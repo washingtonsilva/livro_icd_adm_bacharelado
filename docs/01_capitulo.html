@@ -20,7 +20,27 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -199,9 +219,12 @@ ul.task-list li input[type="checkbox"] {
 </section>
 <section id="a-economia-de-dados-um-breve-histórico" class="level2" data-number="2.2">
 <h2 data-number="2.2" class="anchored" data-anchor-id="a-economia-de-dados-um-breve-histórico"><span class="header-section-number">2.2</span> A economia de dados: um breve histórico</h2>
-<p>As raízes da economia de dados podem ser identificadas ainda no século XIX, quando jornais norte-americanos passaram a realizar levantamentos para antecipar resultados eleitorais. No início do século XX, com o avanço do marketing, pesquisadores e empresas estruturaram departamentos dedicados ao estudo sistemático do comportamento do consumidor.</p>
-<p>A partir da década de 1930, a introdução de métodos estatísticos de amostragem, popularizados por George Gallup, marcou uma mudança importante: previsões baseadas em dados passaram a ser cientificamente fundamentadas. Entre as décadas de 1950 e 1980, empresas como a Nielsen consolidaram sistemas de observação contínua de hábitos de consumo, reforçando a ideia de que observar o comportamento real frequentemente produz informações mais confiáveis do que simplesmente perguntar.</p>
-<p>Com a digitalização da economia a partir dos anos 1990, códigos de barras, programas de fidelidade e, posteriormente, plataformas digitais e redes sociais transformaram dados em um ativo estratégico de escala global. Mais recentemente, modelos avançados de inteligência artificial, como os grandes modelos de linguagem, representam o estágio mais sofisticado dessa trajetória, dependendo fortemente de grandes volumes de dados para seu treinamento.</p>
+<p>As raízes da economia de dados remontam ao século XIX, quando jornais norte-americanos passaram a coletar informações sistemáticas sobre seus leitores e a realizar levantamentos para antecipar resultados eleitorais. Já nesse período inicial, dados eram utilizados como instrumento para reduzir incertezas e orientar decisões editoriais e comerciais, ainda que de forma incipiente e pouco padronizada <span class="citation" data-cites="harkness2021p01">(<a href="referencias.html#ref-harkness2021p01" role="doc-biblioref">Harkness, 2021a</a>)</span>.</p>
+<p>No início do século XX, com a consolidação do marketing como área organizacional, empresas e pesquisadores passaram a estruturar departamentos dedicados ao estudo sistemático do comportamento do consumidor. A coleta de dados deixou de ser episódica e passou a integrar processos contínuos de análise, voltados à compreensão de mercados, preferências e padrões de consumo <span class="citation" data-cites="harkness2021p01">(<a href="referencias.html#ref-harkness2021p01" role="doc-biblioref">Harkness, 2021a</a>)</span>.</p>
+<p>A partir da década de 1930, a introdução de métodos estatísticos de amostragem, notadamente os trabalhos associados a George Gallup, marcou uma mudança qualitativa importante. Previsões baseadas em dados passaram a apoiar-se em fundamentos estatísticos mais sólidos, substituindo abordagens baseadas em grandes volumes de respostas não controladas por técnicas cientificamente mais rigorosas <span class="citation" data-cites="harkness2021p02">(<a href="referencias.html#ref-harkness2021p02" role="doc-biblioref">Harkness, 2021b</a>)</span>.</p>
+<p>Entre as décadas de 1950 e 1980, empresas como a Nielsen consolidaram sistemas de observação contínua de hábitos de consumo e audiência. Esse período reforçou uma distinção central na economia de dados: observar comportamentos reais, de forma sistemática, frequentemente produz informações mais confiáveis do que simplesmente perguntar aos indivíduos sobre suas intenções ou opiniões <span class="citation" data-cites="harkness2021p02">Harkness (<a href="referencias.html#ref-harkness2021p03" role="doc-biblioref">2021c</a>)</span>.</p>
+<p>Com a digitalização da economia a partir dos anos 1990, o uso de códigos de barras, programas de fidelidade e, posteriormente, plataformas digitais e redes sociais transformou os dados em um ativo estratégico de escala global. A capacidade de coletar, armazenar e analisar grandes volumes de informações passou a redefinir modelos de negócio e estruturas competitivas em diversos setores <span class="citation" data-cites="harkness2021p03">(<a href="referencias.html#ref-harkness2021p03" role="doc-biblioref">Harkness, 2021c</a>)</span>.</p>
+<p>Mais recentemente, o avanço de modelos de inteligência artificial, como os grandes modelos de linguagem, representa o estágio mais sofisticado dessa trajetória. Esses sistemas dependem fortemente de grandes volumes de dados para seu treinamento e funcionamento, evidenciando que, na economia contemporânea, dados não são apenas um subproduto das atividades organizacionais, mas um recurso central que condiciona inovação, eficiência e poder econômico <span class="citation" data-cites="harkness2021p04">(<a href="referencias.html#ref-harkness2021p04" role="doc-biblioref">Harkness, 2021d</a>)</span>.</p>
 </section>
 <section id="big-data-e-a-explosão-do-volume-de-dados" class="level2" data-number="2.3">
 <h2 data-number="2.3" class="anchored" data-anchor-id="big-data-e-a-explosão-do-volume-de-dados"><span class="header-section-number">2.3</span> Big Data e a explosão do volume de dados</h2>
@@ -221,16 +244,19 @@ Figura&nbsp;2.1: Os cinco Vs do Big Data.
 </div>
 </div>
 <p>Esse aumento no volume e na complexidade dos dados tornou inviável o uso exclusivo de ferramentas tradicionais, como planilhas eletrônicas, e criou a necessidade de métodos, linguagens e infraestruturas mais robustas para análise. Não por acaso, publicações de referência na área de negócios passaram a destacar dados como um dos recursos mais valiosos da economia contemporânea.</p>
-<p>Um marco simbólico importante na consolidação da chamada economia de dados foi a capa da revista <em>The Economist</em>, publicada em 2017, que trazia a afirmação “Data is the new oil” (“Dados são o novo petróleo”). A analogia sugere que, assim como o petróleo foi o recurso estratégico central da economia industrial, os dados passaram a ocupar papel equivalente na economia digital.</p>
+<p>Um marco simbólico importante na consolidação da chamada economia de dados foi a capa da revista <em>The Economist</em>, publicada em 2017, cujo título era <em>The World’s Most Valuable Resource</em> (“O recurso mais valioso do mundo”) e cujo subtítulo anunciava <em>Data and the new rules of competition</em> (“Dados e as novas regras da competição”). A mensagem central não era apenas a comparação entre dados e petróleo, mas a ideia de que os dados haviam se tornado o principal recurso estratégico capaz de redefinir a dinâmica competitiva entre empresas e setores.</p>
+<p>Diferentemente de recursos tradicionais, os dados não geram valor de forma automática. Seu valor emerge da capacidade de coletá-los, organizá-los, analisá-los e, sobretudo, utilizá-los de maneira sistemática na tomada de decisão. Nesse sentido, a capa da <em>The Economist</em> aponta para uma mudança mais profunda: empresas competitivas passam a ser aquelas capazes de transformar dados em conhecimento operacional e vantagem estratégica contínua.</p>
+<p>Essa mudança implica novas regras de competição. Escala, velocidade de análise, capacidade de experimentação e aprendizado contínuo tornam-se fatores centrais. Organizações que dominam esses elementos conseguem adaptar produtos, processos e estratégias com maior rapidez, enquanto aquelas que tratam dados apenas como subprodutos operacionais tendem a perder relevância.</p>
+<p>Ao destacar os dados como o recurso mais valioso da economia contemporânea, a revista reforça a necessidade de métodos, ferramentas e competências voltadas não apenas à análise técnica, mas à integração entre dados, estratégia e decisão. É nesse contexto que a Ciência de Dados se consolida como área essencial para a Administração, indo além do uso de tecnologias específicas e passando a influenciar diretamente a forma como as organizações competem.</p>
 <div class="cell">
 <div class="cell-output-display">
-<div id="fig-data-new-oil" class="quarto-float quarto-figure quarto-figure-center anchored">
+<div id="fig-worlds-most-valuable-resource" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-data-new-oil-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div aria-describedby="fig-worlds-most-valuable-resource-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/new_oil.jpeg" class="img-fluid figure-img" style="width:60.0%">
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-data-new-oil-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;2.2: Capa da revista <em>The Economist</em> (2017): “Data is the new oil”.
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-worlds-most-valuable-resource-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.2: Capa da revista <em>The Economist</em> (2017): The World’s Most Valuable Resource — Data and the new rules of competition.
 </figcaption>
 </figure>
 </div>
@@ -367,6 +393,20 @@ Dica
 </div>
 
 
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-harkness2021p01" class="csl-entry" role="listitem">
+HARKNESS, T. <a href="https://doi.org/10.1111/1740-9713.01504">The history of the data economy: Part I: The birth of customer insight</a>. <strong>Significance</strong>, v. 18, n. 2, p. 12–15, a2021.
+</div>
+<div id="ref-harkness2021p02" class="csl-entry" role="listitem">
+___. <a href="https://doi.org/10.1111/1740-9713.01547">The history of the data economy: Part II: Analytics arrives</a>. <strong>Significance</strong>, v. 18, n. 4, p. 16–19, b2021.
+</div>
+<div id="ref-harkness2021p03" class="csl-entry" role="listitem">
+___. <a href="https://doi.org/10.1111/1740-9713.01567">The history of the data economy: Part III: The new kings and queens of data</a>. <strong>Significance</strong>, v. 18, n. 5, p. 16–19, c2021.
+</div>
+<div id="ref-harkness2021p04" class="csl-entry" role="listitem">
+___. <a href="https://doi.org/10.1111/1740-9713.01586">The history of the data economy: Part IV: The future</a>. <strong>Significance</strong>, v. 18, n. 6, p. 12–15, d2021.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
