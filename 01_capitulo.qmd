@@ -119,7 +119,7 @@ passando a influenciar diretamente a forma como as organizações competem.
 ```{r}
 #| label: fig-worlds-most-valuable-resource
 #| echo: false
-#| fig-cap: "Capa da revista *The Economist* (2017): The World’s Most Valuable Resource — Data and the new rules of competition."
+#| fig-cap: "Capa da revista @economist2017 sobre o recurso mais valioso do mundo."
 #| out-width: "60%"
 knitr::include_graphics("img/new_oil.jpeg")
 ```
