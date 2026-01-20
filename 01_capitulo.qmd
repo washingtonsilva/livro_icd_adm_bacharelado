@@ -93,7 +93,7 @@ subtítulo anunciava *Data and the new rules of competition* (“Dados e as nova
 regras da competição”). A mensagem central não era apenas a comparação entre
 dados e petróleo, mas a ideia de que os dados haviam se tornado o principal
 recurso estratégico capaz de redefinir a dinâmica competitiva entre empresas
-e setores.
+e setores [@economist2017].
 
 Diferentemente de recursos tradicionais, os dados não geram valor de forma
 automática. Seu valor emerge da capacidade de coletá-los, organizá-los,
