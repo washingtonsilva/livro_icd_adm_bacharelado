@@ -15,7 +15,7 @@ estruturado, progressivo e reutilizável.
 
 Há duas motivações centrais para este projeto.
 
-A primeira é pedagógica. Muitos alunos de Administração apresentam
+A primeira refere-se ao fato de que muitos alunos de Administração apresentam
 dificuldades com programação, matemática e estatística, e estão
 acostumados a trabalhar quase exclusivamente com planilhas eletrônicas.
 O livro procura introduzir conceitos e ferramentas de Ciência de Dados de
@@ -24,9 +24,10 @@ apresentando-as de maneira honesta, contextualizada e conectada a
 problemas reais de gestão.
 
 A segunda é prática. Bons livros de Ciência de Dados raramente estão
-disponíveis em português, e o acesso a obras importadas é limitado. Este
-livro busca oferecer uma alternativa aberta, em língua portuguesa,
-pensada especificamente para o contexto da Administração e para a
+disponíveis em português, e o acesso a obras importadas é quase nulo, 
+devendo-acrescentar a barreira da língua inglesa para a maioria dos estudantes. 
+Assim, este livro busca oferecer uma alternativa aberta, em língua portuguesa, 
+pensada, mas não limitada, ao contexto da Administração e para a
 realidade de cursos noturnos.
 
 
@@ -37,25 +38,24 @@ registro estruturado da disciplina e de suas práticas.
 
 Entre suas principais características, destacam-se:
 
-- Ênfase em **problemas de negócio**, e não apenas em ferramentas ou
-  algoritmos.
-- Uso predominante da linguagem **R**, com introdução gradual à linguagem
-  **SQL**.
 - Apresentação explícita de metodologias de projetos de dados, em
   especial o **CRISP-DM**.
+- Ênfase em **problemas de negócio**, e não apenas em ferramentas ou
+  algoritmos.
+- Uso predominante da linguagem **R**, com uma introdução à linguagem
+  **SQL**.
 - Integração sistemática do **controle de versão com Git e GitHub**, como
   parte da formação do aluno, e não como ferramenta acessória.
-- Uso intensivo do sistema **Quarto** para a produção de relatórios,
-  livros e materiais reprodutíveis.
+- Uso intensivo do sistema **Quarto** para a produção de relatórios.
 
-O Quarto é tratado como elemento central para promover **reprodutibilidade,
-transparência e documentação**, permitindo que análises, código e texto
-convivam de forma integrada e verificável.
+O sistema Quarto é tratado como elemento central para promover 
+**reprodutibilidade, transparência e documentação**, permitindo que análises, 
+código e texto convivam de forma integrada e verificável.
 
 
 ## Status do projeto
 
-O livro está em **desenvolvimento contínuo**.  
+O livro está em fase inicial e, portanto, em **desenvolvimento contínuo**.  
 O conteúdo é revisado, reorganizado e expandido à medida que novas edições
 da disciplina são ministradas e conforme surgem oportunidades de melhoria
 didática.
