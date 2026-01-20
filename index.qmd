@@ -1,0 +1,69 @@
+# Prefácio {.unnumbered}
+
+Este livro nasceu da experiência acumulada ao longo dos anos de 2024 e 2025 na
+oferta da disciplina *Introdução à Ciência de Dados* para os alunos do curso
+noturno de Bacharelado em Administração do IFMG – Campus Formiga. Ele reúne,
+organiza e aprofunda os materiais, exemplos e reflexões utilizados em sala de
+aula, com o objetivo de oferecer aos estudantes um recurso didático acessível,
+progressivo e alinhado com a realidade do ensino público brasileiro.
+
+Este livro acompanha a estrutura da disciplina *Introdução à Ciência de
+Dados*, ofertada no curso de Bacharelado em Administração do IFMG – Campus
+Formiga. Ele funciona tanto como material de apoio às aulas quanto como um
+registro organizado dos conteúdos trabalhados ao longo do curso. Ao longo dos capítulos, o leitor encontrará referências a materiais
+complementares, ao site da disciplina e a trilhas de formação online, que
+podem ser utilizados para aprofundamento e estudo autônomo após o término da
+disciplina.
+
+Embora pensado prioritariamente para os alunos desse curso e desse campus, o
+livro foi escrito de forma a poder ser útil a estudantes de Administração e de
+áreas afins em outras instituições, especialmente àqueles que estão dando os
+primeiros passos no uso de dados para apoiar decisões organizacionais. Trata-se,
+portanto, de um material aberto, tanto no sentido pedagógico quanto no sentido
+institucional.
+
+O leitor típico ao qual este livro se dirige já teve algum contato prévio com
+programação, geralmente em disciplinas introdutórias que utilizam a linguagem
+Python. Ainda assim, é comum que enfrente dificuldades significativas com lógica
+de programação, matemática básica e abstrações estatísticas. Além disso, a maior
+parte dos estudantes está acostumada a trabalhar quase exclusivamente com
+planilhas eletrônicas, como o Excel, o que frequentemente limita a
+reprodutibilidade, a transparência e a escalabilidade das análises. Este livro
+parte dessa realidade concreta e não pressupõe fluência prévia em programação ou
+estatística.
+
+A proposta pedagógica adotada aqui é deliberada: o livro não evita as
+dificuldades inerentes à Ciência de Dados, mas procura introduzi-las de forma
+honesta, gradual e contextualizada. Conceitos, técnicas e ferramentas são
+apresentados passo a passo, sempre que possível ancorados em exemplos práticos
+relacionados à área de Administração, sem promessas de atalhos ou soluções
+milagrosas. O objetivo não é apenas ensinar comandos ou procedimentos, mas
+contribuir para a formação de um modo de pensar analítico, crítico e orientado
+por dados.
+
+A linguagem central utilizada ao longo do livro é **R**, escolhida por sua ampla
+adoção acadêmica, forte ecossistema de pacotes e adequação a análises
+reprodutíveis. Além disso, o livro introduz noções básicas de **SQL**, reconhecendo
+a importância dessa linguagem no trabalho com bases de dados reais. Ferramentas
+como o **RStudio**, o uso do **terminal (BASH no Windows)**, bem como **Git** e
+**GitHub**, fazem parte do ambiente de trabalho apresentado, não como fins em si,
+mas como instrumentos fundamentais para práticas modernas de análise de dados.
+O sistema **Quarto** é utilizado extensivamente, tanto para a produção deste
+livro quanto como ferramenta didática, reforçando a importância da
+reprodutibilidade e da documentação clara.
+
+Este projeto também é uma resposta a uma limitação estrutural: a escassez de
+referências atualizadas e traduzidas para o português na área de Ciência de
+Dados, aliada à dificuldade de acesso a livros importados em instituições
+públicas de ensino. Diante desse cenário, a produção de materiais abertos e
+adaptados ao contexto local torna-se não apenas desejável, mas necessária.
+
+Por fim, este texto deve ser entendido como um material vivo. Ele não pretende
+ser definitivo nem completo, mas sim um ponto de partida que pode ser
+progressivamente aprimorado, corrigido e expandido ao longo do tempo, sempre em
+diálogo com a experiência em sala de aula e com as necessidades reais dos
+estudantes.
+
+[**Washington Santos da Silva**](https://washingtonsilva.github.io){target="_blank"} <br>
+Professor do IFMG – Campus Formiga
+

@@ -1,0 +1,305 @@
+# Visão Geral de Ciência de Dados
+
+## Introdução e contextualização
+
+Nas últimas décadas, dados passaram a ocupar um papel central nas decisões
+econômicas, organizacionais e governamentais. Atividades cotidianas como
+compras online, interações em redes sociais ou o uso do GPS em smartphones
+geram continuamente grandes volumes de dados, que alimentam o que hoje se
+convencionou chamar de *economia de dados*.
+
+Esse fenômeno não surgiu de forma repentina. Ele é resultado de um processo
+histórico no qual a coleta, o armazenamento e a análise de dados foram
+progressivamente incorporados às práticas de gestão, pesquisa e tomada de
+decisão. Compreender essa trajetória é fundamental para entender por que a
+Ciência de Dados se tornou uma área central no mundo contemporâneo.
+
+## A economia de dados: um breve histórico
+
+As raízes da economia de dados podem ser identificadas ainda no século XIX,
+quando jornais norte-americanos passaram a realizar levantamentos para
+antecipar resultados eleitorais. No início do século XX, com o avanço do
+marketing, pesquisadores e empresas estruturaram departamentos dedicados ao
+estudo sistemático do comportamento do consumidor.
+
+A partir da década de 1930, a introdução de métodos estatísticos de amostragem,
+popularizados por George Gallup, marcou uma mudança importante: previsões
+baseadas em dados passaram a ser cientificamente fundamentadas. Entre as
+décadas de 1950 e 1980, empresas como a Nielsen consolidaram sistemas de
+observação contínua de hábitos de consumo, reforçando a ideia de que observar
+o comportamento real frequentemente produz informações mais confiáveis do
+que simplesmente perguntar.
+
+Com a digitalização da economia a partir dos anos 1990, códigos de barras,
+programas de fidelidade e, posteriormente, plataformas digitais e redes
+sociais transformaram dados em um ativo estratégico de escala global. Mais
+recentemente, modelos avançados de inteligência artificial, como os grandes
+modelos de linguagem, representam o estágio mais sofisticado dessa
+trajetória, dependendo fortemente de grandes volumes de dados para seu
+treinamento.
+
+## Big Data e a explosão do volume de dados
+
+O crescimento exponencial da produção de dados levou ao surgimento do conceito
+de *Big Data*, frequentemente caracterizado pelos chamados *cinco Vs*: volume,
+velocidade, variedade, veracidade e valor. Esses atributos ajudam a
+compreender não apenas a quantidade de dados gerados, mas também os desafios
+associados ao seu processamento e uso.
+
+```{r}
+#| label: fig-5v-bigdata
+#| echo: false
+#| fig-cap: "Os cinco Vs do Big Data."
+#| out-width: "70%"
+knitr::include_graphics("img/5vbigdata.png")
+```
+
+Esse aumento no volume e na complexidade dos dados tornou inviável o uso
+exclusivo de ferramentas tradicionais, como planilhas eletrônicas, e criou a
+necessidade de métodos, linguagens e infraestruturas mais robustas para
+análise. Não por acaso, publicações de referência na área de negócios
+passaram a destacar dados como um dos recursos mais valiosos da economia
+contemporânea.
+
+Um marco simbólico importante na consolidação da chamada economia de dados foi
+a capa da revista *The Economist*, publicada em 2017, que trazia a afirmação
+“Data is the new oil” (“Dados são o novo petróleo”). A analogia sugere que,
+assim como o petróleo foi o recurso estratégico central da economia industrial,
+os dados passaram a ocupar papel equivalente na economia digital.
+
+```{r}
+#| label: fig-data-new-oil
+#| echo: false
+#| fig-cap: "Capa da revista *The Economist* (2017): \"Data is the new oil\"."
+#| out-width: "60%"
+knitr::include_graphics("img/new_oil.jpeg")
+```
+
+## O que é Ciência de Dados?
+
+Diante desse contexto, surge a Ciência de Dados como uma abordagem estruturada
+para extrair significado e valor de grandes volumes de dados. Embora o termo
+possa parecer intimidador, sua ideia central é relativamente simples: usar
+métodos analíticos e computacionais para transformar dados brutos em
+informações úteis para a tomada de decisão.
+
+De forma sintética, a Ciência de Dados integra conhecimentos de estatística,
+computação e domínio do negócio, combinando técnicas dessas áreas para lidar
+com problemas reais.
+
+```{r}
+#| label: fig-venn-ds
+#| echo: false
+#| fig-cap: "A Ciência de Dados como interseção entre estatística, computação e conhecimento do domínio."
+#| out-width: "60%"
+knitr::include_graphics("img/diagrama_venn_ds.png")
+```
+
+Essa característica interdisciplinar explica tanto o potencial da área quanto
+a diversidade de formações presentes em equipes de dados.
+
+## Metodologias e processos: CRISP-DM
+
+A prática da Ciência de Dados costuma ser organizada por meio de
+metodologias de projeto. Uma das mais difundidas é o CRISP-DM (*Cross
+Industry Standard Process for Data Mining*), que estrutura o trabalho em
+etapas iterativas, desde o entendimento do problema de negócio até a
+implantação de soluções baseadas em dados.
+
+```{r}
+#| label: fig-crispdm
+#| echo: false
+#| fig-cap: "Etapas do processo CRISP-DM aplicadas a projetos de Ciência de Dados."
+#| out-width: "70%"
+knitr::include_graphics("img/crispdm-trad.png")
+```
+
+Esse modelo destaca que projetos de dados raramente seguem um caminho linear.
+É comum que análises retornem a etapas anteriores à medida que novos insights
+surgem ou que hipóteses iniciais precisem ser revistas.
+
+## Papéis profissionais na área de dados
+
+O crescimento da área de dados deu origem a diferentes papéis profissionais,
+que variam conforme o foco técnico, o grau de especialização e a posição no
+fluxo de produção de valor a partir dos dados. Entre os papéis mais comuns
+estão o Analista de Dados, o Cientista de Dados e o Engenheiro de Dados.
+
+Embora essas funções sejam conceitualmente distintas, na prática,
+especialmente em organizações de pequeno e médio porte, é comum que um mesmo
+profissional acumule responsabilidades associadas a mais de um papel. Essa
+sobreposição é particularmente relevante no contexto brasileiro e deve ser
+levada em conta ao interpretar descrições formais de cargos.
+
+Nas subseções a seguir, apresentam-se esses papéis de forma sintética,
+destacando habilidades técnicas, competências analíticas e exemplos típicos
+de aplicação.
+
+
+### Analista de Dados {.unnumbered}
+
+O Analista de Dados atua principalmente na exploração, organização e
+interpretação de dados, com foco em apoiar decisões operacionais e táticas
+por meio de análises descritivas e diagnósticas.
+
+**Habilidades técnicas**
+
+- Domínio de ferramentas de visualização de dados, como Power BI ou Tableau,
+  e conhecimento avançado em planilhas eletrônicas, como o MS Excel.
+
+- Proficiência em linguagens de programação voltadas à análise de dados,
+  especialmente R e/ou Python.
+
+- Experiência prática, ainda que em nível introdutório, com bancos de dados
+  e linguagem SQL.
+
+**Habilidades analíticas**
+
+- Capacidade de realizar análises estatísticas básicas e interpretar grandes
+  volumes de dados para identificar padrões, tendências e anomalias.
+
+**Exemplos de aplicações práticas**
+
+- Análise de dados em setores como finanças, saúde e turismo, com o objetivo
+  de gerar insights para melhoria de processos, gestão de recursos e
+  atendimento ao cliente.
+
+- Elaboração de análises **descritivas** e **diagnósticas**: a análise
+  descritiva busca compreender *o que* ocorreu, enquanto a análise
+  diagnóstica procura explicar *por que* ocorreu.
+
+
+### Cientista de Dados (Iniciante) {.unnumbered}
+
+O Cientista de Dados atua de forma mais aprofundada na modelagem e na
+construção de soluções analíticas, combinando estatística, programação e
+conhecimento do problema de negócio. No nível iniciante, esse papel ainda
+envolve forte aprendizado técnico e conceitual.
+
+**Habilidades técnicas**
+
+- Proficiência em linguagens de programação como R e/ou Python, com uso de
+  bibliotecas especializadas (por exemplo, tidyverse, pandas,
+  scikit-learn, tidymodels).
+
+- Conhecimento em SQL e em bancos de dados relacionais e não relacionais.
+
+- Familiaridade com ferramentas de versionamento de código (Git) e ambientes
+  de desenvolvimento.
+
+**Habilidades analíticas**
+
+- Conhecimentos em estatística aplicada e aprendizagem de máquina.
+
+- Capacidade de preparar, transformar e organizar conjuntos de dados para
+  análise e modelagem.
+
+- Capacidade de implementar algoritmos básicos de aprendizagem de máquina
+  sob supervisão ou em projetos de escopo limitado.
+
+**Exemplos de aplicações práticas**
+
+- Desenvolvimento de modelos de classificação e regressão para problemas
+  como previsão, segmentação de clientes e detecção de anomalias.
+
+- Realização de análises **preditivas** e **prescritivas**, utilizando dados
+  históricos para antecipar comportamentos e apoiar recomendações de ação.
+
+- Criação de provas de conceito (POCs) para validação de hipóteses de negócio
+  baseadas em dados.
+
+- Comunicação de resultados técnicos em formato acessível a públicos não
+  técnicos.
+
+
+### Engenheiro de Dados {.unnumbered}
+
+O Engenheiro de Dados é o profissional responsável pela construção e
+manutenção da infraestrutura que permite o armazenamento, o processamento e
+o acesso eficiente aos dados utilizados pelas equipes analíticas.
+
+- Atua no projeto, desenvolvimento e otimização de *pipelines* de dados,
+  *data warehouses* e *data lakes*.
+
+- Seu foco principal é garantir que os dados sejam confiáveis, consistentes,
+  acessíveis e escaláveis, servindo como base para o trabalho de analistas e
+  cientistas de dados.
+
+- Em geral, esse papel envolve menor ênfase em análises estatísticas e maior
+  concentração em aspectos de arquitetura, desempenho e integração de
+  sistemas.
+
+
+
+
+## Áreas de aplicação
+
+As aplicações da Ciência de Dados são amplas e afetam diretamente o cotidiano
+das organizações. Em finanças, destacam-se análises de risco de crédito,
+detecção de fraudes e gestão de investimentos. Em marketing, técnicas de
+segmentação de clientes, análise de sentimentos e monitoramento de mídias
+sociais são amplamente utilizadas.
+
+Esses exemplos ilustram como dados podem ser usados para compreender o
+passado, explicar causas e antecipar cenários futuros, correspondendo às
+análises descritivas, diagnósticas e preditivas.
+
+
+
+## Habilidades interpessoais e analíticas
+
+Além de competências técnicas, profissionais de dados precisam desenvolver
+habilidades interpessoais e analíticas que permitam transformar resultados
+quantitativos em decisões organizacionais concretas. Essas habilidades são
+essenciais para conectar análises de dados a problemas reais de negócio e
+para comunicar resultados de forma eficaz a diferentes públicos.
+
+- **Pensamento analítico**: Abordar problemas de forma estruturada,
+  formular perguntas relevantes, selecionar informações apropriadas e
+  buscar soluções baseadas em evidências.
+
+- **Conhecimento do negócio**: Compreender os objetivos da organização,
+  o contexto do mercado e a forma como análises de dados se relacionam com
+  metas estratégicas e operacionais.
+
+- **Comunicação oral e escrita**: Capacidade de explicar resultados
+  técnicos a pessoas sem formação técnica, utilizando linguagem clara,
+  exemplos práticos e evitando jargões desnecessários.
+
+- **Pensamento crítico**: Questionar suposições implícitas, avaliar a
+  qualidade e as limitações dos dados disponíveis e considerar
+  interpretações alternativas antes de chegar a conclusões.
+
+- **Contar histórias com dados**: Organizar resultados e indicadores de modo a
+  construir uma narrativa coerente, capaz de destacar os principais
+  insights e apoiar processos de tomada de decisão.
+
+- **Trabalho em equipe**: Colaborar com profissionais de diferentes áreas,
+  compreender necessidades diversas e integrar perspectivas técnicas e
+  organizacionais.
+
+- **Gerenciamento de projetos**: Planejar etapas de trabalho, definir
+  prioridades, estabelecer prazos realistas e comunicar o andamento das
+  atividades às partes interessadas.
+
+- **Adaptabilidade**: Lidar com mudanças de requisitos, ferramentas e
+  tecnologias em um campo caracterizado por rápida evolução.
+
+- **Curiosidade intelectual**: Demonstrar interesse contínuo em aprender,
+  formular novas perguntas e explorar dados de forma sistemática e
+  responsável.
+
+
+::: {.callout-tip}
+
+Na prática profissional em Ciência de Dados, a capacidade de **estruturar problemas**, **compreender o contexto do negócio** e **comunicar resultados** de forma
+clara tende a ser mais determinante do que o domínio isolado de ferramentas.
+As habilidades técnicas adquirem valor quando integradas a essas
+competências centrais.
+
+:::
+
+
+
+
+

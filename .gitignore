@@ -1,0 +1,14 @@
+# Arquivos temporários
+*.log
+*.aux
+*.out
+
+# Cache do Quarto
+.quarto/
+
+# Artefatos intermediários
+_book/
+
+# Sistema
+.DS_Store
+

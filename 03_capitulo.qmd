@@ -1,0 +1,132 @@
+# Tipos de análise no contexto de CRISP-DM
+
+Ao longo do processo CRISP-DM, diferentes tipos de análise podem ser
+empregados, variando em complexidade técnica e valor estratégico. Cada
+tipo de análise responde a uma pergunta distinta e reflete um determinado
+nível de maturidade analítica da organização.
+
+As análises descritiva, diagnóstica, preditiva e prescritiva não são
+excludentes. Pelo contrário, costumam ser adotadas de forma progressiva e
+complementar, à medida que a organização desenvolve suas capacidades
+analíticas e passa a utilizar dados de forma mais sistemática em seus
+processos decisórios.
+
+
+## Visão geral dos tipos de análise
+
+O termo *analytics* refere-se a um espectro contínuo de técnicas analíticas
+que evoluem em complexidade e impacto organizacional. Esse espectro vai da
+compreensão do que ocorreu no passado até a recomendação de ações
+otimizadas para o futuro.
+
+Cada tipo de análise está associado a uma pergunta fundamental de negócio
+e a um conjunto específico de métodos. Em geral, as organizações avançam
+nessa jornada de forma gradual, consolidando competências em um nível
+antes de progredir para o seguinte.
+
+A maturidade analítica de uma empresa pode ser avaliada pelo equilíbrio e
+pela profundidade com que esses quatro tipos de análise são incorporados
+às rotinas de decisão.
+
+
+## Análise descritiva
+
+A análise descritiva representa o primeiro nível de uso sistemático de
+dados. Seu objetivo é resumir e organizar informações históricas de modo
+a tornar o passado compreensível.
+
+::: {.callout-note icon=false}
+## O que aconteceu?
+
+- **Objetivo**: Sumarizar dados históricos para identificar padrões,
+  tendências e comportamentos recorrentes.
+
+- **Técnicas**: Estatísticas descritivas, tabelas, visualizações e
+  dashboards.
+
+- **Complexidade**: ★☆☆☆
+:::
+
+No contexto da Administração, a análise descritiva é amplamente utilizada
+em relatórios gerenciais e sistemas de acompanhamento operacional.
+
+**Exemplos** incluem relatórios de vendas por canal durante períodos
+promocionais, dashboards de monitoramento de indicadores em tempo real e
+análises de segmentação de clientes por região ou perfil de consumo.
+
+
+## Análise diagnóstica
+
+A análise diagnóstica aprofunda a análise descritiva ao buscar explicações
+para os padrões observados. Enquanto a análise descritiva mostra *o que*
+aconteceu, a diagnóstica procura entender *por que* aconteceu.
+
+::: {.callout-note icon=false}
+## Por que aconteceu?
+
+- **Objetivo**: Investigar causas, relações e fatores associados aos
+  resultados observados.
+
+- **Técnicas**: Análise de correlação, segmentação, *drill-down*,
+  análise de fatores e comparações entre grupos.
+
+- **Complexidade**: ★★☆☆
+:::
+
+Em Administração, esse tipo de análise é fundamental para apoiar decisões
+corretivas e ajustes de estratégia, como investigar as causas de queda nas
+vendas após um reajuste de preços ou identificar fatores associados ao
+aumento do turnover em determinadas unidades da empresa.
+
+
+## Análise preditiva
+
+A análise preditiva utiliza dados históricos para estimar comportamentos
+futuros. Nesse nível, modelos estatísticos e de aprendizagem de máquina
+passam a desempenhar papel central.
+
+::: {.callout-note icon=false}
+## O que provavelmente acontecerá?
+
+- **Objetivo**: Prever tendências futuras e resultados prováveis com base
+  em padrões históricos.
+
+- **Técnicas**: modelos de regressão, análise de séries temporais, algoritmos para 
+classifição.
+
+- **Complexidade**: ★★★☆
+:::
+
+Exemplos típicos em Administração incluem a previsão de demanda para
+produtos sazonais, modelos de propensão à inadimplência em instituições
+financeiras e estimativas de giro de estoque para apoiar decisões de
+compras e logística.
+
+
+## Análise prescritiva
+
+A análise prescritiva representa o nível mais avançado da jornada
+analítica. Seu foco não está apenas em prever resultados, mas em recomendar
+ações que maximizem objetivos organizacionais, considerando restrições e
+trade-offs.
+
+::: {.callout-note icon=false}
+## O que devemos fazer?
+
+- **Objetivo**: Recomendar decisões e ações otimizadas com base em análises
+  descritivas, diagnósticas e preditivas.
+
+- **Técnicas**: Otimização, simulação, algoritmos de decisão e sistemas de
+  recomendação.
+
+- **Complexidade**: ★★★★
+:::
+
+No contexto empresarial, a análise prescritiva é utilizada em problemas
+como otimização do mix de produtos por loja, recomendação personalizada em
+plataformas de e-commerce e definição automática de rotas logísticas em
+ambientes urbanos complexos.
+
+Em geral, esse tipo de análise exige não apenas maturidade técnica, mas
+também processos decisórios bem estruturados e integração com sistemas
+operacionais.

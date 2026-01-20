@@ -1,0 +1,31 @@
+lang: pt-BR
+
+project:
+  type: book
+
+book:
+  title: "Introdução à Ciência de Dados para o Bacharelado em Administração"
+  author: "Washington Santos da Silva"
+  date: 2026-01-19
+  date-format: long
+  chapters:
+    - index.qmd
+    - introducao.qmd
+    - 01_capitulo.qmd
+    - 02_capitulo.qmd
+    - 03_capitulo.qmd
+    - referencias.qmd
+
+bibliography: referencias.bib
+csl: associacao-brasileira-de-normas-tecnicas-ipea.csl
+
+format:
+  html:
+    theme:
+      - cosmo
+      - brand
+  pdf:
+    documentclass: scrreprt
+
+
+

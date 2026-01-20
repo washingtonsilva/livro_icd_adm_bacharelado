@@ -1,0 +1,193 @@
+# Metodologia CRISP-DM
+
+Este capítulo apresenta a metodologia CRISP-DM (*Cross-Industry Standard
+Process for Data Mining*) [@ibm_crisp_dm], amplamente utilizada para estruturar projetos de Ciência de Dados. O objetivo é oferecer uma visão clara e operacional deste método, destacando o papel do administrador na condução e no alinhamento
+estratégico desses projetos.
+
+
+## O problema do “código antes do plano”
+
+Projetos de dados frequentemente falham não por limitações técnicas, mas
+pela ausência de uma metodologia clara. É comum que equipes iniciem o
+desenvolvimento de modelos ou scripts antes mesmo de compreender o problema
+de negócio a ser resolvido.
+
+Esse tipo de abordagem tende a gerar desalinhamento entre soluções técnicas
+e necessidades organizacionais, ciclos recorrentes de retrabalho,
+desperdício de tempo e recursos, além de dificuldades para escalar projetos
+piloto para soluções corporativas.
+
+
+## O papel do administrador em projetos de dados
+
+Nesse contexto, o administrador desempenha papel central. Cabe a ele
+assegurar que projetos de dados tenham início a partir de objetivos de
+negócio claramente definidos, com critérios mensuráveis de sucesso
+estabelecidos antes da implementação técnica.
+
+Além disso, o administrador atua como elo entre equipes técnicas e a
+organização, traduzindo necessidades estratégicas em perguntas analíticas e
+garantindo que os resultados produzidos sejam relevantes para a tomada de
+decisão.
+
+
+## Ferramentas são meios, não fins
+
+Ferramentas como R, Python, SQL, Quarto e Git são essenciais para projetos
+de Ciência de Dados, mas não constituem um fim em si mesmas. Sem uma
+metodologia orientadora, mesmo códigos tecnicamente sofisticados podem
+resolver o problema errado.
+
+O CRISP-DM fornece contexto e direção para o uso dessas ferramentas,
+enfatizando que a modelagem é apenas uma das etapas de um processo mais
+amplo, orientado por objetivos organizacionais.
+
+
+## CRISP-DM como estrutura orientadora
+
+O CRISP-DM é uma metodologia consolidada para organizar projetos de dados
+de forma sistemática e iterativa. Diferentemente de abordagens centradas em
+ferramentas, o processo começa com a compreensão do negócio e termina com a
+implementação e avaliação dos resultados no contexto organizacional.
+
+```{r}
+#| label: fig-crispdm-fases
+#| echo: false
+#| fig-cap: "Fases da metodologia CRISP-DM e sua natureza iterativa."
+#| out-width: "60%"
+knitr::include_graphics("img/crispdm.png")
+```
+
+As fases do CRISP-DM funcionam como pontos de verificação, permitindo
+avaliar o progresso, alinhar expectativas e decidir se o projeto deve
+avançar, ser ajustado ou interrompido.
+
+
+## Fase 1: Compreensão do Negócio (*Business Understanding*)
+
+A primeira fase do CRISP-DM tem como foco alinhar a análise de dados aos
+objetivos empresariais. Antes de qualquer coleta ou modelagem, é necessário
+compreender claramente qual problema se deseja resolver e por que ele é
+relevante.
+
+Nessa etapa, objetivos de negócio são definidos, a situação atual é
+avaliada, metas analíticas são estabelecidas e um plano de projeto é
+elaborado.
+
+
+### Checklist da Fase 1
+
+| #   | Tarefa                          | Resultados esperados                         |
+| --- | ------------------------------- | -------------------------------------------- |
+| 1.1 | Determinar objetivos de negócio | Contexto, objetivos e critérios de sucesso   |
+| 1.2 | Avaliar situação                | Recursos, restrições, riscos e contingências |
+| 1.3 | Determinar objetivos de análise | Metas analíticas e critérios técnicos        |
+| 1.4 | Produzir plano do projeto       | Cronograma, responsáveis e ferramentas       |
+
+
+## Fase 2: Compreensão dos Dados (*Data Understanding*)
+
+Após a definição dos objetivos, inicia-se a compreensão dos dados
+disponíveis. O foco desta fase é conhecer profundamente as fontes de
+dados, suas características, limitações e problemas de qualidade.
+
+São realizadas atividades de coleta inicial, descrição, exploração e
+verificação da qualidade dos dados, fornecendo base sólida para as etapas
+seguintes.
+
+
+### Checklist da Fase 2
+
+| #   | Tarefa                        | Resultados esperados    |
+| --- | ----------------------------- | ----------------------- |
+| 2.1 | Coletar dados iniciais        | Relatório de coleta     |
+| 2.2 | Descrever dados               | Relatório de descrição  |
+| 2.3 | Explorar dados                | Relatório de exploração |
+| 2.4 | Verificar qualidade dos dados | Relatório de qualidade  |
+
+
+## Fase 3: Preparação dos Dados (*Data Preparation*)
+
+A preparação dos dados é, frequentemente, a fase mais trabalhosa do
+processo. Seu objetivo é transformar dados brutos em um conjunto adequado
+para análise e modelagem.
+
+Inclui seleção de registros e variáveis, limpeza de inconsistências,
+criação de atributos derivados, integração de diferentes fontes e
+padronização de formatos.
+
+
+### Checklist da Fase 3
+
+| #   | Tarefa           | Resultados esperados                  |
+| --- | ---------------- | ------------------------------------- |
+| 3.1 | Selecionar dados | Justificativas de inclusão e exclusão |
+| 3.2 | Limpar dados     | Relatório de limpeza                  |
+| 3.3 | Construir dados  | Atributos derivados                   |
+| 3.4 | Integrar dados   | Conjuntos integrados                  |
+| 3.5 | Formatar dados   | Conjunto final documentado            |
+
+
+## Fase 4: Modelagem (*Modeling*)
+
+Na fase de modelagem, técnicas analíticas e estatísticas são aplicadas aos
+dados preparados. São escolhidos algoritmos apropriados, definidos
+procedimentos de teste e ajustados parâmetros dos modelos.
+
+É importante destacar que decisões tomadas nesta fase dependem
+fortemente das escolhas realizadas nas etapas anteriores.
+
+
+### Checklist da Fase 4
+
+| #   | Tarefa                | Resultados esperados    |
+| --- | --------------------- | ----------------------- |
+| 4.1 | Selecionar técnicas   | Técnica e pressupostos  |
+| 4.2 | Gerar design de teste | Estratégia de validação |
+| 4.3 | Construir modelo      | Modelos e parâmetros    |
+| 4.4 | Avaliar modelo        | Métricas e ajustes      |
+
+
+## Fase 5: Avaliação (*Evaluation*)
+
+A fase de avaliação verifica se os resultados obtidos geram valor para o
+negócio. Não se trata apenas de desempenho técnico, mas de aderência aos
+objetivos definidos inicialmente.
+
+Nesta etapa, decide-se se o modelo está pronto para implementação, se
+ajustes adicionais são necessários ou se novas análises devem ser
+conduzidas.
+
+
+### Checklist da Fase 5
+
+| #   | Tarefa                     | Resultados esperados                |
+| --- | -------------------------- | ----------------------------------- |
+| 5.1 | Avaliar resultados         | Comparação com critérios de sucesso |
+| 5.2 | Revisar processo           | Lições aprendidas                   |
+| 5.3 | Determinar próximos passos | Decisões e ações                    |
+
+
+## Fase 6: Implementação (*Deployment*)
+
+A implementação transforma análises e modelos em instrumentos efetivos de
+decisão. Envolve integração com sistemas organizacionais, definição de
+métricas de monitoramento e produção de relatórios ou dashboards para os
+gestores.
+
+Essa fase também inclui a documentação do projeto e a consolidação de
+aprendizados para uso em iniciativas futuras.
+
+
+### Checklist da Fase 6
+
+| #   | Tarefa                              | Resultados esperados        |
+| --- | ----------------------------------- | --------------------------- |
+| 6.1 | Planejar implantação                | Plano de implantação        |
+| 6.2 | Planejar monitoramento e manutenção | Plano de monitoramento      |
+| 6.3 | Produzir relatório final            | Relatório e apresentação    |
+| 6.4 | Revisar projeto                     | Documentação de experiência |
+
+
+
+
