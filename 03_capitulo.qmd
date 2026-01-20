@@ -1,4 +1,4 @@
-# Tipos de análise no contexto de CRISP-DM
+# Tipos de análise e Pertuntas de Negócio
 
 Ao longo do processo CRISP-DM, diferentes tipos de análise podem ser
 empregados, variando em complexidade técnica e valor estratégico. Cada
