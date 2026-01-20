@@ -12,3 +12,6 @@ _book/
 # Sistema
 .DS_Store
 
+
+/.quarto/
+**/*.quarto_ipynb

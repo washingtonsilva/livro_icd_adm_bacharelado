@@ -2,6 +2,8 @@ lang: pt-BR
 
 project:
   type: book
+  output-dir: docs
+
 
 book:
   title: "Introdução à Ciência de Dados para o Bacharelado em Administração"
