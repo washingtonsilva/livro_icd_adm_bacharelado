@@ -228,9 +228,11 @@ div.csl-indent {
   <li><a href="#fase-3-preparação-dos-dados" id="toc-fase-3-preparação-dos-dados" class="nav-link" data-scroll-target="#fase-3-preparação-dos-dados"><span class="header-section-number">5.6</span> Fase 3: Preparação dos Dados</a></li>
   <li><a href="#análise-exploratória-de-dados" id="toc-análise-exploratória-de-dados" class="nav-link" data-scroll-target="#análise-exploratória-de-dados"><span class="header-section-number">5.7</span> Análise exploratória de dados</a>
   <ul class="collapse">
-  <li><a href="#qualidade-por-fornecedor-de-malte" id="toc-qualidade-por-fornecedor-de-malte" class="nav-link" data-scroll-target="#qualidade-por-fornecedor-de-malte"><span class="header-section-number">5.7.1</span> Qualidade por fornecedor de malte</a></li>
-  <li><a href="#relação-entre-cor-e-qualidade" id="toc-relação-entre-cor-e-qualidade" class="nav-link" data-scroll-target="#relação-entre-cor-e-qualidade"><span class="header-section-number">5.7.2</span> Relação entre cor e qualidade</a></li>
-  <li><a href="#conclusão-da-análise-exploratória" id="toc-conclusão-da-análise-exploratória" class="nav-link" data-scroll-target="#conclusão-da-análise-exploratória"><span class="header-section-number">5.7.3</span> Conclusão da análise exploratória</a></li>
+  <li><a href="#investigando-relação-entre-fornecedor-e-qualidade" id="toc-investigando-relação-entre-fornecedor-e-qualidade" class="nav-link" data-scroll-target="#investigando-relação-entre-fornecedor-e-qualidade"><span class="header-section-number">5.7.1</span> Investigando relação entre fornecedor e qualidade</a></li>
+  <li><a href="#investigando-a-qualidade-média-por-fornecedor" id="toc-investigando-a-qualidade-média-por-fornecedor" class="nav-link" data-scroll-target="#investigando-a-qualidade-média-por-fornecedor"><span class="header-section-number">5.7.2</span> Investigando a qualidade média por fornecedor</a></li>
+  <li><a href="#investigando-relação-entre-cor-e-qualidade" id="toc-investigando-relação-entre-cor-e-qualidade" class="nav-link" data-scroll-target="#investigando-relação-entre-cor-e-qualidade"><span class="header-section-number">5.7.3</span> Investigando relação entre cor e qualidade</a></li>
+  <li><a href="#investigando-relação-entre-mestre-responsável-e-qualidade" id="toc-investigando-relação-entre-mestre-responsável-e-qualidade" class="nav-link" data-scroll-target="#investigando-relação-entre-mestre-responsável-e-qualidade"><span class="header-section-number">5.7.4</span> Investigando relação entre mestre responsável e qualidade</a></li>
+  <li><a href="#conclusão-da-análise-exploratória" id="toc-conclusão-da-análise-exploratória" class="nav-link" data-scroll-target="#conclusão-da-análise-exploratória"><span class="header-section-number">5.7.5</span> Conclusão da análise exploratória</a></li>
   </ul></li>
   <li><a href="#conclusões-e-próximos-passos" id="toc-conclusões-e-próximos-passos" class="nav-link" data-scroll-target="#conclusões-e-próximos-passos"><span class="header-section-number">5.8</span> Conclusões e próximos passos</a></li>
   </ul>
@@ -433,67 +435,89 @@ $ TASTING      &lt;dbl&gt; 895, 879, 938, 900, 917, 900, 934, 951, 852, 850, NA,
 </section>
 <section id="fase-3-preparação-dos-dados" class="level2" data-number="5.6">
 <h2 data-number="5.6" class="anchored" data-anchor-id="fase-3-preparação-dos-dados"><span class="header-section-number">5.6</span> Fase 3: Preparação dos Dados</h2>
-<p>A preparação dos dados transforma dados brutos em um conjunto adequado para análise. Esta é, frequentemente, a fase mais trabalhosa do CRISP-DM.</p>
-<p>As operações a seguir realizam:</p>
+<p>Nesta fase, preparamos os dados para análise, renomeando variáveis, convertendo cada variável para um tipo ou classe de dados adequado, tratando valores ausentes, removendo colunas irrelevantes e garantindo que temos dados de qualidade para trabalhar.</p>
+<p>O código a seguir executa as seguintes operações para limpar os dados:</p>
 <ol type="1">
-<li>Remoção de variáveis irrelevantes.</li>
-<li>Renomeação das colunas para nomes mais claros.</li>
-<li>Conversão explícita dos tipos de dados.</li>
-<li>Tratamento de valores ausentes.</li>
+<li><p><strong>Remove</strong> a coluna <code>MONTH</code> que é desnecessária para a análise.</p></li>
+<li><p><strong>Renomeia</strong> todas as colunas para nomes mais descritivos em português, facilitando a interpretação.</p></li>
+<li><p><strong>Converte</strong> as variáveis para seus tipos/classes de dados apropriados: <code>numeric</code> para valores quantitativos (dia, cor, indicador_qualidade) e <code>factor</code> para variáveis categóricas (fabricante, tipo_produto, turno, fornecedor_malte).</p></li>
+<li><p>Remove linhas com valores ausentes para garantir a integridade dos dados nas análises subsequentes.</p></li>
 </ol>
+<p>Vamos utilizar o operador pipe (<code>%&gt;%</code>) do tidyverse para encadear as operações de limpeza e transformação de dados de forma mais legível. Cada operação recebe o resultado da anterior e aplica uma nova transformação.</p>
+<p>Observe como organizamos o código com identação consistente e comentários explicativos para cada operação. Esta é uma boa prática que torna o código mais legível e facilita sua manutenção.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cria um novo data frame com os dados limpos e preparados.</span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># O operador pipe (%&gt;%) permite encadear operações,</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="co"># tornando o código mais legível.</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a>dados_destilaria_limpos <span class="ot">&lt;-</span> dados_destilaria <span class="sc">%&gt;%</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Remove a variável MONTH</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>MONTH) <span class="sc">%&gt;%</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Renomeia as variáveis para nomes mais descritivos</span></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">dia =</span> DAY,</span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">mestre_responsavel =</span> MANUFACTURER,</span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">tipo_produto =</span> PRODUCT,</span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">turno =</span> SHIFT,</span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">cor =</span> COLOR,</span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">fornecedor_malte =</span> MALTING,</span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">indicador_qualidade =</span> TASTING</span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Converte explicitamente os tipos das variáveis</span></span>
-<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">dia =</span> <span class="fu">as.numeric</span>(dia),</span>
-<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">mestre_responsavel =</span> <span class="fu">as.factor</span>(mestre_responsavel),</span>
-<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">tipo_produto =</span> <span class="fu">as.factor</span>(tipo_produto),</span>
-<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">turno =</span> <span class="fu">as.factor</span>(turno),</span>
-<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">cor =</span> <span class="fu">as.numeric</span>(cor),</span>
-<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">fornecedor_malte =</span> <span class="fu">as.factor</span>(fornecedor_malte),</span>
-<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">indicador_qualidade =</span> <span class="fu">as.numeric</span>(indicador_qualidade)</span>
-<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>  </span>
-<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Remove observações com valores ausentes</span></span>
-<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pipeline para criar uma nova data frame </span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># contendo os dados limpos.</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># define o objeto que armazenará os dados limpos</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># criado a partir de dados_destilaria</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>dados_destilaria_limpos <span class="ot">&lt;-</span> dados_destilaria <span class="sc">%&gt;%</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Remove a variável MONTH</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>MONTH) <span class="sc">%&gt;%</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Renomeia as variáveis para nomes mais descritivos</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">dia =</span> DAY,</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">mestre_responsavel =</span> MANUFACTURER,</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">tipo_produto =</span> PRODUCT,</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">turno =</span> SHIFT,</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">cor =</span> COLOR,</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>    <span class="at">fornecedor_malte =</span> MALTING,</span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>    <span class="at">indicador_qualidade =</span> TASTING</span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Converte explicitamente os tipos das variáveis</span></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">dia =</span> <span class="fu">as.numeric</span>(dia),</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">mestre_responsavel =</span> <span class="fu">as.factor</span>(mestre_responsavel),</span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">tipo_produto =</span> <span class="fu">as.factor</span>(tipo_produto),</span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">turno =</span> <span class="fu">as.factor</span>(turno),</span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>    <span class="at">cor =</span> <span class="fu">as.numeric</span>(cor),</span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>    <span class="at">fornecedor_malte =</span> <span class="fu">as.factor</span>(fornecedor_malte),</span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>    <span class="at">indicador_qualidade =</span> <span class="fu">as.numeric</span>(indicador_qualidade)</span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>  </span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Remove observações com valores ausentes</span></span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="análise-exploratória-de-dados" class="level2" data-number="5.7">
 <h2 data-number="5.7" class="anchored" data-anchor-id="análise-exploratória-de-dados"><span class="header-section-number">5.7</span> Análise exploratória de dados</h2>
-<p>A Análise Exploratória de Dados (AED) permite identificar padrões, tendências e relações iniciais entre variáveis, orientando análises posteriores.</p>
-<section id="qualidade-por-fornecedor-de-malte" class="level3" data-number="5.7.1">
-<h3 data-number="5.7.1" class="anchored" data-anchor-id="qualidade-por-fornecedor-de-malte"><span class="header-section-number">5.7.1</span> Qualidade por fornecedor de malte</h3>
+<p>A Análise Exploratória de Dados (AED) é uma abordagem fundamental que nos permite investigar e compreender as características principais de um conjunto de dados.</p>
+<p>Utilizamos técnicas visuais e estatísticas para:</p>
+<ul>
+<li>Identificar padrões, tendências e relações entre variáveis.</li>
+<li>Detectar valores atípicos (outliers) e anomalias.</li>
+<li>Verificar hipóteses preliminares sobre possíveis causas do problema.</li>
+<li>Orientar análises mais detalhadas e modelagens futuras.</li>
+</ul>
+<p>Com os dados devidamente preparados, vamos explorar graficamente<br>
+relações entre algumas variáveis e o indicador de qualidade do whisky para identificar potenciais fatores que explicam os problemas enfrentados pela destilaria.</p>
+<section id="investigando-relação-entre-fornecedor-e-qualidade" class="level3" data-number="5.7.1">
+<h3 data-number="5.7.1" class="anchored" data-anchor-id="investigando-relação-entre-fornecedor-e-qualidade"><span class="header-section-number">5.7.1</span> Investigando relação entre fornecedor e qualidade</h3>
+<p>O boxplot ou diagrama de caixa é uma ferramenta útil para visualizar a distribuição de variáveis numéricas agrupadas por categorias.</p>
+<p>Neste gráfico:</p>
+<ul>
+<li><p>A linha horizontal dentro da caixa representa a <strong>mediana</strong> (percentil 50).</p></li>
+<li><p>Os limites inferior e superior da caixa representam o <strong>primeiro quartil</strong> (percentil 25) e o <strong>terceiro quartil</strong> (percentil 75), respectivamente.</p></li>
+<li><p>As “hastes” (whiskers) se estendem até 1,5 vezes o intervalo interquartil (IQR).</p></li>
+<li><p>Pontos individuais além das hastes representam <strong>outliers</strong> (valores atípicos)</p></li>
+</ul>
+<p>Esta visualização nos permite comparar as distribuições de qualidade entre os diferentes fornecedores de malte. Assim, ela pode revelar evidências de uma relação sistemática entre o fornecedor de malte e a qualidade final do produto.</p>
 <div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Boxplot para comparar a distribuição da qualidade </span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="co"># entre fornecedores</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados_destilaria_limpos,</span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> fornecedor_malte, <span class="at">y =</span> indicador_qualidade)) <span class="sc">+</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Boxplot comparativa da qualidade por fornecedor de malte</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados_destilaria_limpos, <span class="fu">aes</span>(<span class="at">x =</span> fornecedor_malte, <span class="at">y =</span> indicador_qualidade)) <span class="sc">+</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Cria boxplots para representar a distribuição dos dados</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Aplica um tema minimalista para melhor visualização</span></span>
 <span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Qualidade do whisky por fornecedor de malte"</span>,</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Fornecedor"</span>,</span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Indicador de qualidade"</span></span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Define títulos e rótulos dos eixos</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Qualidade do Whisky por Fornecedor de Malte"</span>,</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Fornecedor"</span>,</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Pontuação de Qualidade"</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div id="fig-boxplot-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
 <figure class="quarto-float quarto-float-fig figure">
@@ -501,7 +525,7 @@ $ TASTING      &lt;dbl&gt; 895, 879, 938, 900, 917, 900, 934, 951, 852, 850, NA,
 <img src="04_capitulo_files/figure-html/fig-boxplot-1-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-boxplot-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;5.1: Boxplot comparativo de qualidade por fornecedor de malte.
+Figura&nbsp;5.1: Boxplot comparativo de qualidade do whisky por fornecedor de malte.
 </figcaption>
 </figure>
 </div>
@@ -511,29 +535,71 @@ Figura&nbsp;5.1: Boxplot comparativo de qualidade por fornecedor de malte.
 <p>Por outro lado, os produtos associados ao fornecedor <em>Burns Best Ltd.</em> tendem a apresentar qualidade mediana inferior, com distribuição mais concentrada em valores baixos. Já o fornecedor <em>Matro Ltd.</em> apresenta maior variabilidade, indicando inconsistência no padrão de qualidade do insumo fornecido.</p>
 <p>Esses resultados sugerem que o fornecedor de malte é um fator potencialmente relevante para explicar a queda observada na qualidade do produto final.</p>
 </section>
-<section id="relação-entre-cor-e-qualidade" class="level3" data-number="5.7.2">
-<h3 data-number="5.7.2" class="anchored" data-anchor-id="relação-entre-cor-e-qualidade"><span class="header-section-number">5.7.2</span> Relação entre cor e qualidade</h3>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Gráfico de dispersão com suavização LOESS para </span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="co"># identificar tendências</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados_destilaria_limpos,</span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>       <span class="fu">aes</span>(<span class="at">x =</span> cor, <span class="at">y =</span> indicador_qualidade)) <span class="sc">+</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Relação entre cor e qualidade do whisky"</span>,</span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Indicador de cor"</span>,</span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Indicador de qualidade"</span></span>
-<span id="cb10-12"><a href="#cb10-12" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div id="fig-scatter-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-scatter-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="04_capitulo_files/figure-html/fig-scatter-1-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672">
+<section id="investigando-a-qualidade-média-por-fornecedor" class="level3" data-number="5.7.2">
+<h3 data-number="5.7.2" class="anchored" data-anchor-id="investigando-a-qualidade-média-por-fornecedor"><span class="header-section-number">5.7.2</span> Investigando a qualidade média por fornecedor</h3>
+<p>Embora os boxplots forneçam uma visualização rica da distribuição dos dados, às vezes precisamos de medidas numéricas precisas para confirmar nossas observações visuais. Nesta análise:</p>
+<ul>
+<li><p>Agrupamos os dados por fornecedor de malte.</p></li>
+<li><p>Calculamos a média do indicador de qualidade para cada grupo.</p></li>
+<li><p>Contamos o número de amostras (n) por fornecedor para avaliar a robustez dos resultados.</p></li>
+<li><p>Ordenamos os resultados em ordem decrescente para facilitar a comparação.</p></li>
+</ul>
+<p>Esta abordagem complementa a visualização anterior, fornecendo valores numéricos para fundamentar a análise do boxplot.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcula a qualidade média por fornecedor</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>dados_destilaria_limpos <span class="sc">%&gt;%</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Agrupa os dados pelo fornecedor de malte</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(fornecedor_malte) <span class="sc">%&gt;%</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Calcula a média e conta o número de obs. para cada grupo</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">qualidade_media =</span> <span class="fu">mean</span>(indicador_qualidade),</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>()</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Ordena os resultados em ordem decrescente pela qualidade média</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(qualidade_media))</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+  fornecedor_malte qualidade_media     n
+  &lt;fct&gt;                      &lt;dbl&gt; &lt;int&gt;
+1 Inhouse                     935.    10
+2 Matro Ltd.                  904      5
+3 Burns Best Ltd.             901      5</code></pre>
 </div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-scatter-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;5.2: Gráfico de dispersão entre cor e qualidade do whisky.
+</div>
+</section>
+<section id="investigando-relação-entre-cor-e-qualidade" class="level3" data-number="5.7.3">
+<h3 data-number="5.7.3" class="anchored" data-anchor-id="investigando-relação-entre-cor-e-qualidade"><span class="header-section-number">5.7.3</span> Investigando relação entre cor e qualidade</h3>
+<p>O gráfico de dispersão ou <em>scatter plot</em> é ideal para explorar a relação entre duas variáveis numéricas. Ao analisar a relação entre a cor do whisky e seu indicador de qualidade:</p>
+<ul>
+<li>Cada ponto representa uma amostra de whisky produzida.</li>
+<li>O eixo X mostra o valor do indicador de cor.</li>
+<li>O eixo Y indica a pontuação de qualidade.</li>
+<li>A linha de tendência (curva LOESS) ajuda a visualizar o padrão geral dos dados sem assumir uma relação linear.</li>
+</ul>
+<p>Esta visualização nos permite identificar se existe um valor ou faixa ótima de cor que está associada à melhor qualidade, o que poderia ser usado como indicador durante o processo de produção.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Grafico de dispersão entre o indicador de cor e a qualidade</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados_destilaria_limpos, <span class="fu">aes</span>(<span class="at">x =</span> cor, <span class="at">y =</span> indicador_qualidade)) <span class="sc">+</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Adiciona pontos para cada observação no conjunto de dados</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Adiciona uma linha suavizada (LOESS) para mostrar a tendência geral</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Aplica um tema minimalista</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Define títulos e rótulos dos eixos</span></span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Relação entre Cor e Qualidade do Whisky"</span>,</span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Indicador de Cor"</span>,</span>
+<span id="cb12-13"><a href="#cb12-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Indicador de Qualidade"</span></span>
+<span id="cb12-14"><a href="#cb12-14" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="04_capitulo_files/figure-html/fig-2-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;5.2: Gráfico de dispersão entre qualidade e cor do whisky.
 </figcaption>
 </figure>
 </div>
@@ -543,8 +609,45 @@ Figura&nbsp;5.2: Gráfico de dispersão entre cor e qualidade do whisky.
 <p>Valores muito baixos ou muito elevados do indicador de cor parecem associar-se a pior desempenho no indicador de qualidade. Essa evidência sugere que a cor pode funcionar como um sinal antecipado de problemas no processo produtivo.</p>
 <p>Do ponto de vista operacional, esse resultado é particularmente interessante, pois a cor pode ser monitorada durante a produção, antes das etapas finais de avaliação sensorial.</p>
 </section>
-<section id="conclusão-da-análise-exploratória" class="level3" data-number="5.7.3">
-<h3 data-number="5.7.3" class="anchored" data-anchor-id="conclusão-da-análise-exploratória"><span class="header-section-number">5.7.3</span> Conclusão da análise exploratória</h3>
+<section id="investigando-relação-entre-mestre-responsável-e-qualidade" class="level3" data-number="5.7.4">
+<h3 data-number="5.7.4" class="anchored" data-anchor-id="investigando-relação-entre-mestre-responsável-e-qualidade"><span class="header-section-number">5.7.4</span> Investigando relação entre mestre responsável e qualidade</h3>
+<p>Os mestres responsáveis pela produção podem influenciar significativamente a qualidade do produto final devido às suas técnicas, experiência e atenção aos detalhes. Este boxplot nos permite:</p>
+<ul>
+<li><p>Comparar a performance de diferentes mestres responsáveis.</p></li>
+<li><p>Identificar se há diferenças consistentes na qualidade do whisky produzido por cada um.</p></li>
+<li><p>Verificar se algum mestre responsável apresenta maior variabilidade nos resultados.</p></li>
+<li><p>Detectar possíveis interações entre a experiência do profissional e a qualidade final.</p></li>
+</ul>
+<p>Esta análise pode revelar se há necessidade de padronização de processos ou treinamentos específicos para garantir consistência na produção.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Boxplot comparativo entre indicador de qualidade e mestre destilador\\</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados_destilaria_limpos, <span class="fu">aes</span>(<span class="at">x =</span> mestre_responsavel, <span class="at">y =</span> indicador_qualidade)) <span class="sc">+</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Cria boxplots para visualizar a distribuição e identificar outliers</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Aplica um tema minimalista</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Define títulos e rótulos dos eixos</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Qualidade do Whisky por Fabricante"</span>,</span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Mestre Responsável"</span>,</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Indicador de Qualidade"</span></span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="04_capitulo_files/figure-html/fig-3-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;5.3: Boxplot comparativo entre qualidade do whisky e mestre destilador.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="conclusão-da-análise-exploratória" class="level3" data-number="5.7.5">
+<h3 data-number="5.7.5" class="anchored" data-anchor-id="conclusão-da-análise-exploratória"><span class="header-section-number">5.7.5</span> Conclusão da análise exploratória</h3>
 <p>A análise exploratória dos dados da linha de produção da Junglivet Whisky Company indica que a queda na qualidade do produto não ocorre de forma aleatória. Pelo contrário, há evidências de associação entre o indicador de qualidade e fatores operacionais específicos.</p>
 <p>Em particular, o fornecedor de malte e o indicador de cor emergem como variáveis relevantes, tanto pela magnitude das diferenças observadas quanto pela consistência dos padrões identificados.</p>
 <p>Esses resultados não constituem provas definitivas de causalidade, mas fornecem hipóteses analíticas bem fundamentadas para as próximas fases de CRISP-DM.</p>

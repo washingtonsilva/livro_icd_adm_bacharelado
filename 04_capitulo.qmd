@@ -220,21 +220,40 @@ summary(dados_destilaria)
 
 ## Fase 3: Preparação dos Dados
 
-A preparação dos dados transforma dados brutos em um conjunto adequado para
-análise. Esta é, frequentemente, a fase mais trabalhosa do CRISP-DM.
+Nesta fase, preparamos os dados para análise, renomeando variáveis, 
+convertendo cada variável para um tipo ou classe de dados adequado, 
+tratando valores ausentes, removendo colunas irrelevantes e garantindo 
+que temos dados de qualidade para trabalhar.
 
-As operações a seguir realizam:
+O código a seguir executa as seguintes operações para limpar os dados:
 
-1. Remoção de variáveis irrelevantes.
-2. Renomeação das colunas para nomes mais claros.
-3. Conversão explícita dos tipos de dados.
-4. Tratamento de valores ausentes.
+1. **Remove** a coluna `MONTH` que é desnecessária para a análise.
+  
+2. **Renomeia** todas as colunas para nomes mais descritivos em português, 
+facilitando a interpretação.
+ 
+3. **Converte** as variáveis para seus tipos/classes de dados apropriados: 
+`numeric` para valores quantitativos (dia, cor, indicador_qualidade) e 
+`factor` para variáveis categóricas (fabricante, tipo_produto, turno, 
+fornecedor_malte).
+ 
+4. Remove linhas com valores ausentes para garantir a integridade 
+dos dados nas análises subsequentes.
+
+Vamos utilizar o operador pipe (`%>%`) do tidyverse para encadear
+as operações de limpeza e transformação de dados de forma mais legível.
+Cada operação recebe o resultado da anterior e aplica uma nova transformação.
+
+Observe como organizamos o código com identação consistente e
+comentários explicativos para cada operação. Esta é uma boa prática
+que torna o código mais legível e facilita sua manutenção.
 
 ```{r}
-# Cria um novo data frame com os dados limpos e preparados.
-# O operador pipe (%>%) permite encadear operações,
-# tornando o código mais legível.
+# Pipeline para criar uma nova data frame 
+# contendo os dados limpos.
 
+# define o objeto que armazenará os dados limpos
+# criado a partir de dados_destilaria
 dados_destilaria_limpos <- dados_destilaria %>%
   
   # Remove a variável MONTH
@@ -268,27 +287,62 @@ dados_destilaria_limpos <- dados_destilaria %>%
 
 ## Análise exploratória de dados
 
-A Análise Exploratória de Dados (AED) permite identificar padrões,
-tendências e relações iniciais entre variáveis, orientando análises
-posteriores.
+A Análise Exploratória de Dados (AED) é uma abordagem fundamental que nos 
+permite investigar e compreender as características principais de um 
+conjunto de dados. 
 
-### Qualidade por fornecedor de malte
+Utilizamos técnicas visuais e estatísticas para:
+
+- Identificar padrões, tendências e relações entre variáveis.
+- Detectar valores atípicos (outliers) e anomalias.
+- Verificar hipóteses preliminares sobre possíveis causas do problema.
+- Orientar análises mais detalhadas e modelagens futuras.
+
+Com os dados devidamente preparados, vamos explorar graficamente  
+relações entre algumas variáveis e o indicador de qualidade do whisky 
+para identificar potenciais fatores que explicam os problemas 
+enfrentados pela destilaria.
+
+### Investigando relação entre fornecedor e qualidade
+
+O boxplot ou diagrama de caixa é uma ferramenta útil para 
+visualizar a distribuição de variáveis numéricas agrupadas 
+por categorias. 
+
+Neste gráfico:
+
+- A linha horizontal dentro da caixa representa a **mediana** (percentil 50).
+
+- Os limites inferior e superior da caixa representam o **primeiro quartil** 
+(percentil 25) e o **terceiro quartil** (percentil 75), respectivamente.
+
+- As "hastes" (whiskers) se estendem até 1,5 vezes o intervalo 
+interquartil (IQR).
+
+- Pontos individuais além das hastes representam **outliers** 
+(valores atípicos)
+
+Esta visualização nos permite comparar as distribuições de 
+qualidade entre os diferentes fornecedores de malte. Assim, 
+ela pode revelar evidências de uma relação sistemática entre o 
+fornecedor de malte e a qualidade final do produto.
 
 ```{r}
 #| label: fig-boxplot-1
-#| fig-cap: "Boxplot comparativo de qualidade por fornecedor de malte."
+#| fig-cap: "Boxplot comparativo de qualidade do whisky por fornecedor de malte."
 #| fig-align: center
 
-# Boxplot para comparar a distribuição da qualidade 
-# entre fornecedores
-ggplot(dados_destilaria_limpos,
-       aes(x = fornecedor_malte, y = indicador_qualidade)) +
+# Boxplot comparativa da qualidade por fornecedor de malte
+ggplot(dados_destilaria_limpos, aes(x = fornecedor_malte, y = indicador_qualidade)) +
+  # Cria boxplots para representar a distribuição dos dados
   geom_boxplot() +
+  # Aplica um tema minimalista para melhor visualização
   theme_minimal() +
+  # Define títulos e rótulos dos eixos
   labs(
-    title = "Qualidade do whisky por fornecedor de malte",
+    title = "Qualidade do Whisky por Fornecedor de Malte",
     x = "Fornecedor",
-    y = "Indicador de qualidade"
+    y = "Pontuação de Qualidade"
   )
 ```
 
@@ -308,25 +362,73 @@ potencialmente relevante para explicar a queda observada na qualidade do
 produto final.
 
 
+### Investigando a qualidade média por fornecedor
 
-### Relação entre cor e qualidade
+Embora os boxplots forneçam uma visualização rica da distribuição dos dados, 
+às vezes precisamos de medidas numéricas precisas para confirmar nossas 
+observações visuais. Nesta análise:
+
+- Agrupamos os dados por fornecedor de malte.
+
+- Calculamos a média do indicador de qualidade para cada grupo.
+
+- Contamos o número de amostras (n) por fornecedor para avaliar a 
+robustez dos resultados.
+
+- Ordenamos os resultados em ordem decrescente para facilitar a comparação.
+
+Esta abordagem complementa a visualização anterior, fornecendo valores 
+numéricos para fundamentar a análise do boxplot.
 
 ```{r}
-#| label: fig-scatter-1
-#| fig-cap: "Gráfico de dispersão entre cor e qualidade do whisky."
-#| fig-align: center
+# Calcula a qualidade média por fornecedor
+dados_destilaria_limpos %>%
+  # Agrupa os dados pelo fornecedor de malte
+  group_by(fornecedor_malte) %>%
+  # Calcula a média e conta o número de obs. para cada grupo
+  summarise(
+    qualidade_media = mean(indicador_qualidade),
+    n = n()
+  ) %>%
+  # Ordena os resultados em ordem decrescente pela qualidade média
+  arrange(desc(qualidade_media))
+```
 
-# Gráfico de dispersão com suavização LOESS para 
-# identificar tendências
-ggplot(dados_destilaria_limpos,
-       aes(x = cor, y = indicador_qualidade)) +
+
+
+### Investigando relação entre cor e qualidade
+
+O gráfico de dispersão ou *scatter plot*  é ideal para explorar 
+a relação entre duas variáveis numéricas. Ao analisar a relação entre a 
+cor do whisky e seu indicador de qualidade:
+
+- Cada ponto representa uma amostra de whisky produzida.
+- O eixo X mostra o valor do indicador de cor.
+- O eixo Y indica a pontuação de qualidade.
+- A linha de tendência (curva LOESS) ajuda a visualizar o padrão geral dos 
+dados sem assumir uma relação linear.
+
+Esta visualização nos permite identificar se existe um valor ou faixa 
+ótima de cor que está associada à melhor qualidade, o que poderia ser usado 
+como indicador durante o processo de produção.
+
+```{r}
+#| label: fig-2
+#| fig-cap: "Gráfico de dispersão entre qualidade e cor do whisky."
+
+# Grafico de dispersão entre o indicador de cor e a qualidade
+ggplot(dados_destilaria_limpos, aes(x = cor, y = indicador_qualidade)) +
+  # Adiciona pontos para cada observação no conjunto de dados
   geom_point() +
+  # Adiciona uma linha suavizada (LOESS) para mostrar a tendência geral
   geom_smooth(method = "loess", se = FALSE) +
+  # Aplica um tema minimalista
   theme_minimal() +
+  # Define títulos e rótulos dos eixos
   labs(
-    title = "Relação entre cor e qualidade do whisky",
-    x = "Indicador de cor",
-    y = "Indicador de qualidade"
+    title = "Relação entre Cor e Qualidade do Whisky",
+    x = "Indicador de Cor",
+    y = "Indicador de Qualidade"
   )
 ```
 
@@ -343,6 +445,46 @@ processo produtivo.
 Do ponto de vista operacional, esse resultado é particularmente
 interessante, pois a cor pode ser monitorada durante a produção, antes
 das etapas finais de avaliação sensorial.
+
+
+
+### Investigando relação entre mestre responsável e qualidade
+
+Os mestres responsáveis pela produção podem influenciar significativamente 
+a qualidade do produto final devido às suas técnicas, experiência e atenção 
+aos detalhes. Este boxplot nos permite:
+
+- Comparar a performance de diferentes mestres responsáveis.
+
+- Identificar se há diferenças consistentes na qualidade do whisky 
+produzido por cada um.
+
+- Verificar se algum mestre responsável apresenta maior variabilidade 
+nos resultados.
+
+- Detectar possíveis interações entre a experiência do profissional e a 
+qualidade final.
+
+Esta análise pode revelar se há necessidade de padronização de processos 
+ou treinamentos específicos para garantir consistência na produção.
+
+```{r}
+#| label: fig-3
+#| fig-cap: "Boxplot comparativo entre qualidade do whisky e mestre destilador."
+
+# Boxplot comparativo entre indicador de qualidade e mestre destilador\\
+ggplot(dados_destilaria_limpos, aes(x = mestre_responsavel, y = indicador_qualidade)) +
+  # Cria boxplots para visualizar a distribuição e identificar outliers
+  geom_boxplot() +
+  # Aplica um tema minimalista
+  theme_minimal() +
+  # Define títulos e rótulos dos eixos
+  labs(
+    title = "Qualidade do Whisky por Fabricante",
+    x = "Mestre Responsável",
+    y = "Indicador de Qualidade"
+  )
+```
 
 
 ### Conclusão da análise exploratória
