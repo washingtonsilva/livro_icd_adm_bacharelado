@@ -323,8 +323,10 @@ Dica
 <p>Nesta etapa, analisamos os dados disponíveis, sua estrutura e limitações, antes de qualquer transformação ou modelagem.</p>
 <section id="dicionário-de-dados" class="level3" data-number="5.5.1">
 <h3 data-number="5.5.1" class="anchored" data-anchor-id="dicionário-de-dados"><span class="header-section-number">5.5.1</span> Dicionário de dados</h3>
-<p>A documentação das variáveis é uma prática essencial em projetos de dados. Ela garante interpretação consistente e reduz ambiguidades ao longo do processo analítico.</p>
-<p>O conjunto de dados contém as seguintes variáveis:</p>
+<p>A documentação das variáveis é uma prática fundamental em projetos de análise de dados. Ela garante interpretação consistente e reduz ambiguidades ao longo do processo analítico.</p>
+<p>Um dicionário de dados é uma documentação estruturada que descreve o significado, formato, uso e relacionamentos de cada variável em um conjunto de dados.</p>
+<p>Ele funciona como um guia essencial para compreender corretamente as informações disponíveis, garantindo que todos os usuários interpretem os dados de maneira consistente.</p>
+<p>O arquivo de dados fornecido contém as seguintes colunas (ou variáveis):</p>
 <ul>
 <li><strong>DAY</strong>: dia da produção.</li>
 <li><strong>MONTH</strong>: mês da produção.</li>
@@ -361,39 +363,33 @@ Dica
 <span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  ggplot2    <span class="co"># visualização de dados</span></span>
 <span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
-<p>O processo de importação de dados utiliza dois pacotes centrais:</p>
+<p>O processo de importação de dados é um passo fundamental em qualquer análise. Neste caso, utilizamos duas ferramentas importantes:</p>
 <ul>
-<li><code>here</code>, para garantir portabilidade por meio de caminhos relativos;</li>
-<li><code>readr</code>, para leitura eficiente e consistente de arquivos CSV.</li>
+<li><p>O pacote <code>here</code> permite definir caminhos relativos ao diretório raiz do projeto, o que torna o código mais portátil e facilita o compartilhamento. Independentemente de onde o projeto esteja armazenado em diferentes computadores, o pacote <code>here</code> encontrará automaticamente os arquivos a partir da raiz do projeto.</p></li>
+<li><p>O pacote <code>readr</code>, parte do tidyverse, oferece funções otimizadas para leitura de arquivos, como a <code>read_csv()</code>, que é mais rápida que a função base do R e oferece tratamento mais consistente dos tipos de dados. Além disso, ela converte automaticamente strings vazias para NA, indica o tipo de cada coluna importada e preserva os nomes das variáveis originais.</p></li>
 </ul>
-<p>O uso de caminhos relativos é fundamental em projetos reprodutíveis, pois evita dependência de diretórios específicos de cada computador.</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define o caminho relativo do arquivo de dados </span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># a partir da raiz do projeto.</span></span>
 <span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>caminho <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"dados/brutos/productionlog_sample.csv"</span>)</span>
 <span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Importa o arquivo CSV utilizando a função read_csv(), que:</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="co"># - identifica automaticamente os tipos das colunas</span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># - trata strings vazias como valores ausentes (NA)</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># - é mais eficiente que a função read.csv() do R base</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a>dados_destilaria <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(</span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a>  caminho,</span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a>  <span class="at">show_col_types =</span> <span class="cn">FALSE</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="do">## Importa o arquivo com a funçào read_csv</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>dados_destilaria <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(caminho)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 <p>A partir desse ponto, os dados estão disponíveis na ambiente de R e podem ser explorados, verificados e preparados para as etapas seguintes da análise.</p>
 </section>
 <section id="inspeção-inicial-dos-dados" class="level3" data-number="5.5.3">
 <h3 data-number="5.5.3" class="anchored" data-anchor-id="inspeção-inicial-dos-dados"><span class="header-section-number">5.5.3</span> Inspeção inicial dos dados</h3>
-<p>Antes de qualquer transformação, é essencial compreender a estrutura do conjunto de dados.</p>
+<p>Após importar os dados, é essencial verificar sua estrutura para entender o que temos disponível. A função <code>glimpse()</code> do pacote <code>dplyr</code> nos oferece uma visão concisa e informativa sobre:</p>
+<ul>
+<li>Quais variáveis (colunas) estão presentes no conjunto de dados.</li>
+<li>Qual o tipo ou classe de cada variável.</li>
+<li>Os primeiros valores de cada variável.</li>
+<li>O número total de observações (linhas).</li>
+</ul>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A função glimpse fornece uma visão compacta dos dados</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="co"># - classe do objeto: data frame/tibble</span></span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="co"># - número de observações (linhas x colunas)</span></span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a><span class="co"># - nomes das variáveis</span></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># - tipos de dados</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="co"># - primeiros valores</span></span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">glimpse</span>(dados_destilaria)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># fornece visão geral da estrutura dos dados</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">glimpse</span>(dados_destilaria)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>Rows: 21
 Columns: 8
@@ -408,10 +404,10 @@ $ TASTING      &lt;dbl&gt; 895, 879, 938, 900, 917, 900, 934, 951, 852, 850, NA,
 </div>
 </div>
 <p>Além disso, estatísticas descritivas básicas ajudam a identificar valores ausentes, escalas e possíveis inconsistências.</p>
+<p>A função <code>summary()</code> resume as principais estatísticas das variáveis e indica automaticamente a presença de valores ausentes (NA)</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># A função summary resume as principais estatísticas das variáveis</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="co"># e indica automaticamente a presença de valores ausentes (NA)</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(dados_destilaria)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># fornece estatísticas descritivas dos dados</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(dados_destilaria)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>      DAY           MONTH   MANUFACTURER         PRODUCT         
  Min.   : 1.0   Min.   :4   Length:21          Length:21         
@@ -431,6 +427,7 @@ $ TASTING      &lt;dbl&gt; 895, 879, 938, 900, 917, 900, 934, 951, 852, 850, NA,
                     NA's   :1                           NA's   :1      </code></pre>
 </div>
 </div>
+<p>A saída da função mostra que há pelo menos um valor faltante (<code>NA</code>) em uma linha (observação) do arquivo.</p>
 </section>
 </section>
 <section id="fase-3-preparação-dos-dados" class="level2" data-number="5.6">

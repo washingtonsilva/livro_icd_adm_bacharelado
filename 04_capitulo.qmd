@@ -115,11 +115,19 @@ antes de qualquer transformação ou modelagem.
 
 ### Dicionário de dados
 
-A documentação das variáveis é uma prática essencial em projetos de dados.
-Ela garante interpretação consistente e reduz ambiguidades ao longo do
+A documentação das variáveis é uma prática fundamental em projetos de análise de 
+dados. Ela garante interpretação consistente e reduz ambiguidades ao longo do
 processo analítico.
 
-O conjunto de dados contém as seguintes variáveis:
+Um dicionário de dados é uma documentação estruturada que descreve o 
+significado, formato, uso e relacionamentos de cada variável em um 
+conjunto de dados. 
+
+Ele funciona como um guia essencial para compreender corretamente as 
+informações disponíveis, garantindo que todos os usuários interpretem 
+os dados de maneira consistente. 
+
+O arquivo de dados fornecido contém as seguintes colunas (ou variáveis):
 
 - **DAY**: dia da produção.
 - **MONTH**: mês da produção.
@@ -165,27 +173,29 @@ pacman::p_load(
 )
 ```
 
-O processo de importação de dados utiliza dois pacotes centrais:
+O processo de importação de dados é um passo fundamental em qualquer 
+análise. Neste caso, utilizamos duas ferramentas importantes:
 
-- `here`, para garantir portabilidade por meio de caminhos relativos;
-- `readr`, para leitura eficiente e consistente de arquivos CSV.
+- O pacote `here` permite definir caminhos relativos ao diretório 
+raiz do projeto, o que torna o código mais portátil e facilita o 
+compartilhamento. Independentemente de onde o projeto esteja armazenado 
+em diferentes computadores, o pacote `here` encontrará automaticamente 
+os arquivos a partir da raiz do projeto.
 
-O uso de caminhos relativos é fundamental em projetos reprodutíveis,
-pois evita dependência de diretórios específicos de cada computador.
+- O pacote `readr`, parte do tidyverse, oferece funções otimizadas 
+para leitura de arquivos, como a `read_csv()`, que é mais rápida 
+que a função base do R e oferece tratamento mais consistente dos 
+tipos de dados. Além disso, ela converte automaticamente strings vazias 
+para NA, indica o tipo de cada coluna importada e preserva os nomes 
+das variáveis originais.
 
 ```{r}
 # Define o caminho relativo do arquivo de dados 
 # a partir da raiz do projeto.
 caminho <- here::here("dados/brutos/productionlog_sample.csv")
 
-# Importa o arquivo CSV utilizando a função read_csv(), que:
-# - identifica automaticamente os tipos das colunas
-# - trata strings vazias como valores ausentes (NA)
-# - é mais eficiente que a função read.csv() do R base
-dados_destilaria <- readr::read_csv(
-  caminho,
-  show_col_types = FALSE
-)
+## Importa o arquivo com a funçào read_csv
+dados_destilaria <- readr::read_csv(caminho)
 ```
 
 A partir desse ponto, os dados estão disponíveis na ambiente de R e podem
@@ -196,27 +206,35 @@ análise.
 
 ### Inspeção inicial dos dados
 
-Antes de qualquer transformação, é essencial compreender a estrutura do
-conjunto de dados.
+Após importar os dados, é essencial verificar sua estrutura para entender 
+o que temos disponível. A função `glimpse()` do pacote `dplyr` nos 
+oferece uma visão concisa e informativa sobre:
+
+- Quais variáveis (colunas) estão presentes no conjunto de dados.
+- Qual o tipo ou classe de cada variável.
+- Os primeiros valores de cada variável.
+- O número total de observações (linhas).
 
 ```{r}
-# A função glimpse fornece uma visão compacta dos dados
-# - classe do objeto: data frame/tibble
-# - número de observações (linhas x colunas)
-# - nomes das variáveis
-# - tipos de dados
-# - primeiros valores
+# fornece visão geral da estrutura dos dados
 dplyr::glimpse(dados_destilaria)
 ```
 
 Além disso, estatísticas descritivas básicas ajudam a identificar valores
 ausentes, escalas e possíveis inconsistências.
 
+A função `summary()` resume as principais estatísticas das variáveis
+e indica automaticamente a presença de valores ausentes (NA)
+
 ```{r}
-# A função summary resume as principais estatísticas das variáveis
-# e indica automaticamente a presença de valores ausentes (NA)
+# fornece estatísticas descritivas dos dados
 summary(dados_destilaria)
 ```
+
+A saída da função mostra que há pelo menos um valor faltante (`NA`) em 
+uma linha (observação) do arquivo.
+
+
 
 ## Fase 3: Preparação dos Dados
 
@@ -284,6 +302,8 @@ dados_destilaria_limpos <- dados_destilaria %>%
   # Remove observações com valores ausentes
   drop_na()
 ```
+
+
 
 ## Análise exploratória de dados
 
