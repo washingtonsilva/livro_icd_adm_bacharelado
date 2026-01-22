@@ -174,8 +174,8 @@ O uso de caminhos relativos é fundamental em projetos reprodutíveis,
 pois evita dependência de diretórios específicos de cada computador.
 
 ```{r}
-# Define o caminho relativo do arquivo de dados a partir da raiz do projeto.
-# Dessa forma, o código funciona corretamente em diferentes máquinas.
+# Define o caminho relativo do arquivo de dados 
+# a partir da raiz do projeto.
 caminho <- here::here("dados/brutos/productionlog_sample.csv")
 
 # Importa o arquivo CSV utilizando a função read_csv(), que:
@@ -200,7 +200,7 @@ Antes de qualquer transformação, é essencial compreender a estrutura do
 conjunto de dados.
 
 ```{r}
-# A função glimpse fornece uma visão compacta da estrutura dos dados
+# A função glimpse fornece uma visão compacta dos dados
 # - classe do objeto: data frame/tibble
 # - número de observações (linhas x colunas)
 # - nomes das variáveis
@@ -232,15 +232,15 @@ As operações a seguir realizam:
 
 ```{r}
 # Cria um novo data frame com os dados limpos e preparados.
-# O operador pipe (%>%) permite encadear operações de forma legível,
-# tornando o código mais próximo de uma descrição em linguagem natural.
+# O operador pipe (%>%) permite encadear operações,
+# tornando o código mais legível.
 
 dados_destilaria_limpos <- dados_destilaria %>%
   
-  # Remove a variável MONTH, que não é necessária para a análise proposta
+  # Remove a variável MONTH
   select(-MONTH) %>%
   
-  # Renomeia as variáveis para nomes mais descritivos em português
+  # Renomeia as variáveis para nomes mais descritivos
   rename(
     dia = DAY,
     mestre_responsavel = MANUFACTURER,
@@ -279,7 +279,8 @@ posteriores.
 #| fig-cap: "Boxplot comparativo de qualidade por fornecedor de malte."
 #| fig-align: center
 
-# Boxplot para comparar a distribuição da qualidade entre fornecedores
+# Boxplot para comparar a distribuição da qualidade 
+# entre fornecedores
 ggplot(dados_destilaria_limpos,
        aes(x = fornecedor_malte, y = indicador_qualidade)) +
   geom_boxplot() +
@@ -291,6 +292,23 @@ ggplot(dados_destilaria_limpos,
   )
 ```
 
+O boxplot evidencia diferenças relevantes na distribuição do indicador de
+qualidade entre os fornecedores de malte. Observa-se que os whiskies
+produzidos com malte proveniente da categoria *Inhouse* apresentam, em
+média, valores mais elevados de qualidade, além de menor dispersão.
+
+Por outro lado, os produtos associados ao fornecedor *Burns Best Ltd.*
+tendem a apresentar qualidade mediana inferior, com distribuição mais
+concentrada em valores baixos. Já o fornecedor *Matro Ltd.* apresenta
+maior variabilidade, indicando inconsistência no padrão de qualidade do
+insumo fornecido.
+
+Esses resultados sugerem que o fornecedor de malte é um fator
+potencialmente relevante para explicar a queda observada na qualidade do
+produto final.
+
+
+
 ### Relação entre cor e qualidade
 
 ```{r}
@@ -298,7 +316,8 @@ ggplot(dados_destilaria_limpos,
 #| fig-cap: "Gráfico de dispersão entre cor e qualidade do whisky."
 #| fig-align: center
 
-# Gráfico de dispersão com suavização LOESS para identificar tendências
+# Gráfico de dispersão com suavização LOESS para 
+# identificar tendências
 ggplot(dados_destilaria_limpos,
        aes(x = cor, y = indicador_qualidade)) +
   geom_point() +
@@ -311,6 +330,38 @@ ggplot(dados_destilaria_limpos,
   )
 ```
 
+O gráfico de dispersão indica uma relação não linear entre o indicador de
+cor e a qualidade do whisky. A curva de suavização sugere que valores de
+cor em torno de 0,3 estão associados, em média, a níveis mais elevados de
+qualidade.
+
+Valores muito baixos ou muito elevados do indicador de cor parecem
+associar-se a pior desempenho no indicador de qualidade. Essa evidência
+sugere que a cor pode funcionar como um sinal antecipado de problemas no
+processo produtivo.
+
+Do ponto de vista operacional, esse resultado é particularmente
+interessante, pois a cor pode ser monitorada durante a produção, antes
+das etapas finais de avaliação sensorial.
+
+
+### Conclusão da análise exploratória
+
+A análise exploratória dos dados da linha de produção da Junglivet Whisky
+Company indica que a queda na qualidade do produto não ocorre de forma
+aleatória. Pelo contrário, há evidências de associação entre o indicador
+de qualidade e fatores operacionais específicos.
+
+Em particular, o fornecedor de malte e o indicador de cor emergem como
+variáveis relevantes, tanto pela magnitude das diferenças observadas
+quanto pela consistência dos padrões identificados.
+
+Esses resultados não constituem provas definitivas de causalidade, mas
+fornecem hipóteses analíticas bem fundamentadas para as próximas fases de
+CRISP-DM.
+
+
+
 ## Conclusões e próximos passos
 
 Este estudo de caso ilustra como as fases iniciais do CRISP-DM permitem
@@ -319,12 +370,30 @@ definidas, apoiadas por dados.
 
 As etapas seguintes do processo envolveriam:
 
-- **Modelagem**: construção de modelos preditivos de qualidade.
-- **Avaliação**: verificação do valor dos modelos para o negócio.
-- **Implantação**: uso dos resultados no processo produtivo.
+- **Modelagem**: aplicação de métodos estatísticos de comparação entre
+  grupos, como testes de médias e análise de variância, com o objetivo de
+  avaliar diferenças sistemáticas associadas aos fatores operacionais
+  identificados.
 
-O objetivo deste capítulo é fornecer uma visão integrada do processo,
+- **Avaliação**: interpretação dos resultados estatísticos à luz dos
+  objetivos de negócio, considerando significância, magnitude dos efeitos
+  e implicações práticas para o processo produtivo.
+
+- **Implantação**: adoção de medidas operacionais baseadas nos resultados,
+  como revisão de fornecedores, ajustes de processo e definição de
+  indicadores de monitoramento da qualidade.
+
+
+O objetivo deste capítulo foi fornecer uma visão integrada do processo,
 preparando o leitor para o aprofundamento técnico e conceitual nos
 capítulos seguintes.
 
 
+::: {.callout-note}
+
+No contexto de CRISP-DM, **modelagem não se confunde com aprendizagem de máquina**. 
+Modelar pode significar aplicar métodos estatísticos
+tradicionais para comparar grupos, explicar relações e apoiar decisões,
+sem a necessidade de construir modelos preditivos complexos.
+
+:::
