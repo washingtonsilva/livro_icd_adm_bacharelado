@@ -1,4 +1,4 @@
-# Tipos de análise e perguntas de negócio
+# Tipos de Análise de Dados em CRISP-DM
 
 Ao longo do processo CRISP-DM, diferentes tipos de análise podem ser
 empregados, variando em complexidade técnica, grau de formalização e

@@ -1,5 +1,5 @@
 
-# Um estudo de caso introdutório com CRISP-DM e R
+# Um Estudo de Caso Introdutório 
 
 Este capítulo apresenta um estudo de caso introdutório com o objetivo de
 integrar, em um único exemplo, conceitos, ferramentas e práticas que serão
@@ -27,7 +27,7 @@ os exemplos e códigos apresentados nos capítulos seguintes.
 
 Uma estrutura básica de projeto pode ser representada da seguinte forma:
 
-```
+``` markdown
 seunome_icd2025/
 ├── dados/
 │   ├── brutos/     # dados originais, sem modificações
@@ -448,7 +448,7 @@ ggplot(dados_destilaria_limpos, aes(x = mestre_responsavel, y = indicador_qualid
   theme_minimal() +
   # Define títulos e rótulos dos eixos
   labs(
-    title = "Qualidade do Whisky por Fabricante",
+    title = "Qualidade do Whisky por Mestre Responsável",
     x = "Mestre Responsável",
     y = "Indicador de Qualidade"
   )
