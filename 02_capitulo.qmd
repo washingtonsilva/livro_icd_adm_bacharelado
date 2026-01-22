@@ -60,7 +60,7 @@ resultados no contexto organizacional.
 #| echo: false
 #| fig-cap: "Fases da metodologia CRISP-DM e sua natureza iterativa."
 #| out-width: "60%"
-knitr::include_graphics("img/crispdm.png")
+knitr::include_graphics("img/02-cap/crispdm.png")
 ```
 
 As fases funcionam como pontos de verificação, permitindo avaliar o
@@ -200,6 +200,5 @@ aprendizados, contribuindo para a maturidade analítica da organização.
 | 6.2 | Planejar monitoramento e manutenção | Plano de monitoramento      |
 | 6.3 | Produzir relatório final            | Relatório e apresentação    |
 | 6.4 | Revisar projeto                     | Documentação de experiência |
-
 
 

@@ -76,7 +76,7 @@ associados ao seu processamento e uso.
 #| echo: false
 #| fig-cap: "Os cinco Vs do Big Data."
 #| out-width: "70%"
-knitr::include_graphics("img/5vbigdata.png")
+knitr::include_graphics("img/01-cap/5vbigdata.png")
 ```
 
 Esse aumento no volume e na complexidade dos dados tornou inviável o uso
@@ -121,7 +121,7 @@ passando a influenciar diretamente a forma como as organizações competem.
 #| echo: false
 #| fig-cap: "Capa da revista @economist2017 sobre o recurso mais valioso do mundo."
 #| out-width: "60%"
-knitr::include_graphics("img/new_oil.jpeg")
+knitr::include_graphics("img/01-cap/new_oil.jpeg")
 ```
 
 
@@ -143,7 +143,7 @@ com problemas reais.
 #| echo: false
 #| fig-cap: "A Ciência de Dados como interseção entre estatística, computação e conhecimento do domínio."
 #| out-width: "60%"
-knitr::include_graphics("img/diagrama_venn_ds.png")
+knitr::include_graphics("img/01-cap/diagrama_venn_ds.png")
 ```
 
 Essa característica interdisciplinar explica tanto o potencial da área quanto
@@ -164,7 +164,7 @@ implantação de soluções baseadas em dados.
 #| echo: false
 #| fig-cap: "Etapas do processo CRISP-DM aplicadas a projetos de Ciência de Dados."
 #| out-width: "70%"
-knitr::include_graphics("img/crispdm-trad.png")
+knitr::include_graphics("img/01-cap/crispdm-trad.png")
 ```
 
 Esse modelo destaca que projetos de dados raramente seguem um caminho linear.
@@ -353,7 +353,6 @@ As habilidades técnicas adquirem valor quando integradas a essas
 competências centrais.
 
 :::
-
 
 
 
