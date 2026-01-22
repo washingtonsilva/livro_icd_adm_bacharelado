@@ -53,13 +53,12 @@ como parte integrante de boas práticas em projetos de análise de dados.
 
 ::: {.callout-tip}
 
-A organização do projeto não é um detalhe técnico, mas parte central da
-reprodutibilidade e do trabalho em equipe. Um projeto bem estruturado
-permite que análises sejam compreendidas, verificadas e reproduzidas por
-outras pessoas — ou pelo próprio autor em um momento posterior.
+A *organização das pastas e arquivos do projeto* não é um detalhe técnico, 
+mas parte central da reprodutibilidade e do trabalho em equipe. Um projeto 
+bem estruturado permite que análises sejam compreendidas, verificadas e 
+reproduzidas por outras pessoas — ou pelo próprio autor em um momento posterior.
 
 :::
-
 
 
 
@@ -194,7 +193,7 @@ das variáveis originais.
 # a partir da raiz do projeto.
 caminho <- here::here("dados/brutos/productionlog_sample.csv")
 
-## Importa o arquivo com a funçào read_csv
+# Importa o arquivo com a funçào read_csv
 dados_destilaria <- readr::read_csv(caminho)
 ```
 
@@ -273,10 +272,8 @@ que torna o código mais legível e facilita sua manutenção.
 # define o objeto que armazenará os dados limpos
 # criado a partir de dados_destilaria
 dados_destilaria_limpos <- dados_destilaria %>%
-  
   # Remove a variável MONTH
   select(-MONTH) %>%
-  
   # Renomeia as variáveis para nomes mais descritivos
   rename(
     dia = DAY,
@@ -287,7 +284,6 @@ dados_destilaria_limpos <- dados_destilaria %>%
     fornecedor_malte = MALTING,
     indicador_qualidade = TASTING
   ) %>%
-  
   # Converte explicitamente os tipos das variáveis
   mutate(
     dia = as.numeric(dia),
@@ -298,7 +294,6 @@ dados_destilaria_limpos <- dados_destilaria %>%
     fornecedor_malte = as.factor(fornecedor_malte),
     indicador_qualidade = as.numeric(indicador_qualidade)
   ) %>%
-  
   # Remove observações com valores ausentes
   drop_na()
 ```
@@ -323,7 +318,8 @@ relações entre algumas variáveis e o indicador de qualidade do whisky
 para identificar potenciais fatores que explicam os problemas 
 enfrentados pela destilaria.
 
-### Investigando relação entre fornecedor e qualidade
+
+### Relação entre fornecedor e qualidade 
 
 O boxplot ou diagrama de caixa é uma ferramenta útil para 
 visualizar a distribuição de variáveis numéricas agrupadas 
@@ -382,15 +378,13 @@ potencialmente relevante para explicar a queda observada na qualidade do
 produto final.
 
 
-### Investigando a qualidade mediana por fornecedor
-
 Embora os boxplots forneçam uma visualização rica da distribuição dos dados, 
 às vezes precisamos de medidas numéricas precisas para confirmar nossas 
 observações visuais. Nesta análise:
 
 - Agrupamos os dados por fornecedor de malte.
 
-- Calculamos a média do indicador de qualidade para cada grupo.
+- Calculamos a mediana do indicador de qualidade para cada grupo.
 
 - Contamos o número de amostras (n) por fornecedor para avaliar a 
 robustez dos resultados.
@@ -416,7 +410,7 @@ dados_destilaria_limpos %>%
 
 
 
-### Investigando relação entre mestre responsável e qualidade
+### Relação entre mestre responsável e qualidade 
 
 Os mestres responsáveis pela produção podem influenciar significativamente 
 a qualidade do produto final devido às suas técnicas, experiência e atenção 
@@ -457,7 +451,7 @@ ggplot(dados_destilaria_limpos, aes(x = mestre_responsavel, y = indicador_qualid
 
 
 
-### Investigando relação entre cor e qualidade
+### Relação entre cor e qualidade
 
 O gráfico de dispersão ou *scatter plot*  é ideal para explorar 
 a relação entre duas variáveis numéricas. Ao analisar a relação entre a 
@@ -509,7 +503,7 @@ das etapas finais de avaliação sensorial.
 
 
 
-### Conclusão da análise exploratória
+### Conclusão da Análise Exploratória
 
 A análise exploratória dos dados da linha de produção da Junglivet Whisky
 Company indica que a queda na qualidade do produto não ocorre de forma
@@ -517,22 +511,15 @@ aleatória. Pelo contrário, há evidências de associação entre o indicador
 de qualidade e fatores operacionais específicos.
 
 Em particular, o fornecedor de malte e o indicador de cor emergem como
-variáveis relevantes, tanto pela magnitude das diferenças observadas
-quanto pela consistência dos padrões identificados.
+variáveis relevantes. 
 
-Esses resultados não constituem provas definitivas de causalidade, mas
-fornecem hipóteses analíticas bem fundamentadas para as próximas fases de
-CRISP-DM.
-
+Entretanto, esses resultados não constituem provas 
+definitivas de causalidade, mas fornecem hipóteses analíticas bem 
+fundamentadas para as próximas fases de CRISP-DM.
 
 
-## Conclusões e próximos passos
 
-Este estudo de caso ilustra como as fases iniciais do CRISP-DM permitem
-transformar um problema organizacional em perguntas analíticas bem
-definidas, apoiadas por dados.
-
-As etapas seguintes do processo envolveriam:
+## Próximos passos
 
 - **Modelagem**: aplicação de métodos estatísticos de comparação entre
   grupos, como testes de médias e análise de variância, com o objetivo de
@@ -546,11 +533,6 @@ As etapas seguintes do processo envolveriam:
 - **Implantação**: adoção de medidas operacionais baseadas nos resultados,
   como revisão de fornecedores, ajustes de processo e definição de
   indicadores de monitoramento da qualidade.
-
-
-O objetivo deste capítulo foi fornecer uma visão integrada do processo,
-preparando o leitor para o aprofundamento técnico e conceitual nos
-capítulos seguintes.
 
 
 ::: {.callout-note}
