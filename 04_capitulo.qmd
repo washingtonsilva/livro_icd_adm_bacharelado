@@ -1,1 +1,330 @@
-# RStudio: Ambiente de Desenvolvimento Integrado para R
+
+# Um estudo de caso introdutório com CRISP-DM e R
+
+Este capítulo apresenta um estudo de caso introdutório com o objetivo de
+integrar, em um único exemplo, conceitos, ferramentas e práticas que serão
+aprofundados ao longo dos capítulos seguintes. A intenção não é esgotar os
+tópicos abordados, mas oferecer uma visão geral do processo de análise de
+dados no contexto da metodologia CRISP-DM.
+
+O estudo de caso é baseado em um exemplo fictício adaptado do livro de
+Jung (2024) [@jung2024modern], sendo aqui utilizado exclusivamente com
+finalidade didática.
+
+
+
+## Estrutura do projeto e organização dos arquivos
+
+Antes de iniciar qualquer análise, é fundamental definir uma estrutura
+mínima de projeto. A organização adequada dos arquivos facilita a
+reprodutibilidade, a colaboração e a manutenção do trabalho ao longo do
+tempo, além de tornar mais claras as etapas do processo analítico.
+
+Ao longo da disciplina, os projetos foram organizados de forma
+padronizada, separando dados brutos, dados processados e relatórios.
+Essa mesma lógica será adotada neste livro, servindo como referência para
+os exemplos e códigos apresentados nos capítulos seguintes.
+
+Uma estrutura básica de projeto pode ser representada da seguinte forma:
+
+```
+seunome_icd2025/
+├── dados/
+│   ├── brutos/     # dados originais, sem modificações
+│   └── limpos/     # dados após limpeza e transformações
+├── relatorios/
+│   └── 01-relatorio/
+├── README.md
+└── seunome_icd2025.Rproj
+```
+
+Essa separação explícita evita que dados originais sejam sobrescritos,
+torna as etapas do processo analítico mais transparentes e facilita a
+verificação e a reprodução das análises realizadas.
+
+Na prática, recomenda-se criar inicialmente um repositório vazio no
+GitHub, cloná-lo localmente e, na pasta clonada do repositório, criar um
+projeto RStudio. A partir desse projeto, os arquivos e diretórios podem
+ser organizados de forma estruturada.
+
+O controle de versão com Git não é tratado aqui como um fim em si, mas
+como parte integrante de boas práticas em projetos de análise de dados.
+
+
+::: {.callout-tip}
+
+A organização do projeto não é um detalhe técnico, mas parte central da
+reprodutibilidade e do trabalho em equipe. Um projeto bem estruturado
+permite que análises sejam compreendidas, verificadas e reproduzidas por
+outras pessoas — ou pelo próprio autor em um momento posterior.
+
+:::
+
+
+
+
+## O Caso Junglivet Whisky Company
+
+Neste estudo de caso, aplicamos as três primeiras fases da metodologia
+CRISP-DM:
+
+1. **Compreensão do Negócio** (*Business Understanding*)
+2. **Compreensão dos Dados** (*Data Understanding*)
+3. **Preparação dos Dados** (*Data Preparation*)
+
+Você acaba de ser contratado como analista de dados na *Junglivet Whisky
+Company*. A empresa enfrenta reclamações recorrentes sobre a qualidade do
+whisky produzido, e a direção busca identificar possíveis causas para o
+problema.
+
+Os dados fornecidos correspondem ao registro da linha de produção das
+últimas duas semanas.
+
+
+## Organização do projeto e reprodutibilidade
+
+Antes de qualquer análise, o projeto foi organizado seguindo uma estrutura
+padronizada, separando dados brutos, dados tratados e relatórios. Essa
+organização facilita a reprodutibilidade, a documentação e o trabalho
+colaborativo.
+
+A análise apresentada neste capítulo foi desenvolvida em um projeto RStudio
+versionado com Git e sincronizado com GitHub, utilizando o sistema Quarto
+para geração de relatórios reprodutíveis.
+
+
+## Fase 1: Compreensão do Negócio
+
+O primeiro passo do CRISP-DM consiste em entender claramente o problema de
+negócio, antes de qualquer decisão técnica.
+
+- **Problema de negócio**: queda na qualidade do whisky produzido.
+- **Objetivo**: identificar fatores associados à redução da qualidade.
+- **Critério de sucesso**: evidenciar fatores operacionais que influenciam
+  negativamente o indicador de qualidade.
+
+Nesta fase, ainda não buscamos respostas nos dados, mas sim formular as
+perguntas corretas.
+
+
+## Fase 2: Compreensão dos Dados
+
+Nesta etapa, analisamos os dados disponíveis, sua estrutura e limitações,
+antes de qualquer transformação ou modelagem.
+
+
+### Dicionário de dados
+
+A documentação das variáveis é uma prática essencial em projetos de dados.
+Ela garante interpretação consistente e reduz ambiguidades ao longo do
+processo analítico.
+
+O conjunto de dados contém as seguintes variáveis:
+
+- **DAY**: dia da produção.
+- **MONTH**: mês da produção.
+- **MANUFACTURER**: mestre responsável pela produção.
+- **PRODUCT**: tipo de produto.
+- **SHIFT**: turno de produção.
+- **COLOR**: indicador de cor (0 a 1).
+- **MALTING**: fornecedor do malte.
+- **TASTING**: indicador de qualidade (0 a 1000).
+
+
+### Importação dos dados
+
+Antes de iniciar a análise, é necessário garantir que os pacotes R
+utilizados no projeto estejam instalados e carregados. Neste livro,
+utilizaremos o pacote **pacman** para facilitar esse processo, pois ele
+permite instalar e carregar pacotes de forma automática quando necessário.
+
+A instalação de pacotes deve ser feita apenas uma vez em cada ambiente.
+Após isso, basta carregá-los normalmente. O uso do **pacman** reduz
+problemas comuns enfrentados por iniciantes, como erros relacionados a
+pacotes ausentes.
+
+```{r}
+# Verifica se o pacote 'pacman' está instalado.
+# Caso não esteja, realiza a instalação a partir do CRAN.
+if (!requireNamespace("pacman", quietly = TRUE)) {
+  install.packages("pacman")
+}
+
+# Carrega o pacote 'pacman' na sessão atual
+library(pacman)
+
+# A função p_load():
+# - instala automaticamente pacotes ausentes
+# - carrega todos os pacotes listados
+pacman::p_load(
+  here,      # define caminhos relativos ao diretório raiz do projeto
+  readr,     # leitura eficiente de arquivos CSV
+  dplyr,     # manipulação e transformação de dados
+  tidyr,     # função drop_na()
+  ggplot2    # visualização de dados
+)
+```
+
+O processo de importação de dados utiliza dois pacotes centrais:
+
+- `here`, para garantir portabilidade por meio de caminhos relativos;
+- `readr`, para leitura eficiente e consistente de arquivos CSV.
+
+O uso de caminhos relativos é fundamental em projetos reprodutíveis,
+pois evita dependência de diretórios específicos de cada computador.
+
+```{r}
+# Define o caminho relativo do arquivo de dados a partir da raiz do projeto.
+# Dessa forma, o código funciona corretamente em diferentes máquinas.
+caminho <- here::here("dados/brutos/productionlog_sample.csv")
+
+# Importa o arquivo CSV utilizando a função read_csv(), que:
+# - identifica automaticamente os tipos das colunas
+# - trata strings vazias como valores ausentes (NA)
+# - é mais eficiente que a função read.csv() do R base
+dados_destilaria <- readr::read_csv(
+  caminho,
+  show_col_types = FALSE
+)
+```
+
+A partir desse ponto, os dados estão disponíveis na ambiente de R e podem
+ser explorados, verificados e preparados para as etapas seguintes da
+análise.
+
+
+
+### Inspeção inicial dos dados
+
+Antes de qualquer transformação, é essencial compreender a estrutura do
+conjunto de dados.
+
+```{r}
+# A função glimpse fornece uma visão compacta da estrutura dos dados
+# - classe do objeto: data frame/tibble
+# - número de observações (linhas x colunas)
+# - nomes das variáveis
+# - tipos de dados
+# - primeiros valores
+dplyr::glimpse(dados_destilaria)
+```
+
+Além disso, estatísticas descritivas básicas ajudam a identificar valores
+ausentes, escalas e possíveis inconsistências.
+
+```{r}
+# A função summary resume as principais estatísticas das variáveis
+# e indica automaticamente a presença de valores ausentes (NA)
+summary(dados_destilaria)
+```
+
+## Fase 3: Preparação dos Dados
+
+A preparação dos dados transforma dados brutos em um conjunto adequado para
+análise. Esta é, frequentemente, a fase mais trabalhosa do CRISP-DM.
+
+As operações a seguir realizam:
+
+1. Remoção de variáveis irrelevantes.
+2. Renomeação das colunas para nomes mais claros.
+3. Conversão explícita dos tipos de dados.
+4. Tratamento de valores ausentes.
+
+```{r}
+# Cria um novo data frame com os dados limpos e preparados.
+# O operador pipe (%>%) permite encadear operações de forma legível,
+# tornando o código mais próximo de uma descrição em linguagem natural.
+
+dados_destilaria_limpos <- dados_destilaria %>%
+  
+  # Remove a variável MONTH, que não é necessária para a análise proposta
+  select(-MONTH) %>%
+  
+  # Renomeia as variáveis para nomes mais descritivos em português
+  rename(
+    dia = DAY,
+    mestre_responsavel = MANUFACTURER,
+    tipo_produto = PRODUCT,
+    turno = SHIFT,
+    cor = COLOR,
+    fornecedor_malte = MALTING,
+    indicador_qualidade = TASTING
+  ) %>%
+  
+  # Converte explicitamente os tipos das variáveis
+  mutate(
+    dia = as.numeric(dia),
+    mestre_responsavel = as.factor(mestre_responsavel),
+    tipo_produto = as.factor(tipo_produto),
+    turno = as.factor(turno),
+    cor = as.numeric(cor),
+    fornecedor_malte = as.factor(fornecedor_malte),
+    indicador_qualidade = as.numeric(indicador_qualidade)
+  ) %>%
+  
+  # Remove observações com valores ausentes
+  drop_na()
+```
+
+## Análise exploratória de dados
+
+A Análise Exploratória de Dados (AED) permite identificar padrões,
+tendências e relações iniciais entre variáveis, orientando análises
+posteriores.
+
+### Qualidade por fornecedor de malte
+
+```{r}
+#| label: fig-boxplot-1
+#| fig-cap: "Boxplot comparativo de qualidade por fornecedor de malte."
+#| fig-align: center
+
+# Boxplot para comparar a distribuição da qualidade entre fornecedores
+ggplot(dados_destilaria_limpos,
+       aes(x = fornecedor_malte, y = indicador_qualidade)) +
+  geom_boxplot() +
+  theme_minimal() +
+  labs(
+    title = "Qualidade do whisky por fornecedor de malte",
+    x = "Fornecedor",
+    y = "Indicador de qualidade"
+  )
+```
+
+### Relação entre cor e qualidade
+
+```{r}
+#| label: fig-scatter-1
+#| fig-cap: "Gráfico de dispersão entre cor e qualidade do whisky."
+#| fig-align: center
+
+# Gráfico de dispersão com suavização LOESS para identificar tendências
+ggplot(dados_destilaria_limpos,
+       aes(x = cor, y = indicador_qualidade)) +
+  geom_point() +
+  geom_smooth(method = "loess", se = FALSE) +
+  theme_minimal() +
+  labs(
+    title = "Relação entre cor e qualidade do whisky",
+    x = "Indicador de cor",
+    y = "Indicador de qualidade"
+  )
+```
+
+## Conclusões e próximos passos
+
+Este estudo de caso ilustra como as fases iniciais do CRISP-DM permitem
+transformar um problema organizacional em perguntas analíticas bem
+definidas, apoiadas por dados.
+
+As etapas seguintes do processo envolveriam:
+
+- **Modelagem**: construção de modelos preditivos de qualidade.
+- **Avaliação**: verificação do valor dos modelos para o negócio.
+- **Implantação**: uso dos resultados no processo produtivo.
+
+O objetivo deste capítulo é fornecer uma visão integrada do processo,
+preparando o leitor para o aprofundamento técnico e conceitual nos
+capítulos seguintes.
+
+

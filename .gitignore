@@ -1,17 +1,25 @@
-# Arquivos temporários
+# Sistema
+.DS_Store
+
+# Quarto
+.quarto/
+_book/
+**/*.quarto_ipynb
+
+# Artefatos LaTeX
 *.log
 *.aux
 *.out
 
-# Cache do Quarto
-.quarto/
+# Cache de execução R
+*_cache/
 
-# Artefatos intermediários
-_book/
+# R (caso o projeto seja aberto no RStudio)
+.Rhistory
+.RData
+.Ruserdata
 
-# Sistema
-.DS_Store
-
+# VS Code
+.vscode/
 
 /.quarto/
-**/*.quarto_ipynb
