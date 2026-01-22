@@ -362,7 +362,7 @@ potencialmente relevante para explicar a queda observada na qualidade do
 produto final.
 
 
-### Investigando a qualidade média por fornecedor
+### Investigando a qualidade mediana por fornecedor
 
 Embora os boxplots forneçam uma visualização rica da distribuição dos dados, 
 às vezes precisamos de medidas numéricas precisas para confirmar nossas 
@@ -387,12 +387,53 @@ dados_destilaria_limpos %>%
   group_by(fornecedor_malte) %>%
   # Calcula a média e conta o número de obs. para cada grupo
   summarise(
-    qualidade_media = mean(indicador_qualidade),
+    qualidade_mediana = median(indicador_qualidade),
     n = n()
   ) %>%
   # Ordena os resultados em ordem decrescente pela qualidade média
-  arrange(desc(qualidade_media))
+  arrange(desc(qualidade_mediana))
 ```
+
+
+
+### Investigando relação entre mestre responsável e qualidade
+
+Os mestres responsáveis pela produção podem influenciar significativamente 
+a qualidade do produto final devido às suas técnicas, experiência e atenção 
+aos detalhes. Este boxplot nos permite:
+
+- Comparar a performance de diferentes mestres responsáveis.
+
+- Identificar se há diferenças consistentes na qualidade do whisky 
+produzido por cada um.
+
+- Verificar se algum mestre responsável apresenta maior variabilidade 
+nos resultados.
+
+- Detectar possíveis interações entre a experiência do profissional e a 
+qualidade final.
+
+Esta análise pode revelar se há necessidade de padronização de processos 
+ou treinamentos específicos para garantir consistência na produção.
+
+```{r}
+#| label: fig-3
+#| fig-cap: "Boxplot comparativo entre qualidade do whisky e mestre destilador."
+
+# Boxplot comparativo entre indicador de qualidade e mestre destilador\\
+ggplot(dados_destilaria_limpos, aes(x = mestre_responsavel, y = indicador_qualidade)) +
+  # Cria boxplots para visualizar a distribuição e identificar outliers
+  geom_boxplot() +
+  # Aplica um tema minimalista
+  theme_minimal() +
+  # Define títulos e rótulos dos eixos
+  labs(
+    title = "Qualidade do Whisky por Fabricante",
+    x = "Mestre Responsável",
+    y = "Indicador de Qualidade"
+  )
+```
+
 
 
 
@@ -446,45 +487,6 @@ Do ponto de vista operacional, esse resultado é particularmente
 interessante, pois a cor pode ser monitorada durante a produção, antes
 das etapas finais de avaliação sensorial.
 
-
-
-### Investigando relação entre mestre responsável e qualidade
-
-Os mestres responsáveis pela produção podem influenciar significativamente 
-a qualidade do produto final devido às suas técnicas, experiência e atenção 
-aos detalhes. Este boxplot nos permite:
-
-- Comparar a performance de diferentes mestres responsáveis.
-
-- Identificar se há diferenças consistentes na qualidade do whisky 
-produzido por cada um.
-
-- Verificar se algum mestre responsável apresenta maior variabilidade 
-nos resultados.
-
-- Detectar possíveis interações entre a experiência do profissional e a 
-qualidade final.
-
-Esta análise pode revelar se há necessidade de padronização de processos 
-ou treinamentos específicos para garantir consistência na produção.
-
-```{r}
-#| label: fig-3
-#| fig-cap: "Boxplot comparativo entre qualidade do whisky e mestre destilador."
-
-# Boxplot comparativo entre indicador de qualidade e mestre destilador\\
-ggplot(dados_destilaria_limpos, aes(x = mestre_responsavel, y = indicador_qualidade)) +
-  # Cria boxplots para visualizar a distribuição e identificar outliers
-  geom_boxplot() +
-  # Aplica um tema minimalista
-  theme_minimal() +
-  # Define títulos e rótulos dos eixos
-  labs(
-    title = "Qualidade do Whisky por Fabricante",
-    x = "Mestre Responsável",
-    y = "Indicador de Qualidade"
-  )
-```
 
 
 ### Conclusão da análise exploratória
