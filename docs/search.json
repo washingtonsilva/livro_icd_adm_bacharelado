@@ -340,6 +340,186 @@
     ]
   },
   {
+    "objectID": "05_capitulo.html",
+    "href": "05_capitulo.html",
+    "title": "6  Capítulo 5 — RStudio e fluxo de trabalho",
+    "section": "",
+    "text": "6.1 Instalação do RStudio\nEste capítulo dá o primeiro passo para um trabalho organizado e reproduzível com R: entender o RStudio, configurar o ambiente e adotar boas práticas desde o início. A ideia é que o leitor consiga estudar e produzir relatórios com autonomia, inclusive em contextos administrativos simples, como análises de vendas ou custos.\nCom o RStudio instalado, vamos entender o que ele é e por que um IDE facilita o trabalho de quem está começando.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Capítulo 5 — RStudio e fluxo de trabalho</span>"
+    ]
+  },
+  {
+    "objectID": "05_capitulo.html#instalação-do-rstudio",
+    "href": "05_capitulo.html#instalação-do-rstudio",
+    "title": "6  Capítulo 5 — RStudio e fluxo de trabalho",
+    "section": "",
+    "text": "NotaInstalação do RStudio no Windows\n\n\n\n\nAcesse https://posit.co/download/rstudio-desktop/\nRole a página; normalmente o site detecta seu sistema e disponibiliza o instalador logo abaixo de 2: Install RStudio.\nClique em Download RStudio Desktop for Windows se o sistema for Windows.\nFinalizado o download, clique duas vezes no arquivo e avance até concluir.\n\n\n\n\n\n\n\n\n\nNotamacOS/Linux\n\n\n\nNa mesma página de download, escolha o instalador do seu sistema. O fluxo é análogo ao do Windows: baixar, executar e concluir a instalação.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Capítulo 5 — RStudio e fluxo de trabalho</span>"
+    ]
+  },
+  {
+    "objectID": "05_capitulo.html#o-que-é-o-rstudio-e-o-que-é-um-ide",
+    "href": "05_capitulo.html#o-que-é-o-rstudio-e-o-que-é-um-ide",
+    "title": "6  Capítulo 5 — RStudio e fluxo de trabalho",
+    "section": "6.2 O que é o RStudio e o que é um IDE",
+    "text": "6.2 O que é o RStudio e o que é um IDE\nO RStudio é um Ambiente de Desenvolvimento Integrado (IDE) voltado para a linguagem R. Em vez de abrir programas separados para escrever, executar e visualizar resultados, o IDE reúne tudo em uma única interface.\n\n\n\n\n\n\nNotaConceito-chave: IDE\n\n\n\nUm IDE integra editor de texto, execução de código, ajuda, visualização de gráficos e organização de projetos. Isso reduz erros e acelera o aprendizado.\n\n\nPara quem está começando, a vantagem prática é simples: você escreve um script, executa no console e vê o resultado sem sair do mesmo ambiente.\n\n6.2.1 Erros comuns e como resolver\n\nConfundir RStudio com a linguagem R: lembre que são ferramentas diferentes.\nAbrir o RStudio sem ter o R instalado: instale o R antes do IDE.\nIgnorar o painel de ajuda: use a guia Help para consultar funções.\n\n\n\n6.2.2 Checklist do leitor\n\nDefinir o que é um IDE.\nExplicar por que o RStudio facilita o trabalho inicial.\nVerificar que o R está instalado no computador.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Capítulo 5 — RStudio e fluxo de trabalho</span>"
+    ]
+  },
+  {
+    "objectID": "05_capitulo.html#r-linguagem-vs-rstudio-ide",
+    "href": "05_capitulo.html#r-linguagem-vs-rstudio-ide",
+    "title": "6  Capítulo 5 — RStudio e fluxo de trabalho",
+    "section": "6.3 R (linguagem) vs RStudio (IDE)",
+    "text": "6.3 R (linguagem) vs RStudio (IDE)\n\n\n\n\n\nO R é a linguagem (o “motor”). O RStudio é o painel de controle que facilita o uso desse motor. A analogia ajuda a lembrar que são instalados e usados em conjunto, mas com papéis diferentes.\n\n6.3.1 Erros comuns e como resolver\n\nInstalar apenas o RStudio e esperar que o R funcione: instale ambos.\nAchar que o RStudio “substitui” o R: ele apenas organiza o trabalho.\nNão saber onde digitar comandos: use o painel Console para executar.\n\n\n\n6.3.2 Checklist do leitor\n\nDiferenciar o que é o R e o que é o RStudio.\nExplicar por que ambos devem estar instalados.\nIndicar onde executar comandos no RStudio.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Capítulo 5 — RStudio e fluxo de trabalho</span>"
+    ]
+  },
+  {
+    "objectID": "05_capitulo.html#interface-do-rstudio",
+    "href": "05_capitulo.html#interface-do-rstudio",
+    "title": "6  Capítulo 5 — RStudio e fluxo de trabalho",
+    "section": "7.1 Interface do RStudio",
+    "text": "7.1 Interface do RStudio\nNa primeira abertura, você verá quatro painéis. Eles funcionam em conjunto para escrever, executar, inspecionar objetos e visualizar resultados.\n\n\n\n\n\nNa figura acima, cada painel tem um papel. Vamos percorrê-los começando pelo Source, que é onde você escreve.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Capítulo 5 — RStudio e fluxo de trabalho</span>"
+    ]
+  },
+  {
+    "objectID": "05_capitulo.html#painel-source",
+    "href": "05_capitulo.html#painel-source",
+    "title": "6  Capítulo 5 — RStudio e fluxo de trabalho",
+    "section": "7.2 Painel: Source",
+    "text": "7.2 Painel: Source\n\nO painel Source permite a visualização e edição de vários arquivos relacionados a diversas linguagens, tais como: .R, .qmd,.py ou arquivos de texto gerais como .txt ou .md.\nPor padrão, é o painel superior esquerdo e pode ser iniciado abrindo qualquer arquivo editável no RStudio.\nCada arquivo adicional que for aberto será adicionado como uma nova guia no painel.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Capítulo 5 — RStudio e fluxo de trabalho</span>"
+    ]
+  },
+  {
+    "objectID": "05_capitulo.html#painel-console",
+    "href": "05_capitulo.html#painel-console",
+    "title": "6  Capítulo 5 — RStudio e fluxo de trabalho",
+    "section": "7.3 Painel: Console",
+    "text": "7.3 Painel: Console\n\nEsse painel fornece uma área para executar o código interativamente, isto é, você pode “conversar” diretamente com o interpretador da linguagem R.\nPor padrão, está vinculado à linguagem R, mas ele também pode fornecer um console Python.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Capítulo 5 — RStudio e fluxo de trabalho</span>"
+    ]
+  },
+  {
+    "objectID": "05_capitulo.html#painel-environment",
+    "href": "05_capitulo.html#painel-environment",
+    "title": "6  Capítulo 5 — RStudio e fluxo de trabalho",
+    "section": "7.4 Painel: Environment",
+    "text": "7.4 Painel: Environment\nGuia Environment\n\nEssa guia exibe objetos R e Python ativos na sessão atual.\nA barra de menus de Environment fornece carregamento ou salvamento de R workspaces, importação interativa de conjuntos de dados de arquivos de texto, Excel ou SPSS/SAS/Stata.\nEla também exibe a memória usada pela sessão R ativa e um ícone de uma vassoura para remover todos os objetos ativos.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Capítulo 5 — RStudio e fluxo de trabalho</span>"
+    ]
+  },
+  {
+    "objectID": "05_capitulo.html#painel-output",
+    "href": "05_capitulo.html#painel-output",
+    "title": "6  Capítulo 5 — RStudio e fluxo de trabalho",
+    "section": "7.5 Painel: Output",
+    "text": "7.5 Painel: Output\nPor padrão, o painel Output é o painel inferior direito e contém as seguintes guias:\nGuia Files\n\nEsta guia fornece uma exploração interativa da pasta de trabalho (working directory), ou seja, a pasta para a qual o R está direcionado.\nNesta guia, você pode adicionar, excluir, renomear e remover arquivos e pastas, entre outras operações.\n\nGuia Help\n\nO ícone Home exibe a página de ajuda geral, com links para Manuais e Referências sobre o R e RStudio.\nExibe também a documentação dos pacotes.\n\nGuia Viewer\n\nExibe conteúdos interativos tais como: gráficos interativos, aplicativos Shiny, páginas HTML geradas pelo Quarto, entre outros.\n\nGuia Presentation\n\nEsta guia é usada para exibir slides HTML gerados pelo sistema Quarto.\n\nGuia Plots\n\nEsta guia exibe imagens estáticas produzidas na sessão.\nHá setas para navegar entre gráficos mais antigos e mais recentes, zoom, um botão de exportação para salvar as imagens, um botão de exclusão de imagens e um ícone de vassoura que limpará todos os gráficos.\n\nGuia Packages\n\nEsta guia permite visualizar os pacotes R instalados.\nHá uma barra para pesquisar a biblioteca atual de pacotes.\nHá também um botão para instalação e atualização de pacotes.\n\n\n7.5.1 Erros comuns e como resolver\n\nNão saber onde digitar comandos: use o Console para executar.\nAbrir um arquivo e não ver no Source: confirme se ele é editável.\nSalvar arquivos fora do projeto: trabalhe sempre dentro da pasta do projeto.\nConfundir Files com o sistema inteiro: ele mostra o working directory.\n\n\n\n7.5.2 Checklist do leitor\n\nLocalizar Source, Console, Environment e Output.\nExplicar o papel da guia Files como pasta de trabalho.\nAbrir e alternar arquivos no Source.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Capítulo 5 — RStudio e fluxo de trabalho</span>"
+    ]
+  },
+  {
+    "objectID": "05_capitulo.html#instalando-pacotes-r",
+    "href": "05_capitulo.html#instalando-pacotes-r",
+    "title": "6  Capítulo 5 — RStudio e fluxo de trabalho",
+    "section": "7.6 Instalando Pacotes R:",
+    "text": "7.6 Instalando Pacotes R:\n\n7.6.1 Usando a Guia Packages\nPara instalar pacotes usando a guia Packages no RStudio:\n\nClique na guia Packages.\nClique em Install Packages.\nDigite o nome de cada pacote que deseja instalar separados por um espaço ou vírgula na caixa de texto.\nCopie os pacotes abaixo e cole na caixa de texto:\n\ntidyverse usethis \n\nClique em Install para iniciar a instalação\n\n\n\n\n\n\n\n\n7.6.2 Usando comandos\n\nUma forma alternativa de instalar pacotes é usando a linha de comando.\nVocê pode usar o seguinte comando diretamente no console, em um script, ou em um documento Quarto:\n\n\ninstall.packages(c(\"tidyverse\", \"usethis\"))",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Capítulo 5 — RStudio e fluxo de trabalho</span>"
+    ]
+  },
+  {
+    "objectID": "05_capitulo.html#pacotes-atenção",
+    "href": "05_capitulo.html#pacotes-atenção",
+    "title": "6  Capítulo 5 — RStudio e fluxo de trabalho",
+    "section": "7.7 Pacotes: atenção",
+    "text": "7.7 Pacotes: atenção\n\n\n\n\n\n\nNotaInstalação e carregamento de pacotes\n\n\n\n\nEm um computador, você instala o pacote uma única vez.\nPara usar o pacote em cada sessão, é preciso carregá-lo com library().\n\n\n# carrega os pacotes utilizados\nlibrary(tidyverse)\nlibrary(usethis)\n.\n.\n\n\n\n\n\n\n\n\n\nDicaConexão com a internet\n\n\n\n\nPara instalar pacotes de R ou Python, é necessária uma conexão ativa com a internet.\nEm caso de falhas de conexão, o download pode falhar. Nesse caso, repita a instalação.\n\n\n\n\n7.7.1 Erros comuns e como resolver\n\nTentar usar library() sem instalar: rode install.packages() antes.\nEsperar que a instalação funcione sem internet: verifique a conexão.\nInstalar toda vez que abrir o RStudio: instale uma vez, carregue sempre.\n\n\n\n7.7.2 Checklist do leitor\n\nIndicar quando usar install.packages().\nIndicar quando usar library().\nReconhecer que a instalação exige internet.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Capítulo 5 — RStudio e fluxo de trabalho</span>"
+    ]
+  },
+  {
+    "objectID": "05_capitulo.html#configurações-básicas-recomendadas-do-rstudio",
+    "href": "05_capitulo.html#configurações-básicas-recomendadas-do-rstudio",
+    "title": "6  Capítulo 5 — RStudio e fluxo de trabalho",
+    "section": "7.8 Configurações Básicas Recomendadas do RStudio",
+    "text": "7.8 Configurações Básicas Recomendadas do RStudio\nEstas opções evitam mensagens e comportamentos confusos ao iniciar o RStudio em diferentes projetos.\n\nAbra o RStudio.\nClique no menu “Tools” &gt; “Global Options” &gt; “Basic”.\nDesmarque a opção: “Restore most recently opened project at startup”.\nDesmarque a opção: “Restore previously open source document at startup”.\nDesmarque a opção: “Restore .Rdata into workspace at startup”.\nNa caixa à direita de “Save workspace to .Rdata on exit:”, selecione “never”\nClique em “Ok” e, em seguida, em “Apply”.\n\n\n\n\n\n\n\n7.8.1 Erros comuns e como resolver\n\nDeixar o RStudio restaurar sessões antigas: desmarque as opções acima.\nSalvar .RData automaticamente: escolha “never”.\nReabrir arquivos de outro projeto sem perceber: confirme o projeto ativo.\n\n\n\n7.8.2 Checklist do leitor\n\nDesativar a restauração automática de projetos e arquivos.\nConfigurar “Save workspace to .Rdata” como “never”.\nVerificar o projeto ativo no RStudio.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Capítulo 5 — RStudio e fluxo de trabalho</span>"
+    ]
+  },
+  {
+    "objectID": "05_capitulo.html#criando-projetos-no-rstudio",
+    "href": "05_capitulo.html#criando-projetos-no-rstudio",
+    "title": "6  Capítulo 5 — RStudio e fluxo de trabalho",
+    "section": "8.1 Criando projetos no RStudio",
+    "text": "8.1 Criando projetos no RStudio\nOs Projetos RStudio estão associados a pastas. Você pode criar:\n\nEm uma nova pasta, que ainda não existe.\nEm uma pasta existente, por exemplo, uma pasta que contém um repositório clonado do GitHub.\n\nO caminho mais curto para criar um projeto no RStudio envolve:\n\nClique no botão Project, em seguida, clique em New Project, no canto superior direito do RStudio:\n\n\n\n\n\n\n\nEm seguida, clique em New Directory:\n\n\n\n\n\n\n\nNa janela seguinte selecione New Project:\n\n\n\n\n\n\n\nEscolha a pasta dentro da qual você criará a subpasta seunome_icd2025 (que será a pasta do projeto), clicando no botão Browse.\n\n\n\n\n\n\n\nDicaImportante! Nome da Pasta e do Projeto\n\n\n\nNo caso de um exemplo hipotético chamado João Silva, o nome da subpasta seria joaosilva_icd2025, tente seguir esse padrão e não utilize acentos, espaços e caracteres especiais para nomear pastas, projetos e arquivos.\n\n\n\nDigite o nome do projeto (por exemplo, joaosilva_icd2025) no campo de texto abaixo de Directory Name e clique na caixa Create a git repository:\n\n\n\n\n\n\n\nClique em Create Project para criar o projeto. Em seguida, você verá algo similar a seguinte imagem no RStudio:\n\n\n\n\n\n\n\n8.1.1 Erros comuns e como resolver\n\nCriar projetos com nomes confusos: use um padrão simples e sem espaços.\nSalvar arquivos fora da pasta do projeto: confira a guia Files.\nEsquecer de ativar o projeto ao abrir o RStudio: selecione no menu Project.\n\n\n\n8.1.2 Checklist do leitor\n\nCriar um projeto com nome padronizado.\nLocalizar a pasta do projeto na guia Files.\nReabrir o projeto pelo menu Project.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Capítulo 5 — RStudio e fluxo de trabalho</span>"
+    ]
+  },
+  {
+    "objectID": "05_capitulo.html#projeto-criado",
+    "href": "05_capitulo.html#projeto-criado",
+    "title": "6  Capítulo 5 — RStudio e fluxo de trabalho",
+    "section": "8.2 Projeto Criado",
+    "text": "8.2 Projeto Criado\nQuando um novo projeto é criado, o RStudio:\n\nCria um arquivo de projeto (joaosilva_icd2025.Rproj) dentro da pasta do projeto.\nCarrega o projeto no RStudio e exibe seu nome no menu Projects.\nCom um projeto criado, toda vez que abrir o RStudio, basta clicar em Project; logo abaixo aparece o nome do projeto. Clique no nome para abrir o projeto.\n\n\n8.2.1 Erros comuns e como resolver\n\nAbrir o RStudio e começar a trabalhar sem projeto: selecione o projeto ativo.\nGuardar arquivos soltos na área de trabalho: mova para a pasta do projeto.\nEsquecer o arquivo .Rproj: ele indica qual pasta é o projeto.\n\n\n\n8.2.2 Checklist do leitor\n\nIdentificar o arquivo .Rproj.\nReabrir o projeto a partir do menu Project.\nReconhecer que o projeto define a pasta de trabalho.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Capítulo 5 — RStudio e fluxo de trabalho</span>"
+    ]
+  },
+  {
+    "objectID": "05_capitulo.html#estrutura-recomendada-para-o-projeto-rstudio-criado",
+    "href": "05_capitulo.html#estrutura-recomendada-para-o-projeto-rstudio-criado",
+    "title": "6  Capítulo 5 — RStudio e fluxo de trabalho",
+    "section": "8.3 Estrutura Recomendada para o Projeto RStudio Criado",
+    "text": "8.3 Estrutura Recomendada para o Projeto RStudio Criado\nPara organizar adequadamente os arquivos de seus projetos envolvendo a análise de dados, recomendamos que você adote a seguinte estrutura inicial de pastas para seu projeto:\n\nPrimeiramente, vamos criar duas pastas principais:\n\n\ndados: Para armazenar os conjuntos de dados do projeto.\nrelatorios: Para armazenar os relatórios Quarto elaborados.\nscripts: Para armazenar os scripts R utilizados.\n\n\nDentro da pasta dados, vamos criar duas subpastas:\n\n\ndados_brutos: Para armazenar os dados originais, sem modificações.\ndados_limpos: Para armazenar dados após limpeza e transformações.\n\n\nDentro da pasta relatorios, vamos criar a subpasta:\n\n\ntestes: Para armazenar documentos Quarto de teste e experimentos.\n\nEsta estrutura fornece uma organização clara que separa dados de documentos e também distingue entre dados brutos e processados (ou limpos, no jargão de Ciência de Dados), seguindo boas práticas de reprodutibilidade.\nPara criar esta estrutura usando o RStudio:\n\nNa Guia Files do RStudio, clique no botão New Folder para criar as pastas principais dados, relatorios e scripts:\n\n\n\n\n\n\n\nNavegue para dentro da pasta dados e crie as subpastas dados_brutos e dados_limpos.\n\nConsiderando o caso do exemplo hipotético chamado João Silva, a estrutura final do projeto ficaria assim:\njoaosilva_icd2025/\n│\n├── dados/\n│   ├── dados_brutos\n│   └── dados_limpos\n|\n├── joaosilva_icd2025.Rproj\n|\n├── relatorios/\n│   └── testes\n└── scripts/\n\n8.3.1 Erros comuns e como resolver\n\nMisturar dados brutos com dados limpos: use subpastas separadas.\nSalvar relatórios fora de relatorios: mantenha o padrão.\nCriar pastas com acentos e espaços: prefira nomes simples.\n\n\n\n8.3.2 Checklist do leitor\n\nCriar dados/, relatorios/ e scripts/.\nSeparar dados_brutos e dados_limpos.\nJustificar por que essa estrutura ajuda na reprodutibilidade.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Capítulo 5 — RStudio e fluxo de trabalho</span>"
+    ]
+  },
+  {
+    "objectID": "05_capitulo.html#gerenciamento-de-arquivos",
+    "href": "05_capitulo.html#gerenciamento-de-arquivos",
+    "title": "6  Capítulo 5 — RStudio e fluxo de trabalho",
+    "section": "8.4 Gerenciamento de Arquivos",
+    "text": "8.4 Gerenciamento de Arquivos\nO RStudio suporta realce de sintaxe e outros recursos especializados de edição de código para tipos de arquivos específicos:\n\nScripts R, Python, SQL e outros.\nDocumentos computacionais e científicos em Quarto, R Markdown e LaTeX.\nConteúdo da Web, como HTML e CSS.\nE muitos mais.\n\nAo criar um novo arquivo, lembre que documentos Quarto (.qmd) são a base do livro e dos relatórios reprodutíveis.\n\n8.4.1 Menu Files\n\nÉ possível criar um novo arquivo com File -&gt; New File (por exemplo, Quarto Document para relatórios):\n\n\n\n\n\n\n\nOutra possibilidade é usar o ícone no canto superior esquerdo do RStudio:\n\n\n\n\n\n\n\n\n8.4.2 Erros comuns e como resolver\n\nCriar arquivos fora do projeto: verifique a guia Files.\nNão salvar o arquivo após criar: use Ctrl+S ou ⌘+S.\nCriar um .R quando precisava de .qmd: escolha o tipo correto.\n\n\n\n8.4.3 Checklist do leitor\n\nCriar um arquivo pelo menu File.\nCriar um .qmd para relatórios.\nLocalizar arquivos na guia Files.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Capítulo 5 — RStudio e fluxo de trabalho</span>"
+    ]
+  },
+  {
+    "objectID": "05_capitulo.html#configurações-opcionais-windows",
+    "href": "05_capitulo.html#configurações-opcionais-windows",
+    "title": "6  Capítulo 5 — RStudio e fluxo de trabalho",
+    "section": "8.5 Configurações opcionais (Windows)",
+    "text": "8.5 Configurações opcionais (Windows)\nSe você usa Windows e deseja o Git Bash como terminal no RStudio, siga as etapas abaixo. Em macOS e Linux, o terminal padrão já é suficiente.\n\n\n\n\n\n\nNotaTerminal Git Bash no RStudio (Windows)\n\n\n\nComo o RStudio e o sistema Quarto fazem parte do fluxo de trabalho, é importante saber como acessar e usar o terminal Git Bash diretamente dentro do RStudio:\n\nConfigurando o terminal Git Bash no RStudio:\n\n\nAbra o RStudio\nVá para “Tools” &gt; “Global Options” &gt; “Terminal”.\nNo campo “New terminals open with:”, selecione “Git Bash” no menu suspenso.\nClique em “Apply” e depois em “OK”\n\n\nAcessando o terminal Git Bash no RStudio:\n\n\nNo painel inferior do RStudio, clique na guia “Terminal”.\nUm novo terminal Git Bash será aberto.\nSe um terminal já estiver aberto, mas não for o Git Bash, clique no ícone “+” no canto superior direito do painel Terminal e selecione “New Terminal” para abrir um novo terminal Git Bash\n\n\nVantagens de usar o Git Bash dentro do RStudio:\n\n\nMantém seu fluxo de trabalho dentro de um único ambiente.\nFacilita a navegação entre edição de arquivos e execução de comandos Git.\nPermite copiar e colar facilmente entre o editor e o terminal.\nEvita a necessidade de alternar entre aplicativos diferentes.\n\n\n\n\n8.5.1 Erros comuns e como resolver\n\nSelecionar o terminal errado: verifique o campo “New terminals open with:”.\nAbrir um terminal antigo: use o botão “+” para abrir um novo.\nEsperar esse ajuste em macOS/Linux: nesses sistemas, o terminal já é padrão.\n\n\n\n8.5.2 Checklist do leitor\n\nConfigurar o Git Bash no RStudio (Windows).\nAbrir um novo terminal no painel Terminal.\nReconhecer que em macOS/Linux esse ajuste não é necessário.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Capítulo 5 — RStudio e fluxo de trabalho</span>"
+    ]
+  },
+  {
+    "objectID": "05_capitulo.html#exercícios",
+    "href": "05_capitulo.html#exercícios",
+    "title": "6  Capítulo 5 — RStudio e fluxo de trabalho",
+    "section": "9.1 Exercícios",
+    "text": "9.1 Exercícios\n\nExplique a diferença entre R e RStudio usando a analogia motor/painel de controle.\nIdentifique os quatro painéis principais do RStudio e descreva, em uma frase, o papel de cada um.\nDefina o que é um IDE e dê um exemplo do fluxo “escrever -&gt; executar -&gt; ver resultado”.\nExplique quando usar install.packages() e quando usar library().\nAjuste as configurações básicas recomendadas do RStudio (restore/save) e registre, em 3 a 4 linhas, por que essas opções ajudam em projetos.\nCrie um novo projeto no RStudio com um nome padronizado (sem espaços) e explique o que é um caminho relativo e por que ele facilita a reprodutibilidade.\nNo projeto criado, gere as pastas dados/, relatorios/ e scripts/ e, dentro de dados/, crie dados_brutos/ e dados_limpos/. Apresente o código R usado para criar as pastas.\nCrie um arquivo .qmd simples com um chunk que calcula a média de c(2, 4, 6, 8) e renderize o documento. Informe o resultado obtido.",
+    "crumbs": [
+      "<span class='chapter-number'>6</span>  <span class='chapter-title'>Capítulo 5 — RStudio e fluxo de trabalho</span>"
+    ]
+  },
+  {
     "objectID": "referencias.html",
     "href": "referencias.html",
     "title": "Referências",

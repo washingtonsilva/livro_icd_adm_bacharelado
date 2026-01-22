@@ -1,0 +1,1460 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="pt-BR" xml:lang="pt-BR"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.8.27">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>6&nbsp; Capítulo 5 — RStudio e fluxo de trabalho – Introdução à Ciência de Dados para o Bacharelado em Administração</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+html { -webkit-text-size-adjust: 100%; }
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./referencias.html" rel="next">
+<link href="./04_capitulo.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js" type="module"></script>
+<script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-ed96de9b727972fe78a7b5d16c58bf87.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap-27c261d06b905028a18691de25d09dde.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Nenhum resultado",
+    "search-matching-documents-text": "documentos correspondentes",
+    "search-copy-link-title": "Copiar link para a busca",
+    "search-hide-matches-text": "Esconder correspondências adicionais",
+    "search-more-match-text": "mais correspondência neste documento",
+    "search-more-matches-text": "mais correspondências neste documento",
+    "search-clear-button-title": "Limpar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Procurar"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating quarto-light">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05_capitulo.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Capítulo 5 — RStudio e fluxo de trabalho</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Procurar" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Introdução à Ciência de Dados para o Bacharelado em Administração</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Procurar"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Prefácio</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./introducao.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introdução</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./01_capitulo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Visão Geral de Ciência de Dados</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./02_capitulo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">A Metodologia CRISP-DM</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./03_capitulo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tipos de Análise de Dados em CRISP-DM</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./04_capitulo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Um Estudo de Caso Introdutório</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./05_capitulo.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Capítulo 5 — RStudio e fluxo de trabalho</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./referencias.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Referências</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Índice</h2>
+   
+  <ul>
+  <li><a href="#instalação-do-rstudio" id="toc-instalação-do-rstudio" class="nav-link active" data-scroll-target="#instalação-do-rstudio"><span class="header-section-number">6.1</span> Instalação do RStudio</a></li>
+  <li><a href="#o-que-é-o-rstudio-e-o-que-é-um-ide" id="toc-o-que-é-o-rstudio-e-o-que-é-um-ide" class="nav-link" data-scroll-target="#o-que-é-o-rstudio-e-o-que-é-um-ide"><span class="header-section-number">6.2</span> O que é o RStudio e o que é um IDE</a>
+  <ul class="collapse">
+  <li><a href="#erros-comuns-e-como-resolver" id="toc-erros-comuns-e-como-resolver" class="nav-link" data-scroll-target="#erros-comuns-e-como-resolver"><span class="header-section-number">6.2.1</span> Erros comuns e como resolver</a></li>
+  <li><a href="#checklist-do-leitor" id="toc-checklist-do-leitor" class="nav-link" data-scroll-target="#checklist-do-leitor"><span class="header-section-number">6.2.2</span> Checklist do leitor</a></li>
+  </ul></li>
+  <li><a href="#r-linguagem-vs-rstudio-ide" id="toc-r-linguagem-vs-rstudio-ide" class="nav-link" data-scroll-target="#r-linguagem-vs-rstudio-ide"><span class="header-section-number">6.3</span> R (linguagem) vs RStudio (IDE)</a>
+  <ul class="collapse">
+  <li><a href="#erros-comuns-e-como-resolver-1" id="toc-erros-comuns-e-como-resolver-1" class="nav-link" data-scroll-target="#erros-comuns-e-como-resolver-1"><span class="header-section-number">6.3.1</span> Erros comuns e como resolver</a></li>
+  <li><a href="#checklist-do-leitor-1" id="toc-checklist-do-leitor-1" class="nav-link" data-scroll-target="#checklist-do-leitor-1"><span class="header-section-number">6.3.2</span> Checklist do leitor</a></li>
+  </ul></li>
+  <li><a href="#rstudio-uma-visão-geral" id="toc-rstudio-uma-visão-geral" class="nav-link" data-scroll-target="#rstudio-uma-visão-geral"><span class="header-section-number">7</span> RStudio: Uma Visão Geral</a>
+  <ul class="collapse">
+  <li><a href="#interface-do-rstudio" id="toc-interface-do-rstudio" class="nav-link" data-scroll-target="#interface-do-rstudio"><span class="header-section-number">7.1</span> Interface do RStudio</a></li>
+  <li><a href="#painel-source" id="toc-painel-source" class="nav-link" data-scroll-target="#painel-source"><span class="header-section-number">7.2</span> Painel: <strong>Source</strong></a></li>
+  <li><a href="#painel-console" id="toc-painel-console" class="nav-link" data-scroll-target="#painel-console"><span class="header-section-number">7.3</span> Painel: <strong>Console</strong></a></li>
+  <li><a href="#painel-environment" id="toc-painel-environment" class="nav-link" data-scroll-target="#painel-environment"><span class="header-section-number">7.4</span> Painel: <strong>Environment</strong></a></li>
+  <li><a href="#painel-output" id="toc-painel-output" class="nav-link" data-scroll-target="#painel-output"><span class="header-section-number">7.5</span> Painel: <strong>Output</strong></a>
+  <ul class="collapse">
+  <li><a href="#erros-comuns-e-como-resolver-2" id="toc-erros-comuns-e-como-resolver-2" class="nav-link" data-scroll-target="#erros-comuns-e-como-resolver-2"><span class="header-section-number">7.5.1</span> Erros comuns e como resolver</a></li>
+  <li><a href="#checklist-do-leitor-2" id="toc-checklist-do-leitor-2" class="nav-link" data-scroll-target="#checklist-do-leitor-2"><span class="header-section-number">7.5.2</span> Checklist do leitor</a></li>
+  </ul></li>
+  <li><a href="#instalando-pacotes-r" id="toc-instalando-pacotes-r" class="nav-link" data-scroll-target="#instalando-pacotes-r"><span class="header-section-number">7.6</span> Instalando Pacotes R:</a>
+  <ul class="collapse">
+  <li><a href="#usando-a-guia-packages" id="toc-usando-a-guia-packages" class="nav-link" data-scroll-target="#usando-a-guia-packages"><span class="header-section-number">7.6.1</span> Usando a Guia Packages</a></li>
+  <li><a href="#usando-comandos" id="toc-usando-comandos" class="nav-link" data-scroll-target="#usando-comandos"><span class="header-section-number">7.6.2</span> Usando comandos</a></li>
+  </ul></li>
+  <li><a href="#pacotes-atenção" id="toc-pacotes-atenção" class="nav-link" data-scroll-target="#pacotes-atenção"><span class="header-section-number">7.7</span> Pacotes: atenção</a>
+  <ul class="collapse">
+  <li><a href="#erros-comuns-e-como-resolver-3" id="toc-erros-comuns-e-como-resolver-3" class="nav-link" data-scroll-target="#erros-comuns-e-como-resolver-3"><span class="header-section-number">7.7.1</span> Erros comuns e como resolver</a></li>
+  <li><a href="#checklist-do-leitor-3" id="toc-checklist-do-leitor-3" class="nav-link" data-scroll-target="#checklist-do-leitor-3"><span class="header-section-number">7.7.2</span> Checklist do leitor</a></li>
+  </ul></li>
+  <li><a href="#configurações-básicas-recomendadas-do-rstudio" id="toc-configurações-básicas-recomendadas-do-rstudio" class="nav-link" data-scroll-target="#configurações-básicas-recomendadas-do-rstudio"><span class="header-section-number">7.8</span> Configurações Básicas Recomendadas do RStudio</a>
+  <ul class="collapse">
+  <li><a href="#erros-comuns-e-como-resolver-4" id="toc-erros-comuns-e-como-resolver-4" class="nav-link" data-scroll-target="#erros-comuns-e-como-resolver-4"><span class="header-section-number">7.8.1</span> Erros comuns e como resolver</a></li>
+  <li><a href="#checklist-do-leitor-4" id="toc-checklist-do-leitor-4" class="nav-link" data-scroll-target="#checklist-do-leitor-4"><span class="header-section-number">7.8.2</span> Checklist do leitor</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#projetos-rstudio-e-reprodutibilidade" id="toc-projetos-rstudio-e-reprodutibilidade" class="nav-link" data-scroll-target="#projetos-rstudio-e-reprodutibilidade"><span class="header-section-number">8</span> Projetos RStudio e reprodutibilidade</a>
+  <ul class="collapse">
+  <li><a href="#erros-comuns-e-como-resolver-5" id="toc-erros-comuns-e-como-resolver-5" class="nav-link" data-scroll-target="#erros-comuns-e-como-resolver-5"><span class="header-section-number">8.0.1</span> Erros comuns e como resolver</a></li>
+  <li><a href="#checklist-do-leitor-5" id="toc-checklist-do-leitor-5" class="nav-link" data-scroll-target="#checklist-do-leitor-5"><span class="header-section-number">8.0.2</span> Checklist do leitor</a></li>
+  <li><a href="#criando-projetos-no-rstudio" id="toc-criando-projetos-no-rstudio" class="nav-link" data-scroll-target="#criando-projetos-no-rstudio"><span class="header-section-number">8.1</span> Criando projetos no RStudio</a>
+  <ul class="collapse">
+  <li><a href="#erros-comuns-e-como-resolver-6" id="toc-erros-comuns-e-como-resolver-6" class="nav-link" data-scroll-target="#erros-comuns-e-como-resolver-6"><span class="header-section-number">8.1.1</span> Erros comuns e como resolver</a></li>
+  <li><a href="#checklist-do-leitor-6" id="toc-checklist-do-leitor-6" class="nav-link" data-scroll-target="#checklist-do-leitor-6"><span class="header-section-number">8.1.2</span> Checklist do leitor</a></li>
+  </ul></li>
+  <li><a href="#projeto-criado" id="toc-projeto-criado" class="nav-link" data-scroll-target="#projeto-criado"><span class="header-section-number">8.2</span> Projeto Criado</a>
+  <ul class="collapse">
+  <li><a href="#erros-comuns-e-como-resolver-7" id="toc-erros-comuns-e-como-resolver-7" class="nav-link" data-scroll-target="#erros-comuns-e-como-resolver-7"><span class="header-section-number">8.2.1</span> Erros comuns e como resolver</a></li>
+  <li><a href="#checklist-do-leitor-7" id="toc-checklist-do-leitor-7" class="nav-link" data-scroll-target="#checklist-do-leitor-7"><span class="header-section-number">8.2.2</span> Checklist do leitor</a></li>
+  </ul></li>
+  <li><a href="#estrutura-recomendada-para-o-projeto-rstudio-criado" id="toc-estrutura-recomendada-para-o-projeto-rstudio-criado" class="nav-link" data-scroll-target="#estrutura-recomendada-para-o-projeto-rstudio-criado"><span class="header-section-number">8.3</span> Estrutura Recomendada para o Projeto RStudio Criado</a>
+  <ul class="collapse">
+  <li><a href="#erros-comuns-e-como-resolver-8" id="toc-erros-comuns-e-como-resolver-8" class="nav-link" data-scroll-target="#erros-comuns-e-como-resolver-8"><span class="header-section-number">8.3.1</span> Erros comuns e como resolver</a></li>
+  <li><a href="#checklist-do-leitor-8" id="toc-checklist-do-leitor-8" class="nav-link" data-scroll-target="#checklist-do-leitor-8"><span class="header-section-number">8.3.2</span> Checklist do leitor</a></li>
+  </ul></li>
+  <li><a href="#gerenciamento-de-arquivos" id="toc-gerenciamento-de-arquivos" class="nav-link" data-scroll-target="#gerenciamento-de-arquivos"><span class="header-section-number">8.4</span> Gerenciamento de Arquivos</a>
+  <ul class="collapse">
+  <li><a href="#menu-files" id="toc-menu-files" class="nav-link" data-scroll-target="#menu-files"><span class="header-section-number">8.4.1</span> Menu <code>Files</code></a></li>
+  <li><a href="#erros-comuns-e-como-resolver-9" id="toc-erros-comuns-e-como-resolver-9" class="nav-link" data-scroll-target="#erros-comuns-e-como-resolver-9"><span class="header-section-number">8.4.2</span> Erros comuns e como resolver</a></li>
+  <li><a href="#checklist-do-leitor-9" id="toc-checklist-do-leitor-9" class="nav-link" data-scroll-target="#checklist-do-leitor-9"><span class="header-section-number">8.4.3</span> Checklist do leitor</a></li>
+  </ul></li>
+  <li><a href="#configurações-opcionais-windows" id="toc-configurações-opcionais-windows" class="nav-link" data-scroll-target="#configurações-opcionais-windows"><span class="header-section-number">8.5</span> Configurações opcionais (Windows)</a>
+  <ul class="collapse">
+  <li><a href="#erros-comuns-e-como-resolver-10" id="toc-erros-comuns-e-como-resolver-10" class="nav-link" data-scroll-target="#erros-comuns-e-como-resolver-10"><span class="header-section-number">8.5.1</span> Erros comuns e como resolver</a></li>
+  <li><a href="#checklist-do-leitor-10" id="toc-checklist-do-leitor-10" class="nav-link" data-scroll-target="#checklist-do-leitor-10"><span class="header-section-number">8.5.2</span> Checklist do leitor</a></li>
+  </ul></li>
+  </ul></li>
+  <li><a href="#atalhos-essenciais" id="toc-atalhos-essenciais" class="nav-link" data-scroll-target="#atalhos-essenciais"><span class="header-section-number">9</span> Atalhos essenciais</a>
+  <ul class="collapse">
+  <li><a href="#erros-comuns-e-como-resolver-11" id="toc-erros-comuns-e-como-resolver-11" class="nav-link" data-scroll-target="#erros-comuns-e-como-resolver-11"><span class="header-section-number">9.0.1</span> Erros comuns e como resolver</a></li>
+  <li><a href="#checklist-do-leitor-11" id="toc-checklist-do-leitor-11" class="nav-link" data-scroll-target="#checklist-do-leitor-11"><span class="header-section-number">9.0.2</span> Checklist do leitor</a></li>
+  <li><a href="#exercícios" id="toc-exercícios" class="nav-link" data-scroll-target="#exercícios"><span class="header-section-number">9.1</span> Exercícios</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Capítulo 5 — RStudio e fluxo de trabalho</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<p>Este capítulo dá o primeiro passo para um trabalho organizado e reproduzível com R: entender o RStudio, configurar o ambiente e adotar boas práticas desde o início. A ideia é que o leitor consiga estudar e produzir relatórios com autonomia, inclusive em contextos administrativos simples, como análises de vendas ou custos.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Objetivos do capítulo
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Reconhecer o papel do RStudio como IDE para o R.</li>
+<li>Navegar pela interface e usar os painéis principais.</li>
+<li>Instalar e carregar pacotes corretamente.</li>
+<li>Criar projetos e organizar pastas de forma reprodutível.</li>
+</ul>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Pré-requisitos
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li>Ter o R instalado no computador.</li>
+<li>Acesso à internet para baixar o RStudio e instalar pacotes quando necessário.</li>
+<li>Noções básicas de organização de arquivos e pastas.</li>
+</ul>
+</div>
+</div>
+<section id="instalação-do-rstudio" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="instalação-do-rstudio"><span class="header-section-number">6.1</span> Instalação do RStudio</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Instalação do RStudio no Windows
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ol type="1">
+<li>Acesse <a href="https://posit.co/download/rstudio-desktop/" target="_blank">https://posit.co/download/rstudio-desktop/</a></li>
+<li>Role a página; normalmente o site detecta seu sistema e disponibiliza o instalador logo abaixo de <code>2: Install RStudio</code>.</li>
+<li>Clique em <code>Download RStudio Desktop for Windows</code> se o sistema for Windows.</li>
+<li>Finalizado o download, clique duas vezes no arquivo e avance até concluir.</li>
+</ol>
+</div>
+</div>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>macOS/Linux
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Na mesma página de download, escolha o instalador do seu sistema. O fluxo é análogo ao do Windows: baixar, executar e concluir a instalação.</p>
+</div>
+</div>
+<p>Com o RStudio instalado, vamos entender o que ele é e por que um IDE facilita o trabalho de quem está começando.</p>
+</section>
+<section id="o-que-é-o-rstudio-e-o-que-é-um-ide" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="o-que-é-o-rstudio-e-o-que-é-um-ide"><span class="header-section-number">6.2</span> O que é o RStudio e o que é um IDE</h2>
+<p>O RStudio é um Ambiente de Desenvolvimento Integrado (IDE) voltado para a linguagem R. Em vez de abrir programas separados para escrever, executar e visualizar resultados, o IDE reúne tudo em uma única interface.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Conceito-chave: IDE
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Um IDE integra editor de texto, execução de código, ajuda, visualização de gráficos e organização de projetos. Isso reduz erros e acelera o aprendizado.</p>
+</div>
+</div>
+<p>Para quem está começando, a vantagem prática é simples: você escreve um script, executa no console e vê o resultado sem sair do mesmo ambiente.</p>
+<section id="erros-comuns-e-como-resolver" class="level3" data-number="6.2.1">
+<h3 data-number="6.2.1" class="anchored" data-anchor-id="erros-comuns-e-como-resolver"><span class="header-section-number">6.2.1</span> Erros comuns e como resolver</h3>
+<ul>
+<li>Confundir RStudio com a linguagem R: lembre que são ferramentas diferentes.</li>
+<li>Abrir o RStudio sem ter o R instalado: instale o R antes do IDE.</li>
+<li>Ignorar o painel de ajuda: use a guia <code>Help</code> para consultar funções.</li>
+</ul>
+</section>
+<section id="checklist-do-leitor" class="level3" data-number="6.2.2">
+<h3 data-number="6.2.2" class="anchored" data-anchor-id="checklist-do-leitor"><span class="header-section-number">6.2.2</span> Checklist do leitor</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Definir o que é um IDE.</label></li>
+<li><label><input type="checkbox">Explicar por que o RStudio facilita o trabalho inicial.</label></li>
+<li><label><input type="checkbox">Verificar que o R está instalado no computador.</label></li>
+</ul>
+</section>
+</section>
+<section id="r-linguagem-vs-rstudio-ide" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="r-linguagem-vs-rstudio-ide"><span class="header-section-number">6.3</span> R (linguagem) vs RStudio (IDE)</h2>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://d33wubrfki0l68.cloudfront.net/0b4d0569b2ddf6147da90b110fbb2a17653c8b08/f06f3/images/shutterstock/r_vs_rstudio_1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+<p>O R é a linguagem (o “motor”). O RStudio é o painel de controle que facilita o uso desse motor. A analogia ajuda a lembrar que são instalados e usados em conjunto, mas com papéis diferentes.</p>
+<section id="erros-comuns-e-como-resolver-1" class="level3" data-number="6.3.1">
+<h3 data-number="6.3.1" class="anchored" data-anchor-id="erros-comuns-e-como-resolver-1"><span class="header-section-number">6.3.1</span> Erros comuns e como resolver</h3>
+<ul>
+<li>Instalar apenas o RStudio e esperar que o R funcione: instale ambos.</li>
+<li>Achar que o RStudio “substitui” o R: ele apenas organiza o trabalho.</li>
+<li>Não saber onde digitar comandos: use o painel <code>Console</code> para executar.</li>
+</ul>
+</section>
+<section id="checklist-do-leitor-1" class="level3" data-number="6.3.2">
+<h3 data-number="6.3.2" class="anchored" data-anchor-id="checklist-do-leitor-1"><span class="header-section-number">6.3.2</span> Checklist do leitor</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Diferenciar o que é o R e o que é o RStudio.</label></li>
+<li><label><input type="checkbox">Explicar por que ambos devem estar instalados.</label></li>
+<li><label><input type="checkbox">Indicar onde executar comandos no RStudio.</label></li>
+</ul>
+</section>
+</section>
+<section id="rstudio-uma-visão-geral" class="level1" data-number="7">
+<h1 data-number="7"><span class="header-section-number">7</span> RStudio: Uma Visão Geral</h1>
+<section id="interface-do-rstudio" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="interface-do-rstudio"><span class="header-section-number">7.1</span> Interface do RStudio</h2>
+<p>Na primeira abertura, você verá quatro painéis. Eles funcionam em conjunto para escrever, executar, inspecionar objetos e visualizar resultados.</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/05-cap/rstudio-panes.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<p>Na figura acima, cada painel tem um papel. Vamos percorrê-los começando pelo <code>Source</code>, que é onde você escreve.</p>
+</section>
+<section id="painel-source" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="painel-source"><span class="header-section-number">7.2</span> Painel: <strong>Source</strong></h2>
+<ul>
+<li><p>O painel <code>Source</code> permite a visualização e edição de vários arquivos relacionados a diversas linguagens, tais como: <code>.R</code>, <code>.qmd</code>,<code>.py</code> ou arquivos de texto gerais como <code>.txt</code> ou <code>.md.</code></p></li>
+<li><p>Por padrão, é o painel superior esquerdo e pode ser iniciado abrindo qualquer arquivo editável no RStudio.</p></li>
+<li><p>Cada arquivo adicional que for aberto será adicionado como uma nova guia no painel.</p></li>
+</ul>
+</section>
+<section id="painel-console" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="painel-console"><span class="header-section-number">7.3</span> Painel: <strong>Console</strong></h2>
+<ul>
+<li><p>Esse painel fornece uma área para executar o código interativamente, isto é, você pode “conversar” diretamente com o interpretador da linguagem R.</p></li>
+<li><p>Por padrão, está vinculado à linguagem R, mas ele também pode fornecer um console Python.</p></li>
+</ul>
+</section>
+<section id="painel-environment" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="painel-environment"><span class="header-section-number">7.4</span> Painel: <strong>Environment</strong></h2>
+<p><strong>Guia <code>Environment</code></strong></p>
+<ul>
+<li><p>Essa guia exibe objetos R e Python ativos na sessão atual.</p></li>
+<li><p>A barra de menus de <code>Environment</code> fornece carregamento ou salvamento de R workspaces, importação interativa de conjuntos de dados de arquivos de texto, Excel ou SPSS/SAS/Stata.</p></li>
+<li><p>Ela também exibe a memória usada pela sessão R ativa e um ícone de uma vassoura para remover todos os objetos ativos.</p></li>
+</ul>
+</section>
+<section id="painel-output" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="painel-output"><span class="header-section-number">7.5</span> Painel: <strong>Output</strong></h2>
+<p>Por padrão, o painel <code>Output</code> é o painel inferior direito e contém as seguintes guias:</p>
+<p><strong>Guia <code>Files</code></strong></p>
+<ul>
+<li><p>Esta guia fornece uma exploração interativa da pasta de trabalho (<em>working directory</em>), ou seja, a pasta para a qual o R está direcionado.</p></li>
+<li><p>Nesta guia, você pode adicionar, excluir, renomear e remover arquivos e pastas, entre outras operações.</p></li>
+</ul>
+<p><strong>Guia <code>Help</code></strong></p>
+<ul>
+<li><p>O ícone <code>Home</code> exibe a página de ajuda geral, com links para Manuais e Referências sobre o R e RStudio.</p></li>
+<li><p>Exibe também a documentação dos pacotes.</p></li>
+</ul>
+<p><strong>Guia <code>Viewer</code></strong></p>
+<ul>
+<li>Exibe conteúdos interativos tais como: gráficos interativos, aplicativos Shiny, páginas HTML geradas pelo Quarto, entre outros.</li>
+</ul>
+<p><strong>Guia <code>Presentation</code></strong></p>
+<ul>
+<li>Esta guia é usada para exibir slides HTML gerados pelo sistema Quarto.</li>
+</ul>
+<p><strong>Guia <code>Plots</code></strong></p>
+<ul>
+<li><p>Esta guia exibe imagens estáticas produzidas na sessão.</p></li>
+<li><p>Há setas para navegar entre gráficos mais antigos e mais recentes, zoom, um botão de exportação para salvar as imagens, um botão de exclusão de imagens e um ícone de vassoura que limpará todos os gráficos.</p></li>
+</ul>
+<p><strong>Guia <code>Packages</code></strong></p>
+<ul>
+<li><p>Esta guia permite visualizar os pacotes R instalados.</p></li>
+<li><p>Há uma barra para pesquisar a biblioteca atual de pacotes.</p></li>
+<li><p>Há também um botão para instalação e atualização de pacotes.</p></li>
+</ul>
+<section id="erros-comuns-e-como-resolver-2" class="level3" data-number="7.5.1">
+<h3 data-number="7.5.1" class="anchored" data-anchor-id="erros-comuns-e-como-resolver-2"><span class="header-section-number">7.5.1</span> Erros comuns e como resolver</h3>
+<ul>
+<li>Não saber onde digitar comandos: use o <code>Console</code> para executar.</li>
+<li>Abrir um arquivo e não ver no <code>Source</code>: confirme se ele é editável.</li>
+<li>Salvar arquivos fora do projeto: trabalhe sempre dentro da pasta do projeto.</li>
+<li>Confundir <code>Files</code> com o sistema inteiro: ele mostra o <em>working directory</em>.</li>
+</ul>
+</section>
+<section id="checklist-do-leitor-2" class="level3" data-number="7.5.2">
+<h3 data-number="7.5.2" class="anchored" data-anchor-id="checklist-do-leitor-2"><span class="header-section-number">7.5.2</span> Checklist do leitor</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Localizar <code>Source</code>, <code>Console</code>, <code>Environment</code> e <code>Output</code>.</label></li>
+<li><label><input type="checkbox">Explicar o papel da guia <code>Files</code> como pasta de trabalho.</label></li>
+<li><label><input type="checkbox">Abrir e alternar arquivos no <code>Source</code>.</label></li>
+</ul>
+</section>
+</section>
+<section id="instalando-pacotes-r" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="instalando-pacotes-r"><span class="header-section-number">7.6</span> Instalando Pacotes R:</h2>
+<section id="usando-a-guia-packages" class="level3" data-number="7.6.1">
+<h3 data-number="7.6.1" class="anchored" data-anchor-id="usando-a-guia-packages"><span class="header-section-number">7.6.1</span> Usando a Guia Packages</h3>
+<p>Para instalar pacotes usando a guia <strong>Packages</strong> no RStudio:</p>
+<ul>
+<li><p>Clique na guia <strong>Packages</strong>.</p></li>
+<li><p>Clique em <strong>Install Packages</strong>.</p></li>
+<li><p>Digite o nome de cada pacote que deseja instalar separados por um espaço ou vírgula na caixa de texto.</p></li>
+<li><p>Copie os pacotes abaixo e cole na caixa de texto:</p></li>
+</ul>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>tidyverse usethis </span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<ul>
+<li>Clique em <strong>Install</strong> para iniciar a instalação</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/05-cap/install_packages.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="usando-comandos" class="level3" data-number="7.6.2">
+<h3 data-number="7.6.2" class="anchored" data-anchor-id="usando-comandos"><span class="header-section-number">7.6.2</span> Usando comandos</h3>
+<ul>
+<li><p>Uma forma alternativa de instalar pacotes é usando a linha de comando.</p></li>
+<li><p>Você pode usar o seguinte comando diretamente no console, em um script, ou em um documento Quarto:</p></li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"tidyverse"</span>, <span class="st">"usethis"</span>))</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+</section>
+<section id="pacotes-atenção" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="pacotes-atenção"><span class="header-section-number">7.7</span> Pacotes: atenção</h2>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Instalação e carregamento de pacotes
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><p>Em um computador, você instala o pacote <strong>uma única vez</strong>.</p></li>
+<li><p>Para usar o pacote em cada sessão, é preciso <strong>carregá-lo</strong> com <code>library()</code>.</p></li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># carrega os pacotes utilizados</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(usethis)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>.</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>.</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</div>
+</div>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Dica</span>Conexão com a internet
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><p>Para instalar pacotes de R ou Python, é necessária uma <strong>conexão ativa com a internet</strong>.</p></li>
+<li><p>Em caso de falhas de conexão, o download pode falhar. Nesse caso, repita a instalação.</p></li>
+</ul>
+</div>
+</div>
+<section id="erros-comuns-e-como-resolver-3" class="level3" data-number="7.7.1">
+<h3 data-number="7.7.1" class="anchored" data-anchor-id="erros-comuns-e-como-resolver-3"><span class="header-section-number">7.7.1</span> Erros comuns e como resolver</h3>
+<ul>
+<li>Tentar usar <code>library()</code> sem instalar: rode <code>install.packages()</code> antes.</li>
+<li>Esperar que a instalação funcione sem internet: verifique a conexão.</li>
+<li>Instalar toda vez que abrir o RStudio: instale uma vez, carregue sempre.</li>
+</ul>
+</section>
+<section id="checklist-do-leitor-3" class="level3" data-number="7.7.2">
+<h3 data-number="7.7.2" class="anchored" data-anchor-id="checklist-do-leitor-3"><span class="header-section-number">7.7.2</span> Checklist do leitor</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Indicar quando usar <code>install.packages()</code>.</label></li>
+<li><label><input type="checkbox">Indicar quando usar <code>library()</code>.</label></li>
+<li><label><input type="checkbox">Reconhecer que a instalação exige internet.</label></li>
+</ul>
+</section>
+</section>
+<section id="configurações-básicas-recomendadas-do-rstudio" class="level2" data-number="7.8">
+<h2 data-number="7.8" class="anchored" data-anchor-id="configurações-básicas-recomendadas-do-rstudio"><span class="header-section-number">7.8</span> Configurações Básicas Recomendadas do RStudio</h2>
+<p>Estas opções evitam mensagens e comportamentos confusos ao iniciar o RStudio em diferentes projetos.</p>
+<ol type="1">
+<li><p>Abra o RStudio.</p></li>
+<li><p>Clique no menu “<em>Tools</em>” &gt; “<em>Global Options</em>” &gt; “<em>Basic</em>”.</p></li>
+<li><p><strong>Desmarque</strong> a opção: “<em>Restore most recently opened project at startup</em>”.</p></li>
+<li><p><strong>Desmarque</strong> a opção: “<em>Restore previously open source document at startup</em>”.</p></li>
+<li><p><strong>Desmarque</strong> a opção: “<em>Restore .Rdata into workspace at startup</em>”.</p></li>
+<li><p>Na caixa à direita de “<em>Save workspace to .Rdata on exit:</em>”, <strong>selecione</strong> “<em>never</em>”</p></li>
+<li><p>Clique em “<em>Ok</em>” e, em seguida, em “<em>Apply</em>”.</p></li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/05-cap/rstudio_config_basica.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
+</figure>
+</div>
+<section id="erros-comuns-e-como-resolver-4" class="level3" data-number="7.8.1">
+<h3 data-number="7.8.1" class="anchored" data-anchor-id="erros-comuns-e-como-resolver-4"><span class="header-section-number">7.8.1</span> Erros comuns e como resolver</h3>
+<ul>
+<li>Deixar o RStudio restaurar sessões antigas: desmarque as opções acima.</li>
+<li>Salvar <code>.RData</code> automaticamente: escolha “<em>never</em>”.</li>
+<li>Reabrir arquivos de outro projeto sem perceber: confirme o projeto ativo.</li>
+</ul>
+</section>
+<section id="checklist-do-leitor-4" class="level3" data-number="7.8.2">
+<h3 data-number="7.8.2" class="anchored" data-anchor-id="checklist-do-leitor-4"><span class="header-section-number">7.8.2</span> Checklist do leitor</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Desativar a restauração automática de projetos e arquivos.</label></li>
+<li><label><input type="checkbox">Configurar “Save workspace to .Rdata” como “never”.</label></li>
+<li><label><input type="checkbox">Verificar o projeto ativo no RStudio.</label></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="projetos-rstudio-e-reprodutibilidade" class="level1" data-number="8">
+<h1 data-number="8"><span class="header-section-number">8</span> Projetos RStudio e reprodutibilidade</h1>
+<p>Depois de conhecer a interface, o próximo passo para trabalhar com segurança é organizar seu trabalho em projetos. Isso evita confusões com arquivos e torna o seu estudo mais reprodutível. Por exemplo, um projeto pode reunir os dados, os scripts e os relatórios de uma análise simples de vendas.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Visão Geral
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><p>Cientistas e analistas de dados mantêm todos os arquivos de um projeto em uma única pasta, com subpastas organizadas (dados, scripts, relatórios).</p></li>
+<li><p>Essa prática é tão comum que o RStudio oferece suporte direto por meio dos <code>Projects</code>.</p></li>
+<li><p>Os <em>RStudio Projects</em> (em português, <em>Projetos RStudio</em>) tornam simples organizar seus projetos em vários contextos, cada um com sua própria pasta e documentos diversos.</p></li>
+<li><p>Seja com R ou Python, criar um projeto ajuda a manter tudo no lugar certo.</p></li>
+<li><p>Além disso, projetos reduzem problemas com caminhos absolutos. Você passa a usar caminhos <strong>relativos</strong>, ou seja, arquivos são encontrados com base na pasta do projeto, e não em caminhos longos do sistema.</p></li>
+</ul>
+</div>
+</div>
+<section id="erros-comuns-e-como-resolver-5" class="level3" data-number="8.0.1">
+<h3 data-number="8.0.1" class="anchored" data-anchor-id="erros-comuns-e-como-resolver-5"><span class="header-section-number">8.0.1</span> Erros comuns e como resolver</h3>
+<ul>
+<li>Trabalhar sem projeto e “perder” arquivos: crie um projeto para cada trabalho.</li>
+<li>Misturar arquivos de disciplinas diferentes: use uma pasta por disciplina.</li>
+<li>Usar caminhos absolutos: prefira caminhos relativos dentro do projeto.</li>
+</ul>
+</section>
+<section id="checklist-do-leitor-5" class="level3" data-number="8.0.2">
+<h3 data-number="8.0.2" class="anchored" data-anchor-id="checklist-do-leitor-5"><span class="header-section-number">8.0.2</span> Checklist do leitor</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Explicar por que projetos ajudam na reprodutibilidade.</label></li>
+<li><label><input type="checkbox">Definir o que é um caminho relativo.</label></li>
+<li><label><input type="checkbox">Adotar um projeto para cada trabalho.</label></li>
+</ul>
+</section>
+<section id="criando-projetos-no-rstudio" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="criando-projetos-no-rstudio"><span class="header-section-number">8.1</span> Criando projetos no RStudio</h2>
+<p>Os Projetos RStudio estão associados a pastas. Você pode criar:</p>
+<ul>
+<li><p>Em uma nova pasta, que ainda não existe.</p></li>
+<li><p>Em uma pasta existente, por exemplo, uma pasta que contém um repositório clonado do GitHub.</p></li>
+</ul>
+<p>O caminho mais curto para criar um projeto no RStudio envolve:</p>
+<ol type="1">
+<li>Clique no botão <code>Project</code>, em seguida, clique em <code>New Project</code>, no canto superior direito do RStudio:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/05-cap/menu_projects.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+<ul>
+<li>Em seguida, clique em <code>New Directory</code>:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/05-cap/new_proj01.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+<ol start="2" type="1">
+<li>Na janela seguinte selecione <code>New Project</code>:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/05-cap/new_proj2.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+<ol start="3" type="1">
+<li>Escolha a pasta dentro da qual você criará a subpasta <strong>seunome_icd2025</strong> (que será a pasta do projeto), clicando no botão <strong>Browse</strong>.</li>
+</ol>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Dica</span>Importante! Nome da Pasta e do Projeto
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>No caso de um exemplo hipotético chamado João Silva, o nome da subpasta seria <code>joaosilva_icd2025</code>, tente seguir esse padrão e <strong>não</strong> utilize acentos, espaços e caracteres especiais para nomear pastas, projetos e arquivos.</p>
+</div>
+</div>
+<ol start="4" type="1">
+<li>Digite o nome do projeto (por exemplo, <code>joaosilva_icd2025</code>) no campo de texto abaixo de <strong>Directory Name</strong> e clique na caixa <strong>Create a git repository</strong>:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/05-cap/new_project04.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+<ol start="5" type="1">
+<li>Clique em <strong>Create Project</strong> para criar o projeto. Em seguida, você verá algo similar a seguinte imagem no RStudio:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/05-cap/projeto_criado.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
+</figure>
+</div>
+<section id="erros-comuns-e-como-resolver-6" class="level3" data-number="8.1.1">
+<h3 data-number="8.1.1" class="anchored" data-anchor-id="erros-comuns-e-como-resolver-6"><span class="header-section-number">8.1.1</span> Erros comuns e como resolver</h3>
+<ul>
+<li>Criar projetos com nomes confusos: use um padrão simples e sem espaços.</li>
+<li>Salvar arquivos fora da pasta do projeto: confira a guia <code>Files</code>.</li>
+<li>Esquecer de ativar o projeto ao abrir o RStudio: selecione no menu <code>Project</code>.</li>
+</ul>
+</section>
+<section id="checklist-do-leitor-6" class="level3" data-number="8.1.2">
+<h3 data-number="8.1.2" class="anchored" data-anchor-id="checklist-do-leitor-6"><span class="header-section-number">8.1.2</span> Checklist do leitor</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Criar um projeto com nome padronizado.</label></li>
+<li><label><input type="checkbox">Localizar a pasta do projeto na guia <code>Files</code>.</label></li>
+<li><label><input type="checkbox">Reabrir o projeto pelo menu <code>Project</code>.</label></li>
+</ul>
+</section>
+</section>
+<section id="projeto-criado" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="projeto-criado"><span class="header-section-number">8.2</span> Projeto Criado</h2>
+<p>Quando um novo projeto é criado, o RStudio:</p>
+<ul>
+<li><p>Cria um arquivo de projeto (<code>joaosilva_icd2025.Rproj</code>) dentro da pasta do projeto.</p></li>
+<li><p>Carrega o projeto no RStudio e exibe seu nome no menu <strong>Projects</strong>.</p></li>
+<li><p>Com um projeto criado, toda vez que abrir o RStudio, basta clicar em Project; logo abaixo aparece o nome do projeto. Clique no nome para abrir o projeto.</p></li>
+</ul>
+<section id="erros-comuns-e-como-resolver-7" class="level3" data-number="8.2.1">
+<h3 data-number="8.2.1" class="anchored" data-anchor-id="erros-comuns-e-como-resolver-7"><span class="header-section-number">8.2.1</span> Erros comuns e como resolver</h3>
+<ul>
+<li>Abrir o RStudio e começar a trabalhar sem projeto: selecione o projeto ativo.</li>
+<li>Guardar arquivos soltos na área de trabalho: mova para a pasta do projeto.</li>
+<li>Esquecer o arquivo <code>.Rproj</code>: ele indica qual pasta é o projeto.</li>
+</ul>
+</section>
+<section id="checklist-do-leitor-7" class="level3" data-number="8.2.2">
+<h3 data-number="8.2.2" class="anchored" data-anchor-id="checklist-do-leitor-7"><span class="header-section-number">8.2.2</span> Checklist do leitor</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Identificar o arquivo <code>.Rproj</code>.</label></li>
+<li><label><input type="checkbox">Reabrir o projeto a partir do menu <code>Project</code>.</label></li>
+<li><label><input type="checkbox">Reconhecer que o projeto define a pasta de trabalho.</label></li>
+</ul>
+</section>
+</section>
+<section id="estrutura-recomendada-para-o-projeto-rstudio-criado" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="estrutura-recomendada-para-o-projeto-rstudio-criado"><span class="header-section-number">8.3</span> Estrutura Recomendada para o Projeto RStudio Criado</h2>
+<p>Para organizar adequadamente os arquivos de seus projetos envolvendo a análise de dados, recomendamos que você adote a seguinte estrutura inicial de pastas para seu projeto:</p>
+<ol type="1">
+<li>Primeiramente, vamos criar duas pastas principais:</li>
+</ol>
+<ul>
+<li><strong>dados</strong>: Para armazenar os conjuntos de dados do projeto.</li>
+<li><strong>relatorios</strong>: Para armazenar os relatórios Quarto elaborados.</li>
+<li><strong>scripts</strong>: Para armazenar os scripts R utilizados.</li>
+</ul>
+<ol start="2" type="1">
+<li>Dentro da pasta <strong>dados</strong>, vamos criar duas subpastas:</li>
+</ol>
+<ul>
+<li><strong>dados_brutos</strong>: Para armazenar os dados originais, sem modificações.</li>
+<li><strong>dados_limpos</strong>: Para armazenar dados após limpeza e transformações.</li>
+</ul>
+<ol start="3" type="1">
+<li>Dentro da pasta <strong>relatorios</strong>, vamos criar a subpasta:</li>
+</ol>
+<ul>
+<li><strong>testes</strong>: Para armazenar documentos Quarto de teste e experimentos.</li>
+</ul>
+<p>Esta estrutura fornece uma organização clara que separa dados de documentos e também distingue entre dados brutos e processados (ou limpos, no jargão de Ciência de Dados), seguindo boas práticas de reprodutibilidade.</p>
+<p>Para criar esta estrutura usando o RStudio:</p>
+<ol type="1">
+<li>Na Guia <code>Files</code> do RStudio, clique no botão <code>New Folder</code> para criar as pastas principais <code>dados</code>, <code>relatorios</code> e <code>scripts</code>:</li>
+</ol>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/05-cap/criar_pastas.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
+</figure>
+</div>
+<ol start="2" type="1">
+<li>Navegue para dentro da pasta <code>dados</code> e crie as subpastas <code>dados_brutos</code> e <code>dados_limpos</code>.</li>
+</ol>
+<p>Considerando o caso do exemplo hipotético chamado João Silva, a estrutura final do projeto ficaria assim:</p>
+<pre><code>joaosilva_icd2025/
+│
+├── dados/
+│   ├── dados_brutos
+│   └── dados_limpos
+|
+├── joaosilva_icd2025.Rproj
+|
+├── relatorios/
+│   └── testes
+└── scripts/</code></pre>
+<section id="erros-comuns-e-como-resolver-8" class="level3" data-number="8.3.1">
+<h3 data-number="8.3.1" class="anchored" data-anchor-id="erros-comuns-e-como-resolver-8"><span class="header-section-number">8.3.1</span> Erros comuns e como resolver</h3>
+<ul>
+<li>Misturar dados brutos com dados limpos: use subpastas separadas.</li>
+<li>Salvar relatórios fora de <code>relatorios</code>: mantenha o padrão.</li>
+<li>Criar pastas com acentos e espaços: prefira nomes simples.</li>
+</ul>
+</section>
+<section id="checklist-do-leitor-8" class="level3" data-number="8.3.2">
+<h3 data-number="8.3.2" class="anchored" data-anchor-id="checklist-do-leitor-8"><span class="header-section-number">8.3.2</span> Checklist do leitor</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Criar <code>dados/</code>, <code>relatorios/</code> e <code>scripts/</code>.</label></li>
+<li><label><input type="checkbox">Separar <code>dados_brutos</code> e <code>dados_limpos</code>.</label></li>
+<li><label><input type="checkbox">Justificar por que essa estrutura ajuda na reprodutibilidade.</label></li>
+</ul>
+</section>
+</section>
+<section id="gerenciamento-de-arquivos" class="level2" data-number="8.4">
+<h2 data-number="8.4" class="anchored" data-anchor-id="gerenciamento-de-arquivos"><span class="header-section-number">8.4</span> Gerenciamento de Arquivos</h2>
+<p>O RStudio suporta realce de sintaxe e outros recursos especializados de edição de código para tipos de arquivos específicos:</p>
+<ul>
+<li><p>Scripts R, Python, SQL e outros.</p></li>
+<li><p>Documentos computacionais e científicos em Quarto, R Markdown e LaTeX.</p></li>
+<li><p>Conteúdo da Web, como HTML e CSS.</p></li>
+<li><p>E muitos mais.</p></li>
+</ul>
+<p>Ao criar um novo arquivo, lembre que documentos Quarto (<code>.qmd</code>) são a base do livro e dos relatórios reprodutíveis.</p>
+<section id="menu-files" class="level3" data-number="8.4.1">
+<h3 data-number="8.4.1" class="anchored" data-anchor-id="menu-files"><span class="header-section-number">8.4.1</span> Menu <code>Files</code></h3>
+<ul>
+<li>É possível criar um novo arquivo com <code>File -&gt; New File</code> (por exemplo, <code>Quarto Document</code> para relatórios):</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="https://docs.posit.co/ide/user/ide/guide/ui/images/system-files-menu.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+<ul>
+<li>Outra possibilidade é usar o ícone no canto superior esquerdo do RStudio:</li>
+</ul>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="img/05-cap/cria_arquivos.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+</figure>
+</div>
+</section>
+<section id="erros-comuns-e-como-resolver-9" class="level3" data-number="8.4.2">
+<h3 data-number="8.4.2" class="anchored" data-anchor-id="erros-comuns-e-como-resolver-9"><span class="header-section-number">8.4.2</span> Erros comuns e como resolver</h3>
+<ul>
+<li>Criar arquivos fora do projeto: verifique a guia <code>Files</code>.</li>
+<li>Não salvar o arquivo após criar: use <code>Ctrl+S</code> ou <code>⌘+S</code>.</li>
+<li>Criar um <code>.R</code> quando precisava de <code>.qmd</code>: escolha o tipo correto.</li>
+</ul>
+</section>
+<section id="checklist-do-leitor-9" class="level3" data-number="8.4.3">
+<h3 data-number="8.4.3" class="anchored" data-anchor-id="checklist-do-leitor-9"><span class="header-section-number">8.4.3</span> Checklist do leitor</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Criar um arquivo pelo menu <code>File</code>.</label></li>
+<li><label><input type="checkbox">Criar um <code>.qmd</code> para relatórios.</label></li>
+<li><label><input type="checkbox">Localizar arquivos na guia <code>Files</code>.</label></li>
+</ul>
+</section>
+</section>
+<section id="configurações-opcionais-windows" class="level2" data-number="8.5">
+<h2 data-number="8.5" class="anchored" data-anchor-id="configurações-opcionais-windows"><span class="header-section-number">8.5</span> Configurações opcionais (Windows)</h2>
+<p>Se você usa Windows e deseja o Git Bash como terminal no RStudio, siga as etapas abaixo. Em macOS e Linux, o terminal padrão já é suficiente.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Terminal Git Bash no RStudio (Windows)
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Como o RStudio e o sistema Quarto fazem parte do fluxo de trabalho, é importante saber como acessar e usar o terminal Git Bash diretamente dentro do RStudio:</p>
+<ol type="1">
+<li><strong>Configurando o terminal Git Bash no RStudio</strong>:</li>
+</ol>
+<ul>
+<li><p>Abra o RStudio</p></li>
+<li><p>Vá para “<em>Tools</em>” &gt; “<em>Global Options</em>” &gt; “<em>Terminal</em>”.</p></li>
+<li><p>No campo “<em>New terminals open with:</em>”, selecione “<em>Git Bash</em>” no menu suspenso.</p></li>
+<li><p>Clique em “<em>Apply</em>” e depois em “<em>OK</em>”</p></li>
+</ul>
+<ol start="2" type="1">
+<li><strong>Acessando o terminal Git Bash no RStudio</strong>:</li>
+</ol>
+<ul>
+<li><p>No painel inferior do RStudio, clique na guia “<em>Terminal</em>”.</p></li>
+<li><p>Um novo terminal Git Bash será aberto.</p></li>
+<li><p>Se um terminal já estiver aberto, mas não for o Git Bash, clique no ícone “+” no canto superior direito do painel <code>Terminal</code> e selecione “<em>New Terminal</em>” para abrir um novo terminal Git Bash</p></li>
+</ul>
+<ol start="3" type="1">
+<li><strong>Vantagens de usar o Git Bash dentro do RStudio</strong>:</li>
+</ol>
+<ul>
+<li><p>Mantém seu fluxo de trabalho dentro de um único ambiente.</p></li>
+<li><p>Facilita a navegação entre edição de arquivos e execução de comandos Git.</p></li>
+<li><p>Permite copiar e colar facilmente entre o editor e o terminal.</p></li>
+<li><p>Evita a necessidade de alternar entre aplicativos diferentes.</p></li>
+</ul>
+</div>
+</div>
+<section id="erros-comuns-e-como-resolver-10" class="level3" data-number="8.5.1">
+<h3 data-number="8.5.1" class="anchored" data-anchor-id="erros-comuns-e-como-resolver-10"><span class="header-section-number">8.5.1</span> Erros comuns e como resolver</h3>
+<ul>
+<li>Selecionar o terminal errado: verifique o campo “<em>New terminals open with:</em>”.</li>
+<li>Abrir um terminal antigo: use o botão “+” para abrir um novo.</li>
+<li>Esperar esse ajuste em macOS/Linux: nesses sistemas, o terminal já é padrão.</li>
+</ul>
+</section>
+<section id="checklist-do-leitor-10" class="level3" data-number="8.5.2">
+<h3 data-number="8.5.2" class="anchored" data-anchor-id="checklist-do-leitor-10"><span class="header-section-number">8.5.2</span> Checklist do leitor</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Configurar o Git Bash no RStudio (Windows).</label></li>
+<li><label><input type="checkbox">Abrir um novo terminal no painel <code>Terminal</code>.</label></li>
+<li><label><input type="checkbox">Reconhecer que em macOS/Linux esse ajuste não é necessário.</label></li>
+</ul>
+</section>
+</section>
+</section>
+<section id="atalhos-essenciais" class="level1" data-number="9">
+<h1 data-number="9"><span class="header-section-number">9</span> Atalhos essenciais</h1>
+<p>Atalhos economizam tempo e reduzem erros. A lista abaixo é enxuta e organizada por propósito. Use os que fizerem sentido agora e volte a esta seção quando precisar ganhar velocidade.</p>
+<p><strong>Navegação (Windows/Linux | macOS | Função)</strong></p>
+<ul>
+<li><code>Ctrl+1</code> | <code>⌘+1</code> | Ir para o painel <code>Source</code></li>
+<li><code>Ctrl+2</code> | <code>⌘+2</code> | Ir para o painel <code>Console</code></li>
+<li><code>Ctrl+3</code> | <code>⌘+3</code> | Ir para o painel <code>Environment</code></li>
+<li><code>Ctrl+4</code> | <code>⌘+4</code> | Ir para o painel <code>Output</code></li>
+<li><code>Ctrl+.</code> | <code>⌘+.</code> | Navegar para seções/funções/chunks</li>
+</ul>
+<p><strong>Quarto e execução (Windows/Linux | macOS | Função)</strong></p>
+<ul>
+<li><code>Ctrl+Shift+K</code> | <code>⌘+Shift+K</code> | Renderizar o documento Quarto</li>
+<li><code>Ctrl+Alt+I</code> | <code>⌘+Option+I</code> | Inserir um novo chunk</li>
+<li><code>Ctrl+Enter</code> | <code>⌘+Enter</code> | Executar a linha ou chunk atual</li>
+</ul>
+<p><strong>Edição (Windows/Linux | macOS | Função)</strong></p>
+<ul>
+<li><code>Ctrl+Shift+M</code> | <code>⌘+Shift+M</code> | Inserir o pipe do tidyverse (<code>%&gt;%</code>)</li>
+<li><code>Ctrl+Shift+.</code> | <code>⌘+Shift+.</code> | Inserir o pipe nativo do R (<code>|&gt;</code>)</li>
+<li><code>Alt+-</code> | <code>Option+-</code> | Inserir o operador de atribuição (<code>&lt;-</code>)</li>
+<li><code>Ctrl+Shift+C</code> | <code>⌘+Shift+C</code> | Comentar/descomentar a seleção</li>
+</ul>
+<p><strong>Console (Windows/Linux | macOS | Função)</strong></p>
+<ul>
+<li><code>Ctrl+L</code> | <code>⌘+L</code> | Limpar o console</li>
+<li><code>Esc</code> | <code>Esc</code> | Interromper a execução</li>
+</ul>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Dica</span>Extras
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><code>Ctrl+Shift+0</code> | <code>⌘+Shift+0</code> | Restaurar o layout padrão</li>
+<li><code>Tab</code> | <code>Tab</code> | Autocompletar comandos e objetos</li>
+<li><code>F1</code> | <code>F1</code> | Ajuda da função sob o cursor</li>
+<li><code>Alt+Shift+K</code> | <code>Option+Shift+K</code> | Abrir a lista completa de atalhos</li>
+<li><code>Ctrl+Alt+R</code> | <code>⌘+Option+R</code> | Executar todas as linhas/chunks do arquivo</li>
+</ul>
+</div>
+</div>
+<section id="erros-comuns-e-como-resolver-11" class="level3" data-number="9.0.1">
+<h3 data-number="9.0.1" class="anchored" data-anchor-id="erros-comuns-e-como-resolver-11"><span class="header-section-number">9.0.1</span> Erros comuns e como resolver</h3>
+<ul>
+<li>Tentar memorizar tudo de uma vez: comece pelos de navegação e execução.</li>
+<li>Usar atalhos sem saber o foco ativo: clique primeiro no painel desejado.</li>
+<li>Ignorar a lista completa: use <code>Alt+Shift+K</code>/<code>Option+Shift+K</code>.</li>
+</ul>
+</section>
+<section id="checklist-do-leitor-11" class="level3" data-number="9.0.2">
+<h3 data-number="9.0.2" class="anchored" data-anchor-id="checklist-do-leitor-11"><span class="header-section-number">9.0.2</span> Checklist do leitor</h3>
+<ul class="task-list">
+<li><label><input type="checkbox">Alternar entre <code>Source</code> e <code>Console</code>.</label></li>
+<li><label><input type="checkbox">Renderizar um documento Quarto pelo atalho.</label></li>
+<li><label><input type="checkbox">Interromper uma execução travada no console.</label></li>
+</ul>
+</section>
+<section id="exercícios" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="exercícios"><span class="header-section-number">9.1</span> Exercícios</h2>
+<ol type="1">
+<li><p>Explique a diferença entre <strong>R</strong> e <strong>RStudio</strong> usando a analogia motor/painel de controle.</p></li>
+<li><p>Identifique os quatro painéis principais do RStudio e descreva, em uma frase, o papel de cada um.</p></li>
+<li><p>Defina o que é um IDE e dê um exemplo do fluxo “escrever -&gt; executar -&gt; ver resultado”.</p></li>
+<li><p>Explique quando usar <code>install.packages()</code> e quando usar <code>library()</code>.</p></li>
+<li><p>Ajuste as configurações básicas recomendadas do RStudio (restore/save) e registre, em 3 a 4 linhas, por que essas opções ajudam em projetos.</p></li>
+<li><p>Crie um novo projeto no RStudio com um nome padronizado (sem espaços) e explique o que é um <strong>caminho relativo</strong> e por que ele facilita a reprodutibilidade.</p></li>
+<li><p>No projeto criado, gere as pastas <code>dados/</code>, <code>relatorios/</code> e <code>scripts/</code> e, dentro de <code>dados/</code>, crie <code>dados_brutos/</code> e <code>dados_limpos/</code>. Apresente o código R usado para criar as pastas.</p></li>
+<li><p>Crie um arquivo <code>.qmd</code> simples com um chunk que calcula a média de <code>c(2, 4, 6, 8)</code> e renderize o documento. Informe o resultado obtido.</p></li>
+</ol>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copiada");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copiada");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+      const outerScaffold = trigger.parentElement.cloneNode(true);
+      const codeEl = outerScaffold.querySelector('code');
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./04_capitulo.html" class="pagination-link" aria-label="Um Estudo de Caso Introdutório">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Um Estudo de Caso Introdutório</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./referencias.html" class="pagination-link" aria-label="Referências">
+        <span class="nav-page-text">Referências</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

@@ -21,6 +21,7 @@ book:
     - 02_capitulo.qmd
     - 03_capitulo.qmd
     - 04_capitulo.qmd
+    - 05_capitulo.qmd
     - referencias.qmd
 
 bibliography: referencias.bib
