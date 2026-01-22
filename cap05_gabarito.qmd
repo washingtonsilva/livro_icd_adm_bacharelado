@@ -1,0 +1,55 @@
+# Gabarito — Capítulo 5
+
+## Exercício 1
+
+R é a linguagem ("motor"). RStudio é o IDE ("painel de controle").
+
+## Exercício 2
+
+Painel `Source`: editar arquivos.
+Painel `Console`: executar comandos.
+Painel `Environment`: ver objetos.
+Painel `Output`: ver arquivos, gráficos e ajuda.
+
+## Exercício 3
+
+IDE integra editor, execução e visualização. Exemplo: escrever no painel `Source`,
+executar no painel `Console` e ver o gráfico no painel `Output`.
+
+## Exercício 4
+
+`install.packages()` instala uma vez; `library()` carrega a cada sessão.
+
+## Exercício 5
+
+Desative restaurações automáticas e defina "Save workspace to .Rdata: never".
+
+## Exercício 6
+
+Caminho relativo aponta para arquivos a partir da pasta do projeto.
+
+## Exercício 7
+
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+
+dir.create("dados", showWarnings = FALSE)
+dir.create("relatorios", showWarnings = FALSE)
+dir.create("scripts", showWarnings = FALSE)
+dir.create("dados/dados_brutos", recursive = TRUE, showWarnings = FALSE)
+dir.create("dados/dados_limpos", recursive = TRUE, showWarnings = FALSE)
+```
+
+## Exercício 8
+
+```{r}
+#| echo: true
+#| message: false
+#| warning: false
+
+mean(c(2, 4, 6, 8))
+```
+
+Resultado: 5.
