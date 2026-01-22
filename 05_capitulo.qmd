@@ -1,10 +1,9 @@
 # Capítulo 5 — RStudio e fluxo de trabalho
 
 Este capítulo dá o primeiro passo para um trabalho organizado e reproduzível
-com R: entender o RStudio, configurar o ambiente e adotar boas práticas desde o
-início. A ideia é que o leitor consiga estudar e produzir relatórios com
-autonomia, inclusive em contextos administrativos simples, como análises de
-vendas ou custos.
+com as ferramentas que utilizaremos: entender o RStudio, configurar o ambiente e 
+adotar boas práticas desde o início. 
+
 
 ::: {.callout-note icon="false"}
 ## Objetivos do capítulo
@@ -18,10 +17,14 @@ vendas ou custos.
 ::: {.callout-note icon="false"}
 ## Pré-requisitos
 
-- Ter o R instalado no computador.
-- Acesso à internet para baixar o RStudio e instalar pacotes quando necessário.
+- Ter a linguagem R instalado no computador.
+- Acesso à internet para baixar e instalar o RStudio 
+- Acesso à internet para instalar pacotes quando necessário.
 - Noções básicas de organização de arquivos e pastas.
 :::
+
+
+
 
 ## Instalação do RStudio
 
@@ -45,7 +48,10 @@ análogo ao do Windows: baixar, executar e concluir a instalação.
 Com o RStudio instalado, vamos entender o que ele é e por que um IDE facilita
 o trabalho de quem está começando.
 
-## O que é o RStudio e o que é um IDE
+
+
+
+## O que é o RStudio
 
 O RStudio é um Ambiente de Desenvolvimento Integrado (IDE) voltado para a
 linguagem R. Em vez de abrir programas separados para escrever, executar e
@@ -61,11 +67,40 @@ gráficos e organização de projetos. Isso reduz erros e acelera o aprendizado.
 Para quem está começando, a vantagem prática é simples: você escreve um script,
 executa no console e vê o resultado sem sair do mesmo ambiente.
 
+
+### Por que usar o RStudio?
+
+- **Interface Amigável**: O RStudio oferece uma interface gráfica intuitiva 
+que facilita o trabalho, especialmente para iniciantes, com acesso visual 
+a scripts, console, dados e gráficos simultaneamente.
+
+- **Aumento de Produtividade**: Recursos como autocompletar código, 
+atalhos de teclado e visualização integrada de gráficos aceleram 
+significativamente o fluxo de trabalho.
+
+- **Gestão de Projetos**: O sistema de projetos do RStudio organiza seu 
+trabalho, mantendo todos os arquivos relacionados em um único local.
+
+- **Integração com outras ferramentas**: Oferece suporte a várias 
+linguagens (R, Python, SQL), integra-se com sistemas de controle de 
+versão como Git, e facilita a publicação de conteúdo via sistema Quarto.
+
+- **Reprodutibilidade Científica**: Facilita a criação de documentos 
+reproduzíveis que combinam código, resultados e texto narrativo, essenciais 
+para pesquisa científica e relatórios corporativos.
+
+- **Comunidade Ativa**: Desenvolvido pela Posit (anteriormente RStudio), 
+conta com uma grande comunidade de usuários e desenvolvedores que 
+constantemente melhoram a ferramenta.
+
+
+
 ### Erros comuns e como resolver
 
 - Confundir RStudio com a linguagem R: lembre que são ferramentas diferentes.
 - Abrir o RStudio sem ter o R instalado: instale o R antes do IDE.
 - Ignorar o painel de ajuda: use a guia `Help` para consultar funções.
+
 
 ### Checklist do leitor
 
@@ -73,13 +108,20 @@ executa no console e vê o resultado sem sair do mesmo ambiente.
 - [ ] Explicar por que o RStudio facilita o trabalho inicial.
 - [ ] Verificar que o R está instalado no computador.
 
-## R (linguagem) vs RStudio (IDE)
+
+
+
+### R (linguagem) vs RStudio (IDE)
 
 ![](https://d33wubrfki0l68.cloudfront.net/0b4d0569b2ddf6147da90b110fbb2a17653c8b08/f06f3/images/shutterstock/r_vs_rstudio_1.png){width="100%" fig-align="center"}
 
-O R é a linguagem (o "motor"). O RStudio é o painel de controle que facilita
-o uso desse motor. A analogia ajuda a lembrar que são instalados e usados em
-conjunto, mas com papéis diferentes.
+R é uma **linguagem de programação**, enquanto o RStudio é um 
+**Ambiente de Desenvolvimento Integrado** que contém recursos que 
+facilitam o uso da linguagem R.
+
+Utilizando a analogia de um carro, R seria o motor enquanto o RStudio 
+seria o painel de controles (*dashboard*). Portanto, é necessário ter 
+os dois softwares instalados.
 
 ### Erros comuns e como resolver
 
@@ -93,10 +135,12 @@ conjunto, mas com papéis diferentes.
 - [ ] Explicar por que ambos devem estar instalados.
 - [ ] Indicar onde executar comandos no RStudio.
 
-# RStudio: Uma Visão Geral
 
 
-## Interface do RStudio
+
+## RStudio: Uma Visão Geral
+
+### Interface do RStudio
 
 Na primeira abertura, você verá quatro painéis. Eles funcionam em conjunto
 para escrever, executar, inspecionar objetos e visualizar resultados.
@@ -107,12 +151,10 @@ Na figura acima, cada painel tem um papel. Vamos percorrê-los começando pelo
 `Source`, que é onde você escreve.
 
 
-
-
-## Painel: **Source**
+### Painel: **Source**
 
 - O painel `Source` permite a visualização e edição de vários arquivos 
-relacionados a diversas linguagens, tais como: `.R`, `.qmd`,`.py`
+relacionados a diversas linguagens, tais como: `.R`, `.qmd`,
 ou arquivos de texto gerais como `.txt` ou `.md.` 
 
 - Por padrão, é o painel superior esquerdo e pode ser iniciado abrindo 
@@ -122,8 +164,7 @@ qualquer arquivo editável no RStudio.
 no painel.
 
 
-
-## Painel: **Console**
+### Painel: **Console**
 
 - Esse painel fornece uma área para executar o código interativamente, isto
 é, você pode "conversar" diretamente com o interpretador da linguagem R.
@@ -132,8 +173,7 @@ no painel.
 console Python.
 
 
-
-## Painel: **Environment**
+### Painel: **Environment**
 
 **Guia `Environment`**
 
@@ -147,8 +187,7 @@ console Python.
   de uma vassoura para remover todos os objetos ativos.
 
 
-
-## Painel: **Output**
+### Painel: **Output**
 
 Por padrão, o painel `Output` é o painel inferior direito e 
 contém as seguintes guias: 
@@ -199,6 +238,7 @@ exclusão de imagens e um ícone de vassoura que limpará todos os gráficos.
 
 - Há também um botão para instalação e atualização de pacotes. 
 
+
 ### Erros comuns e como resolver
 
 - Não saber onde digitar comandos: use o `Console` para executar.
@@ -206,11 +246,13 @@ exclusão de imagens e um ícone de vassoura que limpará todos os gráficos.
 - Salvar arquivos fora do projeto: trabalhe sempre dentro da pasta do projeto.
 - Confundir `Files` com o sistema inteiro: ele mostra o *working directory*.
 
+
 ### Checklist do leitor
 
 - [ ] Localizar `Source`, `Console`, `Environment` e `Output`.
 - [ ] Explicar o papel da guia `Files` como pasta de trabalho.
 - [ ] Abrir e alternar arquivos no `Source`.
+
 
 
 
@@ -239,8 +281,6 @@ tidyverse usethis
 ![](img/05-cap/install_packages.jpeg){fig-align="center"}
 
 
-
-
 ### Usando comandos
 
 - Uma forma alternativa de instalar pacotes é usando a linha de comando. 
@@ -259,10 +299,8 @@ install.packages(c("tidyverse", "usethis"))
 
 
 
-## Pacotes: atenção
-
 ::: {.callout-note}
-## Instalação e carregamento de pacotes
+## Atenção! Instalação e carregamento de pacotes
 
 - Em um computador, você instala o pacote **uma única vez**.
 
@@ -280,6 +318,7 @@ library(usethis)
 .
 .
 ```
+
 :::
 
 
@@ -306,6 +345,9 @@ repita a instalação.
 - [ ] Indicar quando usar `library()`.
 - [ ] Reconhecer que a instalação exige internet.
 
+
+
+
 ## Configurações Básicas Recomendadas do RStudio
 
 Estas opções evitam mensagens e comportamentos confusos ao iniciar o RStudio
@@ -328,11 +370,6 @@ em diferentes projetos.
 
 ![](img/05-cap/rstudio_config_basica.jpeg){fig-align="center" width="90%"}
 
-### Erros comuns e como resolver
-
-- Deixar o RStudio restaurar sessões antigas: desmarque as opções acima.
-- Salvar `.RData` automaticamente: escolha "*never*".
-- Reabrir arquivos de outro projeto sem perceber: confirme o projeto ativo.
 
 ### Checklist do leitor
 
@@ -345,203 +382,222 @@ em diferentes projetos.
 
 # Projetos RStudio e reprodutibilidade
 
-Depois de conhecer a interface, o próximo passo para trabalhar com segurança
-é organizar seu trabalho em projetos. Isso evita confusões com arquivos e
-torna o seu estudo mais reprodutível. Por exemplo, um projeto pode reunir os
-dados, os scripts e os relatórios de uma análise simples de vendas.
+Depois de conhecer a interface do RStudio, o próximo passo para trabalhar
+de forma organizada e segura é estruturar o trabalho em projetos. Projetos
+reduzem confusões com arquivos, facilitam a colaboração e tornam análises
+mais reprodutíveis ao longo do tempo.
 
-::: {.callout-note icon="false"}
-## Visão Geral
+Em termos práticos, um projeto reúne, em uma única pasta, todos os
+elementos relacionados a uma análise: dados, scripts, relatórios e
+documentação. Essa prática é amplamente adotada por analistas e cientistas
+de dados e é suportada nativamente pelo RStudio por meio dos *RStudio
+Projects*.
 
-- Cientistas e analistas de dados mantêm todos os arquivos de um projeto
-em uma única pasta, com subpastas organizadas (dados, scripts, relatórios).
+::: {.callout-note icon=false}
+## Visão geral
 
-- Essa prática é tão comum que o RStudio oferece suporte direto por meio dos
-`Projects`.
+- Em projetos de análise de dados, todos os arquivos relevantes ficam
+  organizados em uma única pasta, estruturada em subpastas bem definidas
+  (por exemplo, dados, scripts e relatórios).
 
-- Os *RStudio Projects* (em português, *Projetos RStudio*) tornam simples 
-organizar seus projetos em vários contextos, cada um com sua própria 
-pasta e documentos diversos.
+- Essa organização é tão comum que o RStudio oferece suporte direto por meio
+  dos *Projects*, permitindo trabalhar com diferentes projetos de forma
+  isolada e consistente.
 
-- Seja com R ou Python, criar um projeto ajuda a manter tudo no lugar certo.
+- Ao ativar um projeto, a pasta do projeto passa a ser o diretório de
+  trabalho (*working directory*) da sessão, o que facilita o uso de
+  caminhos relativos.
 
-- Além disso, projetos reduzem problemas com caminhos absolutos. Você passa
-a usar caminhos **relativos**, ou seja, arquivos são encontrados com base na
-pasta do projeto, e não em caminhos longos do sistema.
+- O uso de caminhos relativos reduz erros, aumenta a portabilidade do
+  código e é um elemento central da reprodutibilidade.
 :::
 
-### Erros comuns e como resolver
+## Práticas ruins e como resolver
 
-- Trabalhar sem projeto e "perder" arquivos: crie um projeto para cada trabalho.
-- Misturar arquivos de disciplinas diferentes: use uma pasta por disciplina.
-- Usar caminhos absolutos: prefira caminhos relativos dentro do projeto.
+- Trabalhar sem projeto e “perder” arquivos: crie um projeto para cada
+  análise.
+- Misturar arquivos de projetos diferentes: use uma pasta por projeto.
+- Utilizar caminhos absolutos longos: prefira caminhos relativos dentro do
+  projeto.
 
 ### Checklist do leitor
 
-- [ ] Explicar por que projetos ajudam na reprodutibilidade.
+- [ ] Explicar por que projetos facilitam a reprodutibilidade.
 - [ ] Definir o que é um caminho relativo.
-- [ ] Adotar um projeto para cada trabalho.
-
+- [ ] Adotar um projeto para cada análise de dados.
 
 
 ## Criando projetos no RStudio
 
-Os Projetos RStudio estão associados a pastas. Você pode criar:
+Projetos RStudio estão sempre associados a uma pasta no sistema de
+arquivos. Há duas formas principais de criar um projeto:
 
 - Em uma nova pasta, que ainda não existe.
+- Em uma pasta existente, como um repositório previamente clonado do
+  GitHub (**recomendado**).
 
-- Em uma pasta existente, por exemplo, uma pasta que contém um 
-repositório clonado do GitHub.
+É importante destacar que um projeto RStudio é conceitualmente distinto
+do controle de versão com Git. Um projeto pode existir sem Git, mas, neste
+livro, recomenda-se fortemente que projetos sejam versionados, pois isso
+reforça boas práticas profissionais.
 
-O caminho mais curto para criar um projeto no RStudio envolve:
+Suponha que um aluno hipotético, João Silva, deseje criar um projeto para a
+disciplina Introdução à Ciência de Dados. Um nome adequado para a pasta e
+para o projeto seria `joaosilva_icd`, evitando espaços, acentos e caracteres
+especiais.
 
-1. Clique no botão `Project`, em seguida, clique em `New Project`, 
-no canto superior direito do RStudio:
+A seguir, descreve-se o procedimento para criar um projeto a partir de uma
+pasta existente (por exemplo, um repositório clonado do GitHub):
+
+1. Clique no menu `Project` e, em seguida, em `New Project`, no canto
+   superior direito do RStudio.
 
 ![](img/05-cap/menu_projects.jpeg){fig-align="center" width="100%"}
 
-- Em seguida, clique em `New Directory`:
+2. Na janela seguinte, selecione a opção `Existing Directory`.
 
 ![](img/05-cap/new_proj01.png){fig-align="center" width="80%"}
 
+3. Clique em `Browse` e selecione a pasta que servirá como diretório do
+   projeto (por exemplo, a pasta clonada do GitHub).
 
-2. Na janela seguinte selecione `New Project`:
+4. Confirme a criação do projeto clicando em `Create Project`.
 
-![](img/05-cap/new_proj2.png){fig-align="center" width="80%"}
-
-
-3. Escolha a pasta dentro da qual você criará a subpasta 
-**seunome_icd2025** (que será a pasta do projeto), 
-clicando no botão **Browse**. 
-
-::: {.callout-tip}
-## Importante! Nome da Pasta e do Projeto
-
-No caso de um exemplo hipotético chamado João Silva, o nome da subpasta 
-seria `joaosilva_icd2025`, tente seguir esse padrão e **não** utilize 
-acentos, espaços e caracteres especiais para nomear pastas, projetos 
-e arquivos. 
-:::
-
-4. Digite o nome do projeto (por exemplo, `joaosilva_icd2025`) no campo 
-de texto abaixo de **Directory Name** e clique na caixa **Create a git repository**:
-
-![](img/05-cap/new_project04.jpeg){fig-align="center" width="80%"}
-
-
-
-5. Clique em **Create Project** para criar o projeto. Em seguida, 
-você verá algo similar a seguinte imagem no RStudio:
+Após esse procedimento, o RStudio criará o arquivo `.Rproj` dentro da
+pasta selecionada e ativará automaticamente o projeto.
 
 ![](img/05-cap/projeto_criado.jpeg){fig-align="center" width="80%"}
 
+
 ### Erros comuns e como resolver
 
-- Criar projetos com nomes confusos: use um padrão simples e sem espaços.
-- Salvar arquivos fora da pasta do projeto: confira a guia `Files`.
-- Esquecer de ativar o projeto ao abrir o RStudio: selecione no menu `Project`.
+- Criar projetos com nomes confusos ou inconsistentes: adote um padrão
+  simples.
+- Salvar arquivos fora da pasta do projeto: verifique sempre a guia
+  `Files`.
+- Abrir o RStudio sem ativar o projeto correto: selecione o projeto no menu
+  `Project`.
 
 ### Checklist do leitor
 
 - [ ] Criar um projeto com nome padronizado.
-- [ ] Localizar a pasta do projeto na guia `Files`.
-- [ ] Reabrir o projeto pelo menu `Project`.
+- [ ] Identificar a pasta associada ao projeto.
+- [ ] Abrir e fechar projetos pelo menu `Project`.
 
 
+## O que acontece quando um projeto é criado
 
+Quando um novo projeto é criado ou ativado, o RStudio:
 
-## Projeto Criado
+- Cria um arquivo `.Rproj` dentro da pasta do projeto.
+- Define essa pasta como diretório de trabalho da sessão.
+- Isola o ambiente de trabalho em relação a outros projetos.
 
-Quando um novo projeto é criado, o RStudio:
-
-- Cria um arquivo de projeto (`joaosilva_icd2025.Rproj`) dentro 
-da pasta do projeto. 
-
-- Carrega o projeto no RStudio e exibe seu nome no menu 
-**Projects**.
-
-- Com um projeto criado, toda vez que abrir o RStudio, basta
-clicar em Project; logo abaixo aparece o nome do projeto. Clique no nome
-para abrir o projeto.
+A partir desse ponto, todos os arquivos criados, scripts executados e
+relatórios gerados devem estar contidos na pasta do projeto.
 
 ### Erros comuns e como resolver
 
-- Abrir o RStudio e começar a trabalhar sem projeto: selecione o projeto ativo.
-- Guardar arquivos soltos na área de trabalho: mova para a pasta do projeto.
-- Esquecer o arquivo `.Rproj`: ele indica qual pasta é o projeto.
+- Trabalhar fora de um projeto ativo: confirme o nome do projeto no menu
+  `Project`.
+- Manter arquivos soltos fora da pasta do projeto: mova-os para a estrutura
+  adequada.
+- Ignorar o arquivo `.Rproj`: ele define qual pasta corresponde ao projeto.
 
 ### Checklist do leitor
 
-- [ ] Identificar o arquivo `.Rproj`.
-- [ ] Reabrir o projeto a partir do menu `Project`.
-- [ ] Reconhecer que o projeto define a pasta de trabalho.
+- [ ] Reconhecer o arquivo `.Rproj`.
+- [ ] Explicar o papel do projeto como referência para caminhos relativos.
+- [ ] Relacionar projetos com reprodutibilidade e trabalho em equipe.
 
 
 
+## Estrutura recomendada para o projeto RStudio criado
 
-## Estrutura Recomendada para o Projeto RStudio Criado
+Para organizar adequadamente os arquivos de projetos de análise de dados,
+recomenda-se adotar, desde o início, uma estrutura clara e consistente de
+pastas. Essa organização facilita a reprodutibilidade, a colaboração e a
+manutenção do trabalho ao longo do tempo, além de tornar mais explícitas as
+etapas do processo analítico.
 
-Para organizar adequadamente os arquivos de seus projetos envolvendo a 
-análise de dados, recomendamos que você adote a seguinte estrutura inicial
-de pastas para seu projeto:
+Neste livro, adotamos uma estrutura inicial simples, mas alinhada a boas
+práticas amplamente utilizadas em projetos profissionais e acadêmicos de
+Ciência de Dados. Essa estrutura serve como ponto de partida e pode ser
+expandida conforme a complexidade do projeto aumenta.
 
-1. Primeiramente, vamos criar duas pastas principais:
+### Estrutura básica do projeto
 
-- **dados**: Para armazenar os conjuntos de dados do projeto.
-- **relatorios**: Para armazenar os relatórios Quarto elaborados.
-- **scripts**: Para armazenar os scripts R utilizados.
+Inicialmente, criamos as seguintes pastas principais:
 
-2. Dentro da pasta **dados**, vamos criar duas subpastas:
+- **dados/**: destinada ao armazenamento dos conjuntos de dados do projeto.
+- **relatorios/**: destinada aos relatórios produzidos com Quarto.
+- **scripts/**: destinada aos scripts R utilizados nas análises.
 
-- **dados_brutos**: Para armazenar os dados originais, sem modificações.
-- **dados_limpos**: Para armazenar dados após limpeza e transformações.
+Dentro da pasta **dados/**, criamos duas subpastas com papéis bem definidos:
 
-3. Dentro da pasta **relatorios**, vamos criar a subpasta:
+- **dados_brutos/**: para armazenar os dados originais, sem qualquer
+  modificação.
+- **dados_limpos/**: para armazenar os dados após limpeza, tratamento e
+  transformações.
 
-- **testes**: Para armazenar documentos Quarto de teste e experimentos.
+Essa separação explícita evita que dados originais sejam sobrescritos,
+documenta o fluxo de preparação dos dados e contribui diretamente para a
+reprodutibilidade das análises.
 
-Esta estrutura fornece uma organização clara que separa dados de documentos 
-e também distingue entre dados brutos e processados (ou limpos, no 
-jargão de Ciência de Dados), seguindo boas práticas de reprodutibilidade.
+Essa estrutura será utilizada de forma consistente nos exercícios e nos
+exemplos apresentados ao longo do livro, servindo como referência inicial 
+para a organização dos projetos desenvolvidos pelo leitor.
 
-Para criar esta estrutura usando o RStudio:
+Considerando o projeto hipotético de João Silva para a disciplina
+*Introdução à Ciência de Dados* em 2026, a estrutura inicial do projeto
+ficaria da seguinte forma:
 
-1. Na Guia `Files` do RStudio, clique no botão `New Folder` para criar 
-as pastas principais `dados`, `relatorios` e `scripts`:
+```
+joaosilva_icd2026/
+├── dados/
+│   ├── dados_brutos/
+│   └── dados_limpos/
+├── relatorios/
+├── scripts/
+├── README.md
+└── joaosilva_icd2026.Rproj
+```
+
+Essa organização também favorece o trabalho em equipe, pois permite que
+outras pessoas compreendam rapidamente onde encontrar dados, scripts e
+relatórios, reduzindo ambiguidades e erros operacionais.
+
+### Criando pastas pelo RStudio
+
+As pastas podem ser criadas diretamente pela interface gráfica do RStudio.
+Na guia **Files**, utilize o botão **New Folder** para criar as pastas
+necessárias e navegue entre os diretórios conforme indicado.
 
 ![](img/05-cap/criar_pastas.jpeg){fig-align="center" width="100%"}
 
-
-2. Navegue para dentro da pasta `dados` e crie as subpastas `dados_brutos` e `dados_limpos`.
-
-Considerando o caso do exemplo hipotético chamado João Silva, a 
-estrutura final do projeto ficaria assim:
-
-```
-joaosilva_icd2025/
-│
-├── dados/
-│   ├── dados_brutos
-│   └── dados_limpos
-|
-├── joaosilva_icd2025.Rproj
-|
-├── relatorios/
-│   └── testes
-└── scripts/
-```
+::: {.callout-tip}
+Além da interface gráfica, é possível criar pastas e arquivos utilizando
+funções da própria linguagem R, como `dir.create()`. Essa abordagem permite
+documentar explicitamente a estrutura do projeto no código e reproduzi-la
+automaticamente em outros ambientes, sendo especialmente útil em projetos
+colaborativos ou versionados com Git.
+:::
 
 ### Erros comuns e como resolver
 
-- Misturar dados brutos com dados limpos: use subpastas separadas.
-- Salvar relatórios fora de `relatorios`: mantenha o padrão.
-- Criar pastas com acentos e espaços: prefira nomes simples.
+- Misturar dados brutos com dados limpos: utilize subpastas separadas.
+- Salvar relatórios fora da pasta `relatorios/`: mantenha um padrão claro.
+- Criar pastas com espaços, acentos ou caracteres especiais: prefira nomes
+  simples e consistentes.
 
 ### Checklist do leitor
 
-- [ ] Criar `dados/`, `relatorios/` e `scripts/`.
-- [ ] Separar `dados_brutos` e `dados_limpos`.
-- [ ] Justificar por que essa estrutura ajuda na reprodutibilidade.
+- [ ] Criar as pastas `dados/`, `relatorios/` e `scripts/`.
+- [ ] Identificar corretamente onde novos scripts e relatórios devem ser
+      salvos dentro do projeto.
+- [ ] Separar dados brutos e dados processados em subpastas distintas.
+- [ ] Explicar por que essa estrutura contribui para a reprodutibilidade e
+      o trabalho em equipe.
 
 
 
@@ -591,7 +647,7 @@ RStudio:
 
 
 
-## Configurações opcionais (Windows)
+## Configurações recomendadas (Windows)
 
 Se você usa Windows e deseja o Git Bash como terminal no RStudio, siga as
 etapas abaixo. Em macOS e Linux, o terminal padrão já é suficiente.
@@ -704,29 +760,142 @@ precisar ganhar velocidade.
 - [ ] Renderizar um documento Quarto pelo atalho.
 - [ ] Interromper uma execução travada no console.
 
-## Exercícios
+
+
+
+# Exercícios
 
 1. Explique a diferença entre **R** e **RStudio** usando a analogia
    motor/painel de controle.
 
+::: {.callout-tip collapse=true}
+## Reposta
+
+R é a linguagem de programação responsável por executar cálculos,
+manipular dados e gerar resultados, desempenhando o papel de “motor”.
+
+RStudio é um Ambiente de Desenvolvimento Integrado que organiza e facilita
+o uso de R, oferecendo editor de código, console, visualização de objetos
+e resultados em um único ambiente.
+
+:::
+
+
+
 2. Identifique os quatro painéis principais do RStudio e descreva, em uma
    frase, o papel de cada um.
+
+::: {.callout-tip collapse=true}
+## Reposta
+
+- **Source**: edição de scripts, relatórios e outros arquivos de código.
+- **Console**: execução interativa de comandos em R.
+- **Environment**: visualização dos objetos criados na sessão.
+- **Output**: acesso a arquivos, gráficos, pacotes e sistema de ajuda.
+
+:::
+
+
 
 3. Defina o que é um IDE e dê um exemplo do fluxo "escrever -> executar -> ver
    resultado".
 
+::: {.callout-tip collapse=true}
+## Reposta
+
+Um IDE integra ferramentas para edição, execução e visualização de código
+em um único ambiente. No RStudio, o fluxo típico consiste em escrever o
+código no painel *Source*, executá-lo no *Console* e visualizar os
+resultados no painel *Output*.
+:::
+
+
+
 4. Explique quando usar `install.packages()` e quando usar `library()`.
 
+::: {.callout-tip collapse=true}
+## Reposta
+
+A função `install.packages()` é utilizada para instalar um pacote no
+computador e precisa ser executada apenas uma vez. Já a função
+`library()` carrega o pacote instalado na sessão atual do R e deve ser
+executada sempre que uma nova sessão é iniciada.
+
+:::
+
+
+
 5. Ajuste as configurações básicas recomendadas do RStudio (restore/save) e
-   registre, em 3 a 4 linhas, por que essas opções ajudam em projetos.
+   registre, em 3 a 5 linhas, por que essas opções ajudam em projetos.
+
+::: {.callout-tip collapse=true}
+## Reposta
+
+Desativar a restauração automática do ambiente e o salvamento do arquivo
+`.RData` torna o comportamento das sessões mais previsível. Essas opções
+reduzem dependências implícitas do ambiente anterior, facilitam a
+reprodução das análises e evitam erros causados por objetos carregados
+automaticamente sem controle explícito do código.
+
+:::
+
+
 
 6. Crie um novo projeto no RStudio com um nome padronizado (sem espaços) e
    explique o que é um **caminho relativo** e por que ele facilita a
    reprodutibilidade.
 
-7. No projeto criado, gere as pastas `dados/`, `relatorios/` e `scripts/` e,
-   dentro de `dados/`, crie `dados_brutos/` e `dados_limpos/`. Apresente o
-   código R usado para criar as pastas.
+::: {.callout-tip collapse=true}
+## Reposta
 
-8. Crie um arquivo `.qmd` simples com um chunk que calcula a média de
-   `c(2, 4, 6, 8)` e renderize o documento. Informe o resultado obtido.
+Caminhos relativos referenciam arquivos a partir da pasta raiz do projeto,
+em vez de utilizar um endereço fixo no computador. Isso permite que o
+mesmo projeto funcione corretamente em diferentes máquinas e sistemas
+operacionais, facilitando o trabalho em equipe, a reprodutibilidade e o
+uso de controle de versão com Git e GitHub.
+
+:::
+
+
+
+7. Neste capítulo, estamos adotando a prática de organizar projetos de
+   análise de dados por meio de uma estrutura clara de diretórios.
+   Embora essas pastas possam ser criadas manualmente pelo sistema
+   operacional, utilizar recursos da própria linguagem R traz duas
+   vantagens importantes: (i) documenta explicitamente a estrutura do
+   projeto e (ii) permite que ela seja reproduzida de forma automática
+   em qualquer ambiente.
+
+   Considerando o projeto RStudio recém-criado e ainda vazio, utilize a
+   função `dir.create()` no Console do RStudio para criar a seguinte
+   estrutura de pastas:
+
+   - a pasta `dados/`, contendo as subpastas `dados_brutos/` e
+     `dados_limpos/`;
+   - a pasta `relatorios/`;
+   - a pasta `scripts/`.
+
+   Apresente o código R utilizado para criar essas pastas.
+
+::: {.callout-tip collapse=true}
+## Resposta
+
+```{r}
+#| eval: false
+
+# cria a pasta principal de dados
+dir.create("dados")
+
+# cria as subpastas de dados
+dir.create("dados/dados_brutos")
+dir.create("dados/dados_limpos")
+
+# cria a pasta de relatórios
+dir.create("relatorios")
+
+# cria a pasta de scripts
+dir.create("scripts")
+
+:::
+
+
