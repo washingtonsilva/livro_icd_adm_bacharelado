@@ -1,4 +1,4 @@
-# Parte 1
+# Fundamentos da Ciência de Dados
 
 Esta parte do livro tem como objetivo apresentar os fundamentos conceituais,
 organizacionais e metodológicos da Ciência de Dados, com foco em aplicações

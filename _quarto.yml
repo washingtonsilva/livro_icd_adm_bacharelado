@@ -18,7 +18,7 @@ book:
     - index.qmd
     - introducao.qmd
 
-    - part: "Parte 1: Fundamentos da Ciência de Dados"
+    - part: "Parte 1"
       chapters:
         - parte1.qmd
         - 01_capitulo.qmd
