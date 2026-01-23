@@ -1,6 +1,6 @@
 # Visão Geral de Ciência de Dados
 
-## Introdução e contextualização
+## Introdução
 
 Nas últimas décadas, dados passaram a ocupar um papel central nas decisões
 econômicas, organizacionais e governamentais. Atividades cotidianas como
@@ -16,7 +16,7 @@ Ciência de Dados se tornou uma área central no mundo contemporâneo.
 
 
 
-## A economia de dados: um breve histórico
+## A Economia de Dados: Um Breve Histórico
 
 As raízes da economia de dados remontam ao século XIX, quando jornais
 norte-americanos passaram a coletar informações sistemáticas sobre seus
@@ -63,7 +63,7 @@ recurso central que condiciona inovação, eficiência e poder econômico
 
 
 
-## Big Data e a explosão do volume de dados
+## Big Data e a Explosão do Volume de Dados
 
 ![Capa da revista @economist2010 sobre o dilúvio de dados.](img/01-cap/deluge.jpg){#fig-data-deluge
   fig-alt="Capa da revista The Economist com o título 'The Data Deluge'."
@@ -75,7 +75,7 @@ recurso central que condiciona inovação, eficiência e poder econômico
   width="70%"
 }
 
-A matéria *The Data Deluge*, publicada pela *The Economist* 
+O relatório especial *The Data Deluge*, publicado pela *The Economist* 
 [@economist2010], marcou um ponto de inflexão na forma como 
 economistas, gestores e formuladores de políticas passaram a enxergar 
 os dados na economia contemporânea. O texto parte da
@@ -108,7 +108,7 @@ administradores, economistas e profissionais das ciências sociais
 aplicadas, que passam a lidar com um ambiente decisório cada vez mais
 orientado por dados.
 
-O crescimento exponencial da produção de dados levou ao surgimento do conceito
+Este crescimento exponencial da produção de dados levou ao surgimento do conceito
 de *Big Data*, frequentemente caracterizado pelos chamados *cinco Vs*: volume,
 velocidade, variedade, veracidade e valor. Esses atributos ajudam a
 compreender não apenas a quantidade de dados gerados, mas também os desafios
@@ -129,7 +129,7 @@ análise. Não por acaso, publicações de referência na área de negócios
 passaram a destacar dados como um dos recursos mais valiosos da economia
 contemporânea.
 
-Um marco simbólico importante na consolidação da chamada economia de dados foi
+Outro marco simbólico importante na consolidação da chamada economia de dados foi
 a capa da revista *The Economist*, publicada em 2017, cujo título era 
 *The World’s Most Valuable Resource* (“O recurso mais valioso do mundo”) e cujo
 subtítulo anunciava *Data and the new rules of competition* (“Dados e as novas
@@ -194,13 +194,13 @@ a diversidade de formações presentes em equipes de dados.
 
 
 
-## Metodologias e processos: CRISP-DM
+## Metodologias e Processos: CRISP-DM
 
 A prática da Ciência de Dados costuma ser organizada por meio de
-metodologias de projeto. Uma das mais difundidas é o CRISP-DM (*Cross
-Industry Standard Process for Data Mining*), que estrutura o trabalho em
-etapas iterativas, desde o entendimento do problema de negócio até a
-implantação de soluções baseadas em dados.
+metodologias de projeto. Uma das mais difundidas é o CRISP-DM 
+(*Cross Industry Standard Process for Data Mining*) [@ibm_crisp_dm], 
+que estrutura o trabalho em etapas iterativas, desde o entendimento 
+do problema de negócio até a implantação de soluções baseadas em dados.
 
 ```{r}
 #| label: fig-crispdm
