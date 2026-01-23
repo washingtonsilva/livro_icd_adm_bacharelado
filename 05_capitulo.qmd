@@ -3,13 +3,10 @@
 
 Este capítulo apresenta um estudo de caso introdutório com o objetivo de
 integrar, em um único exemplo, conceitos, ferramentas e práticas que serão
-aprofundados ao longo dos capítulos seguintes. A intenção não é esgotar os
-tópicos abordados, mas oferecer uma visão geral do processo de análise de
-dados no contexto da metodologia CRISP-DM.
-
-O estudo de caso é baseado em um exemplo fictício adaptado do livro de
-Jung (2024) [@jung2024modern], sendo aqui utilizado exclusivamente com
-finalidade didática.
+aprofundados ao longo dos capítulos seguintes. A intenção, certamente, 
+não é esgotar os tópicos abordados, mas oferecer uma visão geral do processo 
+de análise de dados no contexto da metodologia CRISP-DM. Este estudo de 
+caso é baseado em um exemplo fictício adaptado do livro de @jung2024modern.
 
 
 
@@ -34,6 +31,8 @@ seunome_icd2025/
 │   └── limpos/     # dados após limpeza e transformações
 ├── relatorios/
 │   └── 01-relatorio/
+|── scripts/
+|   └── 01-importacao.R
 ├── README.md
 └── seunome_icd2025.Rproj
 ```
@@ -42,13 +41,11 @@ Essa separação explícita evita que dados originais sejam sobrescritos,
 torna as etapas do processo analítico mais transparentes e facilita a
 verificação e a reprodução das análises realizadas.
 
-Na prática, recomenda-se criar inicialmente um repositório vazio no
+Na prática, recomendamos **fortemente** criar inicialmente um repositório vazio no
 GitHub, cloná-lo localmente e, na pasta clonada do repositório, criar um
 projeto RStudio. A partir desse projeto, os arquivos e diretórios podem
-ser organizados de forma estruturada.
-
-O controle de versão com Git não é tratado aqui como um fim em si, mas
-como parte integrante de boas práticas em projetos de análise de dados.
+ser organizados de forma estruturada, com controle de versão via 
+Git e GitHub.
 
 
 ::: {.callout-tip}
@@ -338,10 +335,10 @@ interquartil (IQR).
 - Pontos individuais além das hastes representam **outliers** 
 (valores atípicos)
 
-Esta visualização nos permite comparar as distribuições de 
-qualidade entre os diferentes fornecedores de malte. Assim, 
-ela pode revelar evidências de uma relação sistemática entre o 
-fornecedor de malte e a qualidade final do produto.
+Essa visualização permite comparar as distribuições do indicador
+de qualidade entre os diferentes fornecedores de malte, oferecendo
+indícios iniciais sobre possíveis relações sistemáticas entre o
+insumo utilizado e a qualidade final do produto.
 
 ```{r}
 #| label: fig-boxplot-1
@@ -362,51 +359,63 @@ ggplot(dados_destilaria_limpos, aes(x = fornecedor_malte, y = indicador_qualidad
   )
 ```
 
-O boxplot evidencia diferenças relevantes na distribuição do indicador de
-qualidade entre os fornecedores de malte. Observa-se que os whiskies
-produzidos com malte proveniente da categoria *Inhouse* apresentam, em
-média, valores mais elevados de qualidade, além de menor dispersão.
+O boxplot sugere diferenças sistemáticas na distribuição do indicador de
+qualidade entre as diferentes origens do malte. No conjunto observado,
+o malte produzido internamente pela própria destilaria (Inhouse) está
+associado à maior mediana do indicador de qualidade, o que sugere melhor
+desempenho típico quando o insumo não é adquirido de fornecedores externos.
 
-Por outro lado, os produtos associados ao fornecedor *Burns Best Ltd.*
-tendem a apresentar qualidade mediana inferior, com distribuição mais
-concentrada em valores baixos. Já o fornecedor *Matro Ltd.* apresenta
-maior variabilidade, indicando inconsistência no padrão de qualidade do
-insumo fornecido.
+O fornecedor *Matro Ltd.* aparece com mediana intermediária, mas com
+maior dispersão (IQR mais alto), sugerindo maior variabilidade no padrão
+de qualidade associado a esse insumo. Já o fornecedor *Burns Best Ltd.*
+apresenta a menor mediana do indicador de qualidade, com a maior parte
+das observações concentrada em níveis relativamente mais baixos.
 
-Esses resultados sugerem que o fornecedor de malte é um fator
-potencialmente relevante para explicar a queda observada na qualidade do
-produto final.
+É importante destacar que essas evidências são exploratórias: o gráfico
+não prova causalidade e, sem testes estatísticos, não é possível afirmar se
+as diferenças observadas são estatisticamente significativas. Ainda assim,
+o fornecedor de malte emerge como um candidato natural para investigação
+nas próximas fases do CRISP-DM.
 
+Para complementar a leitura visual do boxplot, calculamos medidas numéricas
+por fornecedor. Especificamente, reportamos:
 
-Embora os boxplots forneçam uma visualização rica da distribuição dos dados, 
-às vezes precisamos de medidas numéricas precisas para confirmar nossas 
-observações visuais. Nesta análise:
+- a mediana do indicador de qualidade (medida de posição),
+- o IQR (intervalo interquartil, medida de dispersão coerente com o
+boxplot), e
+- o tamanho da amostra (n) em cada grupo.
 
-- Agrupamos os dados por fornecedor de malte.
-
-- Calculamos a mediana do indicador de qualidade para cada grupo.
-
-- Contamos o número de amostras (n) por fornecedor para avaliar a 
-robustez dos resultados.
-
-- Ordenamos os resultados em ordem decrescente para facilitar a comparação.
-
-Esta abordagem complementa a visualização anterior, fornecendo valores 
-numéricos para fundamentar a análise do boxplot.
+Essa tabela ajuda a confirmar, com números, as diferenças sugeridas pelo
+gráfico e também permite avaliar o quanto os resultados podem ser afetados
+por tamanhos de amostra pequenos.
 
 ```{r}
-# Calcula a qualidade média por fornecedor
 dados_destilaria_limpos %>%
-  # Agrupa os dados pelo fornecedor de malte
   group_by(fornecedor_malte) %>%
-  # Calcula a média e conta o número de obs. para cada grupo
   summarise(
     qualidade_mediana = median(indicador_qualidade),
+    iqr_qualidade = IQR(indicador_qualidade),
     n = n()
   ) %>%
-  # Ordena os resultados em ordem decrescente pela qualidade média
   arrange(desc(qualidade_mediana))
 ```
+
+As estatísticas descritivas reforçam a leitura do boxplot. A origem interna
+do malte (*Inhouse*) está associada à maior mediana do indicador de
+qualidade, seguida pelos fornecedores externos *Matro Ltd.* e
+*Burns Best Ltd.*
+
+Quanto à dispersão, o IQR sugere maior variabilidade para o fornecedor
+*Matro Ltd.* (IQR = 99) do que para o malte produzido internamente pela
+destilaria (Inhouse, IQR = 79,2) e para o fornecedor *Burns Best Ltd*.
+(IQR = 73). Em termos operacionais, esse resultado pode indicar menor
+consistência na qualidade do insumo fornecido por *Matro Ltd*.
+
+Por fim, é necessária cautela na interpretação destes resultados, pois os
+tamanhos de amostra são pequenos (n = 5 para dois fornecedores) e 
+diferentes em relaçõa ao malte próprio da destilaria. Em etapas
+posteriores, métodos estatísticos formais poderão avaliar se as diferenças
+observadas persistem e se são compatíveis com variações aleatórias.
 
 
 
@@ -414,33 +423,18 @@ dados_destilaria_limpos %>%
 
 Os mestres responsáveis pela produção podem influenciar significativamente 
 a qualidade do produto final devido às suas técnicas, experiência e atenção 
-aos detalhes. Este boxplot nos permite:
-
-- Comparar a performance de diferentes mestres responsáveis.
-
-- Identificar se há diferenças consistentes na qualidade do whisky 
-produzido por cada um.
-
-- Verificar se algum mestre responsável apresenta maior variabilidade 
-nos resultados.
-
-- Detectar possíveis interações entre a experiência do profissional e a 
-qualidade final.
-
-Esta análise pode revelar se há necessidade de padronização de processos 
-ou treinamentos específicos para garantir consistência na produção.
+aos detalhes. Novamente, um boxplot comparativo é uma visualização útil para 
+ilustrar a relação entre o indicador numérico de qualidade e o mestre 
+responsável.
 
 ```{r}
 #| label: fig-3
 #| fig-cap: "Boxplot comparativo entre qualidade do whisky e mestre destilador."
 
-# Boxplot comparativo entre indicador de qualidade e mestre destilador\\
+# Boxplot comparativo entre indicador de qualidade e mestre destilador
 ggplot(dados_destilaria_limpos, aes(x = mestre_responsavel, y = indicador_qualidade)) +
-  # Cria boxplots para visualizar a distribuição e identificar outliers
   geom_boxplot() +
-  # Aplica um tema minimalista
   theme_minimal() +
-  # Define títulos e rótulos dos eixos
   labs(
     title = "Qualidade do Whisky por Mestre Responsável",
     x = "Mestre Responsável",
@@ -448,38 +442,72 @@ ggplot(dados_destilaria_limpos, aes(x = mestre_responsavel, y = indicador_qualid
   )
 ```
 
+O boxplot comparativo sugere diferenças na distribuição do indicador de
+qualidade entre os mestres responsáveis pela produção. No conjunto observado,
+os whiskies produzidos pelo mestre Gumble apresentam a maior mediana do
+indicador de qualidade e menor dispersão aparente em relação aos demais.
+
+Os whiskies produzidos pelo mestre Leonard apresentam mediana intermediária
+do indicador de qualidade, enquanto aqueles produzidos pelo mestre Carlson
+exibem a menor mediana e maior dispersão visual, indicando maior variabilidade
+nos resultados observados.
+
+Para complementar a análise gráfica, calculamos estatísticas descritivas por
+mestre responsável, incluindo uma medida de posição (mediana), uma medida de
+dispersão (IQR) e o tamanho da amostra (n) em cada grupo.
+
+```{r}
+dados_destilaria_limpos %>%
+  group_by(mestre_responsavel) %>%
+  summarise(
+    qualidade_mediana = median(indicador_qualidade),
+    iqr_qualidade = IQR(indicador_qualidade),
+    n = n()
+  ) %>%
+  arrange(desc(qualidade_mediana))
+```
+
+As estatísticas descritivas corroboram a hierarquia observada no boxplot: os
+whiskies produzidos pelo mestre Gumble apresentam a maior mediana do
+indicador de qualidade, seguidos por Leonard e Carlson.
+
+Em termos de dispersão, o IQR sugere menor variabilidade para Gumble e maior
+variabilidade para Carlson. Contudo, essa comparação deve ser interpretada
+com extrema cautela, dado o número muito reduzido de observações associadas ao
+mestre Gumble (n = 2).
+
+Esse desbalanceamento amostral limita os possíveis insights e ilustra uma
+situação comum em análises reais: padrões visuais ou estatísticos podem ser
+fortemente influenciados pela quantidade de dados disponíveis, reforçando a
+importância de análises mais robustas nas fases posteriores do CRISP-DM.
 
 
 
 ### Relação entre cor e qualidade
 
-O gráfico de dispersão ou *scatter plot*  é ideal para explorar 
-a relação entre duas variáveis numéricas. Ao analisar a relação entre a 
-cor do whisky e seu indicador de qualidade:
+O gráfico de dispersão, ou *scatter plot*, é uma ferramenta adequada para 
+explorar a relação entre duas variáveis numéricas. Ao analisar a relação entre 
+o indicador de cor do whisky e seu indicador de qualidade:
 
-- Cada ponto representa uma amostra de whisky produzida.
-- O eixo X mostra o valor do indicador de cor.
-- O eixo Y indica a pontuação de qualidade.
-- A linha de tendência (curva LOESS) ajuda a visualizar o padrão geral dos 
-dados sem assumir uma relação linear.
+- cada ponto representa uma amostra produzida;
+- o eixo horizontal mostra o valor do indicador de cor;
+- o eixo vertical indica a pontuação de qualidade;
+- a curva de suavização (*LOESS*) auxilia na visualização do padrão médio dos 
+  dados, sem assumir uma relação linear pré-definida.
 
-Esta visualização nos permite identificar se existe um valor ou faixa 
-ótima de cor que está associada à melhor qualidade, o que poderia ser usado 
-como indicador durante o processo de produção.
+Essa visualização permite investigar se determinados **intervalos de valores** 
+do indicador de cor tendem a estar associados a níveis mais elevados ou mais 
+baixos de qualidade, oferecendo indícios iniciais sobre possíveis padrões no 
+processo produtivo.
 
 ```{r}
 #| label: fig-2
 #| fig-cap: "Gráfico de dispersão entre qualidade e cor do whisky."
 
-# Grafico de dispersão entre o indicador de cor e a qualidade
 ggplot(dados_destilaria_limpos, aes(x = cor, y = indicador_qualidade)) +
-  # Adiciona pontos para cada observação no conjunto de dados
   geom_point() +
-  # Adiciona uma linha suavizada (LOESS) para mostrar a tendência geral
   geom_smooth(method = "loess", se = FALSE) +
-  # Aplica um tema minimalista
   theme_minimal() +
-  # Define títulos e rótulos dos eixos
   labs(
     title = "Relação entre Cor e Qualidade do Whisky",
     x = "Indicador de Cor",
@@ -487,72 +515,92 @@ ggplot(dados_destilaria_limpos, aes(x = cor, y = indicador_qualidade)) +
   )
 ```
 
-O gráfico de dispersão indica uma relação não linear entre o indicador de
-cor e a qualidade do whisky. A curva de suavização sugere que valores de
-cor em torno de 0,3 estão associados, em média, a níveis mais elevados de
-qualidade.
+O gráfico de dispersão sugere uma relação não linear entre o indicador de
+cor e a qualidade do whisky. A curva de suavização indica que valores de cor
+em torno de 0,3 estão associados, em média, a níveis mais elevados de qualidade
+no conjunto observado.
 
-Valores muito baixos ou muito elevados do indicador de cor parecem
-associar-se a pior desempenho no indicador de qualidade. Essa evidência
-sugere que a cor pode funcionar como um sinal antecipado de problemas no
-processo produtivo.
+Por outro lado, valores muito baixos ou muito elevados do indicador de cor
+tendem a estar associados a desempenhos inferiores no indicador de qualidade.
+Esse padrão visual sugere que a cor pode refletir condições do processo
+produtivo que afetam a qualidade final do produto.
 
-Do ponto de vista operacional, esse resultado é particularmente
-interessante, pois a cor pode ser monitorada durante a produção, antes
-das etapas finais de avaliação sensorial.
+Do ponto de vista operacional, esse resultado é particularmente relevante,
+pois o indicador de cor pode ser monitorado durante a produção, antes das
+etapas finais de avaliação sensorial. No entanto, essa evidência deve ser
+interpretada como exploratória, servindo como base para a formulação de
+hipóteses que poderão ser avaliadas de forma mais rigorosa nas fases
+posteriores do CRISP-DM.
 
 
 
 ### Conclusão da Análise Exploratória
 
 A análise exploratória dos dados da linha de produção da Junglivet Whisky
-Company indica que a queda na qualidade do produto não ocorre de forma
-aleatória. Pelo contrário, há evidências de associação entre o indicador
-de qualidade e fatores operacionais específicos.
+Company indica que a variação observada na qualidade do produto não ocorre de
+forma puramente aleatória. Pelo contrário, os resultados sugerem associações
+entre o indicador de qualidade e diferentes dimensões do processo produtivo.
 
-Em particular, o fornecedor de malte e o indicador de cor emergem como
-variáveis relevantes. 
+Em particular, a origem do malte — distinguindo insumos produzidos
+internamente daqueles adquiridos de fornecedores externos — e o indicador de
+cor do whisky emergem como variáveis potencialmente relevantes, apresentando
+padrões consistentes de associação com o desempenho em qualidade. Além disso,
+a análise por mestre responsável sugere diferenças na distribuição do
+indicador de qualidade, embora essas evidências sejam fortemente limitadas pelo
+desbalanceamento dos tamanhos de amostra entre os mestres.
 
-Entretanto, esses resultados não constituem provas 
-definitivas de causalidade, mas fornecem hipóteses analíticas bem 
-fundamentadas para as próximas fases de CRISP-DM.
-
+É fundamental destacar que esses achados têm caráter estritamente
+exploratório. As associações observadas não constituem provas de causalidade,
+nem permitem inferências conclusivas sobre o efeito isolado de cada fator.
+Ainda assim, elas cumprem o papel central da Análise Exploratória de Dados ao
+fornecer hipóteses analíticas bem fundamentadas e ao orientar as próximas fases
+do processo CRISP-DM, nas quais métodos estatísticos mais formais poderão ser
+empregados para avaliar a robustez e a relevância prática desses padrões.
 
 
 ## Próximas Fases
 
-- **Modelagem**: aplicação de métodos estatísticos de comparação entre
-  grupos, como testes de médias e análise de variância, com o objetivo de
-  avaliar diferenças sistemáticas associadas aos fatores operacionais
-  identificados.
+A Análise Exploratória de Dados cumpriu o papel de identificar padrões,
+associações e possíveis fontes de variação na qualidade do whisky. A partir
+dessas evidências iniciais, o projeto avança para as próximas fases da
+metodologia CRISP-DM, nas quais essas hipóteses poderão ser avaliadas de forma
+mais sistemática.
 
-- **Avaliação**: interpretação dos resultados estatísticos à luz dos
-  objetivos de negócio, considerando significância, magnitude dos efeitos
-  e implicações práticas para o processo produtivo.
+- **Modelagem**: nesta fase, serão aplicados métodos estatísticos apropriados
+  para avaliar se as diferenças observadas na análise exploratória — associadas
+  à origem do malte, ao mestre responsável e a intervalos do indicador de cor —
+  são consistentes e não atribuíveis apenas a variações aleatórias. Exemplos de
+  abordagens incluem testes de comparação entre grupos e modelos simples de
+  explicação da variabilidade observada.
 
-- **Implantação**: adoção de medidas operacionais baseadas nos resultados,
-  como revisão de fornecedores, ajustes de processo e definição de
-  indicadores de monitoramento da qualidade.
+- **Avaliação**: os resultados obtidos na etapa de modelagem serão interpretados
+  à luz dos objetivos de negócio da empresa. Além da significância estatística,
+  serão considerados a magnitude dos efeitos estimados, a robustez dos
+  resultados e suas implicações práticas para o processo produtivo.
 
+- **Implantação**: com base nas evidências avaliadas, poderão ser propostas
+  ações operacionais concretas, como a revisão de fornecedores externos,
+  ajustes em etapas do processo produtivo e a definição de indicadores de
+  monitoramento contínuo da qualidade.
 
 ::: {.callout-note}
 
-No contexto de CRISP-DM, **modelagem não se confunde com aprendizagem de máquina**. 
-Modelar pode significar aplicar métodos estatísticos
-tradicionais para comparar grupos, explicar relações e apoiar decisões,
-sem a necessidade de construir modelos preditivos complexos.
+No contexto dE CRISP-DM, modelagem **não se confunde** com aprendizagem de
+máquina. Modelar pode significar aplicar métodos estatísticos tradicionais
+para comparar grupos, explicar relações e apoiar decisões, sem a necessidade
+de construir modelos preditivos complexos.
 
 :::
 
 
 ## Resumo e Próximos Passos
 
-Ao longo dos capítulos da parte 1 do livro, vimos como conceitos, 
-papéis, metodologias e tipos de análise se articulam em um projeto 
-de Ciência de Dados simplificado. Essa visão geral fornece o contexto 
-necessário para compreender não apenas *o que* deve ser feito, mas 
-*por que* determinadas decisões são tomadas.
+Ao longo dos capítulos da Parte 1 do livro, vimos como conceitos, papéis,
+metodologias e tipos de análise se articulam em um projeto de Ciência de
+Dados simplificado. Essa visão geral fornece o contexto necessário para
+compreender não apenas *o que* deve ser feito, mas, sobretudo, *por que*
+determinadas decisões são tomadas ao longo do processo analítico.
 
-Nos capítulos da parte 2, o foco se desloca para as ferramentas que tornam
-possível a execução prática desses projetos, aprofundando os
-princípios e boas práticas que vimos até aqui.
+Na Parte 2, o foco se desloca para as ferramentas que tornam possível a
+execução prática desses projetos, aprofundando os princípios e as boas
+práticas introduzidas até aqui.

@@ -284,8 +284,7 @@ div.csl-indent {
 </header>
 
 
-<p>Este capítulo apresenta um estudo de caso introdutório com o objetivo de integrar, em um único exemplo, conceitos, ferramentas e práticas que serão aprofundados ao longo dos capítulos seguintes. A intenção não é esgotar os tópicos abordados, mas oferecer uma visão geral do processo de análise de dados no contexto da metodologia CRISP-DM.</p>
-<p>O estudo de caso é baseado em um exemplo fictício adaptado do livro de Jung (2024) <span class="citation" data-cites="jung2024modern">(<a href="referencias.html#ref-jung2024modern" role="doc-biblioref">Jung, 2024</a>)</span>, sendo aqui utilizado exclusivamente com finalidade didática.</p>
+<p>Este capítulo apresenta um estudo de caso introdutório com o objetivo de integrar, em um único exemplo, conceitos, ferramentas e práticas que serão aprofundados ao longo dos capítulos seguintes. A intenção, certamente, não é esgotar os tópicos abordados, mas oferecer uma visão geral do processo de análise de dados no contexto da metodologia CRISP-DM. Este estudo de caso é baseado em um exemplo fictício adaptado do livro de <span class="citation" data-cites="jung2024modern">Jung (<a href="referencias.html#ref-jung2024modern" role="doc-biblioref">2024</a>)</span>.</p>
 <section id="estrutura-do-projeto-e-organização-dos-arquivos" class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="estrutura-do-projeto-e-organização-dos-arquivos"><span class="header-section-number">5.1</span> Estrutura do projeto e organização dos arquivos</h2>
 <p>Antes de iniciar qualquer análise, é fundamental definir uma estrutura mínima de projeto. A organização adequada dos arquivos facilita a reprodutibilidade, a colaboração e a manutenção do trabalho ao longo do tempo, além de tornar mais claras as etapas do processo analítico.</p>
@@ -297,11 +296,12 @@ div.csl-indent {
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>│   └── limpos/     # dados após limpeza e transformações</span>
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>├── relatorios/</span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>│   └── 01-relatorio/</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>├── README.md</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>└── seunome_icd2025.Rproj</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>── scripts/</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>   └── 01-importacao.R</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>├── README.md</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>└── seunome_icd2025.Rproj</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <p>Essa separação explícita evita que dados originais sejam sobrescritos, torna as etapas do processo analítico mais transparentes e facilita a verificação e a reprodução das análises realizadas.</p>
-<p>Na prática, recomenda-se criar inicialmente um repositório vazio no GitHub, cloná-lo localmente e, na pasta clonada do repositório, criar um projeto RStudio. A partir desse projeto, os arquivos e diretórios podem ser organizados de forma estruturada.</p>
-<p>O controle de versão com Git não é tratado aqui como um fim em si, mas como parte integrante de boas práticas em projetos de análise de dados.</p>
+<p>Na prática, recomendamos <strong>fortemente</strong> criar inicialmente um repositório vazio no GitHub, cloná-lo localmente e, na pasta clonada do repositório, criar um projeto RStudio. A partir desse projeto, os arquivos e diretórios podem ser organizados de forma estruturada, com controle de versão via Git e GitHub.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -521,7 +521,7 @@ relações entre algumas variáveis e o indicador de qualidade do whisky para id
 <li><p>As “hastes” (whiskers) se estendem até 1,5 vezes o intervalo interquartil (IQR).</p></li>
 <li><p>Pontos individuais além das hastes representam <strong>outliers</strong> (valores atípicos)</p></li>
 </ul>
-<p>Esta visualização nos permite comparar as distribuições de qualidade entre os diferentes fornecedores de malte. Assim, ela pode revelar evidências de uma relação sistemática entre o fornecedor de malte e a qualidade final do produto.</p>
+<p>Essa visualização permite comparar as distribuições do indicador de qualidade entre os diferentes fornecedores de malte, oferecendo indícios iniciais sobre possíveis relações sistemáticas entre o insumo utilizado e a qualidade final do produto.</p>
 <div class="cell" data-layout-align="center">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Boxplot comparativa da qualidade por fornecedor de malte</span></span>
 <span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados_destilaria_limpos, <span class="fu">aes</span>(<span class="at">x =</span> fornecedor_malte, <span class="at">y =</span> indicador_qualidade)) <span class="sc">+</span></span>
@@ -548,62 +548,51 @@ Figura&nbsp;5.1: Boxplot comparativo de qualidade do whisky por fornecedor de ma
 </div>
 </div>
 </div>
-<p>O boxplot evidencia diferenças relevantes na distribuição do indicador de qualidade entre os fornecedores de malte. Observa-se que os whiskies produzidos com malte proveniente da categoria <em>Inhouse</em> apresentam, em média, valores mais elevados de qualidade, além de menor dispersão.</p>
-<p>Por outro lado, os produtos associados ao fornecedor <em>Burns Best Ltd.</em> tendem a apresentar qualidade mediana inferior, com distribuição mais concentrada em valores baixos. Já o fornecedor <em>Matro Ltd.</em> apresenta maior variabilidade, indicando inconsistência no padrão de qualidade do insumo fornecido.</p>
-<p>Esses resultados sugerem que o fornecedor de malte é um fator potencialmente relevante para explicar a queda observada na qualidade do produto final.</p>
-<p>Embora os boxplots forneçam uma visualização rica da distribuição dos dados, às vezes precisamos de medidas numéricas precisas para confirmar nossas observações visuais. Nesta análise:</p>
+<p>O boxplot sugere diferenças sistemáticas na distribuição do indicador de qualidade entre as diferentes origens do malte. No conjunto observado, o malte produzido internamente pela própria destilaria (Inhouse) está associado à maior mediana do indicador de qualidade, o que sugere melhor desempenho típico quando o insumo não é adquirido de fornecedores externos.</p>
+<p>O fornecedor <em>Matro Ltd.</em> aparece com mediana intermediária, mas com maior dispersão (IQR mais alto), sugerindo maior variabilidade no padrão de qualidade associado a esse insumo. Já o fornecedor <em>Burns Best Ltd.</em> apresenta a menor mediana do indicador de qualidade, com a maior parte das observações concentrada em níveis relativamente mais baixos.</p>
+<p>É importante destacar que essas evidências são exploratórias: o gráfico não prova causalidade e, sem testes estatísticos, não é possível afirmar se as diferenças observadas são estatisticamente significativas. Ainda assim, o fornecedor de malte emerge como um candidato natural para investigação nas próximas fases do CRISP-DM.</p>
+<p>Para complementar a leitura visual do boxplot, calculamos medidas numéricas por fornecedor. Especificamente, reportamos:</p>
 <ul>
-<li><p>Agrupamos os dados por fornecedor de malte.</p></li>
-<li><p>Calculamos a mediana do indicador de qualidade para cada grupo.</p></li>
-<li><p>Contamos o número de amostras (n) por fornecedor para avaliar a robustez dos resultados.</p></li>
-<li><p>Ordenamos os resultados em ordem decrescente para facilitar a comparação.</p></li>
+<li>a mediana do indicador de qualidade (medida de posição),</li>
+<li>o IQR (intervalo interquartil, medida de dispersão coerente com o boxplot), e</li>
+<li>o tamanho da amostra (n) em cada grupo.</li>
 </ul>
-<p>Esta abordagem complementa a visualização anterior, fornecendo valores numéricos para fundamentar a análise do boxplot.</p>
+<p>Essa tabela ajuda a confirmar, com números, as diferenças sugeridas pelo gráfico e também permite avaliar o quanto os resultados podem ser afetados por tamanhos de amostra pequenos.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcula a qualidade média por fornecedor</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>dados_destilaria_limpos <span class="sc">%&gt;%</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Agrupa os dados pelo fornecedor de malte</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(fornecedor_malte) <span class="sc">%&gt;%</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Calcula a média e conta o número de obs. para cada grupo</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">qualidade_mediana =</span> <span class="fu">median</span>(indicador_qualidade),</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>()</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Ordena os resultados em ordem decrescente pela qualidade média</span></span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(qualidade_mediana))</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>dados_destilaria_limpos <span class="sc">%&gt;%</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(fornecedor_malte) <span class="sc">%&gt;%</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">qualidade_mediana =</span> <span class="fu">median</span>(indicador_qualidade),</span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">iqr_qualidade =</span> <span class="fu">IQR</span>(indicador_qualidade),</span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>()</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(qualidade_mediana))</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 3
-  fornecedor_malte qualidade_mediana     n
-  &lt;fct&gt;                        &lt;dbl&gt; &lt;int&gt;
-1 Inhouse                        936    10
-2 Matro Ltd.                     917     5
-3 Burns Best Ltd.                879     5</code></pre>
+<pre><code># A tibble: 3 × 4
+  fornecedor_malte qualidade_mediana iqr_qualidade     n
+  &lt;fct&gt;                        &lt;dbl&gt;         &lt;dbl&gt; &lt;int&gt;
+1 Inhouse                        936          79.2    10
+2 Matro Ltd.                     917          99       5
+3 Burns Best Ltd.                879          73       5</code></pre>
 </div>
 </div>
+<p>As estatísticas descritivas reforçam a leitura do boxplot. A origem interna do malte (<em>Inhouse</em>) está associada à maior mediana do indicador de qualidade, seguida pelos fornecedores externos <em>Matro Ltd.</em> e <em>Burns Best Ltd.</em></p>
+<p>Quanto à dispersão, o IQR sugere maior variabilidade para o fornecedor <em>Matro Ltd.</em> (IQR = 99) do que para o malte produzido internamente pela destilaria (Inhouse, IQR = 79,2) e para o fornecedor <em>Burns Best Ltd</em>. (IQR = 73). Em termos operacionais, esse resultado pode indicar menor consistência na qualidade do insumo fornecido por <em>Matro Ltd</em>.</p>
+<p>Por fim, é necessária cautela na interpretação destes resultados, pois os tamanhos de amostra são pequenos (n = 5 para dois fornecedores) e diferentes em relaçõa ao malte próprio da destilaria. Em etapas posteriores, métodos estatísticos formais poderão avaliar se as diferenças observadas persistem e se são compatíveis com variações aleatórias.</p>
 </section>
 <section id="relação-entre-mestre-responsável-e-qualidade" class="level3" data-number="5.7.2">
 <h3 data-number="5.7.2" class="anchored" data-anchor-id="relação-entre-mestre-responsável-e-qualidade"><span class="header-section-number">5.7.2</span> Relação entre mestre responsável e qualidade</h3>
-<p>Os mestres responsáveis pela produção podem influenciar significativamente a qualidade do produto final devido às suas técnicas, experiência e atenção aos detalhes. Este boxplot nos permite:</p>
-<ul>
-<li><p>Comparar a performance de diferentes mestres responsáveis.</p></li>
-<li><p>Identificar se há diferenças consistentes na qualidade do whisky produzido por cada um.</p></li>
-<li><p>Verificar se algum mestre responsável apresenta maior variabilidade nos resultados.</p></li>
-<li><p>Detectar possíveis interações entre a experiência do profissional e a qualidade final.</p></li>
-</ul>
-<p>Esta análise pode revelar se há necessidade de padronização de processos ou treinamentos específicos para garantir consistência na produção.</p>
+<p>Os mestres responsáveis pela produção podem influenciar significativamente a qualidade do produto final devido às suas técnicas, experiência e atenção aos detalhes. Novamente, um boxplot comparativo é uma visualização útil para ilustrar a relação entre o indicador numérico de qualidade e o mestre responsável.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Boxplot comparativo entre indicador de qualidade e mestre destilador\\</span></span>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Boxplot comparativo entre indicador de qualidade e mestre destilador</span></span>
 <span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados_destilaria_limpos, <span class="fu">aes</span>(<span class="at">x =</span> mestre_responsavel, <span class="at">y =</span> indicador_qualidade)) <span class="sc">+</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Cria boxplots para visualizar a distribuição e identificar outliers</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Aplica um tema minimalista</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Define títulos e rótulos dos eixos</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Qualidade do Whisky por Mestre Responsável"</span>,</span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Mestre Responsável"</span>,</span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Indicador de Qualidade"</span></span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Qualidade do Whisky por Mestre Responsável"</span>,</span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Mestre Responsável"</span>,</span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Indicador de Qualidade"</span></span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div id="fig-3" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -617,32 +606,51 @@ Figura&nbsp;5.2: Boxplot comparativo entre qualidade do whisky e mestre destilad
 </div>
 </div>
 </div>
+<p>O boxplot comparativo sugere diferenças na distribuição do indicador de qualidade entre os mestres responsáveis pela produção. No conjunto observado, os whiskies produzidos pelo mestre Gumble apresentam a maior mediana do indicador de qualidade e menor dispersão aparente em relação aos demais.</p>
+<p>Os whiskies produzidos pelo mestre Leonard apresentam mediana intermediária do indicador de qualidade, enquanto aqueles produzidos pelo mestre Carlson exibem a menor mediana e maior dispersão visual, indicando maior variabilidade nos resultados observados.</p>
+<p>Para complementar a análise gráfica, calculamos estatísticas descritivas por mestre responsável, incluindo uma medida de posição (mediana), uma medida de dispersão (IQR) e o tamanho da amostra (n) em cada grupo.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>dados_destilaria_limpos <span class="sc">%&gt;%</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(mestre_responsavel) <span class="sc">%&gt;%</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">qualidade_mediana =</span> <span class="fu">median</span>(indicador_qualidade),</span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">iqr_qualidade =</span> <span class="fu">IQR</span>(indicador_qualidade),</span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>()</span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(qualidade_mediana))</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 4
+  mestre_responsavel qualidade_mediana iqr_qualidade     n
+  &lt;fct&gt;                          &lt;dbl&gt;         &lt;dbl&gt; &lt;int&gt;
+1 Gumble                          974.          22.5     2
+2 Leonard                         935           46.5    10
+3 Carlson                         890.          62.5     8</code></pre>
+</div>
+</div>
+<p>As estatísticas descritivas corroboram a hierarquia observada no boxplot: os whiskies produzidos pelo mestre Gumble apresentam a maior mediana do indicador de qualidade, seguidos por Leonard e Carlson.</p>
+<p>Em termos de dispersão, o IQR sugere menor variabilidade para Gumble e maior variabilidade para Carlson. Contudo, essa comparação deve ser interpretada com extrema cautela, dado o número muito reduzido de observações associadas ao mestre Gumble (n = 2).</p>
+<p>Esse desbalanceamento amostral limita os possíveis insights e ilustra uma situação comum em análises reais: padrões visuais ou estatísticos podem ser fortemente influenciados pela quantidade de dados disponíveis, reforçando a importância de análises mais robustas nas fases posteriores do CRISP-DM.</p>
 </section>
 <section id="relação-entre-cor-e-qualidade" class="level3" data-number="5.7.3">
 <h3 data-number="5.7.3" class="anchored" data-anchor-id="relação-entre-cor-e-qualidade"><span class="header-section-number">5.7.3</span> Relação entre cor e qualidade</h3>
-<p>O gráfico de dispersão ou <em>scatter plot</em> é ideal para explorar a relação entre duas variáveis numéricas. Ao analisar a relação entre a cor do whisky e seu indicador de qualidade:</p>
+<p>O gráfico de dispersão, ou <em>scatter plot</em>, é uma ferramenta adequada para explorar a relação entre duas variáveis numéricas. Ao analisar a relação entre o indicador de cor do whisky e seu indicador de qualidade:</p>
 <ul>
-<li>Cada ponto representa uma amostra de whisky produzida.</li>
-<li>O eixo X mostra o valor do indicador de cor.</li>
-<li>O eixo Y indica a pontuação de qualidade.</li>
-<li>A linha de tendência (curva LOESS) ajuda a visualizar o padrão geral dos dados sem assumir uma relação linear.</li>
+<li>cada ponto representa uma amostra produzida;</li>
+<li>o eixo horizontal mostra o valor do indicador de cor;</li>
+<li>o eixo vertical indica a pontuação de qualidade;</li>
+<li>a curva de suavização (<em>LOESS</em>) auxilia na visualização do padrão médio dos dados, sem assumir uma relação linear pré-definida.</li>
 </ul>
-<p>Esta visualização nos permite identificar se existe um valor ou faixa ótima de cor que está associada à melhor qualidade, o que poderia ser usado como indicador durante o processo de produção.</p>
+<p>Essa visualização permite investigar se determinados <strong>intervalos de valores</strong> do indicador de cor tendem a estar associados a níveis mais elevados ou mais baixos de qualidade, oferecendo indícios iniciais sobre possíveis padrões no processo produtivo.</p>
 <div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Grafico de dispersão entre o indicador de cor e a qualidade</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados_destilaria_limpos, <span class="fu">aes</span>(<span class="at">x =</span> cor, <span class="at">y =</span> indicador_qualidade)) <span class="sc">+</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Adiciona pontos para cada observação no conjunto de dados</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Adiciona uma linha suavizada (LOESS) para mostrar a tendência geral</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Aplica um tema minimalista</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Define títulos e rótulos dos eixos</span></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Relação entre Cor e Qualidade do Whisky"</span>,</span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Indicador de Cor"</span>,</span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Indicador de Qualidade"</span></span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados_destilaria_limpos, <span class="fu">aes</span>(<span class="at">x =</span> cor, <span class="at">y =</span> indicador_qualidade)) <span class="sc">+</span></span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Relação entre Cor e Qualidade do Whisky"</span>,</span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Indicador de Cor"</span>,</span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Indicador de Qualidade"</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 <div class="cell-output-display">
 <div id="fig-2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -656,23 +664,24 @@ Figura&nbsp;5.3: Gráfico de dispersão entre qualidade e cor do whisky.
 </div>
 </div>
 </div>
-<p>O gráfico de dispersão indica uma relação não linear entre o indicador de cor e a qualidade do whisky. A curva de suavização sugere que valores de cor em torno de 0,3 estão associados, em média, a níveis mais elevados de qualidade.</p>
-<p>Valores muito baixos ou muito elevados do indicador de cor parecem associar-se a pior desempenho no indicador de qualidade. Essa evidência sugere que a cor pode funcionar como um sinal antecipado de problemas no processo produtivo.</p>
-<p>Do ponto de vista operacional, esse resultado é particularmente interessante, pois a cor pode ser monitorada durante a produção, antes das etapas finais de avaliação sensorial.</p>
+<p>O gráfico de dispersão sugere uma relação não linear entre o indicador de cor e a qualidade do whisky. A curva de suavização indica que valores de cor em torno de 0,3 estão associados, em média, a níveis mais elevados de qualidade no conjunto observado.</p>
+<p>Por outro lado, valores muito baixos ou muito elevados do indicador de cor tendem a estar associados a desempenhos inferiores no indicador de qualidade. Esse padrão visual sugere que a cor pode refletir condições do processo produtivo que afetam a qualidade final do produto.</p>
+<p>Do ponto de vista operacional, esse resultado é particularmente relevante, pois o indicador de cor pode ser monitorado durante a produção, antes das etapas finais de avaliação sensorial. No entanto, essa evidência deve ser interpretada como exploratória, servindo como base para a formulação de hipóteses que poderão ser avaliadas de forma mais rigorosa nas fases posteriores do CRISP-DM.</p>
 </section>
 <section id="conclusão-da-análise-exploratória" class="level3" data-number="5.7.4">
 <h3 data-number="5.7.4" class="anchored" data-anchor-id="conclusão-da-análise-exploratória"><span class="header-section-number">5.7.4</span> Conclusão da Análise Exploratória</h3>
-<p>A análise exploratória dos dados da linha de produção da Junglivet Whisky Company indica que a queda na qualidade do produto não ocorre de forma aleatória. Pelo contrário, há evidências de associação entre o indicador de qualidade e fatores operacionais específicos.</p>
-<p>Em particular, o fornecedor de malte e o indicador de cor emergem como variáveis relevantes.</p>
-<p>Entretanto, esses resultados não constituem provas definitivas de causalidade, mas fornecem hipóteses analíticas bem fundamentadas para as próximas fases de CRISP-DM.</p>
+<p>A análise exploratória dos dados da linha de produção da Junglivet Whisky Company indica que a variação observada na qualidade do produto não ocorre de forma puramente aleatória. Pelo contrário, os resultados sugerem associações entre o indicador de qualidade e diferentes dimensões do processo produtivo.</p>
+<p>Em particular, a origem do malte — distinguindo insumos produzidos internamente daqueles adquiridos de fornecedores externos — e o indicador de cor do whisky emergem como variáveis potencialmente relevantes, apresentando padrões consistentes de associação com o desempenho em qualidade. Além disso, a análise por mestre responsável sugere diferenças na distribuição do indicador de qualidade, embora essas evidências sejam fortemente limitadas pelo desbalanceamento dos tamanhos de amostra entre os mestres.</p>
+<p>É fundamental destacar que esses achados têm caráter estritamente exploratório. As associações observadas não constituem provas de causalidade, nem permitem inferências conclusivas sobre o efeito isolado de cada fator. Ainda assim, elas cumprem o papel central da Análise Exploratória de Dados ao fornecer hipóteses analíticas bem fundamentadas e ao orientar as próximas fases do processo CRISP-DM, nas quais métodos estatísticos mais formais poderão ser empregados para avaliar a robustez e a relevância prática desses padrões.</p>
 </section>
 </section>
 <section id="próximas-fases" class="level2" data-number="5.8">
 <h2 data-number="5.8" class="anchored" data-anchor-id="próximas-fases"><span class="header-section-number">5.8</span> Próximas Fases</h2>
+<p>A Análise Exploratória de Dados cumpriu o papel de identificar padrões, associações e possíveis fontes de variação na qualidade do whisky. A partir dessas evidências iniciais, o projeto avança para as próximas fases da metodologia CRISP-DM, nas quais essas hipóteses poderão ser avaliadas de forma mais sistemática.</p>
 <ul>
-<li><p><strong>Modelagem</strong>: aplicação de métodos estatísticos de comparação entre grupos, como testes de médias e análise de variância, com o objetivo de avaliar diferenças sistemáticas associadas aos fatores operacionais identificados.</p></li>
-<li><p><strong>Avaliação</strong>: interpretação dos resultados estatísticos à luz dos objetivos de negócio, considerando significância, magnitude dos efeitos e implicações práticas para o processo produtivo.</p></li>
-<li><p><strong>Implantação</strong>: adoção de medidas operacionais baseadas nos resultados, como revisão de fornecedores, ajustes de processo e definição de indicadores de monitoramento da qualidade.</p></li>
+<li><p><strong>Modelagem</strong>: nesta fase, serão aplicados métodos estatísticos apropriados para avaliar se as diferenças observadas na análise exploratória — associadas à origem do malte, ao mestre responsável e a intervalos do indicador de cor — são consistentes e não atribuíveis apenas a variações aleatórias. Exemplos de abordagens incluem testes de comparação entre grupos e modelos simples de explicação da variabilidade observada.</p></li>
+<li><p><strong>Avaliação</strong>: os resultados obtidos na etapa de modelagem serão interpretados à luz dos objetivos de negócio da empresa. Além da significância estatística, serão considerados a magnitude dos efeitos estimados, a robustez dos resultados e suas implicações práticas para o processo produtivo.</p></li>
+<li><p><strong>Implantação</strong>: com base nas evidências avaliadas, poderão ser propostas ações operacionais concretas, como a revisão de fornecedores externos, ajustes em etapas do processo produtivo e a definição de indicadores de monitoramento contínuo da qualidade.</p></li>
 </ul>
 <div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
@@ -684,14 +693,14 @@ Nota
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>No contexto de CRISP-DM, <strong>modelagem não se confunde com aprendizagem de máquina</strong>. Modelar pode significar aplicar métodos estatísticos tradicionais para comparar grupos, explicar relações e apoiar decisões, sem a necessidade de construir modelos preditivos complexos.</p>
+<p>No contexto dE CRISP-DM, modelagem <strong>não se confunde</strong> com aprendizagem de máquina. Modelar pode significar aplicar métodos estatísticos tradicionais para comparar grupos, explicar relações e apoiar decisões, sem a necessidade de construir modelos preditivos complexos.</p>
 </div>
 </div>
 </section>
 <section id="resumo-e-próximos-passos" class="level2" data-number="5.9">
 <h2 data-number="5.9" class="anchored" data-anchor-id="resumo-e-próximos-passos"><span class="header-section-number">5.9</span> Resumo e Próximos Passos</h2>
-<p>Ao longo dos capítulos da parte 1 do livro, vimos como conceitos, papéis, metodologias e tipos de análise se articulam em um projeto de Ciência de Dados simplificado. Essa visão geral fornece o contexto necessário para compreender não apenas <em>o que</em> deve ser feito, mas <em>por que</em> determinadas decisões são tomadas.</p>
-<p>Nos capítulos da parte 2, o foco se desloca para as ferramentas que tornam possível a execução prática desses projetos, aprofundando os princípios e boas práticas que vimos até aqui.</p>
+<p>Ao longo dos capítulos da Parte 1 do livro, vimos como conceitos, papéis, metodologias e tipos de análise se articulam em um projeto de Ciência de Dados simplificado. Essa visão geral fornece o contexto necessário para compreender não apenas <em>o que</em> deve ser feito, mas, sobretudo, <em>por que</em> determinadas decisões são tomadas ao longo do processo analítico.</p>
+<p>Na Parte 2, o foco se desloca para as ferramentas que tornam possível a execução prática desses projetos, aprofundando os princípios e as boas práticas introduzidas até aqui.</p>
 
 
 <div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
