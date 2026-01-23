@@ -215,7 +215,7 @@ Esse modelo destaca que projetos de dados raramente seguem um caminho linear.
 surgem ou que hipóteses iniciais precisem ser revistas.
 
 
-## Da Ciência de Dados aos profissionais que a tornam possível
+## Resumo e Próximos Passos
 
 Ao longo deste capítulo, vimos como a chamada *economia de dados* se
 consolidou historicamente e por que a explosão no volume e na complexidade

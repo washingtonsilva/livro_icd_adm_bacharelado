@@ -203,7 +203,7 @@ aprendizados, contribuindo para a maturidade analítica da organização.
 
 
 
-## Da estrutura dos projetos aos tipos de análise orientados por dados
+## Resumo e Próximos Passos
 
 Ao longo deste capítulo, discutimos a metodologia CRISP-DM como uma estrutura
 orientadora para projetos de Ciência de Dados, destacando a importância de

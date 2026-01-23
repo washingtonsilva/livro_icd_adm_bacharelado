@@ -181,9 +181,9 @@ competências centrais.
 
 
 
-## Dos papéis profissionais à organização de projetos de dados
+## Resumo e Próximos Passos
 
-No capítulo anterior, discutimos os principais papéis profissionais na área
+Neste capítulo, discutimos os principais papéis profissionais na área
 de dados, bem como as competências técnicas, analíticas e interpessoais
 associadas a cada função. Vimos que Analistas de Dados, Cientistas de Dados e
 Engenheiros de Dados contribuem de forma complementar para transformar dados

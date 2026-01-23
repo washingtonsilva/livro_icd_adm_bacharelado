@@ -545,7 +545,7 @@ sem a necessidade de construir modelos preditivos complexos.
 :::
 
 
-## Da visão geral às ferramentas
+## Resumo e Próximos Passos
 
 Ao longo dos capítulos da parte 1 do livro, vimos como conceitos, 
 papéis, metodologias e tipos de análise se articulam em um projeto 
@@ -553,6 +553,6 @@ de Ciência de Dados simplificado. Essa visão geral fornece o contexto
 necessário para compreender não apenas *o que* deve ser feito, mas 
 *por que* determinadas decisões são tomadas.
 
-Nos capítulos seguintes, o foco se desloca para as ferramentas que tornam
-possível a execução prática desses projetos, mantendo como referência os
-princípios e boas práticas apresentados até aqui.
+Nos capítulos da parte 2, o foco se desloca para as ferramentas que tornam
+possível a execução prática desses projetos, aprofundando os
+princípios e boas práticas que vimos até aqui.

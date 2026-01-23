@@ -86,11 +86,11 @@
     ]
   },
   {
-    "objectID": "01_capitulo.html#da-ciência-de-dados-aos-profissionais-que-a-tornam-possível",
-    "href": "01_capitulo.html#da-ciência-de-dados-aos-profissionais-que-a-tornam-possível",
+    "objectID": "01_capitulo.html#resumo-e-próximos-passos",
+    "href": "01_capitulo.html#resumo-e-próximos-passos",
     "title": "1  Visão Geral de Ciência de Dados",
-    "section": "1.6 Da Ciência de Dados aos profissionais que a tornam possível",
-    "text": "1.6 Da Ciência de Dados aos profissionais que a tornam possível\nAo longo deste capítulo, vimos como a chamada economia de dados se consolidou historicamente e por que a explosão no volume e na complexidade das informações tornou necessária uma abordagem estruturada, hoje conhecida como Ciência de Dados. Também discutimos que gerar valor a partir de dados exige mais do que tecnologia: requer métodos, organização e capacidade de transformar informação em decisão.\nNa prática, esse trabalho não é realizado por um único tipo de profissional. Projetos orientados por dados envolvem funções distintas, com responsabilidades e competências complementares. No próximo capítulo, apresentamos os principais papéis profissionais na área de dados — Analista de Dados, Cientista de Dados e Engenheiro de Dados — e discutimos como eles se relacionam com problemas reais de Administração e áreas afins.\n\n\n\n\nHARKNESS, T. The history of the data economy: Part I: The birth of customer insight. Significance, v. 18, n. 2, p. 12–15, a2021.\n\n\n___. The history of the data economy: Part II: Analytics arrives. Significance, v. 18, n. 4, p. 16–19, b2021.\n\n\n___. The history of the data economy: Part III: The new kings and queens of data. Significance, v. 18, n. 5, p. 16–19, c2021.\n\n\n___. The history of the data economy: Part IV: The future. Significance, v. 18, n. 6, p. 12–15, d2021.\n\n\nIBM CORPORATION. Guia do IBM SPSS Modeler CRISP-DM. [s.l.] IBM Corporation, 2023.\n\n\nTHE ECONOMIST. The Data Deluge, 27 fev. 2010. Disponível em: &lt;https://www.economist.com/weeklyedition/2010-02-27&gt;. Acesso em: 21 jan. 2026\n\n\n___. The World’s Most Valuable Resource, 2017. Disponível em: &lt;https://www.economist.com/weeklyedition/2017-05-06&gt;. Acesso em: 20 jan. 2026",
+    "section": "1.6 Resumo e Próximos Passos",
+    "text": "1.6 Resumo e Próximos Passos\nAo longo deste capítulo, vimos como a chamada economia de dados se consolidou historicamente e por que a explosão no volume e na complexidade das informações tornou necessária uma abordagem estruturada, hoje conhecida como Ciência de Dados. Também discutimos que gerar valor a partir de dados exige mais do que tecnologia: requer métodos, organização e capacidade de transformar informação em decisão.\nNa prática, esse trabalho não é realizado por um único tipo de profissional. Projetos orientados por dados envolvem funções distintas, com responsabilidades e competências complementares. No próximo capítulo, apresentamos os principais papéis profissionais na área de dados — Analista de Dados, Cientista de Dados e Engenheiro de Dados — e discutimos como eles se relacionam com problemas reais de Administração e áreas afins.\n\n\n\n\nHARKNESS, T. The history of the data economy: Part I: The birth of customer insight. Significance, v. 18, n. 2, p. 12–15, a2021.\n\n\n___. The history of the data economy: Part II: Analytics arrives. Significance, v. 18, n. 4, p. 16–19, b2021.\n\n\n___. The history of the data economy: Part III: The new kings and queens of data. Significance, v. 18, n. 5, p. 16–19, c2021.\n\n\n___. The history of the data economy: Part IV: The future. Significance, v. 18, n. 6, p. 12–15, d2021.\n\n\nIBM CORPORATION. Guia do IBM SPSS Modeler CRISP-DM. [s.l.] IBM Corporation, 2023.\n\n\nTHE ECONOMIST. The Data Deluge, 27 fev. 2010. Disponível em: &lt;https://www.economist.com/weeklyedition/2010-02-27&gt;. Acesso em: 21 jan. 2026\n\n\n___. The World’s Most Valuable Resource, 2017. Disponível em: &lt;https://www.economist.com/weeklyedition/2017-05-06&gt;. Acesso em: 20 jan. 2026",
     "crumbs": [
       "Parte 1",
       "<span class='chapter-number'>1</span>  <span class='chapter-title'>Visão Geral de Ciência de Dados</span>"
@@ -163,11 +163,11 @@
     ]
   },
   {
-    "objectID": "02_capitulo.html#dos-papéis-profissionais-à-organização-de-projetos-de-dados",
-    "href": "02_capitulo.html#dos-papéis-profissionais-à-organização-de-projetos-de-dados",
+    "objectID": "02_capitulo.html#resumo-e-próximos-passos",
+    "href": "02_capitulo.html#resumo-e-próximos-passos",
     "title": "2  Papéis profissionais na área de dados",
-    "section": "2.3 Dos papéis profissionais à organização de projetos de dados",
-    "text": "2.3 Dos papéis profissionais à organização de projetos de dados\nNo capítulo anterior, discutimos os principais papéis profissionais na área de dados, bem como as competências técnicas, analíticas e interpessoais associadas a cada função. Vimos que Analistas de Dados, Cientistas de Dados e Engenheiros de Dados contribuem de forma complementar para transformar dados em informação útil e apoiar decisões organizacionais.\nNa prática, porém, a atuação desses profissionais não ocorre de maneira isolada ou desordenada. Projetos de Ciência de Dados exigem coordenação, alinhamento estratégico e definição clara de objetivos, etapas e entregáveis. É nesse ponto que metodologias de projeto tornam-se essenciais.\nNo próximo capítulo, apresentamos a metodologia CRISP-DM, amplamente adotada em projetos de Ciência de Dados, como uma estrutura orientadora para organizar o trabalho das equipes, alinhar análises aos objetivos do negócio e reduzir riscos associados a abordagens improvisadas ou excessivamente centradas em ferramentas.",
+    "section": "2.3 Resumo e Próximos Passos",
+    "text": "2.3 Resumo e Próximos Passos\nNeste capítulo, discutimos os principais papéis profissionais na área de dados, bem como as competências técnicas, analíticas e interpessoais associadas a cada função. Vimos que Analistas de Dados, Cientistas de Dados e Engenheiros de Dados contribuem de forma complementar para transformar dados em informação útil e apoiar decisões organizacionais.\nNa prática, porém, a atuação desses profissionais não ocorre de maneira isolada ou desordenada. Projetos de Ciência de Dados exigem coordenação, alinhamento estratégico e definição clara de objetivos, etapas e entregáveis. É nesse ponto que metodologias de projeto tornam-se essenciais.\nNo próximo capítulo, apresentamos a metodologia CRISP-DM, amplamente adotada em projetos de Ciência de Dados, como uma estrutura orientadora para organizar o trabalho das equipes, alinhar análises aos objetivos do negócio e reduzir riscos associados a abordagens improvisadas ou excessivamente centradas em ferramentas.",
     "crumbs": [
       "Parte 1",
       "<span class='chapter-number'>2</span>  <span class='chapter-title'>Papéis profissionais na área de dados</span>"
@@ -284,11 +284,11 @@
     ]
   },
   {
-    "objectID": "03_capitulo.html#da-estrutura-dos-projetos-aos-tipos-de-análise-orientados-por-dados",
-    "href": "03_capitulo.html#da-estrutura-dos-projetos-aos-tipos-de-análise-orientados-por-dados",
+    "objectID": "03_capitulo.html#resumo-e-próximos-passos",
+    "href": "03_capitulo.html#resumo-e-próximos-passos",
     "title": "3  A Metodologia CRISP-DM",
-    "section": "3.11 Da estrutura dos projetos aos tipos de análise orientados por dados",
-    "text": "3.11 Da estrutura dos projetos aos tipos de análise orientados por dados\nAo longo deste capítulo, discutimos a metodologia CRISP-DM como uma estrutura orientadora para projetos de Ciência de Dados, destacando a importância de iniciar análises a partir de objetivos de negócio claramente definidos e de organizar o trabalho de forma iterativa e sistemática. Vimos que projetos bem sucedidos dependem menos de ferramentas isoladas e mais da articulação entre problemas, dados, métodos e decisões.\nNo entanto, estruturar um projeto é apenas parte do desafio. Em cada fase do CRISP-DM, diferentes tipos de análise podem ser empregados, cada um respondendo a perguntas específicas e oferecendo níveis distintos de apoio à tomada de decisão. Nem toda análise tem o mesmo propósito, nem exige o mesmo grau de sofisticação técnica.\nNo próximo capítulo, apresentamos os principais tipos de análise de dados — descritiva, diagnóstica, preditiva e prescritiva — e discutimos como eles se relacionam com as etapas do CRISP-DM e com as necessidades práticas da Administração.\n\n\n\n\nIBM CORPORATION. Guia do IBM SPSS Modeler CRISP-DM. [s.l.] IBM Corporation, 2023.",
+    "section": "3.11 Resumo e Próximos Passos",
+    "text": "3.11 Resumo e Próximos Passos\nAo longo deste capítulo, discutimos a metodologia CRISP-DM como uma estrutura orientadora para projetos de Ciência de Dados, destacando a importância de iniciar análises a partir de objetivos de negócio claramente definidos e de organizar o trabalho de forma iterativa e sistemática. Vimos que projetos bem sucedidos dependem menos de ferramentas isoladas e mais da articulação entre problemas, dados, métodos e decisões.\nNo entanto, estruturar um projeto é apenas parte do desafio. Em cada fase do CRISP-DM, diferentes tipos de análise podem ser empregados, cada um respondendo a perguntas específicas e oferecendo níveis distintos de apoio à tomada de decisão. Nem toda análise tem o mesmo propósito, nem exige o mesmo grau de sofisticação técnica.\nNo próximo capítulo, apresentamos os principais tipos de análise de dados — descritiva, diagnóstica, preditiva e prescritiva — e discutimos como eles se relacionam com as etapas do CRISP-DM e com as necessidades práticas da Administração.\n\n\n\n\nIBM CORPORATION. Guia do IBM SPSS Modeler CRISP-DM. [s.l.] IBM Corporation, 2023.",
     "crumbs": [
       "Parte 1",
       "<span class='chapter-number'>3</span>  <span class='chapter-title'>A Metodologia CRISP-DM</span>"
@@ -350,11 +350,11 @@
     ]
   },
   {
-    "objectID": "04_capitulo.html#dos-tipos-de-análise-à-visão-integrada-de-um-projeto",
-    "href": "04_capitulo.html#dos-tipos-de-análise-à-visão-integrada-de-um-projeto",
+    "objectID": "04_capitulo.html#resumo-e-próximos-passos",
+    "href": "04_capitulo.html#resumo-e-próximos-passos",
     "title": "4  Tipos de Análise de Dados em CRISP-DM",
-    "section": "4.6 Dos tipos de análise à visão integrada de um projeto",
-    "text": "4.6 Dos tipos de análise à visão integrada de um projeto\nNo capítulo anterior, discutimos quatro tipos de análise de dados — descritiva, diagnóstica, preditiva e prescritiva — destacando que cada uma responde a perguntas distintas e oferece diferentes formas de apoio à tomada de decisão. Também vimos que esses tipos de análise atravessam as etapas de um projeto e se articulam com a metodologia CRISP-DM.\nA partir deste ponto, o livro passa a combinar de forma mais direta conceitos e prática. No próximo capítulo, apresentamos um estudo de caso introdutório em R que integra, em um único exemplo, etapas iniciais do CRISP-DM, organização de projeto e análise exploratória. O objetivo é oferecer uma visão da “floresta”: um panorama do fluxo completo de trabalho que será aprofundado, com mais detalhes e novas ferramentas, ao longo dos capítulos seguintes.",
+    "section": "4.6 Resumo e Próximos Passos",
+    "text": "4.6 Resumo e Próximos Passos\nNeste capítulo, discutimos quatro tipos de análise de dados — descritiva, diagnóstica, preditiva e prescritiva — destacando que cada uma responde a perguntas distintas e oferece diferentes formas de apoio à tomada de decisão. Também vimos que esses tipos de análise atravessam as etapas de um projeto e se articulam com a metodologia CRISP-DM.\nNo próximo capítulo, apresentamos um estudo de caso introdutório que integra, em um único exemplo, etapas iniciais do CRISP-DM, organização de projeto e análise exploratória usando a linguagem R. O objetivo é oferecer uma visão da “floresta”: um panorama do fluxo completo de trabalho que será aprofundado, com mais detalhes e novas ferramentas, ao longo dos capítulos seguintes.",
     "crumbs": [
       "Parte 1",
       "<span class='chapter-number'>4</span>  <span class='chapter-title'>Tipos de Análise de Dados em CRISP-DM</span>"
@@ -460,11 +460,11 @@
     ]
   },
   {
-    "objectID": "05_capitulo.html#da-visão-geral-às-ferramentas",
-    "href": "05_capitulo.html#da-visão-geral-às-ferramentas",
+    "objectID": "05_capitulo.html#resumo-e-próximos-passos",
+    "href": "05_capitulo.html#resumo-e-próximos-passos",
     "title": "5  Um Estudo de Caso Introdutório",
-    "section": "5.9 Da visão geral às ferramentas",
-    "text": "5.9 Da visão geral às ferramentas\nAo longo dos capítulos da parte 1 do livro, vimos como conceitos, papéis, metodologias e tipos de análise se articulam em um projeto de Ciência de Dados simplificado. Essa visão geral fornece o contexto necessário para compreender não apenas o que deve ser feito, mas por que determinadas decisões são tomadas.\nNos capítulos seguintes, o foco se desloca para as ferramentas que tornam possível a execução prática desses projetos, mantendo como referência os princípios e boas práticas apresentados até aqui.\n\n\n\n\nJUNG, D. The Modern Business Data Analyst: A Case Study Introduction into Business Data Analytics with CRISP-DM and R. Cham, Switzerland: Springer Nature Switzerland, 2024.",
+    "section": "5.9 Resumo e Próximos Passos",
+    "text": "5.9 Resumo e Próximos Passos\nAo longo dos capítulos da parte 1 do livro, vimos como conceitos, papéis, metodologias e tipos de análise se articulam em um projeto de Ciência de Dados simplificado. Essa visão geral fornece o contexto necessário para compreender não apenas o que deve ser feito, mas por que determinadas decisões são tomadas.\nNos capítulos da parte 2, o foco se desloca para as ferramentas que tornam possível a execução prática desses projetos, aprofundando os princípios e boas práticas que vimos até aqui.\n\n\n\n\nJUNG, D. The Modern Business Data Analyst: A Case Study Introduction into Business Data Analytics with CRISP-DM and R. Cham, Switzerland: Springer Nature Switzerland, 2024.",
     "crumbs": [
       "Parte 1",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Um Estudo de Caso Introdutório</span>"

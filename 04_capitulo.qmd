@@ -147,18 +147,17 @@ operacionais e clareza quanto aos objetivos estratégicos da organização.
 
 
 
-## Dos tipos de análise à visão integrada de um projeto
+## Resumo e Próximos Passos
 
-No capítulo anterior, discutimos quatro tipos de análise de dados —
+Neste capítulo, discutimos quatro tipos de análise de dados —
 descritiva, diagnóstica, preditiva e prescritiva — destacando que cada uma
 responde a perguntas distintas e oferece diferentes formas de apoio à
 tomada de decisão. Também vimos que esses tipos de análise atravessam as
 etapas de um projeto e se articulam com a metodologia CRISP-DM.
 
-A partir deste ponto, o livro passa a combinar de forma mais direta
-conceitos e prática. No próximo capítulo, apresentamos um estudo de caso
-introdutório em R que integra, em um único exemplo, etapas iniciais do
-CRISP-DM, organização de projeto e análise exploratória. O objetivo é
-oferecer uma visão da “floresta”: um panorama do fluxo completo de trabalho
-que será aprofundado, com mais detalhes e novas ferramentas, ao longo dos
-capítulos seguintes.
+No próximo capítulo, apresentamos um estudo de caso
+introdutório que integra, em um único exemplo, etapas iniciais do
+CRISP-DM, organização de projeto e análise exploratória usando a 
+linguagem R. O objetivo é oferecer uma visão da “floresta”: um panorama 
+do fluxo completo de trabalho que será aprofundado, com mais 
+detalhes e novas ferramentas, ao longo dos capítulos seguintes.
