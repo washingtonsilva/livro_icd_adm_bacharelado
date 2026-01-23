@@ -453,7 +453,18 @@
     "href": "05_capitulo.html#próximos-passos",
     "title": "7  Um Estudo de Caso Introdutório",
     "section": "7.8 Próximos passos",
-    "text": "7.8 Próximos passos\n\nModelagem: aplicação de métodos estatísticos de comparação entre grupos, como testes de médias e análise de variância, com o objetivo de avaliar diferenças sistemáticas associadas aos fatores operacionais identificados.\nAvaliação: interpretação dos resultados estatísticos à luz dos objetivos de negócio, considerando significância, magnitude dos efeitos e implicações práticas para o processo produtivo.\nImplantação: adoção de medidas operacionais baseadas nos resultados, como revisão de fornecedores, ajustes de processo e definição de indicadores de monitoramento da qualidade.\n\n\n\n\n\n\n\nNota\n\n\n\nNo contexto de CRISP-DM, modelagem não se confunde com aprendizagem de máquina. Modelar pode significar aplicar métodos estatísticos tradicionais para comparar grupos, explicar relações e apoiar decisões, sem a necessidade de construir modelos preditivos complexos.\n\n\n\n\n\n\nJUNG, D. The Modern Business Data Analyst: A Case Study Introduction into Business Data Analytics with CRISP-DM and R. Cham, Switzerland: Springer Nature Switzerland, 2024.",
+    "text": "7.8 Próximos passos\n\nModelagem: aplicação de métodos estatísticos de comparação entre grupos, como testes de médias e análise de variância, com o objetivo de avaliar diferenças sistemáticas associadas aos fatores operacionais identificados.\nAvaliação: interpretação dos resultados estatísticos à luz dos objetivos de negócio, considerando significância, magnitude dos efeitos e implicações práticas para o processo produtivo.\nImplantação: adoção de medidas operacionais baseadas nos resultados, como revisão de fornecedores, ajustes de processo e definição de indicadores de monitoramento da qualidade.\n\n\n\n\n\n\n\nNota\n\n\n\nNo contexto de CRISP-DM, modelagem não se confunde com aprendizagem de máquina. Modelar pode significar aplicar métodos estatísticos tradicionais para comparar grupos, explicar relações e apoiar decisões, sem a necessidade de construir modelos preditivos complexos.",
+    "crumbs": [
+      "Fundamentos da Ciência de Dados",
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Um Estudo de Caso Introdutório</span>"
+    ]
+  },
+  {
+    "objectID": "05_capitulo.html#da-visão-geral-às-ferramentas",
+    "href": "05_capitulo.html#da-visão-geral-às-ferramentas",
+    "title": "7  Um Estudo de Caso Introdutório",
+    "section": "7.9 Da visão geral às ferramentas",
+    "text": "7.9 Da visão geral às ferramentas\nAo longo dos capítulos da parte 1 do livro, vimos como conceitos, papéis, metodologias e tipos de análise se articulam em um projeto de Ciência de Dados simplificado. Essa visão geral fornece o contexto necessário para compreender não apenas o que deve ser feito, mas por que determinadas decisões são tomadas.\nNos capítulos seguintes, o foco se desloca para as ferramentas que tornam possível a execução prática desses projetos, mantendo como referência os princípios e boas práticas apresentados até aqui.\n\n\n\n\nJUNG, D. The Modern Business Data Analyst: A Case Study Introduction into Business Data Analytics with CRISP-DM and R. Cham, Switzerland: Springer Nature Switzerland, 2024.",
     "crumbs": [
       "Fundamentos da Ciência de Dados",
       "<span class='chapter-number'>7</span>  <span class='chapter-title'>Um Estudo de Caso Introdutório</span>"
