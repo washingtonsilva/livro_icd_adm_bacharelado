@@ -449,11 +449,11 @@
     ]
   },
   {
-    "objectID": "05_capitulo.html#próximos-passos",
-    "href": "05_capitulo.html#próximos-passos",
+    "objectID": "05_capitulo.html#próximas-fases",
+    "href": "05_capitulo.html#próximas-fases",
     "title": "5  Um Estudo de Caso Introdutório",
-    "section": "5.8 Próximos passos",
-    "text": "5.8 Próximos passos\n\nModelagem: aplicação de métodos estatísticos de comparação entre grupos, como testes de médias e análise de variância, com o objetivo de avaliar diferenças sistemáticas associadas aos fatores operacionais identificados.\nAvaliação: interpretação dos resultados estatísticos à luz dos objetivos de negócio, considerando significância, magnitude dos efeitos e implicações práticas para o processo produtivo.\nImplantação: adoção de medidas operacionais baseadas nos resultados, como revisão de fornecedores, ajustes de processo e definição de indicadores de monitoramento da qualidade.\n\n\n\n\n\n\n\nNota\n\n\n\nNo contexto de CRISP-DM, modelagem não se confunde com aprendizagem de máquina. Modelar pode significar aplicar métodos estatísticos tradicionais para comparar grupos, explicar relações e apoiar decisões, sem a necessidade de construir modelos preditivos complexos.",
+    "section": "5.8 Próximas Fases",
+    "text": "5.8 Próximas Fases\n\nModelagem: aplicação de métodos estatísticos de comparação entre grupos, como testes de médias e análise de variância, com o objetivo de avaliar diferenças sistemáticas associadas aos fatores operacionais identificados.\nAvaliação: interpretação dos resultados estatísticos à luz dos objetivos de negócio, considerando significância, magnitude dos efeitos e implicações práticas para o processo produtivo.\nImplantação: adoção de medidas operacionais baseadas nos resultados, como revisão de fornecedores, ajustes de processo e definição de indicadores de monitoramento da qualidade.\n\n\n\n\n\n\n\nNota\n\n\n\nNo contexto de CRISP-DM, modelagem não se confunde com aprendizagem de máquina. Modelar pode significar aplicar métodos estatísticos tradicionais para comparar grupos, explicar relações e apoiar decisões, sem a necessidade de construir modelos preditivos complexos.",
     "crumbs": [
       "Parte 1",
       "<span class='chapter-number'>5</span>  <span class='chapter-title'>Um Estudo de Caso Introdutório</span>"

@@ -519,7 +519,7 @@ fundamentadas para as próximas fases de CRISP-DM.
 
 
 
-## Próximos passos
+## Próximas Fases
 
 - **Modelagem**: aplicação de métodos estatísticos de comparação entre
   grupos, como testes de médias e análise de variância, com o objetivo de
