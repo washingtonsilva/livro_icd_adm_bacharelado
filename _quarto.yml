@@ -17,11 +17,16 @@ book:
   chapters:
     - index.qmd
     - introducao.qmd
-    - 01_capitulo.qmd
-    - 02_capitulo.qmd
-    - 03_capitulo.qmd
-    - 04_capitulo.qmd
-    - 05_capitulo.qmd
+
+    - part: "Fundamentos da Ciência de Dados"
+      chapters:
+        - parte1.qmd
+        - 01_capitulo.qmd
+        - 02_capitulo.qmd
+        - 03_capitulo.qmd
+        - 04_capitulo.qmd
+        - 05_capitulo.qmd
+
     - referencias.qmd
 
 bibliography: referencias.bib

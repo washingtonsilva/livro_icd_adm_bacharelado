@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>6&nbsp; Capítulo 5 — RStudio e fluxo de trabalho – Introdução à Ciência de Dados para o Bacharelado em Administração</title>
+<title>7&nbsp; Um Estudo de Caso Introdutório – Introdução à Ciência de Dados para o Bacharelado em Administração</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -55,7 +55,27 @@ div.sourceCode
 @media screen {
 pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+  margin-bottom: 0em;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -118,7 +138,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./05_capitulo.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Capítulo 5 — RStudio e fluxo de trabalho</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./parte1.html">Fundamentos da Ciência de Dados</a></li><li class="breadcrumb-item"><a href="./05_capitulo.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Um Estudo de Caso Introdutório</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Procurar" onclick="window.quartoOpenSearch();">
@@ -155,36 +175,53 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introdução</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Fundamentos da Ciência de Dados</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./parte1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Fundamentos da Ciência de Dados</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01_capitulo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Visão Geral de Ciência de Dados</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Visão Geral de Ciência de Dados</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02_capitulo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">A Metodologia CRISP-DM</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Papéis profissionais na área de dados</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./03_capitulo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tipos de Análise de Dados em CRISP-DM</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">A Metodologia CRISP-DM</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./04_capitulo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Um Estudo de Caso Introdutório</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tipos de Análise de Dados em CRISP-DM</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./05_capitulo.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Capítulo 5 — RStudio e fluxo de trabalho</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Um Estudo de Caso Introdutório</span></span></a>
   </div>
 </li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./referencias.html" class="sidebar-item-text sidebar-link">
@@ -201,87 +238,34 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Índice</h2>
    
   <ul>
-  <li><a href="#instalação-do-rstudio" id="toc-instalação-do-rstudio" class="nav-link active" data-scroll-target="#instalação-do-rstudio"><span class="header-section-number">6.1</span> Instalação do RStudio</a></li>
-  <li><a href="#o-que-é-o-rstudio" id="toc-o-que-é-o-rstudio" class="nav-link" data-scroll-target="#o-que-é-o-rstudio"><span class="header-section-number">6.2</span> O que é o RStudio</a>
+  <li><a href="#estrutura-do-projeto-e-organização-dos-arquivos" id="toc-estrutura-do-projeto-e-organização-dos-arquivos" class="nav-link active" data-scroll-target="#estrutura-do-projeto-e-organização-dos-arquivos"><span class="header-section-number">7.1</span> Estrutura do projeto e organização dos arquivos</a></li>
+  <li><a href="#o-caso-junglivet-whisky-company" id="toc-o-caso-junglivet-whisky-company" class="nav-link" data-scroll-target="#o-caso-junglivet-whisky-company"><span class="header-section-number">7.2</span> O Caso Junglivet Whisky Company</a></li>
+  <li><a href="#organização-do-projeto-e-reprodutibilidade" id="toc-organização-do-projeto-e-reprodutibilidade" class="nav-link" data-scroll-target="#organização-do-projeto-e-reprodutibilidade"><span class="header-section-number">7.3</span> Organização do projeto e reprodutibilidade</a></li>
+  <li><a href="#fase-1-compreensão-do-negócio" id="toc-fase-1-compreensão-do-negócio" class="nav-link" data-scroll-target="#fase-1-compreensão-do-negócio"><span class="header-section-number">7.4</span> Fase 1: Compreensão do Negócio</a></li>
+  <li><a href="#fase-2-compreensão-dos-dados" id="toc-fase-2-compreensão-dos-dados" class="nav-link" data-scroll-target="#fase-2-compreensão-dos-dados"><span class="header-section-number">7.5</span> Fase 2: Compreensão dos Dados</a>
   <ul class="collapse">
-  <li><a href="#por-que-usar-o-rstudio" id="toc-por-que-usar-o-rstudio" class="nav-link" data-scroll-target="#por-que-usar-o-rstudio"><span class="header-section-number">6.2.1</span> Por que usar o RStudio?</a></li>
-  <li><a href="#erros-comuns-e-como-resolver" id="toc-erros-comuns-e-como-resolver" class="nav-link" data-scroll-target="#erros-comuns-e-como-resolver"><span class="header-section-number">6.2.2</span> Erros comuns e como resolver</a></li>
-  <li><a href="#checklist-do-leitor" id="toc-checklist-do-leitor" class="nav-link" data-scroll-target="#checklist-do-leitor"><span class="header-section-number">6.2.3</span> Checklist do leitor</a></li>
-  <li><a href="#r-linguagem-vs-rstudio-ide" id="toc-r-linguagem-vs-rstudio-ide" class="nav-link" data-scroll-target="#r-linguagem-vs-rstudio-ide"><span class="header-section-number">6.2.4</span> R (linguagem) vs RStudio (IDE)</a></li>
-  <li><a href="#erros-comuns-e-como-resolver-1" id="toc-erros-comuns-e-como-resolver-1" class="nav-link" data-scroll-target="#erros-comuns-e-como-resolver-1"><span class="header-section-number">6.2.5</span> Erros comuns e como resolver</a></li>
-  <li><a href="#checklist-do-leitor-1" id="toc-checklist-do-leitor-1" class="nav-link" data-scroll-target="#checklist-do-leitor-1"><span class="header-section-number">6.2.6</span> Checklist do leitor</a></li>
+  <li><a href="#dicionário-de-dados" id="toc-dicionário-de-dados" class="nav-link" data-scroll-target="#dicionário-de-dados"><span class="header-section-number">7.5.1</span> Dicionário de dados</a></li>
+  <li><a href="#importação-dos-dados" id="toc-importação-dos-dados" class="nav-link" data-scroll-target="#importação-dos-dados"><span class="header-section-number">7.5.2</span> Importação dos dados</a></li>
+  <li><a href="#inspeção-inicial-dos-dados" id="toc-inspeção-inicial-dos-dados" class="nav-link" data-scroll-target="#inspeção-inicial-dos-dados"><span class="header-section-number">7.5.3</span> Inspeção inicial dos dados</a></li>
   </ul></li>
-  <li><a href="#rstudio-uma-visão-geral" id="toc-rstudio-uma-visão-geral" class="nav-link" data-scroll-target="#rstudio-uma-visão-geral"><span class="header-section-number">6.3</span> RStudio: Uma Visão Geral</a>
+  <li><a href="#fase-3-preparação-dos-dados" id="toc-fase-3-preparação-dos-dados" class="nav-link" data-scroll-target="#fase-3-preparação-dos-dados"><span class="header-section-number">7.6</span> Fase 3: Preparação dos Dados</a></li>
+  <li><a href="#análise-exploratória-de-dados" id="toc-análise-exploratória-de-dados" class="nav-link" data-scroll-target="#análise-exploratória-de-dados"><span class="header-section-number">7.7</span> Análise exploratória de dados</a>
   <ul class="collapse">
-  <li><a href="#interface-do-rstudio" id="toc-interface-do-rstudio" class="nav-link" data-scroll-target="#interface-do-rstudio"><span class="header-section-number">6.3.1</span> Interface do RStudio</a></li>
-  <li><a href="#painel-source" id="toc-painel-source" class="nav-link" data-scroll-target="#painel-source"><span class="header-section-number">6.3.2</span> Painel: <strong>Source</strong></a></li>
-  <li><a href="#painel-console" id="toc-painel-console" class="nav-link" data-scroll-target="#painel-console"><span class="header-section-number">6.3.3</span> Painel: <strong>Console</strong></a></li>
-  <li><a href="#painel-environment" id="toc-painel-environment" class="nav-link" data-scroll-target="#painel-environment"><span class="header-section-number">6.3.4</span> Painel: <strong>Environment</strong></a></li>
-  <li><a href="#painel-output" id="toc-painel-output" class="nav-link" data-scroll-target="#painel-output"><span class="header-section-number">6.3.5</span> Painel: <strong>Output</strong></a></li>
-  <li><a href="#erros-comuns-e-como-resolver-2" id="toc-erros-comuns-e-como-resolver-2" class="nav-link" data-scroll-target="#erros-comuns-e-como-resolver-2"><span class="header-section-number">6.3.6</span> Erros comuns e como resolver</a></li>
-  <li><a href="#checklist-do-leitor-2" id="toc-checklist-do-leitor-2" class="nav-link" data-scroll-target="#checklist-do-leitor-2"><span class="header-section-number">6.3.7</span> Checklist do leitor</a></li>
+  <li><a href="#relação-entre-fornecedor-e-qualidade" id="toc-relação-entre-fornecedor-e-qualidade" class="nav-link" data-scroll-target="#relação-entre-fornecedor-e-qualidade"><span class="header-section-number">7.7.1</span> Relação entre fornecedor e qualidade</a></li>
+  <li><a href="#relação-entre-mestre-responsável-e-qualidade" id="toc-relação-entre-mestre-responsável-e-qualidade" class="nav-link" data-scroll-target="#relação-entre-mestre-responsável-e-qualidade"><span class="header-section-number">7.7.2</span> Relação entre mestre responsável e qualidade</a></li>
+  <li><a href="#relação-entre-cor-e-qualidade" id="toc-relação-entre-cor-e-qualidade" class="nav-link" data-scroll-target="#relação-entre-cor-e-qualidade"><span class="header-section-number">7.7.3</span> Relação entre cor e qualidade</a></li>
+  <li><a href="#conclusão-da-análise-exploratória" id="toc-conclusão-da-análise-exploratória" class="nav-link" data-scroll-target="#conclusão-da-análise-exploratória"><span class="header-section-number">7.7.4</span> Conclusão da Análise Exploratória</a></li>
   </ul></li>
-  <li><a href="#instalando-pacotes-r" id="toc-instalando-pacotes-r" class="nav-link" data-scroll-target="#instalando-pacotes-r"><span class="header-section-number">6.4</span> Instalando Pacotes R:</a>
-  <ul class="collapse">
-  <li><a href="#usando-a-guia-packages" id="toc-usando-a-guia-packages" class="nav-link" data-scroll-target="#usando-a-guia-packages"><span class="header-section-number">6.4.1</span> Usando a Guia Packages</a></li>
-  <li><a href="#usando-comandos" id="toc-usando-comandos" class="nav-link" data-scroll-target="#usando-comandos"><span class="header-section-number">6.4.2</span> Usando comandos</a></li>
-  <li><a href="#erros-comuns-e-como-resolver-3" id="toc-erros-comuns-e-como-resolver-3" class="nav-link" data-scroll-target="#erros-comuns-e-como-resolver-3"><span class="header-section-number">6.4.3</span> Erros comuns e como resolver</a></li>
-  <li><a href="#checklist-do-leitor-3" id="toc-checklist-do-leitor-3" class="nav-link" data-scroll-target="#checklist-do-leitor-3"><span class="header-section-number">6.4.4</span> Checklist do leitor</a></li>
-  </ul></li>
-  <li><a href="#configurações-básicas-recomendadas-do-rstudio" id="toc-configurações-básicas-recomendadas-do-rstudio" class="nav-link" data-scroll-target="#configurações-básicas-recomendadas-do-rstudio"><span class="header-section-number">6.5</span> Configurações Básicas Recomendadas do RStudio</a>
-  <ul class="collapse">
-  <li><a href="#checklist-do-leitor-4" id="toc-checklist-do-leitor-4" class="nav-link" data-scroll-target="#checklist-do-leitor-4"><span class="header-section-number">6.5.1</span> Checklist do leitor</a></li>
-  </ul></li>
-  <li><a href="#projetos-rstudio-e-reprodutibilidade" id="toc-projetos-rstudio-e-reprodutibilidade" class="nav-link" data-scroll-target="#projetos-rstudio-e-reprodutibilidade"><span class="header-section-number">7</span> Projetos RStudio e reprodutibilidade</a>
-  <ul class="collapse">
-  <li><a href="#práticas-ruins-e-como-resolver" id="toc-práticas-ruins-e-como-resolver" class="nav-link" data-scroll-target="#práticas-ruins-e-como-resolver"><span class="header-section-number">7.1</span> Práticas ruins e como resolver</a>
-  <ul class="collapse">
-  <li><a href="#checklist-do-leitor-5" id="toc-checklist-do-leitor-5" class="nav-link" data-scroll-target="#checklist-do-leitor-5"><span class="header-section-number">7.1.1</span> Checklist do leitor</a></li>
-  </ul></li>
-  <li><a href="#criando-projetos-no-rstudio" id="toc-criando-projetos-no-rstudio" class="nav-link" data-scroll-target="#criando-projetos-no-rstudio"><span class="header-section-number">7.2</span> Criando projetos no RStudio</a>
-  <ul class="collapse">
-  <li><a href="#erros-comuns-e-como-resolver-4" id="toc-erros-comuns-e-como-resolver-4" class="nav-link" data-scroll-target="#erros-comuns-e-como-resolver-4"><span class="header-section-number">7.2.1</span> Erros comuns e como resolver</a></li>
-  <li><a href="#checklist-do-leitor-6" id="toc-checklist-do-leitor-6" class="nav-link" data-scroll-target="#checklist-do-leitor-6"><span class="header-section-number">7.2.2</span> Checklist do leitor</a></li>
-  </ul></li>
-  <li><a href="#o-que-acontece-quando-um-projeto-é-criado" id="toc-o-que-acontece-quando-um-projeto-é-criado" class="nav-link" data-scroll-target="#o-que-acontece-quando-um-projeto-é-criado"><span class="header-section-number">7.3</span> O que acontece quando um projeto é criado</a>
-  <ul class="collapse">
-  <li><a href="#erros-comuns-e-como-resolver-5" id="toc-erros-comuns-e-como-resolver-5" class="nav-link" data-scroll-target="#erros-comuns-e-como-resolver-5"><span class="header-section-number">7.3.1</span> Erros comuns e como resolver</a></li>
-  <li><a href="#checklist-do-leitor-7" id="toc-checklist-do-leitor-7" class="nav-link" data-scroll-target="#checklist-do-leitor-7"><span class="header-section-number">7.3.2</span> Checklist do leitor</a></li>
-  </ul></li>
-  <li><a href="#estrutura-recomendada-para-o-projeto-rstudio-criado" id="toc-estrutura-recomendada-para-o-projeto-rstudio-criado" class="nav-link" data-scroll-target="#estrutura-recomendada-para-o-projeto-rstudio-criado"><span class="header-section-number">7.4</span> Estrutura recomendada para o projeto RStudio criado</a>
-  <ul class="collapse">
-  <li><a href="#estrutura-básica-do-projeto" id="toc-estrutura-básica-do-projeto" class="nav-link" data-scroll-target="#estrutura-básica-do-projeto"><span class="header-section-number">7.4.1</span> Estrutura básica do projeto</a></li>
-  <li><a href="#criando-pastas-pelo-rstudio" id="toc-criando-pastas-pelo-rstudio" class="nav-link" data-scroll-target="#criando-pastas-pelo-rstudio"><span class="header-section-number">7.4.2</span> Criando pastas pelo RStudio</a></li>
-  <li><a href="#erros-comuns-e-como-resolver-6" id="toc-erros-comuns-e-como-resolver-6" class="nav-link" data-scroll-target="#erros-comuns-e-como-resolver-6"><span class="header-section-number">7.4.3</span> Erros comuns e como resolver</a></li>
-  <li><a href="#checklist-do-leitor-8" id="toc-checklist-do-leitor-8" class="nav-link" data-scroll-target="#checklist-do-leitor-8"><span class="header-section-number">7.4.4</span> Checklist do leitor</a></li>
-  </ul></li>
-  <li><a href="#gerenciamento-de-arquivos" id="toc-gerenciamento-de-arquivos" class="nav-link" data-scroll-target="#gerenciamento-de-arquivos"><span class="header-section-number">7.5</span> Gerenciamento de Arquivos</a>
-  <ul class="collapse">
-  <li><a href="#menu-files" id="toc-menu-files" class="nav-link" data-scroll-target="#menu-files"><span class="header-section-number">7.5.1</span> Menu <code>Files</code></a></li>
-  <li><a href="#erros-comuns-e-como-resolver-7" id="toc-erros-comuns-e-como-resolver-7" class="nav-link" data-scroll-target="#erros-comuns-e-como-resolver-7"><span class="header-section-number">7.5.2</span> Erros comuns e como resolver</a></li>
-  <li><a href="#checklist-do-leitor-9" id="toc-checklist-do-leitor-9" class="nav-link" data-scroll-target="#checklist-do-leitor-9"><span class="header-section-number">7.5.3</span> Checklist do leitor</a></li>
-  </ul></li>
-  <li><a href="#configurações-recomendadas-windows" id="toc-configurações-recomendadas-windows" class="nav-link" data-scroll-target="#configurações-recomendadas-windows"><span class="header-section-number">7.6</span> Configurações recomendadas (Windows)</a>
-  <ul class="collapse">
-  <li><a href="#erros-comuns-e-como-resolver-8" id="toc-erros-comuns-e-como-resolver-8" class="nav-link" data-scroll-target="#erros-comuns-e-como-resolver-8"><span class="header-section-number">7.6.1</span> Erros comuns e como resolver</a></li>
-  <li><a href="#checklist-do-leitor-10" id="toc-checklist-do-leitor-10" class="nav-link" data-scroll-target="#checklist-do-leitor-10"><span class="header-section-number">7.6.2</span> Checklist do leitor</a></li>
-  </ul></li>
-  </ul></li>
-  <li><a href="#atalhos-essenciais" id="toc-atalhos-essenciais" class="nav-link" data-scroll-target="#atalhos-essenciais"><span class="header-section-number">8</span> Atalhos essenciais</a>
-  <ul class="collapse">
-  <li><a href="#erros-comuns-e-como-resolver-9" id="toc-erros-comuns-e-como-resolver-9" class="nav-link" data-scroll-target="#erros-comuns-e-como-resolver-9"><span class="header-section-number">8.0.1</span> Erros comuns e como resolver</a></li>
-  <li><a href="#checklist-do-leitor-11" id="toc-checklist-do-leitor-11" class="nav-link" data-scroll-target="#checklist-do-leitor-11"><span class="header-section-number">8.0.2</span> Checklist do leitor</a></li>
-  </ul></li>
-  <li><a href="#exercícios" id="toc-exercícios" class="nav-link" data-scroll-target="#exercícios"><span class="header-section-number">9</span> Exercícios</a></li>
+  <li><a href="#próximos-passos" id="toc-próximos-passos" class="nav-link" data-scroll-target="#próximos-passos"><span class="header-section-number">7.8</span> Próximos passos</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./parte1.html">Fundamentos da Ciência de Dados</a></li><li class="breadcrumb-item"><a href="./05_capitulo.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Um Estudo de Caso Introdutório</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Capítulo 5 — RStudio e fluxo de trabalho</span></h1>
+<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Um Estudo de Caso Introdutório</span></h1>
 </div>
 
 
@@ -298,504 +282,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<p>Este capítulo dá o primeiro passo para um trabalho organizado e reproduzível com as ferramentas que utilizaremos: entender o RStudio, configurar o ambiente e adotar boas práticas desde o início.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Nota</span>Objetivos do capítulo
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>Reconhecer o papel do RStudio como IDE para o R.</li>
-<li>Navegar pela interface e usar os painéis principais.</li>
-<li>Instalar e carregar pacotes corretamente.</li>
-<li>Criar projetos e organizar pastas de forma reprodutível.</li>
-</ul>
-</div>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Nota</span>Pré-requisitos
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li>Ter a linguagem R instalado no computador.</li>
-<li>Acesso à internet para baixar e instalar o RStudio</li>
-<li>Acesso à internet para instalar pacotes quando necessário.</li>
-<li>Noções básicas de organização de arquivos e pastas.</li>
-</ul>
-</div>
-</div>
-<section id="instalação-do-rstudio" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="instalação-do-rstudio"><span class="header-section-number">6.1</span> Instalação do RStudio</h2>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Nota</span>Instalação do RStudio no Windows
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ol type="1">
-<li>Acesse <a href="https://posit.co/download/rstudio-desktop/" target="_blank">https://posit.co/download/rstudio-desktop/</a></li>
-<li>Role a página; normalmente o site detecta seu sistema e disponibiliza o instalador logo abaixo de <code>2: Install RStudio</code>.</li>
-<li>Clique em <code>Download RStudio Desktop for Windows</code> se o sistema for Windows.</li>
-<li>Finalizado o download, clique duas vezes no arquivo e avance até concluir.</li>
-</ol>
-</div>
-</div>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Nota</span>macOS/Linux
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Na mesma página de download, escolha o instalador do seu sistema. O fluxo é análogo ao do Windows: baixar, executar e concluir a instalação.</p>
-</div>
-</div>
-<p>Com o RStudio instalado, vamos entender o que ele é e por que um IDE facilita o trabalho de quem está começando.</p>
-</section>
-<section id="o-que-é-o-rstudio" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="o-que-é-o-rstudio"><span class="header-section-number">6.2</span> O que é o RStudio</h2>
-<p>O RStudio é um Ambiente de Desenvolvimento Integrado (IDE) voltado para a linguagem R. Em vez de abrir programas separados para escrever, executar e visualizar resultados, o IDE reúne tudo em uma única interface.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Nota</span>Conceito-chave: IDE
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Um IDE integra editor de texto, execução de código, ajuda, visualização de gráficos e organização de projetos. Isso reduz erros e acelera o aprendizado.</p>
-</div>
-</div>
-<p>Para quem está começando, a vantagem prática é simples: você escreve um script, executa no console e vê o resultado sem sair do mesmo ambiente.</p>
-<section id="por-que-usar-o-rstudio" class="level3" data-number="6.2.1">
-<h3 data-number="6.2.1" class="anchored" data-anchor-id="por-que-usar-o-rstudio"><span class="header-section-number">6.2.1</span> Por que usar o RStudio?</h3>
-<ul>
-<li><p><strong>Interface Amigável</strong>: O RStudio oferece uma interface gráfica intuitiva que facilita o trabalho, especialmente para iniciantes, com acesso visual a scripts, console, dados e gráficos simultaneamente.</p></li>
-<li><p><strong>Aumento de Produtividade</strong>: Recursos como autocompletar código, atalhos de teclado e visualização integrada de gráficos aceleram significativamente o fluxo de trabalho.</p></li>
-<li><p><strong>Gestão de Projetos</strong>: O sistema de projetos do RStudio organiza seu trabalho, mantendo todos os arquivos relacionados em um único local.</p></li>
-<li><p><strong>Integração com outras ferramentas</strong>: Oferece suporte a várias linguagens (R, Python, SQL), integra-se com sistemas de controle de versão como Git, e facilita a publicação de conteúdo via sistema Quarto.</p></li>
-<li><p><strong>Reprodutibilidade Científica</strong>: Facilita a criação de documentos reproduzíveis que combinam código, resultados e texto narrativo, essenciais para pesquisa científica e relatórios corporativos.</p></li>
-<li><p><strong>Comunidade Ativa</strong>: Desenvolvido pela Posit (anteriormente RStudio), conta com uma grande comunidade de usuários e desenvolvedores que constantemente melhoram a ferramenta.</p></li>
-</ul>
-</section>
-<section id="erros-comuns-e-como-resolver" class="level3" data-number="6.2.2">
-<h3 data-number="6.2.2" class="anchored" data-anchor-id="erros-comuns-e-como-resolver"><span class="header-section-number">6.2.2</span> Erros comuns e como resolver</h3>
-<ul>
-<li>Confundir RStudio com a linguagem R: lembre que são ferramentas diferentes.</li>
-<li>Abrir o RStudio sem ter o R instalado: instale o R antes do IDE.</li>
-<li>Ignorar o painel de ajuda: use a guia <code>Help</code> para consultar funções.</li>
-</ul>
-</section>
-<section id="checklist-do-leitor" class="level3" data-number="6.2.3">
-<h3 data-number="6.2.3" class="anchored" data-anchor-id="checklist-do-leitor"><span class="header-section-number">6.2.3</span> Checklist do leitor</h3>
-<ul class="task-list">
-<li><label><input type="checkbox">Definir o que é um IDE.</label></li>
-<li><label><input type="checkbox">Explicar por que o RStudio facilita o trabalho inicial.</label></li>
-<li><label><input type="checkbox">Verificar que o R está instalado no computador.</label></li>
-</ul>
-</section>
-<section id="r-linguagem-vs-rstudio-ide" class="level3" data-number="6.2.4">
-<h3 data-number="6.2.4" class="anchored" data-anchor-id="r-linguagem-vs-rstudio-ide"><span class="header-section-number">6.2.4</span> R (linguagem) vs RStudio (IDE)</h3>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://d33wubrfki0l68.cloudfront.net/0b4d0569b2ddf6147da90b110fbb2a17653c8b08/f06f3/images/shutterstock/r_vs_rstudio_1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-<p>R é uma <strong>linguagem de programação</strong>, enquanto o RStudio é um <strong>Ambiente de Desenvolvimento Integrado</strong> que contém recursos que facilitam o uso da linguagem R.</p>
-<p>Utilizando a analogia de um carro, R seria o motor enquanto o RStudio seria o painel de controles (<em>dashboard</em>). Portanto, é necessário ter os dois softwares instalados.</p>
-</section>
-<section id="erros-comuns-e-como-resolver-1" class="level3" data-number="6.2.5">
-<h3 data-number="6.2.5" class="anchored" data-anchor-id="erros-comuns-e-como-resolver-1"><span class="header-section-number">6.2.5</span> Erros comuns e como resolver</h3>
-<ul>
-<li>Instalar apenas o RStudio e esperar que o R funcione: instale ambos.</li>
-<li>Achar que o RStudio “substitui” o R: ele apenas organiza o trabalho.</li>
-<li>Não saber onde digitar comandos: use o painel <code>Console</code> para executar.</li>
-</ul>
-</section>
-<section id="checklist-do-leitor-1" class="level3" data-number="6.2.6">
-<h3 data-number="6.2.6" class="anchored" data-anchor-id="checklist-do-leitor-1"><span class="header-section-number">6.2.6</span> Checklist do leitor</h3>
-<ul class="task-list">
-<li><label><input type="checkbox">Diferenciar o que é o R e o que é o RStudio.</label></li>
-<li><label><input type="checkbox">Explicar por que ambos devem estar instalados.</label></li>
-<li><label><input type="checkbox">Indicar onde executar comandos no RStudio.</label></li>
-</ul>
-</section>
-</section>
-<section id="rstudio-uma-visão-geral" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="rstudio-uma-visão-geral"><span class="header-section-number">6.3</span> RStudio: Uma Visão Geral</h2>
-<section id="interface-do-rstudio" class="level3" data-number="6.3.1">
-<h3 data-number="6.3.1" class="anchored" data-anchor-id="interface-do-rstudio"><span class="header-section-number">6.3.1</span> Interface do RStudio</h3>
-<p>Na primeira abertura, você verá quatro painéis. Eles funcionam em conjunto para escrever, executar, inspecionar objetos e visualizar resultados.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/05-cap/rstudio-panes.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-<p>Na figura acima, cada painel tem um papel. Vamos percorrê-los começando pelo <code>Source</code>, que é onde você escreve.</p>
-</section>
-<section id="painel-source" class="level3" data-number="6.3.2">
-<h3 data-number="6.3.2" class="anchored" data-anchor-id="painel-source"><span class="header-section-number">6.3.2</span> Painel: <strong>Source</strong></h3>
-<ul>
-<li><p>O painel <code>Source</code> permite a visualização e edição de vários arquivos relacionados a diversas linguagens, tais como: <code>.R</code>, <code>.qmd</code>, ou arquivos de texto gerais como <code>.txt</code> ou <code>.md.</code></p></li>
-<li><p>Por padrão, é o painel superior esquerdo e pode ser iniciado abrindo qualquer arquivo editável no RStudio.</p></li>
-<li><p>Cada arquivo adicional que for aberto será adicionado como uma nova guia no painel.</p></li>
-</ul>
-</section>
-<section id="painel-console" class="level3" data-number="6.3.3">
-<h3 data-number="6.3.3" class="anchored" data-anchor-id="painel-console"><span class="header-section-number">6.3.3</span> Painel: <strong>Console</strong></h3>
-<ul>
-<li><p>Esse painel fornece uma área para executar o código interativamente, isto é, você pode “conversar” diretamente com o interpretador da linguagem R.</p></li>
-<li><p>Por padrão, está vinculado à linguagem R, mas ele também pode fornecer um console Python.</p></li>
-</ul>
-</section>
-<section id="painel-environment" class="level3" data-number="6.3.4">
-<h3 data-number="6.3.4" class="anchored" data-anchor-id="painel-environment"><span class="header-section-number">6.3.4</span> Painel: <strong>Environment</strong></h3>
-<p><strong>Guia <code>Environment</code></strong></p>
-<ul>
-<li><p>Essa guia exibe objetos R e Python ativos na sessão atual.</p></li>
-<li><p>A barra de menus de <code>Environment</code> fornece carregamento ou salvamento de R workspaces, importação interativa de conjuntos de dados de arquivos de texto, Excel ou SPSS/SAS/Stata.</p></li>
-<li><p>Ela também exibe a memória usada pela sessão R ativa e um ícone de uma vassoura para remover todos os objetos ativos.</p></li>
-</ul>
-</section>
-<section id="painel-output" class="level3" data-number="6.3.5">
-<h3 data-number="6.3.5" class="anchored" data-anchor-id="painel-output"><span class="header-section-number">6.3.5</span> Painel: <strong>Output</strong></h3>
-<p>Por padrão, o painel <code>Output</code> é o painel inferior direito e contém as seguintes guias:</p>
-<p><strong>Guia <code>Files</code></strong></p>
-<ul>
-<li><p>Esta guia fornece uma exploração interativa da pasta de trabalho (<em>working directory</em>), ou seja, a pasta para a qual o R está direcionado.</p></li>
-<li><p>Nesta guia, você pode adicionar, excluir, renomear e remover arquivos e pastas, entre outras operações.</p></li>
-</ul>
-<p><strong>Guia <code>Help</code></strong></p>
-<ul>
-<li><p>O ícone <code>Home</code> exibe a página de ajuda geral, com links para Manuais e Referências sobre o R e RStudio.</p></li>
-<li><p>Exibe também a documentação dos pacotes.</p></li>
-</ul>
-<p><strong>Guia <code>Viewer</code></strong></p>
-<ul>
-<li>Exibe conteúdos interativos tais como: gráficos interativos, aplicativos Shiny, páginas HTML geradas pelo Quarto, entre outros.</li>
-</ul>
-<p><strong>Guia <code>Presentation</code></strong></p>
-<ul>
-<li>Esta guia é usada para exibir slides HTML gerados pelo sistema Quarto.</li>
-</ul>
-<p><strong>Guia <code>Plots</code></strong></p>
-<ul>
-<li><p>Esta guia exibe imagens estáticas produzidas na sessão.</p></li>
-<li><p>Há setas para navegar entre gráficos mais antigos e mais recentes, zoom, um botão de exportação para salvar as imagens, um botão de exclusão de imagens e um ícone de vassoura que limpará todos os gráficos.</p></li>
-</ul>
-<p><strong>Guia <code>Packages</code></strong></p>
-<ul>
-<li><p>Esta guia permite visualizar os pacotes R instalados.</p></li>
-<li><p>Há uma barra para pesquisar a biblioteca atual de pacotes.</p></li>
-<li><p>Há também um botão para instalação e atualização de pacotes.</p></li>
-</ul>
-</section>
-<section id="erros-comuns-e-como-resolver-2" class="level3" data-number="6.3.6">
-<h3 data-number="6.3.6" class="anchored" data-anchor-id="erros-comuns-e-como-resolver-2"><span class="header-section-number">6.3.6</span> Erros comuns e como resolver</h3>
-<ul>
-<li>Não saber onde digitar comandos: use o <code>Console</code> para executar.</li>
-<li>Abrir um arquivo e não ver no <code>Source</code>: confirme se ele é editável.</li>
-<li>Salvar arquivos fora do projeto: trabalhe sempre dentro da pasta do projeto.</li>
-<li>Confundir <code>Files</code> com o sistema inteiro: ele mostra o <em>working directory</em>.</li>
-</ul>
-</section>
-<section id="checklist-do-leitor-2" class="level3" data-number="6.3.7">
-<h3 data-number="6.3.7" class="anchored" data-anchor-id="checklist-do-leitor-2"><span class="header-section-number">6.3.7</span> Checklist do leitor</h3>
-<ul class="task-list">
-<li><label><input type="checkbox">Localizar <code>Source</code>, <code>Console</code>, <code>Environment</code> e <code>Output</code>.</label></li>
-<li><label><input type="checkbox">Explicar o papel da guia <code>Files</code> como pasta de trabalho.</label></li>
-<li><label><input type="checkbox">Abrir e alternar arquivos no <code>Source</code>.</label></li>
-</ul>
-</section>
-</section>
-<section id="instalando-pacotes-r" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="instalando-pacotes-r"><span class="header-section-number">6.4</span> Instalando Pacotes R:</h2>
-<section id="usando-a-guia-packages" class="level3" data-number="6.4.1">
-<h3 data-number="6.4.1" class="anchored" data-anchor-id="usando-a-guia-packages"><span class="header-section-number">6.4.1</span> Usando a Guia Packages</h3>
-<p>Para instalar pacotes usando a guia <strong>Packages</strong> no RStudio:</p>
-<ul>
-<li><p>Clique na guia <strong>Packages</strong>.</p></li>
-<li><p>Clique em <strong>Install Packages</strong>.</p></li>
-<li><p>Digite o nome de cada pacote que deseja instalar separados por um espaço ou vírgula na caixa de texto.</p></li>
-<li><p>Copie os pacotes abaixo e cole na caixa de texto:</p></li>
-</ul>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>tidyverse usethis </span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<ul>
-<li>Clique em <strong>Install</strong> para iniciar a instalação</li>
-</ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/05-cap/install_packages.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
-</figure>
-</div>
-</section>
-<section id="usando-comandos" class="level3" data-number="6.4.2">
-<h3 data-number="6.4.2" class="anchored" data-anchor-id="usando-comandos"><span class="header-section-number">6.4.2</span> Usando comandos</h3>
-<ul>
-<li><p>Uma forma alternativa de instalar pacotes é usando a linha de comando.</p></li>
-<li><p>Você pode usar o seguinte comando diretamente no console, em um script, ou em um documento Quarto:</p></li>
-</ul>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"tidyverse"</span>, <span class="st">"usethis"</span>))</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<div class="callout callout-style-default callout-note callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Nota</span>Atenção! Instalação e carregamento de pacotes
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li><p>Em um computador, você instala o pacote <strong>uma única vez</strong>.</p></li>
-<li><p>Para usar o pacote em cada sessão, é preciso <strong>carregá-lo</strong> com <code>library()</code>.</p></li>
-</ul>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># carrega os pacotes utilizados</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(usethis)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>.</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>.</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</div>
-</div>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Dica</span>Conexão com a internet
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li><p>Para instalar pacotes de R ou Python, é necessária uma <strong>conexão ativa com a internet</strong>.</p></li>
-<li><p>Em caso de falhas de conexão, o download pode falhar. Nesse caso, repita a instalação.</p></li>
-</ul>
-</div>
-</div>
-</section>
-<section id="erros-comuns-e-como-resolver-3" class="level3" data-number="6.4.3">
-<h3 data-number="6.4.3" class="anchored" data-anchor-id="erros-comuns-e-como-resolver-3"><span class="header-section-number">6.4.3</span> Erros comuns e como resolver</h3>
-<ul>
-<li>Tentar usar <code>library()</code> sem instalar: rode <code>install.packages()</code> antes.</li>
-<li>Esperar que a instalação funcione sem internet: verifique a conexão.</li>
-<li>Instalar toda vez que abrir o RStudio: instale uma vez, carregue sempre.</li>
-</ul>
-</section>
-<section id="checklist-do-leitor-3" class="level3" data-number="6.4.4">
-<h3 data-number="6.4.4" class="anchored" data-anchor-id="checklist-do-leitor-3"><span class="header-section-number">6.4.4</span> Checklist do leitor</h3>
-<ul class="task-list">
-<li><label><input type="checkbox">Indicar quando usar <code>install.packages()</code>.</label></li>
-<li><label><input type="checkbox">Indicar quando usar <code>library()</code>.</label></li>
-<li><label><input type="checkbox">Reconhecer que a instalação exige internet.</label></li>
-</ul>
-</section>
-</section>
-<section id="configurações-básicas-recomendadas-do-rstudio" class="level2" data-number="6.5">
-<h2 data-number="6.5" class="anchored" data-anchor-id="configurações-básicas-recomendadas-do-rstudio"><span class="header-section-number">6.5</span> Configurações Básicas Recomendadas do RStudio</h2>
-<p>Estas opções evitam mensagens e comportamentos confusos ao iniciar o RStudio em diferentes projetos.</p>
-<ol type="1">
-<li><p>Abra o RStudio.</p></li>
-<li><p>Clique no menu “<em>Tools</em>” &gt; “<em>Global Options</em>” &gt; “<em>Basic</em>”.</p></li>
-<li><p><strong>Desmarque</strong> a opção: “<em>Restore most recently opened project at startup</em>”.</p></li>
-<li><p><strong>Desmarque</strong> a opção: “<em>Restore previously open source document at startup</em>”.</p></li>
-<li><p><strong>Desmarque</strong> a opção: “<em>Restore .Rdata into workspace at startup</em>”.</p></li>
-<li><p>Na caixa à direita de “<em>Save workspace to .Rdata on exit:</em>”, <strong>selecione</strong> “<em>never</em>”</p></li>
-<li><p>Clique em “<em>Ok</em>” e, em seguida, em “<em>Apply</em>”.</p></li>
-</ol>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/05-cap/rstudio_config_basica.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:90.0%"></p>
-</figure>
-</div>
-<section id="checklist-do-leitor-4" class="level3" data-number="6.5.1">
-<h3 data-number="6.5.1" class="anchored" data-anchor-id="checklist-do-leitor-4"><span class="header-section-number">6.5.1</span> Checklist do leitor</h3>
-<ul class="task-list">
-<li><label><input type="checkbox">Desativar a restauração automática de projetos e arquivos.</label></li>
-<li><label><input type="checkbox">Configurar “Save workspace to .Rdata” como “never”.</label></li>
-<li><label><input type="checkbox">Verificar o projeto ativo no RStudio.</label></li>
-</ul>
-</section>
-</section>
-<section id="projetos-rstudio-e-reprodutibilidade" class="level1" data-number="7">
-<h1 data-number="7"><span class="header-section-number">7</span> Projetos RStudio e reprodutibilidade</h1>
-<p>Depois de conhecer a interface do RStudio, o próximo passo para trabalhar de forma organizada e segura é estruturar o trabalho em projetos. Projetos reduzem confusões com arquivos, facilitam a colaboração e tornam análises mais reprodutíveis ao longo do tempo.</p>
-<p>Em termos práticos, um projeto reúne, em uma única pasta, todos os elementos relacionados a uma análise: dados, scripts, relatórios e documentação. Essa prática é amplamente adotada por analistas e cientistas de dados e é suportada nativamente pelo RStudio por meio dos <em>RStudio Projects</em>.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Nota</span>Visão geral
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<ul>
-<li><p>Em projetos de análise de dados, todos os arquivos relevantes ficam organizados em uma única pasta, estruturada em subpastas bem definidas (por exemplo, dados, scripts e relatórios).</p></li>
-<li><p>Essa organização é tão comum que o RStudio oferece suporte direto por meio dos <em>Projects</em>, permitindo trabalhar com diferentes projetos de forma isolada e consistente.</p></li>
-<li><p>Ao ativar um projeto, a pasta do projeto passa a ser o diretório de trabalho (<em>working directory</em>) da sessão, o que facilita o uso de caminhos relativos.</p></li>
-<li><p>O uso de caminhos relativos reduz erros, aumenta a portabilidade do código e é um elemento central da reprodutibilidade.</p></li>
-</ul>
-</div>
-</div>
-<section id="práticas-ruins-e-como-resolver" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="práticas-ruins-e-como-resolver"><span class="header-section-number">7.1</span> Práticas ruins e como resolver</h2>
-<ul>
-<li>Trabalhar sem projeto e “perder” arquivos: crie um projeto para cada análise.</li>
-<li>Misturar arquivos de projetos diferentes: use uma pasta por projeto.</li>
-<li>Utilizar caminhos absolutos longos: prefira caminhos relativos dentro do projeto.</li>
-</ul>
-<section id="checklist-do-leitor-5" class="level3" data-number="7.1.1">
-<h3 data-number="7.1.1" class="anchored" data-anchor-id="checklist-do-leitor-5"><span class="header-section-number">7.1.1</span> Checklist do leitor</h3>
-<ul class="task-list">
-<li><label><input type="checkbox">Explicar por que projetos facilitam a reprodutibilidade.</label></li>
-<li><label><input type="checkbox">Definir o que é um caminho relativo.</label></li>
-<li><label><input type="checkbox">Adotar um projeto para cada análise de dados.</label></li>
-</ul>
-</section>
-</section>
-<section id="criando-projetos-no-rstudio" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="criando-projetos-no-rstudio"><span class="header-section-number">7.2</span> Criando projetos no RStudio</h2>
-<p>Projetos RStudio estão sempre associados a uma pasta no sistema de arquivos. Há duas formas principais de criar um projeto:</p>
-<ul>
-<li>Em uma nova pasta, que ainda não existe.</li>
-<li>Em uma pasta existente, como um repositório previamente clonado do GitHub (<strong>recomendado</strong>).</li>
-</ul>
-<p>É importante destacar que um projeto RStudio é conceitualmente distinto do controle de versão com Git. Um projeto pode existir sem Git, mas, neste livro, recomenda-se fortemente que projetos sejam versionados, pois isso reforça boas práticas profissionais.</p>
-<p>Suponha que um aluno hipotético, João Silva, deseje criar um projeto para a disciplina Introdução à Ciência de Dados. Um nome adequado para a pasta e para o projeto seria <code>joaosilva_icd</code>, evitando espaços, acentos e caracteres especiais.</p>
-<p>A seguir, descreve-se o procedimento para criar um projeto a partir de uma pasta existente (por exemplo, um repositório clonado do GitHub):</p>
-<ol type="1">
-<li>Clique no menu <code>Project</code> e, em seguida, em <code>New Project</code>, no canto superior direito do RStudio.</li>
-</ol>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/05-cap/menu_projects.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
-</figure>
-</div>
-<ol start="2" type="1">
-<li>Na janela seguinte, selecione a opção <code>Existing Directory</code>.</li>
-</ol>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/05-cap/new_proj01.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
-</figure>
-</div>
-<ol start="3" type="1">
-<li><p>Clique em <code>Browse</code> e selecione a pasta que servirá como diretório do projeto (por exemplo, a pasta clonada do GitHub).</p></li>
-<li><p>Confirme a criação do projeto clicando em <code>Create Project</code>.</p></li>
-</ol>
-<p>Após esse procedimento, o RStudio criará o arquivo <code>.Rproj</code> dentro da pasta selecionada e ativará automaticamente o projeto.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/05-cap/projeto_criado.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:80.0%"></p>
-</figure>
-</div>
-<section id="erros-comuns-e-como-resolver-4" class="level3" data-number="7.2.1">
-<h3 data-number="7.2.1" class="anchored" data-anchor-id="erros-comuns-e-como-resolver-4"><span class="header-section-number">7.2.1</span> Erros comuns e como resolver</h3>
-<ul>
-<li>Criar projetos com nomes confusos ou inconsistentes: adote um padrão simples.</li>
-<li>Salvar arquivos fora da pasta do projeto: verifique sempre a guia <code>Files</code>.</li>
-<li>Abrir o RStudio sem ativar o projeto correto: selecione o projeto no menu <code>Project</code>.</li>
-</ul>
-</section>
-<section id="checklist-do-leitor-6" class="level3" data-number="7.2.2">
-<h3 data-number="7.2.2" class="anchored" data-anchor-id="checklist-do-leitor-6"><span class="header-section-number">7.2.2</span> Checklist do leitor</h3>
-<ul class="task-list">
-<li><label><input type="checkbox">Criar um projeto com nome padronizado.</label></li>
-<li><label><input type="checkbox">Identificar a pasta associada ao projeto.</label></li>
-<li><label><input type="checkbox">Abrir e fechar projetos pelo menu <code>Project</code>.</label></li>
-</ul>
-</section>
-</section>
-<section id="o-que-acontece-quando-um-projeto-é-criado" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="o-que-acontece-quando-um-projeto-é-criado"><span class="header-section-number">7.3</span> O que acontece quando um projeto é criado</h2>
-<p>Quando um novo projeto é criado ou ativado, o RStudio:</p>
-<ul>
-<li>Cria um arquivo <code>.Rproj</code> dentro da pasta do projeto.</li>
-<li>Define essa pasta como diretório de trabalho da sessão.</li>
-<li>Isola o ambiente de trabalho em relação a outros projetos.</li>
-</ul>
-<p>A partir desse ponto, todos os arquivos criados, scripts executados e relatórios gerados devem estar contidos na pasta do projeto.</p>
-<section id="erros-comuns-e-como-resolver-5" class="level3" data-number="7.3.1">
-<h3 data-number="7.3.1" class="anchored" data-anchor-id="erros-comuns-e-como-resolver-5"><span class="header-section-number">7.3.1</span> Erros comuns e como resolver</h3>
-<ul>
-<li>Trabalhar fora de um projeto ativo: confirme o nome do projeto no menu <code>Project</code>.</li>
-<li>Manter arquivos soltos fora da pasta do projeto: mova-os para a estrutura adequada.</li>
-<li>Ignorar o arquivo <code>.Rproj</code>: ele define qual pasta corresponde ao projeto.</li>
-</ul>
-</section>
-<section id="checklist-do-leitor-7" class="level3" data-number="7.3.2">
-<h3 data-number="7.3.2" class="anchored" data-anchor-id="checklist-do-leitor-7"><span class="header-section-number">7.3.2</span> Checklist do leitor</h3>
-<ul class="task-list">
-<li><label><input type="checkbox">Reconhecer o arquivo <code>.Rproj</code>.</label></li>
-<li><label><input type="checkbox">Explicar o papel do projeto como referência para caminhos relativos.</label></li>
-<li><label><input type="checkbox">Relacionar projetos com reprodutibilidade e trabalho em equipe.</label></li>
-</ul>
-</section>
-</section>
-<section id="estrutura-recomendada-para-o-projeto-rstudio-criado" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="estrutura-recomendada-para-o-projeto-rstudio-criado"><span class="header-section-number">7.4</span> Estrutura recomendada para o projeto RStudio criado</h2>
-<p>Para organizar adequadamente os arquivos de projetos de análise de dados, recomenda-se adotar, desde o início, uma estrutura clara e consistente de pastas. Essa organização facilita a reprodutibilidade, a colaboração e a manutenção do trabalho ao longo do tempo, além de tornar mais explícitas as etapas do processo analítico.</p>
-<p>Neste livro, adotamos uma estrutura inicial simples, mas alinhada a boas práticas amplamente utilizadas em projetos profissionais e acadêmicos de Ciência de Dados. Essa estrutura serve como ponto de partida e pode ser expandida conforme a complexidade do projeto aumenta.</p>
-<section id="estrutura-básica-do-projeto" class="level3" data-number="7.4.1">
-<h3 data-number="7.4.1" class="anchored" data-anchor-id="estrutura-básica-do-projeto"><span class="header-section-number">7.4.1</span> Estrutura básica do projeto</h3>
-<p>Inicialmente, criamos as seguintes pastas principais:</p>
-<ul>
-<li><strong>dados/</strong>: destinada ao armazenamento dos conjuntos de dados do projeto.</li>
-<li><strong>relatorios/</strong>: destinada aos relatórios produzidos com Quarto.</li>
-<li><strong>scripts/</strong>: destinada aos scripts R utilizados nas análises.</li>
-</ul>
-<p>Dentro da pasta <strong>dados/</strong>, criamos duas subpastas com papéis bem definidos:</p>
-<ul>
-<li><strong>dados_brutos/</strong>: para armazenar os dados originais, sem qualquer modificação.</li>
-<li><strong>dados_limpos/</strong>: para armazenar os dados após limpeza, tratamento e transformações.</li>
-</ul>
-<p>Essa separação explícita evita que dados originais sejam sobrescritos, documenta o fluxo de preparação dos dados e contribui diretamente para a reprodutibilidade das análises.</p>
-<p>Essa estrutura será utilizada de forma consistente nos exercícios e nos exemplos apresentados ao longo do livro, servindo como referência inicial para a organização dos projetos desenvolvidos pelo leitor.</p>
-<p>Considerando o projeto hipotético de João Silva para a disciplina <em>Introdução à Ciência de Dados</em> em 2026, a estrutura inicial do projeto ficaria da seguinte forma:</p>
-<pre><code>joaosilva_icd2026/
-├── dados/
-│   ├── dados_brutos/
-│   └── dados_limpos/
-├── relatorios/
-├── scripts/
-├── README.md
-└── joaosilva_icd2026.Rproj</code></pre>
-<p>Essa organização também favorece o trabalho em equipe, pois permite que outras pessoas compreendam rapidamente onde encontrar dados, scripts e relatórios, reduzindo ambiguidades e erros operacionais.</p>
-</section>
-<section id="criando-pastas-pelo-rstudio" class="level3" data-number="7.4.2">
-<h3 data-number="7.4.2" class="anchored" data-anchor-id="criando-pastas-pelo-rstudio"><span class="header-section-number">7.4.2</span> Criando pastas pelo RStudio</h3>
-<p>As pastas podem ser criadas diretamente pela interface gráfica do RStudio. Na guia <strong>Files</strong>, utilize o botão <strong>New Folder</strong> para criar as pastas necessárias e navegue entre os diretórios conforme indicado.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/05-cap/criar_pastas.jpeg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
-</figure>
-</div>
+<p>Este capítulo apresenta um estudo de caso introdutório com o objetivo de integrar, em um único exemplo, conceitos, ferramentas e práticas que serão aprofundados ao longo dos capítulos seguintes. A intenção não é esgotar os tópicos abordados, mas oferecer uma visão geral do processo de análise de dados no contexto da metodologia CRISP-DM.</p>
+<p>O estudo de caso é baseado em um exemplo fictício adaptado do livro de Jung (2024) <span class="citation" data-cites="jung2024modern">(<a href="referencias.html#ref-jung2024modern" role="doc-biblioref">Jung, 2024</a>)</span>, sendo aqui utilizado exclusivamente com finalidade didática.</p>
+<section id="estrutura-do-projeto-e-organização-dos-arquivos" class="level2" data-number="7.1">
+<h2 data-number="7.1" class="anchored" data-anchor-id="estrutura-do-projeto-e-organização-dos-arquivos"><span class="header-section-number">7.1</span> Estrutura do projeto e organização dos arquivos</h2>
+<p>Antes de iniciar qualquer análise, é fundamental definir uma estrutura mínima de projeto. A organização adequada dos arquivos facilita a reprodutibilidade, a colaboração e a manutenção do trabalho ao longo do tempo, além de tornar mais claras as etapas do processo analítico.</p>
+<p>Ao longo da disciplina, os projetos foram organizados de forma padronizada, separando dados brutos, dados processados e relatórios. Essa mesma lógica será adotada neste livro, servindo como referência para os exemplos e códigos apresentados nos capítulos seguintes.</p>
+<p>Uma estrutura básica de projeto pode ser representada da seguinte forma:</p>
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>seunome_icd2025/</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>├── dados/</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>│   ├── brutos/     # dados originais, sem modificações</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>│   └── limpos/     # dados após limpeza e transformações</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>├── relatorios/</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>│   └── 01-relatorio/</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>├── README.md</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>└── seunome_icd2025.Rproj</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<p>Essa separação explícita evita que dados originais sejam sobrescritos, torna as etapas do processo analítico mais transparentes e facilita a verificação e a reprodução das análises realizadas.</p>
+<p>Na prática, recomenda-se criar inicialmente um repositório vazio no GitHub, cloná-lo localmente e, na pasta clonada do repositório, criar um projeto RStudio. A partir desse projeto, os arquivos e diretórios podem ser organizados de forma estruturada.</p>
+<p>O controle de versão com Git não é tratado aqui como um fim em si, mas como parte integrante de boas práticas em projetos de análise de dados.</p>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -806,365 +310,388 @@ Dica
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Além da interface gráfica, é possível criar pastas e arquivos utilizando funções da própria linguagem R, como <code>dir.create()</code>. Essa abordagem permite documentar explicitamente a estrutura do projeto no código e reproduzi-la automaticamente em outros ambientes, sendo especialmente útil em projetos colaborativos ou versionados com Git.</p>
+<p>A <em>organização das pastas e arquivos do projeto</em> não é um detalhe técnico, mas parte central da reprodutibilidade e do trabalho em equipe. Um projeto bem estruturado permite que análises sejam compreendidas, verificadas e reproduzidas por outras pessoas — ou pelo próprio autor em um momento posterior.</p>
 </div>
 </div>
 </section>
-<section id="erros-comuns-e-como-resolver-6" class="level3" data-number="7.4.3">
-<h3 data-number="7.4.3" class="anchored" data-anchor-id="erros-comuns-e-como-resolver-6"><span class="header-section-number">7.4.3</span> Erros comuns e como resolver</h3>
+<section id="o-caso-junglivet-whisky-company" class="level2" data-number="7.2">
+<h2 data-number="7.2" class="anchored" data-anchor-id="o-caso-junglivet-whisky-company"><span class="header-section-number">7.2</span> O Caso Junglivet Whisky Company</h2>
+<p>Neste estudo de caso, aplicamos as três primeiras fases da metodologia CRISP-DM:</p>
+<ol type="1">
+<li><strong>Compreensão do Negócio</strong> (<em>Business Understanding</em>)</li>
+<li><strong>Compreensão dos Dados</strong> (<em>Data Understanding</em>)</li>
+<li><strong>Preparação dos Dados</strong> (<em>Data Preparation</em>)</li>
+</ol>
+<p>Você acaba de ser contratado como analista de dados na <em>Junglivet Whisky Company</em>. A empresa enfrenta reclamações recorrentes sobre a qualidade do whisky produzido, e a direção busca identificar possíveis causas para o problema.</p>
+<p>Os dados fornecidos correspondem ao registro da linha de produção das últimas duas semanas.</p>
+</section>
+<section id="organização-do-projeto-e-reprodutibilidade" class="level2" data-number="7.3">
+<h2 data-number="7.3" class="anchored" data-anchor-id="organização-do-projeto-e-reprodutibilidade"><span class="header-section-number">7.3</span> Organização do projeto e reprodutibilidade</h2>
+<p>Antes de qualquer análise, o projeto foi organizado seguindo uma estrutura padronizada, separando dados brutos, dados tratados e relatórios. Essa organização facilita a reprodutibilidade, a documentação e o trabalho colaborativo.</p>
+<p>A análise apresentada neste capítulo foi desenvolvida em um projeto RStudio versionado com Git e sincronizado com GitHub, utilizando o sistema Quarto para geração de relatórios reprodutíveis.</p>
+</section>
+<section id="fase-1-compreensão-do-negócio" class="level2" data-number="7.4">
+<h2 data-number="7.4" class="anchored" data-anchor-id="fase-1-compreensão-do-negócio"><span class="header-section-number">7.4</span> Fase 1: Compreensão do Negócio</h2>
+<p>O primeiro passo do CRISP-DM consiste em entender claramente o problema de negócio, antes de qualquer decisão técnica.</p>
 <ul>
-<li>Misturar dados brutos com dados limpos: utilize subpastas separadas.</li>
-<li>Salvar relatórios fora da pasta <code>relatorios/</code>: mantenha um padrão claro.</li>
-<li>Criar pastas com espaços, acentos ou caracteres especiais: prefira nomes simples e consistentes.</li>
+<li><strong>Problema de negócio</strong>: queda na qualidade do whisky produzido.</li>
+<li><strong>Objetivo</strong>: identificar fatores associados à redução da qualidade.</li>
+<li><strong>Critério de sucesso</strong>: evidenciar fatores operacionais que influenciam negativamente o indicador de qualidade.</li>
+</ul>
+<p>Nesta fase, ainda não buscamos respostas nos dados, mas sim formular as perguntas corretas.</p>
+</section>
+<section id="fase-2-compreensão-dos-dados" class="level2" data-number="7.5">
+<h2 data-number="7.5" class="anchored" data-anchor-id="fase-2-compreensão-dos-dados"><span class="header-section-number">7.5</span> Fase 2: Compreensão dos Dados</h2>
+<p>Nesta etapa, analisamos os dados disponíveis, sua estrutura e limitações, antes de qualquer transformação ou modelagem.</p>
+<section id="dicionário-de-dados" class="level3" data-number="7.5.1">
+<h3 data-number="7.5.1" class="anchored" data-anchor-id="dicionário-de-dados"><span class="header-section-number">7.5.1</span> Dicionário de dados</h3>
+<p>A documentação das variáveis é uma prática fundamental em projetos de análise de dados. Ela garante interpretação consistente e reduz ambiguidades ao longo do processo analítico.</p>
+<p>Um dicionário de dados é uma documentação estruturada que descreve o significado, formato, uso e relacionamentos de cada variável em um conjunto de dados.</p>
+<p>Ele funciona como um guia essencial para compreender corretamente as informações disponíveis, garantindo que todos os usuários interpretem os dados de maneira consistente.</p>
+<p>O arquivo de dados fornecido contém as seguintes colunas (ou variáveis):</p>
+<ul>
+<li><strong>DAY</strong>: dia da produção.</li>
+<li><strong>MONTH</strong>: mês da produção.</li>
+<li><strong>MANUFACTURER</strong>: mestre responsável pela produção.</li>
+<li><strong>PRODUCT</strong>: tipo de produto.</li>
+<li><strong>SHIFT</strong>: turno de produção.</li>
+<li><strong>COLOR</strong>: indicador de cor (0 a 1).</li>
+<li><strong>MALTING</strong>: fornecedor do malte.</li>
+<li><strong>TASTING</strong>: indicador de qualidade (0 a 1000).</li>
 </ul>
 </section>
-<section id="checklist-do-leitor-8" class="level3" data-number="7.4.4">
-<h3 data-number="7.4.4" class="anchored" data-anchor-id="checklist-do-leitor-8"><span class="header-section-number">7.4.4</span> Checklist do leitor</h3>
-<ul class="task-list">
-<li><label><input type="checkbox">Criar as pastas <code>dados/</code>, <code>relatorios/</code> e <code>scripts/</code>.</label></li>
-<li><label><input type="checkbox">Identificar corretamente onde novos scripts e relatórios devem ser salvos dentro do projeto.</label></li>
-<li><label><input type="checkbox">Separar dados brutos e dados processados em subpastas distintas.</label></li>
-<li><label><input type="checkbox">Explicar por que essa estrutura contribui para a reprodutibilidade e o trabalho em equipe.</label></li>
+<section id="importação-dos-dados" class="level3" data-number="7.5.2">
+<h3 data-number="7.5.2" class="anchored" data-anchor-id="importação-dos-dados"><span class="header-section-number">7.5.2</span> Importação dos dados</h3>
+<p>Antes de iniciar a análise, é necessário garantir que os pacotes R utilizados no projeto estejam instalados e carregados. Neste livro, utilizaremos o pacote <strong>pacman</strong> para facilitar esse processo, pois ele permite instalar e carregar pacotes de forma automática quando necessário.</p>
+<p>A instalação de pacotes deve ser feita apenas uma vez em cada ambiente. Após isso, basta carregá-los normalmente. O uso do <strong>pacman</strong> reduz problemas comuns enfrentados por iniciantes, como erros relacionados a pacotes ausentes.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verifica se o pacote 'pacman' está instalado.</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Caso não esteja, realiza a instalação a partir do CRAN.</span></span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"pacman"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">"pacman"</span>)</span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>}</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Carrega o pacote 'pacman' na sessão atual</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pacman)</span>
+<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># A função p_load():</span></span>
+<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># - instala automaticamente pacotes ausentes</span></span>
+<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># - carrega todos os pacotes listados</span></span>
+<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(</span>
+<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  here,      <span class="co"># define caminhos relativos ao diretório raiz do projeto</span></span>
+<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  readr,     <span class="co"># leitura eficiente de arquivos CSV</span></span>
+<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  dplyr,     <span class="co"># manipulação e transformação de dados</span></span>
+<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  tidyr,     <span class="co"># função drop_na()</span></span>
+<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  ggplot2    <span class="co"># visualização de dados</span></span>
+<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>O processo de importação de dados é um passo fundamental em qualquer análise. Neste caso, utilizamos duas ferramentas importantes:</p>
+<ul>
+<li><p>O pacote <code>here</code> permite definir caminhos relativos ao diretório raiz do projeto, o que torna o código mais portátil e facilita o compartilhamento. Independentemente de onde o projeto esteja armazenado em diferentes computadores, o pacote <code>here</code> encontrará automaticamente os arquivos a partir da raiz do projeto.</p></li>
+<li><p>O pacote <code>readr</code>, parte do tidyverse, oferece funções otimizadas para leitura de arquivos, como a <code>read_csv()</code>, que é mais rápida que a função base do R e oferece tratamento mais consistente dos tipos de dados. Além disso, ela converte automaticamente strings vazias para NA, indica o tipo de cada coluna importada e preserva os nomes das variáveis originais.</p></li>
 </ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define o caminho relativo do arquivo de dados </span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># a partir da raiz do projeto.</span></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>caminho <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"dados/brutos/productionlog_sample.csv"</span>)</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Importa o arquivo com a funçào read_csv</span></span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>dados_destilaria <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(caminho)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+<p>A partir desse ponto, os dados estão disponíveis na ambiente de R e podem ser explorados, verificados e preparados para as etapas seguintes da análise.</p>
+</section>
+<section id="inspeção-inicial-dos-dados" class="level3" data-number="7.5.3">
+<h3 data-number="7.5.3" class="anchored" data-anchor-id="inspeção-inicial-dos-dados"><span class="header-section-number">7.5.3</span> Inspeção inicial dos dados</h3>
+<p>Após importar os dados, é essencial verificar sua estrutura para entender o que temos disponível. A função <code>glimpse()</code> do pacote <code>dplyr</code> nos oferece uma visão concisa e informativa sobre:</p>
+<ul>
+<li>Quais variáveis (colunas) estão presentes no conjunto de dados.</li>
+<li>Qual o tipo ou classe de cada variável.</li>
+<li>Os primeiros valores de cada variável.</li>
+<li>O número total de observações (linhas).</li>
+</ul>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># fornece visão geral da estrutura dos dados</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">glimpse</span>(dados_destilaria)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Rows: 21
+Columns: 8
+$ DAY          &lt;dbl&gt; 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, NA, 6, 6, 7, 7, 8, 8, 9, 9,…
+$ MONTH        &lt;dbl&gt; 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, NA, 4, 4, 4, 4, 4, 4, 4, 4,…
+$ MANUFACTURER &lt;chr&gt; "Leonard", "Carlson", "Leonard", "Carlson", "Leonard", "C…
+$ PRODUCT      &lt;chr&gt; "Junglivet", "Junglivet Premium", "Junglivet", "Junglivet…
+$ SHIFT        &lt;chr&gt; "Morning", "Evening", "Morning", "Evening", "Morning", "E…
+$ COLOR        &lt;dbl&gt; 0.27, 0.27, 0.28, 0.32, 0.32, 0.28, 0.29, 0.29, 0.33, 0.2…
+$ MALTING      &lt;chr&gt; "Inhouse", "Burns Best Ltd.", "Inhouse", "Inhouse", "Matr…
+$ TASTING      &lt;dbl&gt; 895, 879, 938, 900, 917, 900, 934, 951, 852, 850, NA, 991…</code></pre>
+</div>
+</div>
+<p>Além disso, estatísticas descritivas básicas ajudam a identificar valores ausentes, escalas e possíveis inconsistências.</p>
+<p>A função <code>summary()</code> resume as principais estatísticas das variáveis e indica automaticamente a presença de valores ausentes (NA)</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># fornece estatísticas descritivas dos dados</span></span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(dados_destilaria)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>      DAY           MONTH   MANUFACTURER         PRODUCT         
+ Min.   : 1.0   Min.   :4   Length:21          Length:21         
+ 1st Qu.: 3.0   1st Qu.:4   Class :character   Class :character  
+ Median : 5.5   Median :4   Mode  :character   Mode  :character  
+ Mean   : 5.5   Mean   :4                                        
+ 3rd Qu.: 8.0   3rd Qu.:4                                        
+ Max.   :10.0   Max.   :4                                        
+ NA's   :1      NA's   :1                                        
+    SHIFT               COLOR          MALTING             TASTING     
+ Length:21          Min.   :0.2600   Length:21          Min.   :822.0  
+ Class :character   1st Qu.:0.2775   Class :character   1st Qu.:875.0  
+ Mode  :character   Median :0.3000   Mode  :character   Median :925.5  
+                    Mean   :0.2955                      Mean   :918.5  
+                    3rd Qu.:0.3100                      3rd Qu.:957.8  
+                    Max.   :0.3500                      Max.   :999.0  
+                    NA's   :1                           NA's   :1      </code></pre>
+</div>
+</div>
+<p>A saída da função mostra que há pelo menos um valor faltante (<code>NA</code>) em uma linha (observação) do arquivo.</p>
 </section>
 </section>
-<section id="gerenciamento-de-arquivos" class="level2" data-number="7.5">
-<h2 data-number="7.5" class="anchored" data-anchor-id="gerenciamento-de-arquivos"><span class="header-section-number">7.5</span> Gerenciamento de Arquivos</h2>
-<p>O RStudio suporta realce de sintaxe e outros recursos especializados de edição de código para tipos de arquivos específicos:</p>
+<section id="fase-3-preparação-dos-dados" class="level2" data-number="7.6">
+<h2 data-number="7.6" class="anchored" data-anchor-id="fase-3-preparação-dos-dados"><span class="header-section-number">7.6</span> Fase 3: Preparação dos Dados</h2>
+<p>Nesta fase, preparamos os dados para análise, renomeando variáveis, convertendo cada variável para um tipo ou classe de dados adequado, tratando valores ausentes, removendo colunas irrelevantes e garantindo que temos dados de qualidade para trabalhar.</p>
+<p>O código a seguir executa as seguintes operações para limpar os dados:</p>
+<ol type="1">
+<li><p><strong>Remove</strong> a coluna <code>MONTH</code> que é desnecessária para a análise.</p></li>
+<li><p><strong>Renomeia</strong> todas as colunas para nomes mais descritivos em português, facilitando a interpretação.</p></li>
+<li><p><strong>Converte</strong> as variáveis para seus tipos/classes de dados apropriados: <code>numeric</code> para valores quantitativos (dia, cor, indicador_qualidade) e <code>factor</code> para variáveis categóricas (fabricante, tipo_produto, turno, fornecedor_malte).</p></li>
+<li><p>Remove linhas com valores ausentes para garantir a integridade dos dados nas análises subsequentes.</p></li>
+</ol>
+<p>Vamos utilizar o operador pipe (<code>%&gt;%</code>) do tidyverse para encadear as operações de limpeza e transformação de dados de forma mais legível. Cada operação recebe o resultado da anterior e aplica uma nova transformação.</p>
+<p>Observe como organizamos o código com identação consistente e comentários explicativos para cada operação. Esta é uma boa prática que torna o código mais legível e facilita sua manutenção.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pipeline para criar uma nova data frame </span></span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># contendo os dados limpos.</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># define o objeto que armazenará os dados limpos</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># criado a partir de dados_destilaria</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>dados_destilaria_limpos <span class="ot">&lt;-</span> dados_destilaria <span class="sc">%&gt;%</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Remove a variável MONTH</span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>MONTH) <span class="sc">%&gt;%</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Renomeia as variáveis para nomes mais descritivos</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">dia =</span> DAY,</span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">mestre_responsavel =</span> MANUFACTURER,</span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">tipo_produto =</span> PRODUCT,</span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">turno =</span> SHIFT,</span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">cor =</span> COLOR,</span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">fornecedor_malte =</span> MALTING,</span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">indicador_qualidade =</span> TASTING</span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Converte explicitamente os tipos das variáveis</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">dia =</span> <span class="fu">as.numeric</span>(dia),</span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">mestre_responsavel =</span> <span class="fu">as.factor</span>(mestre_responsavel),</span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">tipo_produto =</span> <span class="fu">as.factor</span>(tipo_produto),</span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">turno =</span> <span class="fu">as.factor</span>(turno),</span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">cor =</span> <span class="fu">as.numeric</span>(cor),</span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">fornecedor_malte =</span> <span class="fu">as.factor</span>(fornecedor_malte),</span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">indicador_qualidade =</span> <span class="fu">as.numeric</span>(indicador_qualidade)</span>
+<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Remove observações com valores ausentes</span></span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+</div>
+</section>
+<section id="análise-exploratória-de-dados" class="level2" data-number="7.7">
+<h2 data-number="7.7" class="anchored" data-anchor-id="análise-exploratória-de-dados"><span class="header-section-number">7.7</span> Análise exploratória de dados</h2>
+<p>A Análise Exploratória de Dados (AED) é uma abordagem fundamental que nos permite investigar e compreender as características principais de um conjunto de dados.</p>
+<p>Utilizamos técnicas visuais e estatísticas para:</p>
 <ul>
-<li><p>Scripts R, Python, SQL e outros.</p></li>
-<li><p>Documentos computacionais e científicos em Quarto, R Markdown e LaTeX.</p></li>
-<li><p>Conteúdo da Web, como HTML e CSS.</p></li>
-<li><p>E muitos mais.</p></li>
+<li>Identificar padrões, tendências e relações entre variáveis.</li>
+<li>Detectar valores atípicos (outliers) e anomalias.</li>
+<li>Verificar hipóteses preliminares sobre possíveis causas do problema.</li>
+<li>Orientar análises mais detalhadas e modelagens futuras.</li>
 </ul>
-<p>Ao criar um novo arquivo, lembre que documentos Quarto (<code>.qmd</code>) são a base do livro e dos relatórios reprodutíveis.</p>
-<section id="menu-files" class="level3" data-number="7.5.1">
-<h3 data-number="7.5.1" class="anchored" data-anchor-id="menu-files"><span class="header-section-number">7.5.1</span> Menu <code>Files</code></h3>
+<p>Com os dados devidamente preparados, vamos explorar graficamente<br>
+relações entre algumas variáveis e o indicador de qualidade do whisky para identificar potenciais fatores que explicam os problemas enfrentados pela destilaria.</p>
+<section id="relação-entre-fornecedor-e-qualidade" class="level3" data-number="7.7.1">
+<h3 data-number="7.7.1" class="anchored" data-anchor-id="relação-entre-fornecedor-e-qualidade"><span class="header-section-number">7.7.1</span> Relação entre fornecedor e qualidade</h3>
+<p>O boxplot ou diagrama de caixa é uma ferramenta útil para visualizar a distribuição de variáveis numéricas agrupadas por categorias.</p>
+<p>Neste gráfico:</p>
 <ul>
-<li>É possível criar um novo arquivo com <code>File -&gt; New File</code> (por exemplo, <code>Quarto Document</code> para relatórios):</li>
+<li><p>A linha horizontal dentro da caixa representa a <strong>mediana</strong> (percentil 50).</p></li>
+<li><p>Os limites inferior e superior da caixa representam o <strong>primeiro quartil</strong> (percentil 25) e o <strong>terceiro quartil</strong> (percentil 75), respectivamente.</p></li>
+<li><p>As “hastes” (whiskers) se estendem até 1,5 vezes o intervalo interquartil (IQR).</p></li>
+<li><p>Pontos individuais além das hastes representam <strong>outliers</strong> (valores atípicos)</p></li>
 </ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="https://docs.posit.co/ide/user/ide/guide/ui/images/system-files-menu.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p>Esta visualização nos permite comparar as distribuições de qualidade entre os diferentes fornecedores de malte. Assim, ela pode revelar evidências de uma relação sistemática entre o fornecedor de malte e a qualidade final do produto.</p>
+<div class="cell" data-layout-align="center">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Boxplot comparativa da qualidade por fornecedor de malte</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados_destilaria_limpos, <span class="fu">aes</span>(<span class="at">x =</span> fornecedor_malte, <span class="at">y =</span> indicador_qualidade)) <span class="sc">+</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Cria boxplots para representar a distribuição dos dados</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Aplica um tema minimalista para melhor visualização</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Define títulos e rótulos dos eixos</span></span>
+<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Qualidade do Whisky por Fornecedor de Malte"</span>,</span>
+<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Fornecedor"</span>,</span>
+<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Pontuação de Qualidade"</span></span>
+<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-boxplot-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-boxplot-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="05_capitulo_files/figure-html/fig-boxplot-1-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-boxplot-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;7.1: Boxplot comparativo de qualidade do whisky por fornecedor de malte.
+</figcaption>
 </figure>
 </div>
+</div>
+</div>
+<p>O boxplot evidencia diferenças relevantes na distribuição do indicador de qualidade entre os fornecedores de malte. Observa-se que os whiskies produzidos com malte proveniente da categoria <em>Inhouse</em> apresentam, em média, valores mais elevados de qualidade, além de menor dispersão.</p>
+<p>Por outro lado, os produtos associados ao fornecedor <em>Burns Best Ltd.</em> tendem a apresentar qualidade mediana inferior, com distribuição mais concentrada em valores baixos. Já o fornecedor <em>Matro Ltd.</em> apresenta maior variabilidade, indicando inconsistência no padrão de qualidade do insumo fornecido.</p>
+<p>Esses resultados sugerem que o fornecedor de malte é um fator potencialmente relevante para explicar a queda observada na qualidade do produto final.</p>
+<p>Embora os boxplots forneçam uma visualização rica da distribuição dos dados, às vezes precisamos de medidas numéricas precisas para confirmar nossas observações visuais. Nesta análise:</p>
 <ul>
-<li>Outra possibilidade é usar o ícone no canto superior esquerdo do RStudio:</li>
+<li><p>Agrupamos os dados por fornecedor de malte.</p></li>
+<li><p>Calculamos a mediana do indicador de qualidade para cada grupo.</p></li>
+<li><p>Contamos o número de amostras (n) por fornecedor para avaliar a robustez dos resultados.</p></li>
+<li><p>Ordenamos os resultados em ordem decrescente para facilitar a comparação.</p></li>
 </ul>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="img/05-cap/cria_arquivos.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
+<p>Esta abordagem complementa a visualização anterior, fornecendo valores numéricos para fundamentar a análise do boxplot.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcula a qualidade média por fornecedor</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>dados_destilaria_limpos <span class="sc">%&gt;%</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Agrupa os dados pelo fornecedor de malte</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(fornecedor_malte) <span class="sc">%&gt;%</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Calcula a média e conta o número de obs. para cada grupo</span></span>
+<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
+<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">qualidade_mediana =</span> <span class="fu">median</span>(indicador_qualidade),</span>
+<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>()</span>
+<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
+<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Ordena os resultados em ordem decrescente pela qualidade média</span></span>
+<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(qualidade_mediana))</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 3 × 3
+  fornecedor_malte qualidade_mediana     n
+  &lt;fct&gt;                        &lt;dbl&gt; &lt;int&gt;
+1 Inhouse                        936    10
+2 Matro Ltd.                     917     5
+3 Burns Best Ltd.                879     5</code></pre>
+</div>
+</div>
+</section>
+<section id="relação-entre-mestre-responsável-e-qualidade" class="level3" data-number="7.7.2">
+<h3 data-number="7.7.2" class="anchored" data-anchor-id="relação-entre-mestre-responsável-e-qualidade"><span class="header-section-number">7.7.2</span> Relação entre mestre responsável e qualidade</h3>
+<p>Os mestres responsáveis pela produção podem influenciar significativamente a qualidade do produto final devido às suas técnicas, experiência e atenção aos detalhes. Este boxplot nos permite:</p>
+<ul>
+<li><p>Comparar a performance de diferentes mestres responsáveis.</p></li>
+<li><p>Identificar se há diferenças consistentes na qualidade do whisky produzido por cada um.</p></li>
+<li><p>Verificar se algum mestre responsável apresenta maior variabilidade nos resultados.</p></li>
+<li><p>Detectar possíveis interações entre a experiência do profissional e a qualidade final.</p></li>
+</ul>
+<p>Esta análise pode revelar se há necessidade de padronização de processos ou treinamentos específicos para garantir consistência na produção.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Boxplot comparativo entre indicador de qualidade e mestre destilador\\</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados_destilaria_limpos, <span class="fu">aes</span>(<span class="at">x =</span> mestre_responsavel, <span class="at">y =</span> indicador_qualidade)) <span class="sc">+</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Cria boxplots para visualizar a distribuição e identificar outliers</span></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Aplica um tema minimalista</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Define títulos e rótulos dos eixos</span></span>
+<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Qualidade do Whisky por Mestre Responsável"</span>,</span>
+<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Mestre Responsável"</span>,</span>
+<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Indicador de Qualidade"</span></span>
+<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-3" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="05_capitulo_files/figure-html/fig-3-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;7.2: Boxplot comparativo entre qualidade do whisky e mestre destilador.
+</figcaption>
 </figure>
 </div>
-</section>
-<section id="erros-comuns-e-como-resolver-7" class="level3" data-number="7.5.2">
-<h3 data-number="7.5.2" class="anchored" data-anchor-id="erros-comuns-e-como-resolver-7"><span class="header-section-number">7.5.2</span> Erros comuns e como resolver</h3>
-<ul>
-<li>Criar arquivos fora do projeto: verifique a guia <code>Files</code>.</li>
-<li>Não salvar o arquivo após criar: use <code>Ctrl+S</code> ou <code>⌘+S</code>.</li>
-<li>Criar um <code>.R</code> quando precisava de <code>.qmd</code>: escolha o tipo correto.</li>
-</ul>
-</section>
-<section id="checklist-do-leitor-9" class="level3" data-number="7.5.3">
-<h3 data-number="7.5.3" class="anchored" data-anchor-id="checklist-do-leitor-9"><span class="header-section-number">7.5.3</span> Checklist do leitor</h3>
-<ul class="task-list">
-<li><label><input type="checkbox">Criar um arquivo pelo menu <code>File</code>.</label></li>
-<li><label><input type="checkbox">Criar um <code>.qmd</code> para relatórios.</label></li>
-<li><label><input type="checkbox">Localizar arquivos na guia <code>Files</code>.</label></li>
-</ul>
-</section>
-</section>
-<section id="configurações-recomendadas-windows" class="level2" data-number="7.6">
-<h2 data-number="7.6" class="anchored" data-anchor-id="configurações-recomendadas-windows"><span class="header-section-number">7.6</span> Configurações recomendadas (Windows)</h2>
-<p>Se você usa Windows e deseja o Git Bash como terminal no RStudio, siga as etapas abaixo. Em macOS e Linux, o terminal padrão já é suficiente.</p>
-<div class="callout callout-style-default callout-note no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Nota</span>Terminal Git Bash no RStudio (Windows)
 </div>
 </div>
-<div class="callout-body-container callout-body">
-<p>Como o RStudio e o sistema Quarto fazem parte do fluxo de trabalho, é importante saber como acessar e usar o terminal Git Bash diretamente dentro do RStudio:</p>
-<ol type="1">
-<li><strong>Configurando o terminal Git Bash no RStudio</strong>:</li>
-</ol>
+</section>
+<section id="relação-entre-cor-e-qualidade" class="level3" data-number="7.7.3">
+<h3 data-number="7.7.3" class="anchored" data-anchor-id="relação-entre-cor-e-qualidade"><span class="header-section-number">7.7.3</span> Relação entre cor e qualidade</h3>
+<p>O gráfico de dispersão ou <em>scatter plot</em> é ideal para explorar a relação entre duas variáveis numéricas. Ao analisar a relação entre a cor do whisky e seu indicador de qualidade:</p>
 <ul>
-<li><p>Abra o RStudio</p></li>
-<li><p>Vá para “<em>Tools</em>” &gt; “<em>Global Options</em>” &gt; “<em>Terminal</em>”.</p></li>
-<li><p>No campo “<em>New terminals open with:</em>”, selecione “<em>Git Bash</em>” no menu suspenso.</p></li>
-<li><p>Clique em “<em>Apply</em>” e depois em “<em>OK</em>”</p></li>
+<li>Cada ponto representa uma amostra de whisky produzida.</li>
+<li>O eixo X mostra o valor do indicador de cor.</li>
+<li>O eixo Y indica a pontuação de qualidade.</li>
+<li>A linha de tendência (curva LOESS) ajuda a visualizar o padrão geral dos dados sem assumir uma relação linear.</li>
 </ul>
-<ol start="2" type="1">
-<li><strong>Acessando o terminal Git Bash no RStudio</strong>:</li>
-</ol>
-<ul>
-<li><p>No painel inferior do RStudio, clique na guia “<em>Terminal</em>”.</p></li>
-<li><p>Um novo terminal Git Bash será aberto.</p></li>
-<li><p>Se um terminal já estiver aberto, mas não for o Git Bash, clique no ícone “+” no canto superior direito do painel <code>Terminal</code> e selecione “<em>New Terminal</em>” para abrir um novo terminal Git Bash</p></li>
-</ul>
-<ol start="3" type="1">
-<li><strong>Vantagens de usar o Git Bash dentro do RStudio</strong>:</li>
-</ol>
-<ul>
-<li><p>Mantém seu fluxo de trabalho dentro de um único ambiente.</p></li>
-<li><p>Facilita a navegação entre edição de arquivos e execução de comandos Git.</p></li>
-<li><p>Permite copiar e colar facilmente entre o editor e o terminal.</p></li>
-<li><p>Evita a necessidade de alternar entre aplicativos diferentes.</p></li>
-</ul>
+<p>Esta visualização nos permite identificar se existe um valor ou faixa ótima de cor que está associada à melhor qualidade, o que poderia ser usado como indicador durante o processo de produção.</p>
+<div class="cell">
+<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Grafico de dispersão entre o indicador de cor e a qualidade</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados_destilaria_limpos, <span class="fu">aes</span>(<span class="at">x =</span> cor, <span class="at">y =</span> indicador_qualidade)) <span class="sc">+</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Adiciona pontos para cada observação no conjunto de dados</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Adiciona uma linha suavizada (LOESS) para mostrar a tendência geral</span></span>
+<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
+<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Aplica um tema minimalista</span></span>
+<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
+<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Define títulos e rótulos dos eixos</span></span>
+<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
+<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Relação entre Cor e Qualidade do Whisky"</span>,</span>
+<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Indicador de Cor"</span>,</span>
+<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Indicador de Qualidade"</span></span>
+<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="cell-output-display">
+<div id="fig-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="05_capitulo_files/figure-html/fig-2-1.png" class="img-fluid figure-img" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;7.3: Gráfico de dispersão entre qualidade e cor do whisky.
+</figcaption>
+</figure>
 </div>
 </div>
-<section id="erros-comuns-e-como-resolver-8" class="level3" data-number="7.6.1">
-<h3 data-number="7.6.1" class="anchored" data-anchor-id="erros-comuns-e-como-resolver-8"><span class="header-section-number">7.6.1</span> Erros comuns e como resolver</h3>
-<ul>
-<li>Selecionar o terminal errado: verifique o campo “<em>New terminals open with:</em>”.</li>
-<li>Abrir um terminal antigo: use o botão “+” para abrir um novo.</li>
-<li>Esperar esse ajuste em macOS/Linux: nesses sistemas, o terminal já é padrão.</li>
-</ul>
+</div>
+<p>O gráfico de dispersão indica uma relação não linear entre o indicador de cor e a qualidade do whisky. A curva de suavização sugere que valores de cor em torno de 0,3 estão associados, em média, a níveis mais elevados de qualidade.</p>
+<p>Valores muito baixos ou muito elevados do indicador de cor parecem associar-se a pior desempenho no indicador de qualidade. Essa evidência sugere que a cor pode funcionar como um sinal antecipado de problemas no processo produtivo.</p>
+<p>Do ponto de vista operacional, esse resultado é particularmente interessante, pois a cor pode ser monitorada durante a produção, antes das etapas finais de avaliação sensorial.</p>
 </section>
-<section id="checklist-do-leitor-10" class="level3" data-number="7.6.2">
-<h3 data-number="7.6.2" class="anchored" data-anchor-id="checklist-do-leitor-10"><span class="header-section-number">7.6.2</span> Checklist do leitor</h3>
-<ul class="task-list">
-<li><label><input type="checkbox">Configurar o Git Bash no RStudio (Windows).</label></li>
-<li><label><input type="checkbox">Abrir um novo terminal no painel <code>Terminal</code>.</label></li>
-<li><label><input type="checkbox">Reconhecer que em macOS/Linux esse ajuste não é necessário.</label></li>
-</ul>
+<section id="conclusão-da-análise-exploratória" class="level3" data-number="7.7.4">
+<h3 data-number="7.7.4" class="anchored" data-anchor-id="conclusão-da-análise-exploratória"><span class="header-section-number">7.7.4</span> Conclusão da Análise Exploratória</h3>
+<p>A análise exploratória dos dados da linha de produção da Junglivet Whisky Company indica que a queda na qualidade do produto não ocorre de forma aleatória. Pelo contrário, há evidências de associação entre o indicador de qualidade e fatores operacionais específicos.</p>
+<p>Em particular, o fornecedor de malte e o indicador de cor emergem como variáveis relevantes.</p>
+<p>Entretanto, esses resultados não constituem provas definitivas de causalidade, mas fornecem hipóteses analíticas bem fundamentadas para as próximas fases de CRISP-DM.</p>
 </section>
 </section>
-</section>
-<section id="atalhos-essenciais" class="level1" data-number="8">
-<h1 data-number="8"><span class="header-section-number">8</span> Atalhos essenciais</h1>
-<p>Atalhos economizam tempo e reduzem erros. A lista abaixo é enxuta e organizada por propósito. Use os que fizerem sentido agora e volte a esta seção quando precisar ganhar velocidade.</p>
-<p><strong>Navegação (Windows/Linux | macOS | Função)</strong></p>
+<section id="próximos-passos" class="level2" data-number="7.8">
+<h2 data-number="7.8" class="anchored" data-anchor-id="próximos-passos"><span class="header-section-number">7.8</span> Próximos passos</h2>
 <ul>
-<li><code>Ctrl+1</code> | <code>⌘+1</code> | Ir para o painel <code>Source</code></li>
-<li><code>Ctrl+2</code> | <code>⌘+2</code> | Ir para o painel <code>Console</code></li>
-<li><code>Ctrl+3</code> | <code>⌘+3</code> | Ir para o painel <code>Environment</code></li>
-<li><code>Ctrl+4</code> | <code>⌘+4</code> | Ir para o painel <code>Output</code></li>
-<li><code>Ctrl+.</code> | <code>⌘+.</code> | Navegar para seções/funções/chunks</li>
+<li><p><strong>Modelagem</strong>: aplicação de métodos estatísticos de comparação entre grupos, como testes de médias e análise de variância, com o objetivo de avaliar diferenças sistemáticas associadas aos fatores operacionais identificados.</p></li>
+<li><p><strong>Avaliação</strong>: interpretação dos resultados estatísticos à luz dos objetivos de negócio, considerando significância, magnitude dos efeitos e implicações práticas para o processo produtivo.</p></li>
+<li><p><strong>Implantação</strong>: adoção de medidas operacionais baseadas nos resultados, como revisão de fornecedores, ajustes de processo e definição de indicadores de monitoramento da qualidade.</p></li>
 </ul>
-<p><strong>Quarto e execução (Windows/Linux | macOS | Função)</strong></p>
-<ul>
-<li><code>Ctrl+Shift+K</code> | <code>⌘+Shift+K</code> | Renderizar o documento Quarto</li>
-<li><code>Ctrl+Alt+I</code> | <code>⌘+Option+I</code> | Inserir um novo chunk</li>
-<li><code>Ctrl+Enter</code> | <code>⌘+Enter</code> | Executar a linha ou chunk atual</li>
-</ul>
-<p><strong>Edição (Windows/Linux | macOS | Função)</strong></p>
-<ul>
-<li><code>Ctrl+Shift+M</code> | <code>⌘+Shift+M</code> | Inserir o pipe do tidyverse (<code>%&gt;%</code>)</li>
-<li><code>Ctrl+Shift+.</code> | <code>⌘+Shift+.</code> | Inserir o pipe nativo do R (<code>|&gt;</code>)</li>
-<li><code>Alt+-</code> | <code>Option+-</code> | Inserir o operador de atribuição (<code>&lt;-</code>)</li>
-<li><code>Ctrl+Shift+C</code> | <code>⌘+Shift+C</code> | Comentar/descomentar a seleção</li>
-</ul>
-<p><strong>Console (Windows/Linux | macOS | Função)</strong></p>
-<ul>
-<li><code>Ctrl+L</code> | <code>⌘+L</code> | Limpar o console</li>
-<li><code>Esc</code> | <code>Esc</code> | Interromper a execução</li>
-</ul>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Dica</span>Extras
+Nota
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<ul>
-<li><code>Ctrl+Shift+0</code> | <code>⌘+Shift+0</code> | Restaurar o layout padrão</li>
-<li><code>Tab</code> | <code>Tab</code> | Autocompletar comandos e objetos</li>
-<li><code>F1</code> | <code>F1</code> | Ajuda da função sob o cursor</li>
-<li><code>Alt+Shift+K</code> | <code>Option+Shift+K</code> | Abrir a lista completa de atalhos</li>
-<li><code>Ctrl+Alt+R</code> | <code>⌘+Option+R</code> | Executar todas as linhas/chunks do arquivo</li>
-</ul>
-</div>
-</div>
-<section id="erros-comuns-e-como-resolver-9" class="level3" data-number="8.0.1">
-<h3 data-number="8.0.1" class="anchored" data-anchor-id="erros-comuns-e-como-resolver-9"><span class="header-section-number">8.0.1</span> Erros comuns e como resolver</h3>
-<ul>
-<li>Tentar memorizar tudo de uma vez: comece pelos de navegação e execução.</li>
-<li>Usar atalhos sem saber o foco ativo: clique primeiro no painel desejado.</li>
-<li>Ignorar a lista completa: use <code>Alt+Shift+K</code>/<code>Option+Shift+K</code>.</li>
-</ul>
-</section>
-<section id="checklist-do-leitor-11" class="level3" data-number="8.0.2">
-<h3 data-number="8.0.2" class="anchored" data-anchor-id="checklist-do-leitor-11"><span class="header-section-number">8.0.2</span> Checklist do leitor</h3>
-<ul class="task-list">
-<li><label><input type="checkbox">Alternar entre <code>Source</code> e <code>Console</code>.</label></li>
-<li><label><input type="checkbox">Renderizar um documento Quarto pelo atalho.</label></li>
-<li><label><input type="checkbox">Interromper uma execução travada no console.</label></li>
-</ul>
-</section>
-</section>
-<section id="exercícios" class="level1" data-number="9">
-<h1 data-number="9"><span class="header-section-number">9</span> Exercícios</h1>
-<ol type="1">
-<li>Explique a diferença entre <strong>R</strong> e <strong>RStudio</strong> usando a analogia motor/painel de controle.</li>
-</ol>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-12-contents" aria-controls="callout-12" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Dica</span>Reposta
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-12" class="callout-12-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>R é a linguagem de programação responsável por executar cálculos, manipular dados e gerar resultados, desempenhando o papel de “motor”.</p>
-<p>RStudio é um Ambiente de Desenvolvimento Integrado que organiza e facilita o uso de R, oferecendo editor de código, console, visualização de objetos e resultados em um único ambiente.</p>
-</div>
-</div>
-</div>
-<ol start="2" type="1">
-<li>Identifique os quatro painéis principais do RStudio e descreva, em uma frase, o papel de cada um.</li>
-</ol>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-13-contents" aria-controls="callout-13" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Dica</span>Reposta
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-13" class="callout-13-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<ul>
-<li><strong>Source</strong>: edição de scripts, relatórios e outros arquivos de código.</li>
-<li><strong>Console</strong>: execução interativa de comandos em R.</li>
-<li><strong>Environment</strong>: visualização dos objetos criados na sessão.</li>
-<li><strong>Output</strong>: acesso a arquivos, gráficos, pacotes e sistema de ajuda.</li>
-</ul>
-</div>
-</div>
-</div>
-<ol start="3" type="1">
-<li>Defina o que é um IDE e dê um exemplo do fluxo “escrever -&gt; executar -&gt; ver resultado”.</li>
-</ol>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-14-contents" aria-controls="callout-14" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Dica</span>Reposta
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-14" class="callout-14-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Um IDE integra ferramentas para edição, execução e visualização de código em um único ambiente. No RStudio, o fluxo típico consiste em escrever o código no painel <em>Source</em>, executá-lo no <em>Console</em> e visualizar os resultados no painel <em>Output</em>.</p>
-</div>
-</div>
-</div>
-<ol start="4" type="1">
-<li>Explique quando usar <code>install.packages()</code> e quando usar <code>library()</code>.</li>
-</ol>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-15-contents" aria-controls="callout-15" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Dica</span>Reposta
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-15" class="callout-15-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>A função <code>install.packages()</code> é utilizada para instalar um pacote no computador e precisa ser executada apenas uma vez. Já a função <code>library()</code> carrega o pacote instalado na sessão atual do R e deve ser executada sempre que uma nova sessão é iniciada.</p>
-</div>
-</div>
-</div>
-<ol start="5" type="1">
-<li>Ajuste as configurações básicas recomendadas do RStudio (restore/save) e registre, em 3 a 5 linhas, por que essas opções ajudam em projetos.</li>
-</ol>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-16-contents" aria-controls="callout-16" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Dica</span>Reposta
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-16" class="callout-16-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Desativar a restauração automática do ambiente e o salvamento do arquivo <code>.RData</code> torna o comportamento das sessões mais previsível. Essas opções reduzem dependências implícitas do ambiente anterior, facilitam a reprodução das análises e evitam erros causados por objetos carregados automaticamente sem controle explícito do código.</p>
-</div>
-</div>
-</div>
-<ol start="6" type="1">
-<li>Crie um novo projeto no RStudio com um nome padronizado (sem espaços) e explique o que é um <strong>caminho relativo</strong> e por que ele facilita a reprodutibilidade.</li>
-</ol>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-17-contents" aria-controls="callout-17" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Dica</span>Reposta
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-17" class="callout-17-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>Caminhos relativos referenciam arquivos a partir da pasta raiz do projeto, em vez de utilizar um endereço fixo no computador. Isso permite que o mesmo projeto funcione corretamente em diferentes máquinas e sistemas operacionais, facilitando o trabalho em equipe, a reprodutibilidade e o uso de controle de versão com Git e GitHub.</p>
-</div>
-</div>
-</div>
-<ol start="7" type="1">
-<li><p>Neste capítulo, estamos adotando a prática de organizar projetos de análise de dados por meio de uma estrutura clara de diretórios. Embora essas pastas possam ser criadas manualmente pelo sistema operacional, utilizar recursos da própria linguagem R traz duas vantagens importantes: (i) documenta explicitamente a estrutura do projeto e (ii) permite que ela seja reproduzida de forma automática em qualquer ambiente.</p>
-<p>Considerando o projeto RStudio recém-criado e ainda vazio, utilize a função <code>dir.create()</code> no Console do RStudio para criar a seguinte estrutura de pastas:</p>
-<ul>
-<li>a pasta <code>dados/</code>, contendo as subpastas <code>dados_brutos/</code> e <code>dados_limpos/</code>;</li>
-<li>a pasta <code>relatorios/</code>;</li>
-<li>a pasta <code>scripts/</code>.</li>
-</ul>
-<p>Apresente o código R utilizado para criar essas pastas.</p></li>
-</ol>
-<div class="callout callout-style-default callout-tip callout-titled">
-<div class="callout-header d-flex align-content-center collapsed" data-bs-toggle="collapse" data-bs-target=".callout-18-contents" aria-controls="callout-18" aria-expanded="false" aria-label="Toggle callout">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Dica</span>Resposta
-</div>
-<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
-</div>
-<div id="callout-18" class="callout-18-contents callout-collapse collapse">
-<div class="callout-body-container callout-body">
-<p>#| eval: false</p>
-<section id="cria-a-pasta-principal-de-dados" class="level1" data-number="10">
-<h1 data-number="10"><span class="header-section-number">10</span> cria a pasta principal de dados</h1>
-<p>dir.create(“dados”)</p>
-</section>
-<section id="cria-as-subpastas-de-dados" class="level1" data-number="11">
-<h1 data-number="11"><span class="header-section-number">11</span> cria as subpastas de dados</h1>
-<p>dir.create(“dados/dados_brutos”) dir.create(“dados/dados_limpos”)</p>
-</section>
-<section id="cria-a-pasta-de-relatórios" class="level1" data-number="12">
-<h1 data-number="12"><span class="header-section-number">12</span> cria a pasta de relatórios</h1>
-<p>dir.create(“relatorios”)</p>
-</section>
-<section id="cria-a-pasta-de-scripts" class="level1" data-number="13">
-<h1 data-number="13"><span class="header-section-number">13</span> cria a pasta de scripts</h1>
-<p>dir.create(“scripts”)</p>
-</section>
-</div>
+<p>No contexto de CRISP-DM, <strong>modelagem não se confunde com aprendizagem de máquina</strong>. Modelar pode significar aplicar métodos estatísticos tradicionais para comparar grupos, explicar relações e apoiar decisões, sem a necessidade de construir modelos preditivos complexos.</p>
 </div>
 </div>
 
 
+<div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
+<div id="ref-jung2024modern" class="csl-entry" role="listitem">
+JUNG, D. <strong><a href="https://doi.org/10.1007/978-3-031-59907-1">The Modern Business Data Analyst: A Case Study Introduction into Business Data Analytics with CRISP-DM and R</a></strong>. Cham, Switzerland: Springer Nature Switzerland, 2024.
+</div>
+</div>
 </section>
 
 </main> <!-- /main -->
@@ -1570,8 +1097,8 @@ Dica
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./04_capitulo.html" class="pagination-link" aria-label="Um Estudo de Caso Introdutório">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Um Estudo de Caso Introdutório</span></span>
+      <a href="./04_capitulo.html" class="pagination-link" aria-label="Tipos de Análise de Dados em CRISP-DM">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tipos de Análise de Dados em CRISP-DM</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

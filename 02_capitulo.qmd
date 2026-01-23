@@ -1,204 +1,201 @@
-# A Metodologia CRISP-DM
+# Papéis profissionais na área de dados
 
-Este capítulo apresenta a metodologia CRISP-DM (*Cross-Industry Standard
-Process for Data Mining*) [@ibm_crisp_dm], amplamente utilizada para estruturar
-projetos de Ciência de Dados. O objetivo é oferecer uma visão clara e
-operacional do método, com ênfase no papel do administrador na condução,
-coordenação e alinhamento estratégico desses projetos.
+O crescimento da área de dados deu origem a diferentes papéis profissionais,
+que variam conforme o foco técnico, o grau de especialização e a posição no
+fluxo de produção de valor a partir dos dados. Entre os papéis mais comuns
+estão o Analista de Dados, o Cientista de Dados e o Engenheiro de Dados.
 
+Embora essas funções sejam conceitualmente distintas, na prática,
+especialmente em organizações de pequeno e médio porte, é comum que um mesmo
+profissional acumule responsabilidades associadas a mais de um papel. Essa
+sobreposição é particularmente relevante no contexto brasileiro e deve ser
+levada em conta ao interpretar descrições formais de cargos.
 
-## O problema do “código antes do plano”
+Nas subseções a seguir, apresentam-se esses papéis de forma sintética,
+destacando habilidades técnicas, competências analíticas e exemplos típicos
+de aplicação.
 
-Projetos de dados frequentemente falham não por limitações técnicas, mas
-pela ausência de uma metodologia clara. É comum que equipes iniciem o
-desenvolvimento de modelos ou scripts antes mesmo de compreender o problema
-de negócio a ser resolvido.
 
-Esse tipo de abordagem tende a gerar desalinhamento entre soluções técnicas
-e necessidades organizacionais, ciclos recorrentes de retrabalho,
-desperdício de tempo e recursos, além de dificuldades para escalar projetos
-piloto para soluções corporativas.
+## Analista de Dados {.unnumbered}
 
+O Analista de Dados atua principalmente na exploração, organização e
+interpretação de dados, com foco em apoiar decisões operacionais e táticas
+por meio de análises descritivas e diagnósticas.
 
+**Habilidades técnicas**
 
-## O papel do administrador em projetos de dados
+- Domínio de ferramentas de visualização de dados, como Power BI ou Tableau,
+  e conhecimento avançado em planilhas eletrônicas, como o MS Excel.
 
-Nesse contexto, o administrador desempenha papel central. Cabe a ele
-assegurar que projetos de dados tenham início a partir de objetivos de
-negócio claramente definidos, com critérios mensuráveis de sucesso
-estabelecidos antes da implementação técnica.
+- Proficiência em linguagens de programação voltadas à análise de dados,
+  especialmente R e/ou Python.
 
-Além disso, o administrador atua como elo entre equipes técnicas e as
-partes interessadas no projeto, articulando expectativas, restrições e
-prioridades organizacionais, e garantindo que os resultados produzidos
-sejam relevantes para a tomada de decisão.
+- Experiência prática, ainda que em nível introdutório, com bancos de dados
+  e linguagem SQL.
 
+**Habilidades analíticas**
 
+- Capacidade de realizar análises estatísticas básicas e interpretar grandes
+  volumes de dados para identificar padrões, tendências e anomalias.
 
-## Ferramentas são meios, não fins
+**Exemplos de aplicações práticas**
 
-Ferramentas como R, Python, SQL, Quarto e Git são essenciais para projetos
-de Ciência de Dados, mas não constituem um fim em si mesmas. Sem uma
-metodologia orientadora, mesmo códigos tecnicamente sofisticados podem
-resolver o problema errado.
+- Análise de dados em setores como finanças, saúde e turismo, com o objetivo
+  de gerar insights para melhoria de processos, gestão de recursos e
+  atendimento ao cliente.
 
-O CRISP-DM fornece contexto e direção para o uso dessas ferramentas,
-enfatizando que a modelagem é apenas uma das etapas de um processo mais
-amplo, orientado por objetivos organizacionais.
+- Elaboração de análises **descritivas** e **diagnósticas**: a análise
+  descritiva busca compreender *o que* ocorreu, enquanto a análise
+  diagnóstica procura explicar *por que* ocorreu.
 
 
+## Cientista de Dados (Iniciante) {.unnumbered}
 
-## CRISP-DM como estrutura orientadora
+O Cientista de Dados atua de forma mais aprofundada na modelagem e na
+construção de soluções analíticas, combinando estatística, programação e
+conhecimento do problema de negócio. No nível iniciante, esse papel ainda
+envolve forte aprendizado técnico e conceitual.
 
-O CRISP-DM organiza projetos de dados de forma sistemática e iterativa.
-Diferentemente de abordagens centradas em ferramentas, o processo se inicia
-na compreensão do negócio e se encerra com a avaliação e implementação dos
-resultados no contexto organizacional.
+**Habilidades técnicas**
 
-```{r}
-#| label: fig-crispdm-fases
-#| echo: false
-#| fig-cap: "Fases da metodologia CRISP-DM e sua natureza iterativa."
-#| out-width: "60%"
-knitr::include_graphics("img/02-cap/crispdm.png")
-```
+- Proficiência em linguagens de programação como R e/ou Python, com uso de
+  bibliotecas especializadas (por exemplo, tidyverse, pandas,
+  scikit-learn, tidymodels).
 
-As fases funcionam como pontos de verificação, permitindo avaliar o
-progresso, alinhar expectativas e decidir se o projeto deve avançar, ser
-ajustado ou interrompido.
+- Conhecimento em SQL e em bancos de dados relacionais e não relacionais.
 
+- Familiaridade com ferramentas de versionamento de código (Git) e ambientes
+  de desenvolvimento.
 
+**Habilidades analíticas**
 
-## Fase 1: Compreensão do Negócio (*Business Understanding*)
+- Conhecimentos em estatística aplicada e aprendizagem de máquina.
 
-A primeira fase do CRISP-DM tem como foco alinhar a análise de dados aos
-objetivos empresariais. Antes de qualquer coleta, modelagem ou análise, é
-necessário compreender claramente qual problema se deseja resolver, por que
-ele é relevante e para quem.
+- Capacidade de preparar, transformar e organizar conjuntos de dados para
+  análise e modelagem.
 
-Nessa etapa, objetivos de negócio são definidos, a situação organizacional
-é avaliada, as partes interessadas são identificadas, metas analíticas são
-estabelecidas e um plano de projeto é elaborado de forma realista.
+- Capacidade de implementar algoritmos básicos de aprendizagem de máquina
+  sob supervisão ou em projetos de escopo limitado.
 
-### Checklist da Fase 1
+**Exemplos de aplicações práticas**
 
-| #   | Tarefa                          | Resultados esperados                  |
-| --- | ------------------------------- | ------------------------------------- |
-| 1.1 | Determinar objetivos de negócio | Contexto e critérios de sucesso       |
-| 1.2 | Avaliar situação                | Recursos, restrições e riscos         |
-| 1.3 | Alinhar partes interessadas     | Expectativas e responsabilidades      |
-| 1.4 | Determinar objetivos de análise | Metas analíticas e critérios técnicos |
-| 1.5 | Produzir plano do projeto       | Cronograma e responsabilidades        |
+- Desenvolvimento de modelos de classificação e regressão para problemas
+  como previsão, segmentação de clientes e detecção de anomalias.
 
+- Realização de análises **preditivas** e **prescritivas**, utilizando dados
+  históricos para antecipar comportamentos e apoiar recomendações de ação.
 
+- Criação de provas de conceito (POCs) para validação de hipóteses de negócio
+  baseadas em dados.
 
-## Fase 2: Compreensão dos Dados (*Data Understanding*)
+- Comunicação de resultados técnicos em formato acessível a públicos não
+  técnicos.
 
-A compreensão dos dados envolve conhecer profundamente as informações que
-serão utilizadas no projeto, independentemente de elas já existirem ou
-precisarem ser produzidas.
 
-Em muitos projetos, os dados não estão imediatamente disponíveis, sendo
-necessário coletá-los a partir de fontes externas, bases públicas,
-sistemas de terceiros ou por meio de instrumentos como surveys,
-experimentos ou registros operacionais. Nessa fase, também são avaliadas
-viabilidade, custos, limitações éticas e qualidade dos dados.
+## Engenheiro de Dados {.unnumbered}
 
-As atividades incluem coleta ou produção inicial, descrição, exploração e
-verificação de qualidade, fornecendo base empírica sólida para as etapas
-seguintes.
+O Engenheiro de Dados é o profissional responsável pela construção e
+manutenção da infraestrutura que permite o armazenamento, o processamento e
+o acesso eficiente aos dados utilizados pelas equipes analíticas.
 
-### Checklist da Fase 2
+- Atua no projeto, desenvolvimento e otimização de *pipelines* de dados,
+  *data warehouses* e *data lakes*.
 
-| #   | Tarefa                        | Resultados esperados          |
-| --- | ----------------------------- | ----------------------------- |
-| 2.1 | Coletar ou produzir dados     | Relatório ou desenho de dados |
-| 2.2 | Descrever dados               | Relatório de descrição        |
-| 2.3 | Explorar dados                | Relatório de exploração       |
-| 2.4 | Verificar qualidade dos dados | Relatório de qualidade        |
+- Seu foco principal é garantir que os dados sejam confiáveis, consistentes,
+  acessíveis e escaláveis, servindo como base para o trabalho de analistas e
+  cientistas de dados.
 
+- Em geral, esse papel envolve menor ênfase em análises estatísticas e maior
+  concentração em aspectos de arquitetura, desempenho e integração de
+  sistemas.
 
 
-## Fase 3: Preparação dos Dados (*Data Preparation*)
 
-A preparação dos dados é frequentemente a fase mais trabalhosa do
-processo. Seu objetivo é transformar dados brutos ou heterogêneos em um
-conjunto adequado para análise e modelagem.
 
-Inclui seleção de registros e variáveis, tratamento de inconsistências,
-criação de atributos derivados, integração de múltiplas fontes e
-padronização de formatos, com documentação das decisões adotadas.
+## Áreas de aplicação
 
-### Checklist da Fase 3
+As aplicações da Ciência de Dados são amplas e afetam diretamente o cotidiano
+das organizações. Em finanças, destacam-se análises de risco de crédito,
+detecção de fraudes e gestão de investimentos. Em marketing, técnicas de
+segmentação de clientes, análise de sentimentos e monitoramento de mídias
+sociais são amplamente utilizadas.
 
-| #   | Tarefa           | Resultados esperados             |
-| --- | ---------------- | -------------------------------- |
-| 3.1 | Selecionar dados | Critérios de inclusão e exclusão |
-| 3.2 | Limpar dados     | Relatório de limpeza             |
-| 3.3 | Construir dados  | Atributos derivados              |
-| 3.4 | Integrar dados   | Conjuntos integrados             |
-| 3.5 | Formatar dados   | Conjunto final documentado       |
+Esses exemplos ilustram como dados podem ser usados para compreender o
+passado, explicar causas e antecipar cenários futuros, correspondendo às
+análises descritivas, diagnósticas e preditivas.
 
 
 
-## Fase 4: Modelagem (*Modeling*)
+## Habilidades interpessoais e analíticas
 
-Na fase de modelagem, técnicas estatísticas e de aprendagem de máquisa são 
-aplicadas aosdados preparados. São escolhidos algoritmos compatíveis com 
-os objetivos do projeto, definidos procedimentos de validação e ajustados 
-parâmetros dos modelos.
+Além de competências técnicas, profissionais de dados precisam desenvolver
+habilidades interpessoais e analíticas que permitam transformar resultados
+quantitativos em decisões organizacionais concretas. Essas habilidades são
+essenciais para conectar análises de dados a problemas reais de negócio e
+para comunicar resultados de forma eficaz a diferentes públicos.
 
-Decisões tomadas nessa fase dependem fortemente das escolhas realizadas nas
-etapas anteriores e, com frequência, exigem iteração com fases anteriores.
+- **Pensamento analítico**: Abordar problemas de forma estruturada,
+  formular perguntas relevantes, selecionar informações apropriadas e
+  buscar soluções baseadas em evidências.
 
-### Checklist da Fase 4
+- **Conhecimento do negócio**: Compreender os objetivos da organização,
+  o contexto do mercado e a forma como análises de dados se relacionam com
+  metas estratégicas e operacionais.
 
-| #   | Tarefa                | Resultados esperados    |
-| --- | --------------------- | ----------------------- |
-| 4.1 | Selecionar técnicas   | Técnica e pressupostos  |
-| 4.2 | Gerar design de teste | Estratégia de validação |
-| 4.3 | Construir modelo      | Modelos e parâmetros    |
-| 4.4 | Avaliar modelo        | Métricas e ajustes      |
+- **Comunicação oral e escrita**: Capacidade de explicar resultados
+  técnicos a pessoas sem formação técnica, utilizando linguagem clara,
+  exemplos práticos e evitando jargões desnecessários.
 
+- **Pensamento crítico**: Questionar suposições implícitas, avaliar a
+  qualidade e as limitações dos dados disponíveis e considerar
+  interpretações alternativas antes de chegar a conclusões.
 
+- **Contar histórias com dados**: Organizar resultados e indicadores de modo a
+  construir uma narrativa coerente, capaz de destacar os principais
+  insights e apoiar processos de tomada de decisão.
 
-## Fase 5: Avaliação (*Evaluation*)
+- **Trabalho em equipe**: Colaborar com profissionais de diferentes áreas,
+  compreender necessidades diversas e integrar perspectivas técnicas e
+  organizacionais.
 
-A avaliação verifica se os resultados obtidos atendem aos objetivos de
-negócio definidos inicialmente. Não se trata apenas de desempenho técnico,
-mas de utilidade prática, viabilidade de implementação e impacto
-organizacional.
+- **Gerenciamento de projetos**: Planejar etapas de trabalho, definir
+  prioridades, estabelecer prazos realistas e comunicar o andamento das
+  atividades às partes interessadas.
 
-Nesta etapa, decide-se se o modelo está pronto para uso, se ajustes
-adicionais são necessários ou se novas análises devem ser conduzidas.
+- **Adaptabilidade**: Lidar com mudanças de requisitos, ferramentas e
+  tecnologias em um campo caracterizado por rápida evolução.
 
-### Checklist da Fase 5
+- **Curiosidade intelectual**: Demonstrar interesse contínuo em aprender,
+  formular novas perguntas e explorar dados de forma sistemática e
+  responsável.
 
-| #   | Tarefa                     | Resultados esperados                |
-| --- | -------------------------- | ----------------------------------- |
-| 5.1 | Avaliar resultados         | Comparação com critérios de sucesso |
-| 5.2 | Revisar processo           | Lições aprendidas                   |
-| 5.3 | Determinar próximos passos | Decisões e ações                    |
 
+::: {.callout-tip}
 
+Na prática profissional em Ciência de Dados, a capacidade de **estruturar problemas**, **compreender o contexto do negócio** e **comunicar resultados** de forma
+clara tende a ser mais determinante do que o domínio isolado de ferramentas.
+As habilidades técnicas adquirem valor quando integradas a essas
+competências centrais.
 
-## Fase 6: Implementação (*Deployment*)
+:::
 
-A implementação transforma análises e modelos em instrumentos efetivos de
-decisão. Envolve integração com sistemas organizacionais, definição de
-métricas de monitoramento, manutenção e comunicação dos resultados aos
-gestores.
 
-Essa fase também inclui a documentação do projeto e a consolidação de
-aprendizados, contribuindo para a maturidade analítica da organização.
 
-### Checklist da Fase 6
+## Dos papéis profissionais à organização de projetos de dados
 
-| #   | Tarefa                              | Resultados esperados        |
-| --- | ----------------------------------- | --------------------------- |
-| 6.1 | Planejar implantação                | Plano de implantação        |
-| 6.2 | Planejar monitoramento e manutenção | Plano de monitoramento      |
-| 6.3 | Produzir relatório final            | Relatório e apresentação    |
-| 6.4 | Revisar projeto                     | Documentação de experiência |
+No capítulo anterior, discutimos os principais papéis profissionais na área
+de dados, bem como as competências técnicas, analíticas e interpessoais
+associadas a cada função. Vimos que Analistas de Dados, Cientistas de Dados e
+Engenheiros de Dados contribuem de forma complementar para transformar dados
+em informação útil e apoiar decisões organizacionais.
 
+Na prática, porém, a atuação desses profissionais não ocorre de maneira
+isolada ou desordenada. Projetos de Ciência de Dados exigem coordenação,
+alinhamento estratégico e definição clara de objetivos, etapas e entregáveis.
+É nesse ponto que metodologias de projeto tornam-se essenciais.
 
+No próximo capítulo, apresentamos a metodologia CRISP-DM, amplamente adotada
+em projetos de Ciência de Dados, como uma estrutura orientadora para organizar
+o trabalho das equipes, alinhar análises aos objetivos do negócio e reduzir
+riscos associados a abordagens improvisadas ou excessivamente centradas em
+ferramentas.

@@ -1,901 +1,545 @@
-# Capítulo 5 — RStudio e fluxo de trabalho
 
-Este capítulo dá o primeiro passo para um trabalho organizado e reproduzível
-com as ferramentas que utilizaremos: entender o RStudio, configurar o ambiente e 
-adotar boas práticas desde o início. 
+# Um Estudo de Caso Introdutório 
 
+Este capítulo apresenta um estudo de caso introdutório com o objetivo de
+integrar, em um único exemplo, conceitos, ferramentas e práticas que serão
+aprofundados ao longo dos capítulos seguintes. A intenção não é esgotar os
+tópicos abordados, mas oferecer uma visão geral do processo de análise de
+dados no contexto da metodologia CRISP-DM.
 
-::: {.callout-note icon="false"}
-## Objetivos do capítulo
+O estudo de caso é baseado em um exemplo fictício adaptado do livro de
+Jung (2024) [@jung2024modern], sendo aqui utilizado exclusivamente com
+finalidade didática.
 
-- Reconhecer o papel do RStudio como IDE para o R.
-- Navegar pela interface e usar os painéis principais.
-- Instalar e carregar pacotes corretamente.
-- Criar projetos e organizar pastas de forma reprodutível.
-:::
 
-::: {.callout-note icon="false"}
-## Pré-requisitos
 
-- Ter a linguagem R instalado no computador.
-- Acesso à internet para baixar e instalar o RStudio 
-- Acesso à internet para instalar pacotes quando necessário.
-- Noções básicas de organização de arquivos e pastas.
-:::
+## Estrutura do projeto e organização dos arquivos
 
+Antes de iniciar qualquer análise, é fundamental definir uma estrutura
+mínima de projeto. A organização adequada dos arquivos facilita a
+reprodutibilidade, a colaboração e a manutenção do trabalho ao longo do
+tempo, além de tornar mais claras as etapas do processo analítico.
 
+Ao longo da disciplina, os projetos foram organizados de forma
+padronizada, separando dados brutos, dados processados e relatórios.
+Essa mesma lógica será adotada neste livro, servindo como referência para
+os exemplos e códigos apresentados nos capítulos seguintes.
 
+Uma estrutura básica de projeto pode ser representada da seguinte forma:
 
-## Instalação do RStudio
-
-::: {.callout-note icon="false"}
-## Instalação do RStudio no Windows
-
-1. Acesse [https://posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/){target="_blank"}
-2. Role a página; normalmente o site detecta seu sistema e disponibiliza o
-   instalador logo abaixo de `2: Install RStudio`.
-3. Clique em `Download RStudio Desktop for Windows` se o sistema for Windows.
-4. Finalizado o download, clique duas vezes no arquivo e avance até concluir.
-:::
-
-::: {.callout-note icon="false"}
-## macOS/Linux
-
-Na mesma página de download, escolha o instalador do seu sistema. O fluxo é
-análogo ao do Windows: baixar, executar e concluir a instalação.
-:::
-
-Com o RStudio instalado, vamos entender o que ele é e por que um IDE facilita
-o trabalho de quem está começando.
-
-
-
-
-## O que é o RStudio
-
-O RStudio é um Ambiente de Desenvolvimento Integrado (IDE) voltado para a
-linguagem R. Em vez de abrir programas separados para escrever, executar e
-visualizar resultados, o IDE reúne tudo em uma única interface.
-
-::: {.callout-note icon="false"}
-## Conceito-chave: IDE
-
-Um IDE integra editor de texto, execução de código, ajuda, visualização de
-gráficos e organização de projetos. Isso reduz erros e acelera o aprendizado.
-:::
-
-Para quem está começando, a vantagem prática é simples: você escreve um script,
-executa no console e vê o resultado sem sair do mesmo ambiente.
-
-
-### Por que usar o RStudio?
-
-- **Interface Amigável**: O RStudio oferece uma interface gráfica intuitiva 
-que facilita o trabalho, especialmente para iniciantes, com acesso visual 
-a scripts, console, dados e gráficos simultaneamente.
-
-- **Aumento de Produtividade**: Recursos como autocompletar código, 
-atalhos de teclado e visualização integrada de gráficos aceleram 
-significativamente o fluxo de trabalho.
-
-- **Gestão de Projetos**: O sistema de projetos do RStudio organiza seu 
-trabalho, mantendo todos os arquivos relacionados em um único local.
-
-- **Integração com outras ferramentas**: Oferece suporte a várias 
-linguagens (R, Python, SQL), integra-se com sistemas de controle de 
-versão como Git, e facilita a publicação de conteúdo via sistema Quarto.
-
-- **Reprodutibilidade Científica**: Facilita a criação de documentos 
-reproduzíveis que combinam código, resultados e texto narrativo, essenciais 
-para pesquisa científica e relatórios corporativos.
-
-- **Comunidade Ativa**: Desenvolvido pela Posit (anteriormente RStudio), 
-conta com uma grande comunidade de usuários e desenvolvedores que 
-constantemente melhoram a ferramenta.
-
-
-
-### Erros comuns e como resolver
-
-- Confundir RStudio com a linguagem R: lembre que são ferramentas diferentes.
-- Abrir o RStudio sem ter o R instalado: instale o R antes do IDE.
-- Ignorar o painel de ajuda: use a guia `Help` para consultar funções.
-
-
-### Checklist do leitor
-
-- [ ] Definir o que é um IDE.
-- [ ] Explicar por que o RStudio facilita o trabalho inicial.
-- [ ] Verificar que o R está instalado no computador.
-
-
-
-
-### R (linguagem) vs RStudio (IDE)
-
-![](https://d33wubrfki0l68.cloudfront.net/0b4d0569b2ddf6147da90b110fbb2a17653c8b08/f06f3/images/shutterstock/r_vs_rstudio_1.png){width="100%" fig-align="center"}
-
-R é uma **linguagem de programação**, enquanto o RStudio é um 
-**Ambiente de Desenvolvimento Integrado** que contém recursos que 
-facilitam o uso da linguagem R.
-
-Utilizando a analogia de um carro, R seria o motor enquanto o RStudio 
-seria o painel de controles (*dashboard*). Portanto, é necessário ter 
-os dois softwares instalados.
-
-### Erros comuns e como resolver
-
-- Instalar apenas o RStudio e esperar que o R funcione: instale ambos.
-- Achar que o RStudio "substitui" o R: ele apenas organiza o trabalho.
-- Não saber onde digitar comandos: use o painel `Console` para executar.
-
-### Checklist do leitor
-
-- [ ] Diferenciar o que é o R e o que é o RStudio.
-- [ ] Explicar por que ambos devem estar instalados.
-- [ ] Indicar onde executar comandos no RStudio.
-
-
-
-
-## RStudio: Uma Visão Geral
-
-### Interface do RStudio
-
-Na primeira abertura, você verá quatro painéis. Eles funcionam em conjunto
-para escrever, executar, inspecionar objetos e visualizar resultados.
-
-![](img/05-cap/rstudio-panes.jpeg){fig-align="center"}
-
-Na figura acima, cada painel tem um papel. Vamos percorrê-los começando pelo
-`Source`, que é onde você escreve.
-
-
-### Painel: **Source**
-
-- O painel `Source` permite a visualização e edição de vários arquivos 
-relacionados a diversas linguagens, tais como: `.R`, `.qmd`,
-ou arquivos de texto gerais como `.txt` ou `.md.` 
-
-- Por padrão, é o painel superior esquerdo e pode ser iniciado abrindo 
-qualquer arquivo editável no RStudio. 
-
-- Cada arquivo adicional que for aberto será adicionado como uma nova guia 
-no painel.
-
-
-### Painel: **Console**
-
-- Esse painel fornece uma área para executar o código interativamente, isto
-é, você pode "conversar" diretamente com o interpretador da linguagem R.
-
-- Por padrão, está vinculado à linguagem R, mas ele também pode fornecer um
-console Python.
-
-
-### Painel: **Environment**
-
-**Guia `Environment`**
-
-- Essa guia exibe objetos R e Python ativos na sessão atual.
-
-- A barra de menus de `Environment` fornece carregamento ou salvamento de 
-  R workspaces, importação interativa de conjuntos de dados de arquivos de 
-  texto, Excel ou SPSS/SAS/Stata. 
-
-- Ela também exibe a memória usada pela sessão R ativa e um ícone 
-  de uma vassoura para remover todos os objetos ativos.
-
-
-### Painel: **Output**
-
-Por padrão, o painel `Output` é o painel inferior direito e 
-contém as seguintes guias: 
-
-**Guia `Files`**
-
-- Esta guia fornece uma exploração interativa da pasta de trabalho
-(*working directory*), ou seja, a pasta para a qual o R está direcionado.
-
-- Nesta guia, você pode adicionar, excluir, renomear e remover 
-arquivos e pastas, entre outras operações.
-
-
-**Guia `Help`**
-
-- O ícone `Home` exibe a página de ajuda geral, com links para 
-  Manuais e Referências sobre o R e RStudio.
-  
-- Exibe também a documentação dos pacotes. 
-
-
-**Guia `Viewer`**
-
-- Exibe conteúdos interativos tais como: gráficos interativos, aplicativos
-Shiny, páginas HTML geradas pelo Quarto, entre outros.
-
-  
-**Guia `Presentation`**
-
-- Esta guia é usada para exibir slides HTML gerados pelo 
-sistema Quarto.
-
-
-**Guia `Plots`**
-
-- Esta guia exibe imagens estáticas produzidas na sessão. 
-
-- Há setas para navegar entre gráficos mais antigos e mais recentes,
-zoom, um botão de exportação para salvar as imagens, um botão de
-exclusão de imagens e um ícone de vassoura que limpará todos os gráficos.
-
-
-**Guia `Packages`**
-
-- Esta guia permite visualizar os pacotes R instalados. 
-
-- Há uma barra para pesquisar a biblioteca atual de pacotes. 
-
-- Há também um botão para instalação e atualização de pacotes. 
-
-
-### Erros comuns e como resolver
-
-- Não saber onde digitar comandos: use o `Console` para executar.
-- Abrir um arquivo e não ver no `Source`: confirme se ele é editável.
-- Salvar arquivos fora do projeto: trabalhe sempre dentro da pasta do projeto.
-- Confundir `Files` com o sistema inteiro: ele mostra o *working directory*.
-
-
-### Checklist do leitor
-
-- [ ] Localizar `Source`, `Console`, `Environment` e `Output`.
-- [ ] Explicar o papel da guia `Files` como pasta de trabalho.
-- [ ] Abrir e alternar arquivos no `Source`.
-
-
-
-
-## Instalando Pacotes R: 
-
-### Usando a Guia Packages
-
-Para instalar pacotes usando a guia **Packages** no RStudio:
-
-- Clique na guia **Packages**.
-
-- Clique em **Install Packages**.
-
-- Digite o nome de cada pacote que deseja instalar separados 
-por um espaço ou vírgula na caixa de texto.
-
-- Copie os pacotes abaixo e cole na caixa de texto:
-
-```r
-tidyverse usethis 
+``` markdown
+seunome_icd2025/
+├── dados/
+│   ├── brutos/     # dados originais, sem modificações
+│   └── limpos/     # dados após limpeza e transformações
+├── relatorios/
+│   └── 01-relatorio/
+├── README.md
+└── seunome_icd2025.Rproj
 ```
 
-- Clique em **Install** para iniciar a instalação
+Essa separação explícita evita que dados originais sejam sobrescritos,
+torna as etapas do processo analítico mais transparentes e facilita a
+verificação e a reprodução das análises realizadas.
+
+Na prática, recomenda-se criar inicialmente um repositório vazio no
+GitHub, cloná-lo localmente e, na pasta clonada do repositório, criar um
+projeto RStudio. A partir desse projeto, os arquivos e diretórios podem
+ser organizados de forma estruturada.
+
+O controle de versão com Git não é tratado aqui como um fim em si, mas
+como parte integrante de boas práticas em projetos de análise de dados.
 
 
-![](img/05-cap/install_packages.jpeg){fig-align="center"}
+::: {.callout-tip}
+
+A *organização das pastas e arquivos do projeto* não é um detalhe técnico, 
+mas parte central da reprodutibilidade e do trabalho em equipe. Um projeto 
+bem estruturado permite que análises sejam compreendidas, verificadas e 
+reproduzidas por outras pessoas — ou pelo próprio autor em um momento posterior.
+
+:::
 
 
-### Usando comandos
 
-- Uma forma alternativa de instalar pacotes é usando a linha de comando. 
+## O Caso Junglivet Whisky Company
 
-- Você pode usar o seguinte comando diretamente no console, em um script, 
-ou em um documento Quarto:
+Neste estudo de caso, aplicamos as três primeiras fases da metodologia
+CRISP-DM:
+
+1. **Compreensão do Negócio** (*Business Understanding*)
+2. **Compreensão dos Dados** (*Data Understanding*)
+3. **Preparação dos Dados** (*Data Preparation*)
+
+Você acaba de ser contratado como analista de dados na *Junglivet Whisky
+Company*. A empresa enfrenta reclamações recorrentes sobre a qualidade do
+whisky produzido, e a direção busca identificar possíveis causas para o
+problema.
+
+Os dados fornecidos correspondem ao registro da linha de produção das
+últimas duas semanas.
+
+
+## Organização do projeto e reprodutibilidade
+
+Antes de qualquer análise, o projeto foi organizado seguindo uma estrutura
+padronizada, separando dados brutos, dados tratados e relatórios. Essa
+organização facilita a reprodutibilidade, a documentação e o trabalho
+colaborativo.
+
+A análise apresentada neste capítulo foi desenvolvida em um projeto RStudio
+versionado com Git e sincronizado com GitHub, utilizando o sistema Quarto
+para geração de relatórios reprodutíveis.
+
+
+## Fase 1: Compreensão do Negócio
+
+O primeiro passo do CRISP-DM consiste em entender claramente o problema de
+negócio, antes de qualquer decisão técnica.
+
+- **Problema de negócio**: queda na qualidade do whisky produzido.
+- **Objetivo**: identificar fatores associados à redução da qualidade.
+- **Critério de sucesso**: evidenciar fatores operacionais que influenciam
+  negativamente o indicador de qualidade.
+
+Nesta fase, ainda não buscamos respostas nos dados, mas sim formular as
+perguntas corretas.
+
+
+## Fase 2: Compreensão dos Dados
+
+Nesta etapa, analisamos os dados disponíveis, sua estrutura e limitações,
+antes de qualquer transformação ou modelagem.
+
+
+### Dicionário de dados
+
+A documentação das variáveis é uma prática fundamental em projetos de análise de 
+dados. Ela garante interpretação consistente e reduz ambiguidades ao longo do
+processo analítico.
+
+Um dicionário de dados é uma documentação estruturada que descreve o 
+significado, formato, uso e relacionamentos de cada variável em um 
+conjunto de dados. 
+
+Ele funciona como um guia essencial para compreender corretamente as 
+informações disponíveis, garantindo que todos os usuários interpretem 
+os dados de maneira consistente. 
+
+O arquivo de dados fornecido contém as seguintes colunas (ou variáveis):
+
+- **DAY**: dia da produção.
+- **MONTH**: mês da produção.
+- **MANUFACTURER**: mestre responsável pela produção.
+- **PRODUCT**: tipo de produto.
+- **SHIFT**: turno de produção.
+- **COLOR**: indicador de cor (0 a 1).
+- **MALTING**: fornecedor do malte.
+- **TASTING**: indicador de qualidade (0 a 1000).
+
+
+### Importação dos dados
+
+Antes de iniciar a análise, é necessário garantir que os pacotes R
+utilizados no projeto estejam instalados e carregados. Neste livro,
+utilizaremos o pacote **pacman** para facilitar esse processo, pois ele
+permite instalar e carregar pacotes de forma automática quando necessário.
+
+A instalação de pacotes deve ser feita apenas uma vez em cada ambiente.
+Após isso, basta carregá-los normalmente. O uso do **pacman** reduz
+problemas comuns enfrentados por iniciantes, como erros relacionados a
+pacotes ausentes.
 
 ```{r}
-#| eval: false
-#| echo: true
-#| message: false
-#| warning: false
+# Verifica se o pacote 'pacman' está instalado.
+# Caso não esteja, realiza a instalação a partir do CRAN.
+if (!requireNamespace("pacman", quietly = TRUE)) {
+  install.packages("pacman")
+}
 
-install.packages(c("tidyverse", "usethis"))
+# Carrega o pacote 'pacman' na sessão atual
+library(pacman)
+
+# A função p_load():
+# - instala automaticamente pacotes ausentes
+# - carrega todos os pacotes listados
+pacman::p_load(
+  here,      # define caminhos relativos ao diretório raiz do projeto
+  readr,     # leitura eficiente de arquivos CSV
+  dplyr,     # manipulação e transformação de dados
+  tidyr,     # função drop_na()
+  ggplot2    # visualização de dados
+)
 ```
 
+O processo de importação de dados é um passo fundamental em qualquer 
+análise. Neste caso, utilizamos duas ferramentas importantes:
+
+- O pacote `here` permite definir caminhos relativos ao diretório 
+raiz do projeto, o que torna o código mais portátil e facilita o 
+compartilhamento. Independentemente de onde o projeto esteja armazenado 
+em diferentes computadores, o pacote `here` encontrará automaticamente 
+os arquivos a partir da raiz do projeto.
+
+- O pacote `readr`, parte do tidyverse, oferece funções otimizadas 
+para leitura de arquivos, como a `read_csv()`, que é mais rápida 
+que a função base do R e oferece tratamento mais consistente dos 
+tipos de dados. Além disso, ela converte automaticamente strings vazias 
+para NA, indica o tipo de cada coluna importada e preserva os nomes 
+das variáveis originais.
+
+```{r}
+# Define o caminho relativo do arquivo de dados 
+# a partir da raiz do projeto.
+caminho <- here::here("dados/brutos/productionlog_sample.csv")
+
+# Importa o arquivo com a funçào read_csv
+dados_destilaria <- readr::read_csv(caminho)
+```
+
+A partir desse ponto, os dados estão disponíveis na ambiente de R e podem
+ser explorados, verificados e preparados para as etapas seguintes da
+análise.
+
+
+
+### Inspeção inicial dos dados
+
+Após importar os dados, é essencial verificar sua estrutura para entender 
+o que temos disponível. A função `glimpse()` do pacote `dplyr` nos 
+oferece uma visão concisa e informativa sobre:
+
+- Quais variáveis (colunas) estão presentes no conjunto de dados.
+- Qual o tipo ou classe de cada variável.
+- Os primeiros valores de cada variável.
+- O número total de observações (linhas).
+
+```{r}
+# fornece visão geral da estrutura dos dados
+dplyr::glimpse(dados_destilaria)
+```
+
+Além disso, estatísticas descritivas básicas ajudam a identificar valores
+ausentes, escalas e possíveis inconsistências.
+
+A função `summary()` resume as principais estatísticas das variáveis
+e indica automaticamente a presença de valores ausentes (NA)
+
+```{r}
+# fornece estatísticas descritivas dos dados
+summary(dados_destilaria)
+```
+
+A saída da função mostra que há pelo menos um valor faltante (`NA`) em 
+uma linha (observação) do arquivo.
+
+
+
+## Fase 3: Preparação dos Dados
+
+Nesta fase, preparamos os dados para análise, renomeando variáveis, 
+convertendo cada variável para um tipo ou classe de dados adequado, 
+tratando valores ausentes, removendo colunas irrelevantes e garantindo 
+que temos dados de qualidade para trabalhar.
+
+O código a seguir executa as seguintes operações para limpar os dados:
+
+1. **Remove** a coluna `MONTH` que é desnecessária para a análise.
+  
+2. **Renomeia** todas as colunas para nomes mais descritivos em português, 
+facilitando a interpretação.
+ 
+3. **Converte** as variáveis para seus tipos/classes de dados apropriados: 
+`numeric` para valores quantitativos (dia, cor, indicador_qualidade) e 
+`factor` para variáveis categóricas (fabricante, tipo_produto, turno, 
+fornecedor_malte).
+ 
+4. Remove linhas com valores ausentes para garantir a integridade 
+dos dados nas análises subsequentes.
+
+Vamos utilizar o operador pipe (`%>%`) do tidyverse para encadear
+as operações de limpeza e transformação de dados de forma mais legível.
+Cada operação recebe o resultado da anterior e aplica uma nova transformação.
+
+Observe como organizamos o código com identação consistente e
+comentários explicativos para cada operação. Esta é uma boa prática
+que torna o código mais legível e facilita sua manutenção.
+
+```{r}
+# Pipeline para criar uma nova data frame 
+# contendo os dados limpos.
+
+# define o objeto que armazenará os dados limpos
+# criado a partir de dados_destilaria
+dados_destilaria_limpos <- dados_destilaria %>%
+  # Remove a variável MONTH
+  select(-MONTH) %>%
+  # Renomeia as variáveis para nomes mais descritivos
+  rename(
+    dia = DAY,
+    mestre_responsavel = MANUFACTURER,
+    tipo_produto = PRODUCT,
+    turno = SHIFT,
+    cor = COLOR,
+    fornecedor_malte = MALTING,
+    indicador_qualidade = TASTING
+  ) %>%
+  # Converte explicitamente os tipos das variáveis
+  mutate(
+    dia = as.numeric(dia),
+    mestre_responsavel = as.factor(mestre_responsavel),
+    tipo_produto = as.factor(tipo_produto),
+    turno = as.factor(turno),
+    cor = as.numeric(cor),
+    fornecedor_malte = as.factor(fornecedor_malte),
+    indicador_qualidade = as.numeric(indicador_qualidade)
+  ) %>%
+  # Remove observações com valores ausentes
+  drop_na()
+```
+
+
+
+## Análise exploratória de dados
+
+A Análise Exploratória de Dados (AED) é uma abordagem fundamental que nos 
+permite investigar e compreender as características principais de um 
+conjunto de dados. 
+
+Utilizamos técnicas visuais e estatísticas para:
+
+- Identificar padrões, tendências e relações entre variáveis.
+- Detectar valores atípicos (outliers) e anomalias.
+- Verificar hipóteses preliminares sobre possíveis causas do problema.
+- Orientar análises mais detalhadas e modelagens futuras.
+
+Com os dados devidamente preparados, vamos explorar graficamente  
+relações entre algumas variáveis e o indicador de qualidade do whisky 
+para identificar potenciais fatores que explicam os problemas 
+enfrentados pela destilaria.
+
+
+### Relação entre fornecedor e qualidade 
+
+O boxplot ou diagrama de caixa é uma ferramenta útil para 
+visualizar a distribuição de variáveis numéricas agrupadas 
+por categorias. 
+
+Neste gráfico:
+
+- A linha horizontal dentro da caixa representa a **mediana** (percentil 50).
+
+- Os limites inferior e superior da caixa representam o **primeiro quartil** 
+(percentil 25) e o **terceiro quartil** (percentil 75), respectivamente.
+
+- As "hastes" (whiskers) se estendem até 1,5 vezes o intervalo 
+interquartil (IQR).
+
+- Pontos individuais além das hastes representam **outliers** 
+(valores atípicos)
+
+Esta visualização nos permite comparar as distribuições de 
+qualidade entre os diferentes fornecedores de malte. Assim, 
+ela pode revelar evidências de uma relação sistemática entre o 
+fornecedor de malte e a qualidade final do produto.
+
+```{r}
+#| label: fig-boxplot-1
+#| fig-cap: "Boxplot comparativo de qualidade do whisky por fornecedor de malte."
+#| fig-align: center
+
+# Boxplot comparativa da qualidade por fornecedor de malte
+ggplot(dados_destilaria_limpos, aes(x = fornecedor_malte, y = indicador_qualidade)) +
+  # Cria boxplots para representar a distribuição dos dados
+  geom_boxplot() +
+  # Aplica um tema minimalista para melhor visualização
+  theme_minimal() +
+  # Define títulos e rótulos dos eixos
+  labs(
+    title = "Qualidade do Whisky por Fornecedor de Malte",
+    x = "Fornecedor",
+    y = "Pontuação de Qualidade"
+  )
+```
+
+O boxplot evidencia diferenças relevantes na distribuição do indicador de
+qualidade entre os fornecedores de malte. Observa-se que os whiskies
+produzidos com malte proveniente da categoria *Inhouse* apresentam, em
+média, valores mais elevados de qualidade, além de menor dispersão.
+
+Por outro lado, os produtos associados ao fornecedor *Burns Best Ltd.*
+tendem a apresentar qualidade mediana inferior, com distribuição mais
+concentrada em valores baixos. Já o fornecedor *Matro Ltd.* apresenta
+maior variabilidade, indicando inconsistência no padrão de qualidade do
+insumo fornecido.
+
+Esses resultados sugerem que o fornecedor de malte é um fator
+potencialmente relevante para explicar a queda observada na qualidade do
+produto final.
+
+
+Embora os boxplots forneçam uma visualização rica da distribuição dos dados, 
+às vezes precisamos de medidas numéricas precisas para confirmar nossas 
+observações visuais. Nesta análise:
+
+- Agrupamos os dados por fornecedor de malte.
+
+- Calculamos a mediana do indicador de qualidade para cada grupo.
+
+- Contamos o número de amostras (n) por fornecedor para avaliar a 
+robustez dos resultados.
+
+- Ordenamos os resultados em ordem decrescente para facilitar a comparação.
+
+Esta abordagem complementa a visualização anterior, fornecendo valores 
+numéricos para fundamentar a análise do boxplot.
+
+```{r}
+# Calcula a qualidade média por fornecedor
+dados_destilaria_limpos %>%
+  # Agrupa os dados pelo fornecedor de malte
+  group_by(fornecedor_malte) %>%
+  # Calcula a média e conta o número de obs. para cada grupo
+  summarise(
+    qualidade_mediana = median(indicador_qualidade),
+    n = n()
+  ) %>%
+  # Ordena os resultados em ordem decrescente pela qualidade média
+  arrange(desc(qualidade_mediana))
+```
+
+
+
+### Relação entre mestre responsável e qualidade 
+
+Os mestres responsáveis pela produção podem influenciar significativamente 
+a qualidade do produto final devido às suas técnicas, experiência e atenção 
+aos detalhes. Este boxplot nos permite:
+
+- Comparar a performance de diferentes mestres responsáveis.
+
+- Identificar se há diferenças consistentes na qualidade do whisky 
+produzido por cada um.
+
+- Verificar se algum mestre responsável apresenta maior variabilidade 
+nos resultados.
+
+- Detectar possíveis interações entre a experiência do profissional e a 
+qualidade final.
+
+Esta análise pode revelar se há necessidade de padronização de processos 
+ou treinamentos específicos para garantir consistência na produção.
+
+```{r}
+#| label: fig-3
+#| fig-cap: "Boxplot comparativo entre qualidade do whisky e mestre destilador."
+
+# Boxplot comparativo entre indicador de qualidade e mestre destilador\\
+ggplot(dados_destilaria_limpos, aes(x = mestre_responsavel, y = indicador_qualidade)) +
+  # Cria boxplots para visualizar a distribuição e identificar outliers
+  geom_boxplot() +
+  # Aplica um tema minimalista
+  theme_minimal() +
+  # Define títulos e rótulos dos eixos
+  labs(
+    title = "Qualidade do Whisky por Mestre Responsável",
+    x = "Mestre Responsável",
+    y = "Indicador de Qualidade"
+  )
+```
+
+
+
+
+### Relação entre cor e qualidade
+
+O gráfico de dispersão ou *scatter plot*  é ideal para explorar 
+a relação entre duas variáveis numéricas. Ao analisar a relação entre a 
+cor do whisky e seu indicador de qualidade:
+
+- Cada ponto representa uma amostra de whisky produzida.
+- O eixo X mostra o valor do indicador de cor.
+- O eixo Y indica a pontuação de qualidade.
+- A linha de tendência (curva LOESS) ajuda a visualizar o padrão geral dos 
+dados sem assumir uma relação linear.
+
+Esta visualização nos permite identificar se existe um valor ou faixa 
+ótima de cor que está associada à melhor qualidade, o que poderia ser usado 
+como indicador durante o processo de produção.
+
+```{r}
+#| label: fig-2
+#| fig-cap: "Gráfico de dispersão entre qualidade e cor do whisky."
+
+# Grafico de dispersão entre o indicador de cor e a qualidade
+ggplot(dados_destilaria_limpos, aes(x = cor, y = indicador_qualidade)) +
+  # Adiciona pontos para cada observação no conjunto de dados
+  geom_point() +
+  # Adiciona uma linha suavizada (LOESS) para mostrar a tendência geral
+  geom_smooth(method = "loess", se = FALSE) +
+  # Aplica um tema minimalista
+  theme_minimal() +
+  # Define títulos e rótulos dos eixos
+  labs(
+    title = "Relação entre Cor e Qualidade do Whisky",
+    x = "Indicador de Cor",
+    y = "Indicador de Qualidade"
+  )
+```
+
+O gráfico de dispersão indica uma relação não linear entre o indicador de
+cor e a qualidade do whisky. A curva de suavização sugere que valores de
+cor em torno de 0,3 estão associados, em média, a níveis mais elevados de
+qualidade.
+
+Valores muito baixos ou muito elevados do indicador de cor parecem
+associar-se a pior desempenho no indicador de qualidade. Essa evidência
+sugere que a cor pode funcionar como um sinal antecipado de problemas no
+processo produtivo.
+
+Do ponto de vista operacional, esse resultado é particularmente
+interessante, pois a cor pode ser monitorada durante a produção, antes
+das etapas finais de avaliação sensorial.
+
+
+
+### Conclusão da Análise Exploratória
+
+A análise exploratória dos dados da linha de produção da Junglivet Whisky
+Company indica que a queda na qualidade do produto não ocorre de forma
+aleatória. Pelo contrário, há evidências de associação entre o indicador
+de qualidade e fatores operacionais específicos.
+
+Em particular, o fornecedor de malte e o indicador de cor emergem como
+variáveis relevantes. 
+
+Entretanto, esses resultados não constituem provas 
+definitivas de causalidade, mas fornecem hipóteses analíticas bem 
+fundamentadas para as próximas fases de CRISP-DM.
+
+
+
+## Próximos passos
+
+- **Modelagem**: aplicação de métodos estatísticos de comparação entre
+  grupos, como testes de médias e análise de variância, com o objetivo de
+  avaliar diferenças sistemáticas associadas aos fatores operacionais
+  identificados.
+
+- **Avaliação**: interpretação dos resultados estatísticos à luz dos
+  objetivos de negócio, considerando significância, magnitude dos efeitos
+  e implicações práticas para o processo produtivo.
+
+- **Implantação**: adoção de medidas operacionais baseadas nos resultados,
+  como revisão de fornecedores, ajustes de processo e definição de
+  indicadores de monitoramento da qualidade.
 
 
 ::: {.callout-note}
-## Atenção! Instalação e carregamento de pacotes
 
-- Em um computador, você instala o pacote **uma única vez**.
-
-- Para usar o pacote em cada sessão, é preciso **carregá-lo** com `library()`.
-
-```{r}
-#| eval: false
-#| echo: true
-#| message: false
-#| warning: false
-
-# carrega os pacotes utilizados
-library(tidyverse)
-library(usethis)
-.
-.
-```
+No contexto de CRISP-DM, **modelagem não se confunde com aprendizagem de máquina**. 
+Modelar pode significar aplicar métodos estatísticos
+tradicionais para comparar grupos, explicar relações e apoiar decisões,
+sem a necessidade de construir modelos preditivos complexos.
 
 :::
-
-
-
-::: {.callout-tip}
-## Conexão com a internet
-
-- Para instalar pacotes de R ou Python, é necessária uma
-**conexão ativa com a internet**.
-
-- Em caso de falhas de conexão, o download pode falhar. Nesse caso,
-repita a instalação.
-:::
-
-### Erros comuns e como resolver
-
-- Tentar usar `library()` sem instalar: rode `install.packages()` antes.
-- Esperar que a instalação funcione sem internet: verifique a conexão.
-- Instalar toda vez que abrir o RStudio: instale uma vez, carregue sempre.
-
-### Checklist do leitor
-
-- [ ] Indicar quando usar `install.packages()`.
-- [ ] Indicar quando usar `library()`.
-- [ ] Reconhecer que a instalação exige internet.
-
-
-
-
-## Configurações Básicas Recomendadas do RStudio
-
-Estas opções evitam mensagens e comportamentos confusos ao iniciar o RStudio
-em diferentes projetos.
-
-1. Abra o RStudio.
-
-2. Clique no menu "*Tools*" > "*Global Options*" > "*Basic*".
-
-3. **Desmarque** a opção: "*Restore most recently opened project at startup*".
-
-4. **Desmarque** a opção: "*Restore previously open source document at startup*".
-
-5. **Desmarque** a opção: "*Restore .Rdata into workspace at startup*".
-
-6. Na caixa à direita de "*Save workspace to .Rdata on exit:*", **selecione** 
-"*never*"
-
-7. Clique em "*Ok*" e, em seguida, em "*Apply*".
-
-![](img/05-cap/rstudio_config_basica.jpeg){fig-align="center" width="90%"}
-
-
-### Checklist do leitor
-
-- [ ] Desativar a restauração automática de projetos e arquivos.
-- [ ] Configurar “Save workspace to .Rdata” como “never”.
-- [ ] Verificar o projeto ativo no RStudio.
-
-
-
-
-# Projetos RStudio e reprodutibilidade
-
-Depois de conhecer a interface do RStudio, o próximo passo para trabalhar
-de forma organizada e segura é estruturar o trabalho em projetos. Projetos
-reduzem confusões com arquivos, facilitam a colaboração e tornam análises
-mais reprodutíveis ao longo do tempo.
-
-Em termos práticos, um projeto reúne, em uma única pasta, todos os
-elementos relacionados a uma análise: dados, scripts, relatórios e
-documentação. Essa prática é amplamente adotada por analistas e cientistas
-de dados e é suportada nativamente pelo RStudio por meio dos *RStudio
-Projects*.
-
-::: {.callout-note icon=false}
-## Visão geral
-
-- Em projetos de análise de dados, todos os arquivos relevantes ficam
-  organizados em uma única pasta, estruturada em subpastas bem definidas
-  (por exemplo, dados, scripts e relatórios).
-
-- Essa organização é tão comum que o RStudio oferece suporte direto por meio
-  dos *Projects*, permitindo trabalhar com diferentes projetos de forma
-  isolada e consistente.
-
-- Ao ativar um projeto, a pasta do projeto passa a ser o diretório de
-  trabalho (*working directory*) da sessão, o que facilita o uso de
-  caminhos relativos.
-
-- O uso de caminhos relativos reduz erros, aumenta a portabilidade do
-  código e é um elemento central da reprodutibilidade.
-:::
-
-## Práticas ruins e como resolver
-
-- Trabalhar sem projeto e “perder” arquivos: crie um projeto para cada
-  análise.
-- Misturar arquivos de projetos diferentes: use uma pasta por projeto.
-- Utilizar caminhos absolutos longos: prefira caminhos relativos dentro do
-  projeto.
-
-### Checklist do leitor
-
-- [ ] Explicar por que projetos facilitam a reprodutibilidade.
-- [ ] Definir o que é um caminho relativo.
-- [ ] Adotar um projeto para cada análise de dados.
-
-
-## Criando projetos no RStudio
-
-Projetos RStudio estão sempre associados a uma pasta no sistema de
-arquivos. Há duas formas principais de criar um projeto:
-
-- Em uma nova pasta, que ainda não existe.
-- Em uma pasta existente, como um repositório previamente clonado do
-  GitHub (**recomendado**).
-
-É importante destacar que um projeto RStudio é conceitualmente distinto
-do controle de versão com Git. Um projeto pode existir sem Git, mas, neste
-livro, recomenda-se fortemente que projetos sejam versionados, pois isso
-reforça boas práticas profissionais.
-
-Suponha que um aluno hipotético, João Silva, deseje criar um projeto para a
-disciplina Introdução à Ciência de Dados. Um nome adequado para a pasta e
-para o projeto seria `joaosilva_icd`, evitando espaços, acentos e caracteres
-especiais.
-
-A seguir, descreve-se o procedimento para criar um projeto a partir de uma
-pasta existente (por exemplo, um repositório clonado do GitHub):
-
-1. Clique no menu `Project` e, em seguida, em `New Project`, no canto
-   superior direito do RStudio.
-
-![](img/05-cap/menu_projects.jpeg){fig-align="center" width="100%"}
-
-2. Na janela seguinte, selecione a opção `Existing Directory`.
-
-![](img/05-cap/new_proj01.png){fig-align="center" width="80%"}
-
-3. Clique em `Browse` e selecione a pasta que servirá como diretório do
-   projeto (por exemplo, a pasta clonada do GitHub).
-
-4. Confirme a criação do projeto clicando em `Create Project`.
-
-Após esse procedimento, o RStudio criará o arquivo `.Rproj` dentro da
-pasta selecionada e ativará automaticamente o projeto.
-
-![](img/05-cap/projeto_criado.jpeg){fig-align="center" width="80%"}
-
-
-### Erros comuns e como resolver
-
-- Criar projetos com nomes confusos ou inconsistentes: adote um padrão
-  simples.
-- Salvar arquivos fora da pasta do projeto: verifique sempre a guia
-  `Files`.
-- Abrir o RStudio sem ativar o projeto correto: selecione o projeto no menu
-  `Project`.
-
-### Checklist do leitor
-
-- [ ] Criar um projeto com nome padronizado.
-- [ ] Identificar a pasta associada ao projeto.
-- [ ] Abrir e fechar projetos pelo menu `Project`.
-
-
-## O que acontece quando um projeto é criado
-
-Quando um novo projeto é criado ou ativado, o RStudio:
-
-- Cria um arquivo `.Rproj` dentro da pasta do projeto.
-- Define essa pasta como diretório de trabalho da sessão.
-- Isola o ambiente de trabalho em relação a outros projetos.
-
-A partir desse ponto, todos os arquivos criados, scripts executados e
-relatórios gerados devem estar contidos na pasta do projeto.
-
-### Erros comuns e como resolver
-
-- Trabalhar fora de um projeto ativo: confirme o nome do projeto no menu
-  `Project`.
-- Manter arquivos soltos fora da pasta do projeto: mova-os para a estrutura
-  adequada.
-- Ignorar o arquivo `.Rproj`: ele define qual pasta corresponde ao projeto.
-
-### Checklist do leitor
-
-- [ ] Reconhecer o arquivo `.Rproj`.
-- [ ] Explicar o papel do projeto como referência para caminhos relativos.
-- [ ] Relacionar projetos com reprodutibilidade e trabalho em equipe.
-
-
-
-## Estrutura recomendada para o projeto RStudio criado
-
-Para organizar adequadamente os arquivos de projetos de análise de dados,
-recomenda-se adotar, desde o início, uma estrutura clara e consistente de
-pastas. Essa organização facilita a reprodutibilidade, a colaboração e a
-manutenção do trabalho ao longo do tempo, além de tornar mais explícitas as
-etapas do processo analítico.
-
-Neste livro, adotamos uma estrutura inicial simples, mas alinhada a boas
-práticas amplamente utilizadas em projetos profissionais e acadêmicos de
-Ciência de Dados. Essa estrutura serve como ponto de partida e pode ser
-expandida conforme a complexidade do projeto aumenta.
-
-### Estrutura básica do projeto
-
-Inicialmente, criamos as seguintes pastas principais:
-
-- **dados/**: destinada ao armazenamento dos conjuntos de dados do projeto.
-- **relatorios/**: destinada aos relatórios produzidos com Quarto.
-- **scripts/**: destinada aos scripts R utilizados nas análises.
-
-Dentro da pasta **dados/**, criamos duas subpastas com papéis bem definidos:
-
-- **dados_brutos/**: para armazenar os dados originais, sem qualquer
-  modificação.
-- **dados_limpos/**: para armazenar os dados após limpeza, tratamento e
-  transformações.
-
-Essa separação explícita evita que dados originais sejam sobrescritos,
-documenta o fluxo de preparação dos dados e contribui diretamente para a
-reprodutibilidade das análises.
-
-Essa estrutura será utilizada de forma consistente nos exercícios e nos
-exemplos apresentados ao longo do livro, servindo como referência inicial 
-para a organização dos projetos desenvolvidos pelo leitor.
-
-Considerando o projeto hipotético de João Silva para a disciplina
-*Introdução à Ciência de Dados* em 2026, a estrutura inicial do projeto
-ficaria da seguinte forma:
-
-```
-joaosilva_icd2026/
-├── dados/
-│   ├── dados_brutos/
-│   └── dados_limpos/
-├── relatorios/
-├── scripts/
-├── README.md
-└── joaosilva_icd2026.Rproj
-```
-
-Essa organização também favorece o trabalho em equipe, pois permite que
-outras pessoas compreendam rapidamente onde encontrar dados, scripts e
-relatórios, reduzindo ambiguidades e erros operacionais.
-
-### Criando pastas pelo RStudio
-
-As pastas podem ser criadas diretamente pela interface gráfica do RStudio.
-Na guia **Files**, utilize o botão **New Folder** para criar as pastas
-necessárias e navegue entre os diretórios conforme indicado.
-
-![](img/05-cap/criar_pastas.jpeg){fig-align="center" width="100%"}
-
-::: {.callout-tip}
-Além da interface gráfica, é possível criar pastas e arquivos utilizando
-funções da própria linguagem R, como `dir.create()`. Essa abordagem permite
-documentar explicitamente a estrutura do projeto no código e reproduzi-la
-automaticamente em outros ambientes, sendo especialmente útil em projetos
-colaborativos ou versionados com Git.
-:::
-
-### Erros comuns e como resolver
-
-- Misturar dados brutos com dados limpos: utilize subpastas separadas.
-- Salvar relatórios fora da pasta `relatorios/`: mantenha um padrão claro.
-- Criar pastas com espaços, acentos ou caracteres especiais: prefira nomes
-  simples e consistentes.
-
-### Checklist do leitor
-
-- [ ] Criar as pastas `dados/`, `relatorios/` e `scripts/`.
-- [ ] Identificar corretamente onde novos scripts e relatórios devem ser
-      salvos dentro do projeto.
-- [ ] Separar dados brutos e dados processados em subpastas distintas.
-- [ ] Explicar por que essa estrutura contribui para a reprodutibilidade e
-      o trabalho em equipe.
-
-
-
-
-## Gerenciamento de Arquivos
-
-O RStudio suporta realce de sintaxe e outros recursos especializados 
-de edição de código para tipos de arquivos específicos:
-
-- Scripts R, Python, SQL e outros.
-
-- Documentos computacionais e científicos em Quarto, R Markdown e LaTeX.
-
-- Conteúdo da Web, como HTML e CSS.
-
-- E muitos mais.
-
-Ao criar um novo arquivo, lembre que documentos Quarto (`.qmd`) são a base
-do livro e dos relatórios reprodutíveis.
-
-
-
-### Menu `Files`
-
-- É possível criar um novo arquivo com `File -> New File` (por exemplo,
-`Quarto Document` para relatórios):
-
-![](https://docs.posit.co/ide/user/ide/guide/ui/images/system-files-menu.png){fig-align="center"}
-
-
-- Outra possibilidade é usar o ícone no canto superior esquerdo do 
-RStudio:
-
-![](img/05-cap/cria_arquivos.png){fig-align="center"}
-
-### Erros comuns e como resolver
-
-- Criar arquivos fora do projeto: verifique a guia `Files`.
-- Não salvar o arquivo após criar: use `Ctrl+S` ou `⌘+S`.
-- Criar um `.R` quando precisava de `.qmd`: escolha o tipo correto.
-
-### Checklist do leitor
-
-- [ ] Criar um arquivo pelo menu `File`.
-- [ ] Criar um `.qmd` para relatórios.
-- [ ] Localizar arquivos na guia `Files`.
-
-
-
-## Configurações recomendadas (Windows)
-
-Se você usa Windows e deseja o Git Bash como terminal no RStudio, siga as
-etapas abaixo. Em macOS e Linux, o terminal padrão já é suficiente.
-
-::: {.callout-note icon="false"}
-## Terminal Git Bash no RStudio (Windows)
-
-Como o RStudio e o sistema Quarto fazem parte do fluxo de trabalho, é importante
-saber como acessar e usar o terminal Git Bash diretamente dentro 
-do RStudio:
-
-1. **Configurando o terminal Git Bash no RStudio**:
-
-- Abra o RStudio
-
-- Vá para "*Tools*" > "*Global Options*" > "*Terminal*".
-
-- No campo "*New terminals open with:*", selecione "*Git Bash*" no 
-menu suspenso.
-
-- Clique em "*Apply*" e depois em "*OK*"
-
-2. **Acessando o terminal Git Bash no RStudio**:
-
-- No painel inferior do RStudio, clique na guia "*Terminal*".
-
-- Um novo terminal Git Bash será aberto.
-
-- Se um terminal já estiver aberto, mas não for o Git Bash, clique 
-  no ícone "+" no canto superior direito do painel `Terminal` e 
-  selecione "*New Terminal*" para abrir um novo terminal Git Bash
-
-3. **Vantagens de usar o Git Bash dentro do RStudio**:
-
-- Mantém seu fluxo de trabalho dentro de um único ambiente.
-
-- Facilita a navegação entre edição de arquivos e execução de comandos Git.
-
-- Permite copiar e colar facilmente entre o editor e o terminal.
-
-- Evita a necessidade de alternar entre aplicativos diferentes.
-:::
-
-### Erros comuns e como resolver
-
-- Selecionar o terminal errado: verifique o campo "*New terminals open with:*".
-- Abrir um terminal antigo: use o botão "+" para abrir um novo.
-- Esperar esse ajuste em macOS/Linux: nesses sistemas, o terminal já é padrão.
-
-### Checklist do leitor
-
-- [ ] Configurar o Git Bash no RStudio (Windows).
-- [ ] Abrir um novo terminal no painel `Terminal`.
-- [ ] Reconhecer que em macOS/Linux esse ajuste não é necessário.
-
-
-
-
-# Atalhos essenciais
-
-Atalhos economizam tempo e reduzem erros. A lista abaixo é enxuta e organizada
-por propósito. Use os que fizerem sentido agora e volte a esta seção quando
-precisar ganhar velocidade.
-
-**Navegação (Windows/Linux | macOS | Função)**
-
-- `Ctrl+1` | `⌘+1` | Ir para o painel `Source`
-- `Ctrl+2` | `⌘+2` | Ir para o painel `Console`
-- `Ctrl+3` | `⌘+3` | Ir para o painel `Environment`
-- `Ctrl+4` | `⌘+4` | Ir para o painel `Output`
-- `Ctrl+.` | `⌘+.` | Navegar para seções/funções/chunks
-
-**Quarto e execução (Windows/Linux | macOS | Função)**
-
-- `Ctrl+Shift+K` | `⌘+Shift+K` | Renderizar o documento Quarto
-- `Ctrl+Alt+I` | `⌘+Option+I` | Inserir um novo chunk
-- `Ctrl+Enter` | `⌘+Enter` | Executar a linha ou chunk atual
-
-**Edição (Windows/Linux | macOS | Função)**
-
-- `Ctrl+Shift+M` | `⌘+Shift+M` | Inserir o pipe do tidyverse (`%>%`)
-- `Ctrl+Shift+.` | `⌘+Shift+.` | Inserir o pipe nativo do R (`|>`)
-- `Alt+-` | `Option+-` | Inserir o operador de atribuição (`<-`)
-- `Ctrl+Shift+C` | `⌘+Shift+C` | Comentar/descomentar a seleção
-
-**Console (Windows/Linux | macOS | Função)**
-
-- `Ctrl+L` | `⌘+L` | Limpar o console
-- `Esc` | `Esc` | Interromper a execução
-
-::: {.callout-tip}
-## Extras
-
-- `Ctrl+Shift+0` | `⌘+Shift+0` | Restaurar o layout padrão
-- `Tab` | `Tab` | Autocompletar comandos e objetos
-- `F1` | `F1` | Ajuda da função sob o cursor
-- `Alt+Shift+K` | `Option+Shift+K` | Abrir a lista completa de atalhos
-- `Ctrl+Alt+R` | `⌘+Option+R` | Executar todas as linhas/chunks do arquivo
-:::
-
-### Erros comuns e como resolver
-
-- Tentar memorizar tudo de uma vez: comece pelos de navegação e execução.
-- Usar atalhos sem saber o foco ativo: clique primeiro no painel desejado.
-- Ignorar a lista completa: use `Alt+Shift+K`/`Option+Shift+K`.
-
-### Checklist do leitor
-
-- [ ] Alternar entre `Source` e `Console`.
-- [ ] Renderizar um documento Quarto pelo atalho.
-- [ ] Interromper uma execução travada no console.
-
-
-
-
-# Exercícios
-
-1. Explique a diferença entre **R** e **RStudio** usando a analogia
-   motor/painel de controle.
-
-::: {.callout-tip collapse=true}
-## Reposta
-
-R é a linguagem de programação responsável por executar cálculos,
-manipular dados e gerar resultados, desempenhando o papel de “motor”.
-
-RStudio é um Ambiente de Desenvolvimento Integrado que organiza e facilita
-o uso de R, oferecendo editor de código, console, visualização de objetos
-e resultados em um único ambiente.
-
-:::
-
-
-
-2. Identifique os quatro painéis principais do RStudio e descreva, em uma
-   frase, o papel de cada um.
-
-::: {.callout-tip collapse=true}
-## Reposta
-
-- **Source**: edição de scripts, relatórios e outros arquivos de código.
-- **Console**: execução interativa de comandos em R.
-- **Environment**: visualização dos objetos criados na sessão.
-- **Output**: acesso a arquivos, gráficos, pacotes e sistema de ajuda.
-
-:::
-
-
-
-3. Defina o que é um IDE e dê um exemplo do fluxo "escrever -> executar -> ver
-   resultado".
-
-::: {.callout-tip collapse=true}
-## Reposta
-
-Um IDE integra ferramentas para edição, execução e visualização de código
-em um único ambiente. No RStudio, o fluxo típico consiste em escrever o
-código no painel *Source*, executá-lo no *Console* e visualizar os
-resultados no painel *Output*.
-:::
-
-
-
-4. Explique quando usar `install.packages()` e quando usar `library()`.
-
-::: {.callout-tip collapse=true}
-## Reposta
-
-A função `install.packages()` é utilizada para instalar um pacote no
-computador e precisa ser executada apenas uma vez. Já a função
-`library()` carrega o pacote instalado na sessão atual do R e deve ser
-executada sempre que uma nova sessão é iniciada.
-
-:::
-
-
-
-5. Ajuste as configurações básicas recomendadas do RStudio (restore/save) e
-   registre, em 3 a 5 linhas, por que essas opções ajudam em projetos.
-
-::: {.callout-tip collapse=true}
-## Reposta
-
-Desativar a restauração automática do ambiente e o salvamento do arquivo
-`.RData` torna o comportamento das sessões mais previsível. Essas opções
-reduzem dependências implícitas do ambiente anterior, facilitam a
-reprodução das análises e evitam erros causados por objetos carregados
-automaticamente sem controle explícito do código.
-
-:::
-
-
-
-6. Crie um novo projeto no RStudio com um nome padronizado (sem espaços) e
-   explique o que é um **caminho relativo** e por que ele facilita a
-   reprodutibilidade.
-
-::: {.callout-tip collapse=true}
-## Reposta
-
-Caminhos relativos referenciam arquivos a partir da pasta raiz do projeto,
-em vez de utilizar um endereço fixo no computador. Isso permite que o
-mesmo projeto funcione corretamente em diferentes máquinas e sistemas
-operacionais, facilitando o trabalho em equipe, a reprodutibilidade e o
-uso de controle de versão com Git e GitHub.
-
-:::
-
-
-
-7. Neste capítulo, estamos adotando a prática de organizar projetos de
-   análise de dados por meio de uma estrutura clara de diretórios.
-   Embora essas pastas possam ser criadas manualmente pelo sistema
-   operacional, utilizar recursos da própria linguagem R traz duas
-   vantagens importantes: (i) documenta explicitamente a estrutura do
-   projeto e (ii) permite que ela seja reproduzida de forma automática
-   em qualquer ambiente.
-
-   Considerando o projeto RStudio recém-criado e ainda vazio, utilize a
-   função `dir.create()` no Console do RStudio para criar a seguinte
-   estrutura de pastas:
-
-   - a pasta `dados/`, contendo as subpastas `dados_brutos/` e
-     `dados_limpos/`;
-   - a pasta `relatorios/`;
-   - a pasta `scripts/`.
-
-   Apresente o código R utilizado para criar essas pastas.
-
-::: {.callout-tip collapse=true}
-## Resposta
-
-```{r}
-#| eval: false
-
-# cria a pasta principal de dados
-dir.create("dados")
-
-# cria as subpastas de dados
-dir.create("dados/dados_brutos")
-dir.create("dados/dados_limpos")
-
-# cria a pasta de relatórios
-dir.create("relatorios")
-
-# cria a pasta de scripts
-dir.create("scripts")
-
-:::
-
-

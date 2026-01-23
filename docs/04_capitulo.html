@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; Um Estudo de Caso Introdutório – Introdução à Ciência de Dados para o Bacharelado em Administração</title>
+<title>6&nbsp; Tipos de Análise de Dados em CRISP-DM – Introdução à Ciência de Dados para o Bacharelado em Administração</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,62 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for syntax highlighting */
-html { -webkit-text-size-adjust: 100%; }
-pre > code.sourceCode { white-space: pre; position: relative; }
-pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
-pre > code.sourceCode > span:empty { height: 1.2em; }
-.sourceCode { overflow: visible; }
-code.sourceCode > span { color: inherit; text-decoration: inherit; }
-div.sourceCode { margin: 1em 0; }
-pre.sourceCode { margin: 0; }
-@media screen {
-div.sourceCode { overflow: auto; }
-}
-@media print {
-pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
-}
-pre.numberSource code
-  { counter-reset: source-line 0; }
-pre.numberSource code > span
-  { position: relative; left: -4em; counter-increment: source-line; }
-pre.numberSource code > span > a:first-child::before
-  { content: counter(source-line);
-    position: relative; left: -1em; text-align: right; vertical-align: baseline;
-    border: none; display: inline-block;
-    -webkit-touch-callout: none; -webkit-user-select: none;
-    -khtml-user-select: none; -moz-user-select: none;
-    -ms-user-select: none; user-select: none;
-    padding: 0 4px; width: 4em;
-  }
-pre.numberSource { margin-left: 3em;  padding-left: 4px; }
-div.sourceCode
-  {   }
-@media screen {
-pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
-}
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -138,7 +83,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./04_capitulo.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Um Estudo de Caso Introdutório</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./parte1.html">Fundamentos da Ciência de Dados</a></li><li class="breadcrumb-item"><a href="./04_capitulo.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tipos de Análise de Dados em CRISP-DM</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Procurar" onclick="window.quartoOpenSearch();">
@@ -175,36 +120,53 @@ div.csl-indent {
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introdução</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true">
+ <span class="menu-text">Fundamentos da Ciência de Dados</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-1" role="navigation" aria-expanded="true" aria-label="Alternar seção">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./parte1.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Fundamentos da Ciência de Dados</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./01_capitulo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Visão Geral de Ciência de Dados</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Visão Geral de Ciência de Dados</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./02_capitulo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">A Metodologia CRISP-DM</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Papéis profissionais na área de dados</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./03_capitulo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tipos de Análise de Dados em CRISP-DM</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">A Metodologia CRISP-DM</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./04_capitulo.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Um Estudo de Caso Introdutório</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tipos de Análise de Dados em CRISP-DM</span></span></a>
   </div>
 </li>
-        <li class="sidebar-item">
+          <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./05_capitulo.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Capítulo 5 — RStudio e fluxo de trabalho</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Um Estudo de Caso Introdutório</span></span></a>
   </div>
 </li>
+      </ul>
+  </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./referencias.html" class="sidebar-item-text sidebar-link">
@@ -221,34 +183,21 @@ div.csl-indent {
     <h2 id="toc-title">Índice</h2>
    
   <ul>
-  <li><a href="#estrutura-do-projeto-e-organização-dos-arquivos" id="toc-estrutura-do-projeto-e-organização-dos-arquivos" class="nav-link active" data-scroll-target="#estrutura-do-projeto-e-organização-dos-arquivos"><span class="header-section-number">5.1</span> Estrutura do projeto e organização dos arquivos</a></li>
-  <li><a href="#o-caso-junglivet-whisky-company" id="toc-o-caso-junglivet-whisky-company" class="nav-link" data-scroll-target="#o-caso-junglivet-whisky-company"><span class="header-section-number">5.2</span> O Caso Junglivet Whisky Company</a></li>
-  <li><a href="#organização-do-projeto-e-reprodutibilidade" id="toc-organização-do-projeto-e-reprodutibilidade" class="nav-link" data-scroll-target="#organização-do-projeto-e-reprodutibilidade"><span class="header-section-number">5.3</span> Organização do projeto e reprodutibilidade</a></li>
-  <li><a href="#fase-1-compreensão-do-negócio" id="toc-fase-1-compreensão-do-negócio" class="nav-link" data-scroll-target="#fase-1-compreensão-do-negócio"><span class="header-section-number">5.4</span> Fase 1: Compreensão do Negócio</a></li>
-  <li><a href="#fase-2-compreensão-dos-dados" id="toc-fase-2-compreensão-dos-dados" class="nav-link" data-scroll-target="#fase-2-compreensão-dos-dados"><span class="header-section-number">5.5</span> Fase 2: Compreensão dos Dados</a>
-  <ul class="collapse">
-  <li><a href="#dicionário-de-dados" id="toc-dicionário-de-dados" class="nav-link" data-scroll-target="#dicionário-de-dados"><span class="header-section-number">5.5.1</span> Dicionário de dados</a></li>
-  <li><a href="#importação-dos-dados" id="toc-importação-dos-dados" class="nav-link" data-scroll-target="#importação-dos-dados"><span class="header-section-number">5.5.2</span> Importação dos dados</a></li>
-  <li><a href="#inspeção-inicial-dos-dados" id="toc-inspeção-inicial-dos-dados" class="nav-link" data-scroll-target="#inspeção-inicial-dos-dados"><span class="header-section-number">5.5.3</span> Inspeção inicial dos dados</a></li>
-  </ul></li>
-  <li><a href="#fase-3-preparação-dos-dados" id="toc-fase-3-preparação-dos-dados" class="nav-link" data-scroll-target="#fase-3-preparação-dos-dados"><span class="header-section-number">5.6</span> Fase 3: Preparação dos Dados</a></li>
-  <li><a href="#análise-exploratória-de-dados" id="toc-análise-exploratória-de-dados" class="nav-link" data-scroll-target="#análise-exploratória-de-dados"><span class="header-section-number">5.7</span> Análise exploratória de dados</a>
-  <ul class="collapse">
-  <li><a href="#relação-entre-fornecedor-e-qualidade" id="toc-relação-entre-fornecedor-e-qualidade" class="nav-link" data-scroll-target="#relação-entre-fornecedor-e-qualidade"><span class="header-section-number">5.7.1</span> Relação entre fornecedor e qualidade</a></li>
-  <li><a href="#relação-entre-mestre-responsável-e-qualidade" id="toc-relação-entre-mestre-responsável-e-qualidade" class="nav-link" data-scroll-target="#relação-entre-mestre-responsável-e-qualidade"><span class="header-section-number">5.7.2</span> Relação entre mestre responsável e qualidade</a></li>
-  <li><a href="#relação-entre-cor-e-qualidade" id="toc-relação-entre-cor-e-qualidade" class="nav-link" data-scroll-target="#relação-entre-cor-e-qualidade"><span class="header-section-number">5.7.3</span> Relação entre cor e qualidade</a></li>
-  <li><a href="#conclusão-da-análise-exploratória" id="toc-conclusão-da-análise-exploratória" class="nav-link" data-scroll-target="#conclusão-da-análise-exploratória"><span class="header-section-number">5.7.4</span> Conclusão da Análise Exploratória</a></li>
-  </ul></li>
-  <li><a href="#próximos-passos" id="toc-próximos-passos" class="nav-link" data-scroll-target="#próximos-passos"><span class="header-section-number">5.8</span> Próximos passos</a></li>
+  <li><a href="#visão-geral-dos-tipos-de-análise-no-crisp-dm" id="toc-visão-geral-dos-tipos-de-análise-no-crisp-dm" class="nav-link active" data-scroll-target="#visão-geral-dos-tipos-de-análise-no-crisp-dm"><span class="header-section-number">6.1</span> Visão geral dos tipos de análise no CRISP-DM</a></li>
+  <li><a href="#análise-descritiva" id="toc-análise-descritiva" class="nav-link" data-scroll-target="#análise-descritiva"><span class="header-section-number">6.2</span> Análise descritiva</a></li>
+  <li><a href="#análise-diagnóstica" id="toc-análise-diagnóstica" class="nav-link" data-scroll-target="#análise-diagnóstica"><span class="header-section-number">6.3</span> Análise diagnóstica</a></li>
+  <li><a href="#análise-preditiva" id="toc-análise-preditiva" class="nav-link" data-scroll-target="#análise-preditiva"><span class="header-section-number">6.4</span> Análise preditiva</a></li>
+  <li><a href="#análise-prescritiva" id="toc-análise-prescritiva" class="nav-link" data-scroll-target="#análise-prescritiva"><span class="header-section-number">6.5</span> Análise prescritiva</a></li>
+  <li><a href="#dos-tipos-de-análise-à-visão-integrada-de-um-projeto" id="toc-dos-tipos-de-análise-à-visão-integrada-de-um-projeto" class="nav-link" data-scroll-target="#dos-tipos-de-análise-à-visão-integrada-de-um-projeto"><span class="header-section-number">6.6</span> Dos tipos de análise à visão integrada de um projeto</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default">
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./parte1.html">Fundamentos da Ciência de Dados</a></li><li class="breadcrumb-item"><a href="./04_capitulo.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tipos de Análise de Dados em CRISP-DM</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Um Estudo de Caso Introdutório</span></h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Tipos de Análise de Dados em CRISP-DM</span></h1>
 </div>
 
 
@@ -265,416 +214,112 @@ div.csl-indent {
 </header>
 
 
-<p>Este capítulo apresenta um estudo de caso introdutório com o objetivo de integrar, em um único exemplo, conceitos, ferramentas e práticas que serão aprofundados ao longo dos capítulos seguintes. A intenção não é esgotar os tópicos abordados, mas oferecer uma visão geral do processo de análise de dados no contexto da metodologia CRISP-DM.</p>
-<p>O estudo de caso é baseado em um exemplo fictício adaptado do livro de Jung (2024) <span class="citation" data-cites="jung2024modern">(<a href="referencias.html#ref-jung2024modern" role="doc-biblioref">Jung, 2024</a>)</span>, sendo aqui utilizado exclusivamente com finalidade didática.</p>
-<section id="estrutura-do-projeto-e-organização-dos-arquivos" class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="estrutura-do-projeto-e-organização-dos-arquivos"><span class="header-section-number">5.1</span> Estrutura do projeto e organização dos arquivos</h2>
-<p>Antes de iniciar qualquer análise, é fundamental definir uma estrutura mínima de projeto. A organização adequada dos arquivos facilita a reprodutibilidade, a colaboração e a manutenção do trabalho ao longo do tempo, além de tornar mais claras as etapas do processo analítico.</p>
-<p>Ao longo da disciplina, os projetos foram organizados de forma padronizada, separando dados brutos, dados processados e relatórios. Essa mesma lógica será adotada neste livro, servindo como referência para os exemplos e códigos apresentados nos capítulos seguintes.</p>
-<p>Uma estrutura básica de projeto pode ser representada da seguinte forma:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>seunome_icd2025/</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>├── dados/</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>│   ├── brutos/     # dados originais, sem modificações</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>│   └── limpos/     # dados após limpeza e transformações</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>├── relatorios/</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>│   └── 01-relatorio/</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>├── README.md</span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>└── seunome_icd2025.Rproj</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Essa separação explícita evita que dados originais sejam sobrescritos, torna as etapas do processo analítico mais transparentes e facilita a verificação e a reprodução das análises realizadas.</p>
-<p>Na prática, recomenda-se criar inicialmente um repositório vazio no GitHub, cloná-lo localmente e, na pasta clonada do repositório, criar um projeto RStudio. A partir desse projeto, os arquivos e diretórios podem ser organizados de forma estruturada.</p>
-<p>O controle de versão com Git não é tratado aqui como um fim em si, mas como parte integrante de boas práticas em projetos de análise de dados.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
+<p>Ao longo do processo CRISP-DM, diferentes tipos de análise podem ser empregados, variando em complexidade técnica, grau de formalização e valor estratégico. Cada tipo de análise responde a uma pergunta distinta de negócio e está associado a decisões tomadas em fases específicas do processo analítico.</p>
+<p>As análises descritiva, diagnóstica, preditiva e prescritiva não são excludentes. Pelo contrário, costumam ser adotadas de forma progressiva e complementar, à medida que a organização desenvolve suas capacidades analíticas e passa a integrar dados de maneira mais sistemática em seus processos decisórios.</p>
+<section id="visão-geral-dos-tipos-de-análise-no-crisp-dm" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="visão-geral-dos-tipos-de-análise-no-crisp-dm"><span class="header-section-number">6.1</span> Visão geral dos tipos de análise no CRISP-DM</h2>
+<p>O termo <em>analytics</em> refere-se a um espectro contínuo de técnicas analíticas que evoluem desde a organização e compreensão do passado até a recomendação de ações orientadas para o futuro.</p>
+<p>No contexto do CRISP-DM, esses tipos de análise não correspondem a fases isoladas, mas atravessam o processo como um todo. Análises descritivas e diagnósticas são predominantes nas fases de Compreensão do Negócio e dos Dados, enquanto análises preditivas e prescritivas tornam-se centrais nas fases de Modelagem, Avaliação e Implementação.</p>
+<p>A maturidade analítica de uma organização pode ser avaliada pelo equilíbrio e pela profundidade com que esses quatro tipos de análise são utilizados de forma integrada, e não apenas pela adoção de técnicas mais sofisticadas.</p>
+</section>
+<section id="análise-descritiva" class="level2" data-number="6.2">
+<h2 data-number="6.2" class="anchored" data-anchor-id="análise-descritiva"><span class="header-section-number">6.2</span> Análise descritiva</h2>
+<p>A análise descritiva representa o nível inicial do uso sistemático de dados. Seu objetivo é organizar, resumir e comunicar informações históricas de modo a tornar o passado compreensível para gestores e tomadores de decisão.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Dica
+<span class="screen-reader-only">Nota</span>O que aconteceu?
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>A <em>organização das pastas e arquivos do projeto</em> não é um detalhe técnico, mas parte central da reprodutibilidade e do trabalho em equipe. Um projeto bem estruturado permite que análises sejam compreendidas, verificadas e reproduzidas por outras pessoas — ou pelo próprio autor em um momento posterior.</p>
-</div>
-</div>
-</section>
-<section id="o-caso-junglivet-whisky-company" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="o-caso-junglivet-whisky-company"><span class="header-section-number">5.2</span> O Caso Junglivet Whisky Company</h2>
-<p>Neste estudo de caso, aplicamos as três primeiras fases da metodologia CRISP-DM:</p>
-<ol type="1">
-<li><strong>Compreensão do Negócio</strong> (<em>Business Understanding</em>)</li>
-<li><strong>Compreensão dos Dados</strong> (<em>Data Understanding</em>)</li>
-<li><strong>Preparação dos Dados</strong> (<em>Data Preparation</em>)</li>
-</ol>
-<p>Você acaba de ser contratado como analista de dados na <em>Junglivet Whisky Company</em>. A empresa enfrenta reclamações recorrentes sobre a qualidade do whisky produzido, e a direção busca identificar possíveis causas para o problema.</p>
-<p>Os dados fornecidos correspondem ao registro da linha de produção das últimas duas semanas.</p>
-</section>
-<section id="organização-do-projeto-e-reprodutibilidade" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="organização-do-projeto-e-reprodutibilidade"><span class="header-section-number">5.3</span> Organização do projeto e reprodutibilidade</h2>
-<p>Antes de qualquer análise, o projeto foi organizado seguindo uma estrutura padronizada, separando dados brutos, dados tratados e relatórios. Essa organização facilita a reprodutibilidade, a documentação e o trabalho colaborativo.</p>
-<p>A análise apresentada neste capítulo foi desenvolvida em um projeto RStudio versionado com Git e sincronizado com GitHub, utilizando o sistema Quarto para geração de relatórios reprodutíveis.</p>
-</section>
-<section id="fase-1-compreensão-do-negócio" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="fase-1-compreensão-do-negócio"><span class="header-section-number">5.4</span> Fase 1: Compreensão do Negócio</h2>
-<p>O primeiro passo do CRISP-DM consiste em entender claramente o problema de negócio, antes de qualquer decisão técnica.</p>
 <ul>
-<li><strong>Problema de negócio</strong>: queda na qualidade do whisky produzido.</li>
-<li><strong>Objetivo</strong>: identificar fatores associados à redução da qualidade.</li>
-<li><strong>Critério de sucesso</strong>: evidenciar fatores operacionais que influenciam negativamente o indicador de qualidade.</li>
+<li><p><strong>Objetivo</strong>: Descrever e sintetizar dados históricos, identificando padrões, tendências e comportamentos recorrentes.</p></li>
+<li><p><strong>Técnicas</strong>: Estatísticas descritivas, tabelas, visualizações e dashboards.</p></li>
+<li><p><strong>Complexidade</strong>: ★☆☆☆</p></li>
 </ul>
-<p>Nesta fase, ainda não buscamos respostas nos dados, mas sim formular as perguntas corretas.</p>
+</div>
+</div>
+<p>No contexto da Administração, a análise descritiva está fortemente associada a relatórios gerenciais e sistemas de acompanhamento operacional. Ela fornece a base informacional sobre a qual análises mais avançadas podem ser construídas.</p>
+<p>Exemplos incluem relatórios de vendas por canal em períodos promocionais, painéis de monitoramento de indicadores operacionais e análises de distribuição de clientes por região ou perfil de consumo.</p>
 </section>
-<section id="fase-2-compreensão-dos-dados" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="fase-2-compreensão-dos-dados"><span class="header-section-number">5.5</span> Fase 2: Compreensão dos Dados</h2>
-<p>Nesta etapa, analisamos os dados disponíveis, sua estrutura e limitações, antes de qualquer transformação ou modelagem.</p>
-<section id="dicionário-de-dados" class="level3" data-number="5.5.1">
-<h3 data-number="5.5.1" class="anchored" data-anchor-id="dicionário-de-dados"><span class="header-section-number">5.5.1</span> Dicionário de dados</h3>
-<p>A documentação das variáveis é uma prática fundamental em projetos de análise de dados. Ela garante interpretação consistente e reduz ambiguidades ao longo do processo analítico.</p>
-<p>Um dicionário de dados é uma documentação estruturada que descreve o significado, formato, uso e relacionamentos de cada variável em um conjunto de dados.</p>
-<p>Ele funciona como um guia essencial para compreender corretamente as informações disponíveis, garantindo que todos os usuários interpretem os dados de maneira consistente.</p>
-<p>O arquivo de dados fornecido contém as seguintes colunas (ou variáveis):</p>
-<ul>
-<li><strong>DAY</strong>: dia da produção.</li>
-<li><strong>MONTH</strong>: mês da produção.</li>
-<li><strong>MANUFACTURER</strong>: mestre responsável pela produção.</li>
-<li><strong>PRODUCT</strong>: tipo de produto.</li>
-<li><strong>SHIFT</strong>: turno de produção.</li>
-<li><strong>COLOR</strong>: indicador de cor (0 a 1).</li>
-<li><strong>MALTING</strong>: fornecedor do malte.</li>
-<li><strong>TASTING</strong>: indicador de qualidade (0 a 1000).</li>
-</ul>
-</section>
-<section id="importação-dos-dados" class="level3" data-number="5.5.2">
-<h3 data-number="5.5.2" class="anchored" data-anchor-id="importação-dos-dados"><span class="header-section-number">5.5.2</span> Importação dos dados</h3>
-<p>Antes de iniciar a análise, é necessário garantir que os pacotes R utilizados no projeto estejam instalados e carregados. Neste livro, utilizaremos o pacote <strong>pacman</strong> para facilitar esse processo, pois ele permite instalar e carregar pacotes de forma automática quando necessário.</p>
-<p>A instalação de pacotes deve ser feita apenas uma vez em cada ambiente. Após isso, basta carregá-los normalmente. O uso do <strong>pacman</strong> reduz problemas comuns enfrentados por iniciantes, como erros relacionados a pacotes ausentes.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Verifica se o pacote 'pacman' está instalado.</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="co"># Caso não esteja, realiza a instalação a partir do CRAN.</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="cf">if</span> (<span class="sc">!</span><span class="fu">requireNamespace</span>(<span class="st">"pacman"</span>, <span class="at">quietly =</span> <span class="cn">TRUE</span>)) {</span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">install.packages</span>(<span class="st">"pacman"</span>)</span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>}</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Carrega o pacote 'pacman' na sessão atual</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(pacman)</span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co"># A função p_load():</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="co"># - instala automaticamente pacotes ausentes</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="co"># - carrega todos os pacotes listados</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a>pacman<span class="sc">::</span><span class="fu">p_load</span>(</span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a>  here,      <span class="co"># define caminhos relativos ao diretório raiz do projeto</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a>  readr,     <span class="co"># leitura eficiente de arquivos CSV</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a>  dplyr,     <span class="co"># manipulação e transformação de dados</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a>  tidyr,     <span class="co"># função drop_na()</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a>  ggplot2    <span class="co"># visualização de dados</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a>)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>O processo de importação de dados é um passo fundamental em qualquer análise. Neste caso, utilizamos duas ferramentas importantes:</p>
-<ul>
-<li><p>O pacote <code>here</code> permite definir caminhos relativos ao diretório raiz do projeto, o que torna o código mais portátil e facilita o compartilhamento. Independentemente de onde o projeto esteja armazenado em diferentes computadores, o pacote <code>here</code> encontrará automaticamente os arquivos a partir da raiz do projeto.</p></li>
-<li><p>O pacote <code>readr</code>, parte do tidyverse, oferece funções otimizadas para leitura de arquivos, como a <code>read_csv()</code>, que é mais rápida que a função base do R e oferece tratamento mais consistente dos tipos de dados. Além disso, ela converte automaticamente strings vazias para NA, indica o tipo de cada coluna importada e preserva os nomes das variáveis originais.</p></li>
-</ul>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Define o caminho relativo do arquivo de dados </span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="co"># a partir da raiz do projeto.</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>caminho <span class="ot">&lt;-</span> here<span class="sc">::</span><span class="fu">here</span>(<span class="st">"dados/brutos/productionlog_sample.csv"</span>)</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Importa o arquivo com a funçào read_csv</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>dados_destilaria <span class="ot">&lt;-</span> readr<span class="sc">::</span><span class="fu">read_csv</span>(caminho)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-<p>A partir desse ponto, os dados estão disponíveis na ambiente de R e podem ser explorados, verificados e preparados para as etapas seguintes da análise.</p>
-</section>
-<section id="inspeção-inicial-dos-dados" class="level3" data-number="5.5.3">
-<h3 data-number="5.5.3" class="anchored" data-anchor-id="inspeção-inicial-dos-dados"><span class="header-section-number">5.5.3</span> Inspeção inicial dos dados</h3>
-<p>Após importar os dados, é essencial verificar sua estrutura para entender o que temos disponível. A função <code>glimpse()</code> do pacote <code>dplyr</code> nos oferece uma visão concisa e informativa sobre:</p>
-<ul>
-<li>Quais variáveis (colunas) estão presentes no conjunto de dados.</li>
-<li>Qual o tipo ou classe de cada variável.</li>
-<li>Os primeiros valores de cada variável.</li>
-<li>O número total de observações (linhas).</li>
-</ul>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># fornece visão geral da estrutura dos dados</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>dplyr<span class="sc">::</span><span class="fu">glimpse</span>(dados_destilaria)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Rows: 21
-Columns: 8
-$ DAY          &lt;dbl&gt; 1, 1, 2, 2, 3, 3, 4, 4, 5, 5, NA, 6, 6, 7, 7, 8, 8, 9, 9,…
-$ MONTH        &lt;dbl&gt; 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, NA, 4, 4, 4, 4, 4, 4, 4, 4,…
-$ MANUFACTURER &lt;chr&gt; "Leonard", "Carlson", "Leonard", "Carlson", "Leonard", "C…
-$ PRODUCT      &lt;chr&gt; "Junglivet", "Junglivet Premium", "Junglivet", "Junglivet…
-$ SHIFT        &lt;chr&gt; "Morning", "Evening", "Morning", "Evening", "Morning", "E…
-$ COLOR        &lt;dbl&gt; 0.27, 0.27, 0.28, 0.32, 0.32, 0.28, 0.29, 0.29, 0.33, 0.2…
-$ MALTING      &lt;chr&gt; "Inhouse", "Burns Best Ltd.", "Inhouse", "Inhouse", "Matr…
-$ TASTING      &lt;dbl&gt; 895, 879, 938, 900, 917, 900, 934, 951, 852, 850, NA, 991…</code></pre>
-</div>
-</div>
-<p>Além disso, estatísticas descritivas básicas ajudam a identificar valores ausentes, escalas e possíveis inconsistências.</p>
-<p>A função <code>summary()</code> resume as principais estatísticas das variáveis e indica automaticamente a presença de valores ausentes (NA)</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="co"># fornece estatísticas descritivas dos dados</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(dados_destilaria)</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>      DAY           MONTH   MANUFACTURER         PRODUCT         
- Min.   : 1.0   Min.   :4   Length:21          Length:21         
- 1st Qu.: 3.0   1st Qu.:4   Class :character   Class :character  
- Median : 5.5   Median :4   Mode  :character   Mode  :character  
- Mean   : 5.5   Mean   :4                                        
- 3rd Qu.: 8.0   3rd Qu.:4                                        
- Max.   :10.0   Max.   :4                                        
- NA's   :1      NA's   :1                                        
-    SHIFT               COLOR          MALTING             TASTING     
- Length:21          Min.   :0.2600   Length:21          Min.   :822.0  
- Class :character   1st Qu.:0.2775   Class :character   1st Qu.:875.0  
- Mode  :character   Median :0.3000   Mode  :character   Median :925.5  
-                    Mean   :0.2955                      Mean   :918.5  
-                    3rd Qu.:0.3100                      3rd Qu.:957.8  
-                    Max.   :0.3500                      Max.   :999.0  
-                    NA's   :1                           NA's   :1      </code></pre>
-</div>
-</div>
-<p>A saída da função mostra que há pelo menos um valor faltante (<code>NA</code>) em uma linha (observação) do arquivo.</p>
-</section>
-</section>
-<section id="fase-3-preparação-dos-dados" class="level2" data-number="5.6">
-<h2 data-number="5.6" class="anchored" data-anchor-id="fase-3-preparação-dos-dados"><span class="header-section-number">5.6</span> Fase 3: Preparação dos Dados</h2>
-<p>Nesta fase, preparamos os dados para análise, renomeando variáveis, convertendo cada variável para um tipo ou classe de dados adequado, tratando valores ausentes, removendo colunas irrelevantes e garantindo que temos dados de qualidade para trabalhar.</p>
-<p>O código a seguir executa as seguintes operações para limpar os dados:</p>
-<ol type="1">
-<li><p><strong>Remove</strong> a coluna <code>MONTH</code> que é desnecessária para a análise.</p></li>
-<li><p><strong>Renomeia</strong> todas as colunas para nomes mais descritivos em português, facilitando a interpretação.</p></li>
-<li><p><strong>Converte</strong> as variáveis para seus tipos/classes de dados apropriados: <code>numeric</code> para valores quantitativos (dia, cor, indicador_qualidade) e <code>factor</code> para variáveis categóricas (fabricante, tipo_produto, turno, fornecedor_malte).</p></li>
-<li><p>Remove linhas com valores ausentes para garantir a integridade dos dados nas análises subsequentes.</p></li>
-</ol>
-<p>Vamos utilizar o operador pipe (<code>%&gt;%</code>) do tidyverse para encadear as operações de limpeza e transformação de dados de forma mais legível. Cada operação recebe o resultado da anterior e aplica uma nova transformação.</p>
-<p>Observe como organizamos o código com identação consistente e comentários explicativos para cada operação. Esta é uma boa prática que torna o código mais legível e facilita sua manutenção.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Pipeline para criar uma nova data frame </span></span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="co"># contendo os dados limpos.</span></span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="co"># define o objeto que armazenará os dados limpos</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="co"># criado a partir de dados_destilaria</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a>dados_destilaria_limpos <span class="ot">&lt;-</span> dados_destilaria <span class="sc">%&gt;%</span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Remove a variável MONTH</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(<span class="sc">-</span>MONTH) <span class="sc">%&gt;%</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Renomeia as variáveis para nomes mais descritivos</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">rename</span>(</span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">dia =</span> DAY,</span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">mestre_responsavel =</span> MANUFACTURER,</span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">tipo_produto =</span> PRODUCT,</span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a>    <span class="at">turno =</span> SHIFT,</span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a>    <span class="at">cor =</span> COLOR,</span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a>    <span class="at">fornecedor_malte =</span> MALTING,</span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a>    <span class="at">indicador_qualidade =</span> TASTING</span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Converte explicitamente os tipos das variáveis</span></span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(</span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a>    <span class="at">dia =</span> <span class="fu">as.numeric</span>(dia),</span>
-<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a>    <span class="at">mestre_responsavel =</span> <span class="fu">as.factor</span>(mestre_responsavel),</span>
-<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a>    <span class="at">tipo_produto =</span> <span class="fu">as.factor</span>(tipo_produto),</span>
-<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a>    <span class="at">turno =</span> <span class="fu">as.factor</span>(turno),</span>
-<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a>    <span class="at">cor =</span> <span class="fu">as.numeric</span>(cor),</span>
-<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a>    <span class="at">fornecedor_malte =</span> <span class="fu">as.factor</span>(fornecedor_malte),</span>
-<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a>    <span class="at">indicador_qualidade =</span> <span class="fu">as.numeric</span>(indicador_qualidade)</span>
-<span id="cb8-28"><a href="#cb8-28" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Remove observações com valores ausentes</span></span>
-<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a>  <span class="fu">drop_na</span>()</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-</div>
-</section>
-<section id="análise-exploratória-de-dados" class="level2" data-number="5.7">
-<h2 data-number="5.7" class="anchored" data-anchor-id="análise-exploratória-de-dados"><span class="header-section-number">5.7</span> Análise exploratória de dados</h2>
-<p>A Análise Exploratória de Dados (AED) é uma abordagem fundamental que nos permite investigar e compreender as características principais de um conjunto de dados.</p>
-<p>Utilizamos técnicas visuais e estatísticas para:</p>
-<ul>
-<li>Identificar padrões, tendências e relações entre variáveis.</li>
-<li>Detectar valores atípicos (outliers) e anomalias.</li>
-<li>Verificar hipóteses preliminares sobre possíveis causas do problema.</li>
-<li>Orientar análises mais detalhadas e modelagens futuras.</li>
-</ul>
-<p>Com os dados devidamente preparados, vamos explorar graficamente<br>
-relações entre algumas variáveis e o indicador de qualidade do whisky para identificar potenciais fatores que explicam os problemas enfrentados pela destilaria.</p>
-<section id="relação-entre-fornecedor-e-qualidade" class="level3" data-number="5.7.1">
-<h3 data-number="5.7.1" class="anchored" data-anchor-id="relação-entre-fornecedor-e-qualidade"><span class="header-section-number">5.7.1</span> Relação entre fornecedor e qualidade</h3>
-<p>O boxplot ou diagrama de caixa é uma ferramenta útil para visualizar a distribuição de variáveis numéricas agrupadas por categorias.</p>
-<p>Neste gráfico:</p>
-<ul>
-<li><p>A linha horizontal dentro da caixa representa a <strong>mediana</strong> (percentil 50).</p></li>
-<li><p>Os limites inferior e superior da caixa representam o <strong>primeiro quartil</strong> (percentil 25) e o <strong>terceiro quartil</strong> (percentil 75), respectivamente.</p></li>
-<li><p>As “hastes” (whiskers) se estendem até 1,5 vezes o intervalo interquartil (IQR).</p></li>
-<li><p>Pontos individuais além das hastes representam <strong>outliers</strong> (valores atípicos)</p></li>
-</ul>
-<p>Esta visualização nos permite comparar as distribuições de qualidade entre os diferentes fornecedores de malte. Assim, ela pode revelar evidências de uma relação sistemática entre o fornecedor de malte e a qualidade final do produto.</p>
-<div class="cell" data-layout-align="center">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Boxplot comparativa da qualidade por fornecedor de malte</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados_destilaria_limpos, <span class="fu">aes</span>(<span class="at">x =</span> fornecedor_malte, <span class="at">y =</span> indicador_qualidade)) <span class="sc">+</span></span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Cria boxplots para representar a distribuição dos dados</span></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Aplica um tema minimalista para melhor visualização</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Define títulos e rótulos dos eixos</span></span>
-<span id="cb9-8"><a href="#cb9-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb9-9"><a href="#cb9-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Qualidade do Whisky por Fornecedor de Malte"</span>,</span>
-<span id="cb9-10"><a href="#cb9-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Fornecedor"</span>,</span>
-<span id="cb9-11"><a href="#cb9-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Pontuação de Qualidade"</span></span>
-<span id="cb9-12"><a href="#cb9-12" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div id="fig-boxplot-1" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-align="center">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-boxplot-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="04_capitulo_files/figure-html/fig-boxplot-1-1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" width="672">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-boxplot-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;5.1: Boxplot comparativo de qualidade do whisky por fornecedor de malte.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>O boxplot evidencia diferenças relevantes na distribuição do indicador de qualidade entre os fornecedores de malte. Observa-se que os whiskies produzidos com malte proveniente da categoria <em>Inhouse</em> apresentam, em média, valores mais elevados de qualidade, além de menor dispersão.</p>
-<p>Por outro lado, os produtos associados ao fornecedor <em>Burns Best Ltd.</em> tendem a apresentar qualidade mediana inferior, com distribuição mais concentrada em valores baixos. Já o fornecedor <em>Matro Ltd.</em> apresenta maior variabilidade, indicando inconsistência no padrão de qualidade do insumo fornecido.</p>
-<p>Esses resultados sugerem que o fornecedor de malte é um fator potencialmente relevante para explicar a queda observada na qualidade do produto final.</p>
-<p>Embora os boxplots forneçam uma visualização rica da distribuição dos dados, às vezes precisamos de medidas numéricas precisas para confirmar nossas observações visuais. Nesta análise:</p>
-<ul>
-<li><p>Agrupamos os dados por fornecedor de malte.</p></li>
-<li><p>Calculamos a mediana do indicador de qualidade para cada grupo.</p></li>
-<li><p>Contamos o número de amostras (n) por fornecedor para avaliar a robustez dos resultados.</p></li>
-<li><p>Ordenamos os resultados em ordem decrescente para facilitar a comparação.</p></li>
-</ul>
-<p>Esta abordagem complementa a visualização anterior, fornecendo valores numéricos para fundamentar a análise do boxplot.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcula a qualidade média por fornecedor</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>dados_destilaria_limpos <span class="sc">%&gt;%</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Agrupa os dados pelo fornecedor de malte</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(fornecedor_malte) <span class="sc">%&gt;%</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Calcula a média e conta o número de obs. para cada grupo</span></span>
-<span id="cb10-6"><a href="#cb10-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(</span>
-<span id="cb10-7"><a href="#cb10-7" aria-hidden="true" tabindex="-1"></a>    <span class="at">qualidade_mediana =</span> <span class="fu">median</span>(indicador_qualidade),</span>
-<span id="cb10-8"><a href="#cb10-8" aria-hidden="true" tabindex="-1"></a>    <span class="at">n =</span> <span class="fu">n</span>()</span>
-<span id="cb10-9"><a href="#cb10-9" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">%&gt;%</span></span>
-<span id="cb10-10"><a href="#cb10-10" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Ordena os resultados em ordem decrescente pela qualidade média</span></span>
-<span id="cb10-11"><a href="#cb10-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(qualidade_mediana))</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output cell-output-stdout">
-<pre><code># A tibble: 3 × 3
-  fornecedor_malte qualidade_mediana     n
-  &lt;fct&gt;                        &lt;dbl&gt; &lt;int&gt;
-1 Inhouse                        936    10
-2 Matro Ltd.                     917     5
-3 Burns Best Ltd.                879     5</code></pre>
-</div>
-</div>
-</section>
-<section id="relação-entre-mestre-responsável-e-qualidade" class="level3" data-number="5.7.2">
-<h3 data-number="5.7.2" class="anchored" data-anchor-id="relação-entre-mestre-responsável-e-qualidade"><span class="header-section-number">5.7.2</span> Relação entre mestre responsável e qualidade</h3>
-<p>Os mestres responsáveis pela produção podem influenciar significativamente a qualidade do produto final devido às suas técnicas, experiência e atenção aos detalhes. Este boxplot nos permite:</p>
-<ul>
-<li><p>Comparar a performance de diferentes mestres responsáveis.</p></li>
-<li><p>Identificar se há diferenças consistentes na qualidade do whisky produzido por cada um.</p></li>
-<li><p>Verificar se algum mestre responsável apresenta maior variabilidade nos resultados.</p></li>
-<li><p>Detectar possíveis interações entre a experiência do profissional e a qualidade final.</p></li>
-</ul>
-<p>Esta análise pode revelar se há necessidade de padronização de processos ou treinamentos específicos para garantir consistência na produção.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Boxplot comparativo entre indicador de qualidade e mestre destilador\\</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados_destilaria_limpos, <span class="fu">aes</span>(<span class="at">x =</span> mestre_responsavel, <span class="at">y =</span> indicador_qualidade)) <span class="sc">+</span></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Cria boxplots para visualizar a distribuição e identificar outliers</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Aplica um tema minimalista</span></span>
-<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Define títulos e rótulos dos eixos</span></span>
-<span id="cb12-8"><a href="#cb12-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb12-9"><a href="#cb12-9" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Qualidade do Whisky por Mestre Responsável"</span>,</span>
-<span id="cb12-10"><a href="#cb12-10" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Mestre Responsável"</span>,</span>
-<span id="cb12-11"><a href="#cb12-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Indicador de Qualidade"</span></span>
-<span id="cb12-12"><a href="#cb12-12" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div id="fig-3" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="04_capitulo_files/figure-html/fig-3-1.png" class="img-fluid figure-img" width="672">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;5.2: Boxplot comparativo entre qualidade do whisky e mestre destilador.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="relação-entre-cor-e-qualidade" class="level3" data-number="5.7.3">
-<h3 data-number="5.7.3" class="anchored" data-anchor-id="relação-entre-cor-e-qualidade"><span class="header-section-number">5.7.3</span> Relação entre cor e qualidade</h3>
-<p>O gráfico de dispersão ou <em>scatter plot</em> é ideal para explorar a relação entre duas variáveis numéricas. Ao analisar a relação entre a cor do whisky e seu indicador de qualidade:</p>
-<ul>
-<li>Cada ponto representa uma amostra de whisky produzida.</li>
-<li>O eixo X mostra o valor do indicador de cor.</li>
-<li>O eixo Y indica a pontuação de qualidade.</li>
-<li>A linha de tendência (curva LOESS) ajuda a visualizar o padrão geral dos dados sem assumir uma relação linear.</li>
-</ul>
-<p>Esta visualização nos permite identificar se existe um valor ou faixa ótima de cor que está associada à melhor qualidade, o que poderia ser usado como indicador durante o processo de produção.</p>
-<div class="cell">
-<div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Grafico de dispersão entre o indicador de cor e a qualidade</span></span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(dados_destilaria_limpos, <span class="fu">aes</span>(<span class="at">x =</span> cor, <span class="at">y =</span> indicador_qualidade)) <span class="sc">+</span></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Adiciona pontos para cada observação no conjunto de dados</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Adiciona uma linha suavizada (LOESS) para mostrar a tendência geral</span></span>
-<span id="cb13-6"><a href="#cb13-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_smooth</span>(<span class="at">method =</span> <span class="st">"loess"</span>, <span class="at">se =</span> <span class="cn">FALSE</span>) <span class="sc">+</span></span>
-<span id="cb13-7"><a href="#cb13-7" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Aplica um tema minimalista</span></span>
-<span id="cb13-8"><a href="#cb13-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() <span class="sc">+</span></span>
-<span id="cb13-9"><a href="#cb13-9" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Define títulos e rótulos dos eixos</span></span>
-<span id="cb13-10"><a href="#cb13-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(</span>
-<span id="cb13-11"><a href="#cb13-11" aria-hidden="true" tabindex="-1"></a>    <span class="at">title =</span> <span class="st">"Relação entre Cor e Qualidade do Whisky"</span>,</span>
-<span id="cb13-12"><a href="#cb13-12" aria-hidden="true" tabindex="-1"></a>    <span class="at">x =</span> <span class="st">"Indicador de Cor"</span>,</span>
-<span id="cb13-13"><a href="#cb13-13" aria-hidden="true" tabindex="-1"></a>    <span class="at">y =</span> <span class="st">"Indicador de Qualidade"</span></span>
-<span id="cb13-14"><a href="#cb13-14" aria-hidden="true" tabindex="-1"></a>  )</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<div class="cell-output-display">
-<div id="fig-2" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="04_capitulo_files/figure-html/fig-2-1.png" class="img-fluid figure-img" width="672">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;5.3: Gráfico de dispersão entre qualidade e cor do whisky.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>O gráfico de dispersão indica uma relação não linear entre o indicador de cor e a qualidade do whisky. A curva de suavização sugere que valores de cor em torno de 0,3 estão associados, em média, a níveis mais elevados de qualidade.</p>
-<p>Valores muito baixos ou muito elevados do indicador de cor parecem associar-se a pior desempenho no indicador de qualidade. Essa evidência sugere que a cor pode funcionar como um sinal antecipado de problemas no processo produtivo.</p>
-<p>Do ponto de vista operacional, esse resultado é particularmente interessante, pois a cor pode ser monitorada durante a produção, antes das etapas finais de avaliação sensorial.</p>
-</section>
-<section id="conclusão-da-análise-exploratória" class="level3" data-number="5.7.4">
-<h3 data-number="5.7.4" class="anchored" data-anchor-id="conclusão-da-análise-exploratória"><span class="header-section-number">5.7.4</span> Conclusão da Análise Exploratória</h3>
-<p>A análise exploratória dos dados da linha de produção da Junglivet Whisky Company indica que a queda na qualidade do produto não ocorre de forma aleatória. Pelo contrário, há evidências de associação entre o indicador de qualidade e fatores operacionais específicos.</p>
-<p>Em particular, o fornecedor de malte e o indicador de cor emergem como variáveis relevantes.</p>
-<p>Entretanto, esses resultados não constituem provas definitivas de causalidade, mas fornecem hipóteses analíticas bem fundamentadas para as próximas fases de CRISP-DM.</p>
-</section>
-</section>
-<section id="próximos-passos" class="level2" data-number="5.8">
-<h2 data-number="5.8" class="anchored" data-anchor-id="próximos-passos"><span class="header-section-number">5.8</span> Próximos passos</h2>
-<ul>
-<li><p><strong>Modelagem</strong>: aplicação de métodos estatísticos de comparação entre grupos, como testes de médias e análise de variância, com o objetivo de avaliar diferenças sistemáticas associadas aos fatores operacionais identificados.</p></li>
-<li><p><strong>Avaliação</strong>: interpretação dos resultados estatísticos à luz dos objetivos de negócio, considerando significância, magnitude dos efeitos e implicações práticas para o processo produtivo.</p></li>
-<li><p><strong>Implantação</strong>: adoção de medidas operacionais baseadas nos resultados, como revisão de fornecedores, ajustes de processo e definição de indicadores de monitoramento da qualidade.</p></li>
-</ul>
-<div class="callout callout-style-default callout-note callout-titled">
+<section id="análise-diagnóstica" class="level2" data-number="6.3">
+<h2 data-number="6.3" class="anchored" data-anchor-id="análise-diagnóstica"><span class="header-section-number">6.3</span> Análise diagnóstica</h2>
+<p>A análise diagnóstica aprofunda a análise descritiva ao buscar explicações para os padrões observados. Enquanto a análise descritiva responde ao <em>o que</em> aconteceu, a diagnóstica procura compreender <em>por que</em> esses resultados ocorreram.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Nota
+<span class="screen-reader-only">Nota</span>Por que aconteceu?
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>No contexto de CRISP-DM, <strong>modelagem não se confunde com aprendizagem de máquina</strong>. Modelar pode significar aplicar métodos estatísticos tradicionais para comparar grupos, explicar relações e apoiar decisões, sem a necessidade de construir modelos preditivos complexos.</p>
+<ul>
+<li><p><strong>Objetivo</strong>: Investigar causas, relações e fatores associados aos resultados observados.</p></li>
+<li><p><strong>Técnicas</strong>: Análise de correlação, segmentação, comparações entre grupos, <em>drill-down</em> e análise de fatores.</p></li>
+<li><p><strong>Complexidade</strong>: ★★☆☆</p></li>
+</ul>
 </div>
 </div>
+<p>Esse tipo de análise é fundamental para apoiar decisões corretivas e ajustes de estratégia, como identificar fatores associados à queda nas vendas após um reajuste de preços ou compreender as causas do aumento do turnover em determinadas unidades organizacionais.</p>
+<p>No CRISP-DM, análises diagnósticas são recorrentes nas fases de Compreensão do Negócio e dos Dados, orientando decisões sobre coleta, preparação e seleção de variáveis relevantes.</p>
+</section>
+<section id="análise-preditiva" class="level2" data-number="6.4">
+<h2 data-number="6.4" class="anchored" data-anchor-id="análise-preditiva"><span class="header-section-number">6.4</span> Análise preditiva</h2>
+<p>A análise preditiva utiliza dados históricos para estimar comportamentos futuros ou resultados prováveis. Nesse nível, modelos estatísticos e de aprendizagem de máquina passam a desempenhar papel central.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>O que provavelmente acontecerá?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><p><strong>Objetivo</strong>: Estimar tendências futuras e resultados prováveis com base em padrões observados nos dados.</p></li>
+<li><p><strong>Técnicas</strong>: Modelos de regressão, séries temporais e algoritmos de classificação.</p></li>
+<li><p><strong>Complexidade</strong>: ★★★☆</p></li>
+</ul>
+</div>
+</div>
+<p>Exemplos típicos em Administração incluem previsão de demanda para produtos sazonais, modelos de propensão à inadimplência em instituições financeiras e estimativas de giro de estoque para apoiar decisões de compras e logística.</p>
+<p>No CRISP-DM, a análise preditiva está fortemente associada à fase de Modelagem, mas depende diretamente das decisões tomadas nas etapas anteriores de compreensão e preparação dos dados.</p>
+</section>
+<section id="análise-prescritiva" class="level2" data-number="6.5">
+<h2 data-number="6.5" class="anchored" data-anchor-id="análise-prescritiva"><span class="header-section-number">6.5</span> Análise prescritiva</h2>
+<p>A análise prescritiva representa o nível mais avançado da jornada analítica. Seu foco não está apenas em prever resultados, mas em recomendar ações que maximizem objetivos organizacionais, considerando restrições, custos e trade-offs.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>O que devemos fazer?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<ul>
+<li><p><strong>Objetivo</strong>: Recomendar decisões e ações otimizadas com base em análises descritivas, diagnósticas e preditivas.</p></li>
+<li><p><strong>Técnicas</strong>: Otimização, simulação, algoritmos de decisão e sistemas de recomendação.</p></li>
+<li><p><strong>Complexidade</strong>: ★★★★</p></li>
+</ul>
+</div>
+</div>
+<p>No contexto empresarial, a análise prescritiva é utilizada em problemas como otimização do mix de produtos por loja, recomendação personalizada em plataformas de e-commerce e definição automática de rotas logísticas em ambientes urbanos complexos.</p>
+<p>Esse tipo de análise exige não apenas maturidade técnica, mas também processos decisórios bem estruturados, integração com sistemas operacionais e clareza quanto aos objetivos estratégicos da organização.</p>
+</section>
+<section id="dos-tipos-de-análise-à-visão-integrada-de-um-projeto" class="level2" data-number="6.6">
+<h2 data-number="6.6" class="anchored" data-anchor-id="dos-tipos-de-análise-à-visão-integrada-de-um-projeto"><span class="header-section-number">6.6</span> Dos tipos de análise à visão integrada de um projeto</h2>
+<p>No capítulo anterior, discutimos quatro tipos de análise de dados — descritiva, diagnóstica, preditiva e prescritiva — destacando que cada uma responde a perguntas distintas e oferece diferentes formas de apoio à tomada de decisão. Também vimos que esses tipos de análise atravessam as etapas de um projeto e se articulam com a metodologia CRISP-DM.</p>
+<p>A partir deste ponto, o livro passa a combinar de forma mais direta conceitos e prática. No próximo capítulo, apresentamos um estudo de caso introdutório em R que integra, em um único exemplo, etapas iniciais do CRISP-DM, organização de projeto e análise exploratória. O objetivo é oferecer uma visão da “floresta”: um panorama do fluxo completo de trabalho que será aprofundado, com mais detalhes e novas ferramentas, ao longo dos capítulos seguintes.</p>
 
 
-<div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
-<div id="ref-jung2024modern" class="csl-entry" role="listitem">
-JUNG, D. <strong><a href="https://doi.org/10.1007/978-3-031-59907-1">The Modern Business Data Analyst: A Case Study Introduction into Business Data Analytics with CRISP-DM and R</a></strong>. Cham, Switzerland: Springer Nature Switzerland, 2024.
-</div>
-</div>
 </section>
 
 </main> <!-- /main -->
@@ -1080,13 +725,13 @@ JUNG, D. <strong><a href="https://doi.org/10.1007/978-3-031-59907-1">The Modern 
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./03_capitulo.html" class="pagination-link" aria-label="Tipos de Análise de Dados em CRISP-DM">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Tipos de Análise de Dados em CRISP-DM</span></span>
+      <a href="./03_capitulo.html" class="pagination-link" aria-label="A Metodologia CRISP-DM">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">A Metodologia CRISP-DM</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./05_capitulo.html" class="pagination-link" aria-label="Capítulo 5 — RStudio e fluxo de trabalho">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Capítulo 5 — RStudio e fluxo de trabalho</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./05_capitulo.html" class="pagination-link" aria-label="Um Estudo de Caso Introdutório">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Um Estudo de Caso Introdutório</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -1,0 +1,28 @@
+# Fundamentos da Ciência de Dados
+
+Esta parte do livro tem como objetivo apresentar os fundamentos conceituais,
+organizacionais e metodológicos da Ciência de Dados, com foco em aplicações
+relevantes para a Administração e áreas afins. O propósito não é aprofundar
+técnicas específicas, mas construir uma base sólida para a compreensão do
+campo e para o uso consistente de métodos orientados por dados.
+
+Ao longo dos capítulos que compõem esta parte, discutem-se as transformações
+históricas que levaram à consolidação da economia de dados, os principais
+papéis profissionais envolvidos em projetos analíticos, metodologias de
+organização do trabalho e os diferentes tipos de análise empregados na
+tomada de decisão. Esses elementos são apresentados de forma integrada,
+buscando reduzir a distância entre conceitos abstratos e práticas
+organizacionais concretas.
+
+A Parte I também introduz, de maneira gradual, princípios fundamentais de boas
+práticas em projetos de análise de dados, como organização de arquivos,
+reprodutibilidade e documentação. Esses princípios serão retomados e
+aprofundados ao longo do livro, acompanhando a evolução do conteúdo técnico.
+
+Ao final desta parte, o leitor deverá ser capaz de compreender o que é a
+Ciência de Dados, por que ela se tornou central na Administração
+contemporânea, como projetos de dados são estruturados e de que forma
+conceitos, papéis e processos se articulam em um fluxo analítico coerente.
+Essa visão geral servirá como base para os capítulos seguintes, nos quais
+ferramentas, técnicas e aplicações práticas serão exploradas com maior
+profundidade.

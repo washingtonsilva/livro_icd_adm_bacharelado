@@ -1,545 +1,164 @@
+# Tipos de Análise de Dados em CRISP-DM
 
-# Um Estudo de Caso Introdutório 
-
-Este capítulo apresenta um estudo de caso introdutório com o objetivo de
-integrar, em um único exemplo, conceitos, ferramentas e práticas que serão
-aprofundados ao longo dos capítulos seguintes. A intenção não é esgotar os
-tópicos abordados, mas oferecer uma visão geral do processo de análise de
-dados no contexto da metodologia CRISP-DM.
-
-O estudo de caso é baseado em um exemplo fictício adaptado do livro de
-Jung (2024) [@jung2024modern], sendo aqui utilizado exclusivamente com
-finalidade didática.
-
-
-
-## Estrutura do projeto e organização dos arquivos
-
-Antes de iniciar qualquer análise, é fundamental definir uma estrutura
-mínima de projeto. A organização adequada dos arquivos facilita a
-reprodutibilidade, a colaboração e a manutenção do trabalho ao longo do
-tempo, além de tornar mais claras as etapas do processo analítico.
-
-Ao longo da disciplina, os projetos foram organizados de forma
-padronizada, separando dados brutos, dados processados e relatórios.
-Essa mesma lógica será adotada neste livro, servindo como referência para
-os exemplos e códigos apresentados nos capítulos seguintes.
-
-Uma estrutura básica de projeto pode ser representada da seguinte forma:
-
-``` markdown
-seunome_icd2025/
-├── dados/
-│   ├── brutos/     # dados originais, sem modificações
-│   └── limpos/     # dados após limpeza e transformações
-├── relatorios/
-│   └── 01-relatorio/
-├── README.md
-└── seunome_icd2025.Rproj
-```
-
-Essa separação explícita evita que dados originais sejam sobrescritos,
-torna as etapas do processo analítico mais transparentes e facilita a
-verificação e a reprodução das análises realizadas.
-
-Na prática, recomenda-se criar inicialmente um repositório vazio no
-GitHub, cloná-lo localmente e, na pasta clonada do repositório, criar um
-projeto RStudio. A partir desse projeto, os arquivos e diretórios podem
-ser organizados de forma estruturada.
-
-O controle de versão com Git não é tratado aqui como um fim em si, mas
-como parte integrante de boas práticas em projetos de análise de dados.
-
-
-::: {.callout-tip}
-
-A *organização das pastas e arquivos do projeto* não é um detalhe técnico, 
-mas parte central da reprodutibilidade e do trabalho em equipe. Um projeto 
-bem estruturado permite que análises sejam compreendidas, verificadas e 
-reproduzidas por outras pessoas — ou pelo próprio autor em um momento posterior.
-
-:::
-
-
-
-## O Caso Junglivet Whisky Company
-
-Neste estudo de caso, aplicamos as três primeiras fases da metodologia
-CRISP-DM:
-
-1. **Compreensão do Negócio** (*Business Understanding*)
-2. **Compreensão dos Dados** (*Data Understanding*)
-3. **Preparação dos Dados** (*Data Preparation*)
-
-Você acaba de ser contratado como analista de dados na *Junglivet Whisky
-Company*. A empresa enfrenta reclamações recorrentes sobre a qualidade do
-whisky produzido, e a direção busca identificar possíveis causas para o
-problema.
-
-Os dados fornecidos correspondem ao registro da linha de produção das
-últimas duas semanas.
-
-
-## Organização do projeto e reprodutibilidade
-
-Antes de qualquer análise, o projeto foi organizado seguindo uma estrutura
-padronizada, separando dados brutos, dados tratados e relatórios. Essa
-organização facilita a reprodutibilidade, a documentação e o trabalho
-colaborativo.
-
-A análise apresentada neste capítulo foi desenvolvida em um projeto RStudio
-versionado com Git e sincronizado com GitHub, utilizando o sistema Quarto
-para geração de relatórios reprodutíveis.
-
-
-## Fase 1: Compreensão do Negócio
-
-O primeiro passo do CRISP-DM consiste em entender claramente o problema de
-negócio, antes de qualquer decisão técnica.
-
-- **Problema de negócio**: queda na qualidade do whisky produzido.
-- **Objetivo**: identificar fatores associados à redução da qualidade.
-- **Critério de sucesso**: evidenciar fatores operacionais que influenciam
-  negativamente o indicador de qualidade.
-
-Nesta fase, ainda não buscamos respostas nos dados, mas sim formular as
-perguntas corretas.
-
-
-## Fase 2: Compreensão dos Dados
-
-Nesta etapa, analisamos os dados disponíveis, sua estrutura e limitações,
-antes de qualquer transformação ou modelagem.
-
-
-### Dicionário de dados
-
-A documentação das variáveis é uma prática fundamental em projetos de análise de 
-dados. Ela garante interpretação consistente e reduz ambiguidades ao longo do
+Ao longo do processo CRISP-DM, diferentes tipos de análise podem ser
+empregados, variando em complexidade técnica, grau de formalização e
+valor estratégico. Cada tipo de análise responde a uma pergunta distinta
+de negócio e está associado a decisões tomadas em fases específicas do
 processo analítico.
 
-Um dicionário de dados é uma documentação estruturada que descreve o 
-significado, formato, uso e relacionamentos de cada variável em um 
-conjunto de dados. 
+As análises descritiva, diagnóstica, preditiva e prescritiva não são
+excludentes. Pelo contrário, costumam ser adotadas de forma progressiva e
+complementar, à medida que a organização desenvolve suas capacidades
+analíticas e passa a integrar dados de maneira mais sistemática em seus
+processos decisórios.
 
-Ele funciona como um guia essencial para compreender corretamente as 
-informações disponíveis, garantindo que todos os usuários interpretem 
-os dados de maneira consistente. 
 
-O arquivo de dados fornecido contém as seguintes colunas (ou variáveis):
+## Visão geral dos tipos de análise no CRISP-DM
 
-- **DAY**: dia da produção.
-- **MONTH**: mês da produção.
-- **MANUFACTURER**: mestre responsável pela produção.
-- **PRODUCT**: tipo de produto.
-- **SHIFT**: turno de produção.
-- **COLOR**: indicador de cor (0 a 1).
-- **MALTING**: fornecedor do malte.
-- **TASTING**: indicador de qualidade (0 a 1000).
+O termo *analytics* refere-se a um espectro contínuo de técnicas analíticas
+que evoluem desde a organização e compreensão do passado até a
+recomendação de ações orientadas para o futuro.
 
+No contexto do CRISP-DM, esses tipos de análise não correspondem a fases
+isoladas, mas atravessam o processo como um todo. Análises descritivas e
+diagnósticas são predominantes nas fases de Compreensão do Negócio e dos
+Dados, enquanto análises preditivas e prescritivas tornam-se centrais nas
+fases de Modelagem, Avaliação e Implementação.
 
-### Importação dos dados
+A maturidade analítica de uma organização pode ser avaliada pelo
+equilíbrio e pela profundidade com que esses quatro tipos de análise são
+utilizados de forma integrada, e não apenas pela adoção de técnicas mais
+sofisticadas.
 
-Antes de iniciar a análise, é necessário garantir que os pacotes R
-utilizados no projeto estejam instalados e carregados. Neste livro,
-utilizaremos o pacote **pacman** para facilitar esse processo, pois ele
-permite instalar e carregar pacotes de forma automática quando necessário.
 
-A instalação de pacotes deve ser feita apenas uma vez em cada ambiente.
-Após isso, basta carregá-los normalmente. O uso do **pacman** reduz
-problemas comuns enfrentados por iniciantes, como erros relacionados a
-pacotes ausentes.
+## Análise descritiva
 
-```{r}
-# Verifica se o pacote 'pacman' está instalado.
-# Caso não esteja, realiza a instalação a partir do CRAN.
-if (!requireNamespace("pacman", quietly = TRUE)) {
-  install.packages("pacman")
-}
+A análise descritiva representa o nível inicial do uso sistemático de
+dados. Seu objetivo é organizar, resumir e comunicar informações
+históricas de modo a tornar o passado compreensível para gestores e
+tomadores de decisão.
 
-# Carrega o pacote 'pacman' na sessão atual
-library(pacman)
+::: {.callout-note icon=false}
+## O que aconteceu?
 
-# A função p_load():
-# - instala automaticamente pacotes ausentes
-# - carrega todos os pacotes listados
-pacman::p_load(
-  here,      # define caminhos relativos ao diretório raiz do projeto
-  readr,     # leitura eficiente de arquivos CSV
-  dplyr,     # manipulação e transformação de dados
-  tidyr,     # função drop_na()
-  ggplot2    # visualização de dados
-)
-```
+- **Objetivo**: Descrever e sintetizar dados históricos, identificando
+  padrões, tendências e comportamentos recorrentes.
 
-O processo de importação de dados é um passo fundamental em qualquer 
-análise. Neste caso, utilizamos duas ferramentas importantes:
+- **Técnicas**: Estatísticas descritivas, tabelas, visualizações e
+  dashboards.
 
-- O pacote `here` permite definir caminhos relativos ao diretório 
-raiz do projeto, o que torna o código mais portátil e facilita o 
-compartilhamento. Independentemente de onde o projeto esteja armazenado 
-em diferentes computadores, o pacote `here` encontrará automaticamente 
-os arquivos a partir da raiz do projeto.
-
-- O pacote `readr`, parte do tidyverse, oferece funções otimizadas 
-para leitura de arquivos, como a `read_csv()`, que é mais rápida 
-que a função base do R e oferece tratamento mais consistente dos 
-tipos de dados. Além disso, ela converte automaticamente strings vazias 
-para NA, indica o tipo de cada coluna importada e preserva os nomes 
-das variáveis originais.
-
-```{r}
-# Define o caminho relativo do arquivo de dados 
-# a partir da raiz do projeto.
-caminho <- here::here("dados/brutos/productionlog_sample.csv")
-
-# Importa o arquivo com a funçào read_csv
-dados_destilaria <- readr::read_csv(caminho)
-```
-
-A partir desse ponto, os dados estão disponíveis na ambiente de R e podem
-ser explorados, verificados e preparados para as etapas seguintes da
-análise.
-
-
-
-### Inspeção inicial dos dados
-
-Após importar os dados, é essencial verificar sua estrutura para entender 
-o que temos disponível. A função `glimpse()` do pacote `dplyr` nos 
-oferece uma visão concisa e informativa sobre:
-
-- Quais variáveis (colunas) estão presentes no conjunto de dados.
-- Qual o tipo ou classe de cada variável.
-- Os primeiros valores de cada variável.
-- O número total de observações (linhas).
-
-```{r}
-# fornece visão geral da estrutura dos dados
-dplyr::glimpse(dados_destilaria)
-```
-
-Além disso, estatísticas descritivas básicas ajudam a identificar valores
-ausentes, escalas e possíveis inconsistências.
-
-A função `summary()` resume as principais estatísticas das variáveis
-e indica automaticamente a presença de valores ausentes (NA)
-
-```{r}
-# fornece estatísticas descritivas dos dados
-summary(dados_destilaria)
-```
-
-A saída da função mostra que há pelo menos um valor faltante (`NA`) em 
-uma linha (observação) do arquivo.
-
-
-
-## Fase 3: Preparação dos Dados
-
-Nesta fase, preparamos os dados para análise, renomeando variáveis, 
-convertendo cada variável para um tipo ou classe de dados adequado, 
-tratando valores ausentes, removendo colunas irrelevantes e garantindo 
-que temos dados de qualidade para trabalhar.
-
-O código a seguir executa as seguintes operações para limpar os dados:
-
-1. **Remove** a coluna `MONTH` que é desnecessária para a análise.
-  
-2. **Renomeia** todas as colunas para nomes mais descritivos em português, 
-facilitando a interpretação.
- 
-3. **Converte** as variáveis para seus tipos/classes de dados apropriados: 
-`numeric` para valores quantitativos (dia, cor, indicador_qualidade) e 
-`factor` para variáveis categóricas (fabricante, tipo_produto, turno, 
-fornecedor_malte).
- 
-4. Remove linhas com valores ausentes para garantir a integridade 
-dos dados nas análises subsequentes.
-
-Vamos utilizar o operador pipe (`%>%`) do tidyverse para encadear
-as operações de limpeza e transformação de dados de forma mais legível.
-Cada operação recebe o resultado da anterior e aplica uma nova transformação.
-
-Observe como organizamos o código com identação consistente e
-comentários explicativos para cada operação. Esta é uma boa prática
-que torna o código mais legível e facilita sua manutenção.
-
-```{r}
-# Pipeline para criar uma nova data frame 
-# contendo os dados limpos.
-
-# define o objeto que armazenará os dados limpos
-# criado a partir de dados_destilaria
-dados_destilaria_limpos <- dados_destilaria %>%
-  # Remove a variável MONTH
-  select(-MONTH) %>%
-  # Renomeia as variáveis para nomes mais descritivos
-  rename(
-    dia = DAY,
-    mestre_responsavel = MANUFACTURER,
-    tipo_produto = PRODUCT,
-    turno = SHIFT,
-    cor = COLOR,
-    fornecedor_malte = MALTING,
-    indicador_qualidade = TASTING
-  ) %>%
-  # Converte explicitamente os tipos das variáveis
-  mutate(
-    dia = as.numeric(dia),
-    mestre_responsavel = as.factor(mestre_responsavel),
-    tipo_produto = as.factor(tipo_produto),
-    turno = as.factor(turno),
-    cor = as.numeric(cor),
-    fornecedor_malte = as.factor(fornecedor_malte),
-    indicador_qualidade = as.numeric(indicador_qualidade)
-  ) %>%
-  # Remove observações com valores ausentes
-  drop_na()
-```
-
-
-
-## Análise exploratória de dados
-
-A Análise Exploratória de Dados (AED) é uma abordagem fundamental que nos 
-permite investigar e compreender as características principais de um 
-conjunto de dados. 
-
-Utilizamos técnicas visuais e estatísticas para:
-
-- Identificar padrões, tendências e relações entre variáveis.
-- Detectar valores atípicos (outliers) e anomalias.
-- Verificar hipóteses preliminares sobre possíveis causas do problema.
-- Orientar análises mais detalhadas e modelagens futuras.
-
-Com os dados devidamente preparados, vamos explorar graficamente  
-relações entre algumas variáveis e o indicador de qualidade do whisky 
-para identificar potenciais fatores que explicam os problemas 
-enfrentados pela destilaria.
-
-
-### Relação entre fornecedor e qualidade 
-
-O boxplot ou diagrama de caixa é uma ferramenta útil para 
-visualizar a distribuição de variáveis numéricas agrupadas 
-por categorias. 
-
-Neste gráfico:
-
-- A linha horizontal dentro da caixa representa a **mediana** (percentil 50).
-
-- Os limites inferior e superior da caixa representam o **primeiro quartil** 
-(percentil 25) e o **terceiro quartil** (percentil 75), respectivamente.
-
-- As "hastes" (whiskers) se estendem até 1,5 vezes o intervalo 
-interquartil (IQR).
-
-- Pontos individuais além das hastes representam **outliers** 
-(valores atípicos)
-
-Esta visualização nos permite comparar as distribuições de 
-qualidade entre os diferentes fornecedores de malte. Assim, 
-ela pode revelar evidências de uma relação sistemática entre o 
-fornecedor de malte e a qualidade final do produto.
-
-```{r}
-#| label: fig-boxplot-1
-#| fig-cap: "Boxplot comparativo de qualidade do whisky por fornecedor de malte."
-#| fig-align: center
-
-# Boxplot comparativa da qualidade por fornecedor de malte
-ggplot(dados_destilaria_limpos, aes(x = fornecedor_malte, y = indicador_qualidade)) +
-  # Cria boxplots para representar a distribuição dos dados
-  geom_boxplot() +
-  # Aplica um tema minimalista para melhor visualização
-  theme_minimal() +
-  # Define títulos e rótulos dos eixos
-  labs(
-    title = "Qualidade do Whisky por Fornecedor de Malte",
-    x = "Fornecedor",
-    y = "Pontuação de Qualidade"
-  )
-```
-
-O boxplot evidencia diferenças relevantes na distribuição do indicador de
-qualidade entre os fornecedores de malte. Observa-se que os whiskies
-produzidos com malte proveniente da categoria *Inhouse* apresentam, em
-média, valores mais elevados de qualidade, além de menor dispersão.
-
-Por outro lado, os produtos associados ao fornecedor *Burns Best Ltd.*
-tendem a apresentar qualidade mediana inferior, com distribuição mais
-concentrada em valores baixos. Já o fornecedor *Matro Ltd.* apresenta
-maior variabilidade, indicando inconsistência no padrão de qualidade do
-insumo fornecido.
-
-Esses resultados sugerem que o fornecedor de malte é um fator
-potencialmente relevante para explicar a queda observada na qualidade do
-produto final.
-
-
-Embora os boxplots forneçam uma visualização rica da distribuição dos dados, 
-às vezes precisamos de medidas numéricas precisas para confirmar nossas 
-observações visuais. Nesta análise:
-
-- Agrupamos os dados por fornecedor de malte.
-
-- Calculamos a mediana do indicador de qualidade para cada grupo.
-
-- Contamos o número de amostras (n) por fornecedor para avaliar a 
-robustez dos resultados.
-
-- Ordenamos os resultados em ordem decrescente para facilitar a comparação.
-
-Esta abordagem complementa a visualização anterior, fornecendo valores 
-numéricos para fundamentar a análise do boxplot.
-
-```{r}
-# Calcula a qualidade média por fornecedor
-dados_destilaria_limpos %>%
-  # Agrupa os dados pelo fornecedor de malte
-  group_by(fornecedor_malte) %>%
-  # Calcula a média e conta o número de obs. para cada grupo
-  summarise(
-    qualidade_mediana = median(indicador_qualidade),
-    n = n()
-  ) %>%
-  # Ordena os resultados em ordem decrescente pela qualidade média
-  arrange(desc(qualidade_mediana))
-```
-
-
-
-### Relação entre mestre responsável e qualidade 
-
-Os mestres responsáveis pela produção podem influenciar significativamente 
-a qualidade do produto final devido às suas técnicas, experiência e atenção 
-aos detalhes. Este boxplot nos permite:
-
-- Comparar a performance de diferentes mestres responsáveis.
-
-- Identificar se há diferenças consistentes na qualidade do whisky 
-produzido por cada um.
-
-- Verificar se algum mestre responsável apresenta maior variabilidade 
-nos resultados.
-
-- Detectar possíveis interações entre a experiência do profissional e a 
-qualidade final.
-
-Esta análise pode revelar se há necessidade de padronização de processos 
-ou treinamentos específicos para garantir consistência na produção.
-
-```{r}
-#| label: fig-3
-#| fig-cap: "Boxplot comparativo entre qualidade do whisky e mestre destilador."
-
-# Boxplot comparativo entre indicador de qualidade e mestre destilador\\
-ggplot(dados_destilaria_limpos, aes(x = mestre_responsavel, y = indicador_qualidade)) +
-  # Cria boxplots para visualizar a distribuição e identificar outliers
-  geom_boxplot() +
-  # Aplica um tema minimalista
-  theme_minimal() +
-  # Define títulos e rótulos dos eixos
-  labs(
-    title = "Qualidade do Whisky por Mestre Responsável",
-    x = "Mestre Responsável",
-    y = "Indicador de Qualidade"
-  )
-```
-
-
-
-
-### Relação entre cor e qualidade
-
-O gráfico de dispersão ou *scatter plot*  é ideal para explorar 
-a relação entre duas variáveis numéricas. Ao analisar a relação entre a 
-cor do whisky e seu indicador de qualidade:
-
-- Cada ponto representa uma amostra de whisky produzida.
-- O eixo X mostra o valor do indicador de cor.
-- O eixo Y indica a pontuação de qualidade.
-- A linha de tendência (curva LOESS) ajuda a visualizar o padrão geral dos 
-dados sem assumir uma relação linear.
-
-Esta visualização nos permite identificar se existe um valor ou faixa 
-ótima de cor que está associada à melhor qualidade, o que poderia ser usado 
-como indicador durante o processo de produção.
-
-```{r}
-#| label: fig-2
-#| fig-cap: "Gráfico de dispersão entre qualidade e cor do whisky."
-
-# Grafico de dispersão entre o indicador de cor e a qualidade
-ggplot(dados_destilaria_limpos, aes(x = cor, y = indicador_qualidade)) +
-  # Adiciona pontos para cada observação no conjunto de dados
-  geom_point() +
-  # Adiciona uma linha suavizada (LOESS) para mostrar a tendência geral
-  geom_smooth(method = "loess", se = FALSE) +
-  # Aplica um tema minimalista
-  theme_minimal() +
-  # Define títulos e rótulos dos eixos
-  labs(
-    title = "Relação entre Cor e Qualidade do Whisky",
-    x = "Indicador de Cor",
-    y = "Indicador de Qualidade"
-  )
-```
-
-O gráfico de dispersão indica uma relação não linear entre o indicador de
-cor e a qualidade do whisky. A curva de suavização sugere que valores de
-cor em torno de 0,3 estão associados, em média, a níveis mais elevados de
-qualidade.
-
-Valores muito baixos ou muito elevados do indicador de cor parecem
-associar-se a pior desempenho no indicador de qualidade. Essa evidência
-sugere que a cor pode funcionar como um sinal antecipado de problemas no
-processo produtivo.
-
-Do ponto de vista operacional, esse resultado é particularmente
-interessante, pois a cor pode ser monitorada durante a produção, antes
-das etapas finais de avaliação sensorial.
-
-
-
-### Conclusão da Análise Exploratória
-
-A análise exploratória dos dados da linha de produção da Junglivet Whisky
-Company indica que a queda na qualidade do produto não ocorre de forma
-aleatória. Pelo contrário, há evidências de associação entre o indicador
-de qualidade e fatores operacionais específicos.
-
-Em particular, o fornecedor de malte e o indicador de cor emergem como
-variáveis relevantes. 
-
-Entretanto, esses resultados não constituem provas 
-definitivas de causalidade, mas fornecem hipóteses analíticas bem 
-fundamentadas para as próximas fases de CRISP-DM.
-
-
-
-## Próximos passos
-
-- **Modelagem**: aplicação de métodos estatísticos de comparação entre
-  grupos, como testes de médias e análise de variância, com o objetivo de
-  avaliar diferenças sistemáticas associadas aos fatores operacionais
-  identificados.
-
-- **Avaliação**: interpretação dos resultados estatísticos à luz dos
-  objetivos de negócio, considerando significância, magnitude dos efeitos
-  e implicações práticas para o processo produtivo.
-
-- **Implantação**: adoção de medidas operacionais baseadas nos resultados,
-  como revisão de fornecedores, ajustes de processo e definição de
-  indicadores de monitoramento da qualidade.
-
-
-::: {.callout-note}
-
-No contexto de CRISP-DM, **modelagem não se confunde com aprendizagem de máquina**. 
-Modelar pode significar aplicar métodos estatísticos
-tradicionais para comparar grupos, explicar relações e apoiar decisões,
-sem a necessidade de construir modelos preditivos complexos.
-
+- **Complexidade**: ★☆☆☆
 :::
+
+No contexto da Administração, a análise descritiva está fortemente
+associada a relatórios gerenciais e sistemas de acompanhamento
+operacional. Ela fornece a base informacional sobre a qual análises mais
+avançadas podem ser construídas.
+
+Exemplos incluem relatórios de vendas por canal em períodos promocionais,
+painéis de monitoramento de indicadores operacionais e análises de
+distribuição de clientes por região ou perfil de consumo.
+
+
+## Análise diagnóstica
+
+A análise diagnóstica aprofunda a análise descritiva ao buscar explicações
+para os padrões observados. Enquanto a análise descritiva responde ao
+*o que* aconteceu, a diagnóstica procura compreender *por que* esses
+resultados ocorreram.
+
+::: {.callout-note icon=false}
+## Por que aconteceu?
+
+- **Objetivo**: Investigar causas, relações e fatores associados aos
+  resultados observados.
+
+- **Técnicas**: Análise de correlação, segmentação, comparações entre
+  grupos, *drill-down* e análise de fatores.
+
+- **Complexidade**: ★★☆☆
+:::
+
+Esse tipo de análise é fundamental para apoiar decisões corretivas e
+ajustes de estratégia, como identificar fatores associados à queda nas
+vendas após um reajuste de preços ou compreender as causas do aumento do
+turnover em determinadas unidades organizacionais.
+
+No CRISP-DM, análises diagnósticas são recorrentes nas fases de
+Compreensão do Negócio e dos Dados, orientando decisões sobre coleta,
+preparação e seleção de variáveis relevantes.
+
+
+## Análise preditiva
+
+A análise preditiva utiliza dados históricos para estimar comportamentos
+futuros ou resultados prováveis. Nesse nível, modelos estatísticos e de
+aprendizagem de máquina passam a desempenhar papel central.
+
+::: {.callout-note icon=false}
+## O que provavelmente acontecerá?
+
+- **Objetivo**: Estimar tendências futuras e resultados prováveis com base
+  em padrões observados nos dados.
+
+- **Técnicas**: Modelos de regressão, séries temporais e algoritmos de
+  classificação.
+
+- **Complexidade**: ★★★☆
+:::
+
+Exemplos típicos em Administração incluem previsão de demanda para
+produtos sazonais, modelos de propensão à inadimplência em instituições
+financeiras e estimativas de giro de estoque para apoiar decisões de
+compras e logística.
+
+No CRISP-DM, a análise preditiva está fortemente associada à fase de
+Modelagem, mas depende diretamente das decisões tomadas nas etapas
+anteriores de compreensão e preparação dos dados.
+
+
+## Análise prescritiva
+
+A análise prescritiva representa o nível mais avançado da jornada
+analítica. Seu foco não está apenas em prever resultados, mas em
+recomendar ações que maximizem objetivos organizacionais, considerando
+restrições, custos e trade-offs.
+
+::: {.callout-note icon=false}
+## O que devemos fazer?
+
+- **Objetivo**: Recomendar decisões e ações otimizadas com base em análises
+  descritivas, diagnósticas e preditivas.
+
+- **Técnicas**: Otimização, simulação, algoritmos de decisão e sistemas de
+  recomendação.
+
+- **Complexidade**: ★★★★
+:::
+
+No contexto empresarial, a análise prescritiva é utilizada em problemas
+como otimização do mix de produtos por loja, recomendação personalizada
+em plataformas de e-commerce e definição automática de rotas logísticas
+em ambientes urbanos complexos.
+
+Esse tipo de análise exige não apenas maturidade técnica, mas também
+processos decisórios bem estruturados, integração com sistemas
+operacionais e clareza quanto aos objetivos estratégicos da organização.
+
+
+
+## Dos tipos de análise à visão integrada de um projeto
+
+No capítulo anterior, discutimos quatro tipos de análise de dados —
+descritiva, diagnóstica, preditiva e prescritiva — destacando que cada uma
+responde a perguntas distintas e oferece diferentes formas de apoio à
+tomada de decisão. Também vimos que esses tipos de análise atravessam as
+etapas de um projeto e se articulam com a metodologia CRISP-DM.
+
+A partir deste ponto, o livro passa a combinar de forma mais direta
+conceitos e prática. No próximo capítulo, apresentamos um estudo de caso
+introdutório em R que integra, em um único exemplo, etapas iniciais do
+CRISP-DM, organização de projeto e análise exploratória. O objetivo é
+oferecer uma visão da “floresta”: um panorama do fluxo completo de trabalho
+que será aprofundado, com mais detalhes e novas ferramentas, ao longo dos
+capítulos seguintes.

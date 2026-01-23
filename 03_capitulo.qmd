@@ -1,146 +1,224 @@
-# Tipos de Análise de Dados em CRISP-DM
+# A Metodologia CRISP-DM
 
-Ao longo do processo CRISP-DM, diferentes tipos de análise podem ser
-empregados, variando em complexidade técnica, grau de formalização e
-valor estratégico. Cada tipo de análise responde a uma pergunta distinta
-de negócio e está associado a decisões tomadas em fases específicas do
-processo analítico.
-
-As análises descritiva, diagnóstica, preditiva e prescritiva não são
-excludentes. Pelo contrário, costumam ser adotadas de forma progressiva e
-complementar, à medida que a organização desenvolve suas capacidades
-analíticas e passa a integrar dados de maneira mais sistemática em seus
-processos decisórios.
+Este capítulo apresenta a metodologia CRISP-DM (*Cross-Industry Standard
+Process for Data Mining*) [@ibm_crisp_dm], amplamente utilizada para estruturar
+projetos de Ciência de Dados. O objetivo é oferecer uma visão clara e
+operacional do método, com ênfase no papel do administrador na condução,
+coordenação e alinhamento estratégico desses projetos.
 
 
-## Visão geral dos tipos de análise no CRISP-DM
+## O problema do “código antes do plano”
 
-O termo *analytics* refere-se a um espectro contínuo de técnicas analíticas
-que evoluem desde a organização e compreensão do passado até a
-recomendação de ações orientadas para o futuro.
+Projetos de dados frequentemente falham não por limitações técnicas, mas
+pela ausência de uma metodologia clara. É comum que equipes iniciem o
+desenvolvimento de modelos ou scripts antes mesmo de compreender o problema
+de negócio a ser resolvido.
 
-No contexto do CRISP-DM, esses tipos de análise não correspondem a fases
-isoladas, mas atravessam o processo como um todo. Análises descritivas e
-diagnósticas são predominantes nas fases de Compreensão do Negócio e dos
-Dados, enquanto análises preditivas e prescritivas tornam-se centrais nas
-fases de Modelagem, Avaliação e Implementação.
-
-A maturidade analítica de uma organização pode ser avaliada pelo
-equilíbrio e pela profundidade com que esses quatro tipos de análise são
-utilizados de forma integrada, e não apenas pela adoção de técnicas mais
-sofisticadas.
+Esse tipo de abordagem tende a gerar desalinhamento entre soluções técnicas
+e necessidades organizacionais, ciclos recorrentes de retrabalho,
+desperdício de tempo e recursos, além de dificuldades para escalar projetos
+piloto para soluções corporativas.
 
 
-## Análise descritiva
 
-A análise descritiva representa o nível inicial do uso sistemático de
-dados. Seu objetivo é organizar, resumir e comunicar informações
-históricas de modo a tornar o passado compreensível para gestores e
-tomadores de decisão.
+## O papel do administrador em projetos de dados
 
-::: {.callout-note icon=false}
-## O que aconteceu?
+Nesse contexto, o administrador desempenha papel central. Cabe a ele
+assegurar que projetos de dados tenham início a partir de objetivos de
+negócio claramente definidos, com critérios mensuráveis de sucesso
+estabelecidos antes da implementação técnica.
 
-- **Objetivo**: Descrever e sintetizar dados históricos, identificando
-  padrões, tendências e comportamentos recorrentes.
-
-- **Técnicas**: Estatísticas descritivas, tabelas, visualizações e
-  dashboards.
-
-- **Complexidade**: ★☆☆☆
-:::
-
-No contexto da Administração, a análise descritiva está fortemente
-associada a relatórios gerenciais e sistemas de acompanhamento
-operacional. Ela fornece a base informacional sobre a qual análises mais
-avançadas podem ser construídas.
-
-Exemplos incluem relatórios de vendas por canal em períodos promocionais,
-painéis de monitoramento de indicadores operacionais e análises de
-distribuição de clientes por região ou perfil de consumo.
+Além disso, o administrador atua como elo entre equipes técnicas e as
+partes interessadas no projeto, articulando expectativas, restrições e
+prioridades organizacionais, e garantindo que os resultados produzidos
+sejam relevantes para a tomada de decisão.
 
 
-## Análise diagnóstica
 
-A análise diagnóstica aprofunda a análise descritiva ao buscar explicações
-para os padrões observados. Enquanto a análise descritiva responde ao
-*o que* aconteceu, a diagnóstica procura compreender *por que* esses
-resultados ocorreram.
+## Ferramentas são meios, não fins
 
-::: {.callout-note icon=false}
-## Por que aconteceu?
+Ferramentas como R, Python, SQL, Quarto e Git são essenciais para projetos
+de Ciência de Dados, mas não constituem um fim em si mesmas. Sem uma
+metodologia orientadora, mesmo códigos tecnicamente sofisticados podem
+resolver o problema errado.
 
-- **Objetivo**: Investigar causas, relações e fatores associados aos
-  resultados observados.
-
-- **Técnicas**: Análise de correlação, segmentação, comparações entre
-  grupos, *drill-down* e análise de fatores.
-
-- **Complexidade**: ★★☆☆
-:::
-
-Esse tipo de análise é fundamental para apoiar decisões corretivas e
-ajustes de estratégia, como identificar fatores associados à queda nas
-vendas após um reajuste de preços ou compreender as causas do aumento do
-turnover em determinadas unidades organizacionais.
-
-No CRISP-DM, análises diagnósticas são recorrentes nas fases de
-Compreensão do Negócio e dos Dados, orientando decisões sobre coleta,
-preparação e seleção de variáveis relevantes.
+O CRISP-DM fornece contexto e direção para o uso dessas ferramentas,
+enfatizando que a modelagem é apenas uma das etapas de um processo mais
+amplo, orientado por objetivos organizacionais.
 
 
-## Análise preditiva
 
-A análise preditiva utiliza dados históricos para estimar comportamentos
-futuros ou resultados prováveis. Nesse nível, modelos estatísticos e de
-aprendizagem de máquina passam a desempenhar papel central.
+## CRISP-DM como estrutura orientadora
 
-::: {.callout-note icon=false}
-## O que provavelmente acontecerá?
+O CRISP-DM organiza projetos de dados de forma sistemática e iterativa.
+Diferentemente de abordagens centradas em ferramentas, o processo se inicia
+na compreensão do negócio e se encerra com a avaliação e implementação dos
+resultados no contexto organizacional.
 
-- **Objetivo**: Estimar tendências futuras e resultados prováveis com base
-  em padrões observados nos dados.
+```{r}
+#| label: fig-crispdm-fases
+#| echo: false
+#| fig-cap: "Fases da metodologia CRISP-DM e sua natureza iterativa."
+#| out-width: "60%"
+knitr::include_graphics("img/02-cap/crispdm.png")
+```
 
-- **Técnicas**: Modelos de regressão, séries temporais e algoritmos de
-  classificação.
-
-- **Complexidade**: ★★★☆
-:::
-
-Exemplos típicos em Administração incluem previsão de demanda para
-produtos sazonais, modelos de propensão à inadimplência em instituições
-financeiras e estimativas de giro de estoque para apoiar decisões de
-compras e logística.
-
-No CRISP-DM, a análise preditiva está fortemente associada à fase de
-Modelagem, mas depende diretamente das decisões tomadas nas etapas
-anteriores de compreensão e preparação dos dados.
+As fases funcionam como pontos de verificação, permitindo avaliar o
+progresso, alinhar expectativas e decidir se o projeto deve avançar, ser
+ajustado ou interrompido.
 
 
-## Análise prescritiva
 
-A análise prescritiva representa o nível mais avançado da jornada
-analítica. Seu foco não está apenas em prever resultados, mas em
-recomendar ações que maximizem objetivos organizacionais, considerando
-restrições, custos e trade-offs.
+## Fase 1: Compreensão do Negócio (*Business Understanding*)
 
-::: {.callout-note icon=false}
-## O que devemos fazer?
+A primeira fase do CRISP-DM tem como foco alinhar a análise de dados aos
+objetivos empresariais. Antes de qualquer coleta, modelagem ou análise, é
+necessário compreender claramente qual problema se deseja resolver, por que
+ele é relevante e para quem.
 
-- **Objetivo**: Recomendar decisões e ações otimizadas com base em análises
-  descritivas, diagnósticas e preditivas.
+Nessa etapa, objetivos de negócio são definidos, a situação organizacional
+é avaliada, as partes interessadas são identificadas, metas analíticas são
+estabelecidas e um plano de projeto é elaborado de forma realista.
 
-- **Técnicas**: Otimização, simulação, algoritmos de decisão e sistemas de
-  recomendação.
+### Checklist da Fase 1
 
-- **Complexidade**: ★★★★
-:::
+| #   | Tarefa                          | Resultados esperados                  |
+| --- | ------------------------------- | ------------------------------------- |
+| 1.1 | Determinar objetivos de negócio | Contexto e critérios de sucesso       |
+| 1.2 | Avaliar situação                | Recursos, restrições e riscos         |
+| 1.3 | Alinhar partes interessadas     | Expectativas e responsabilidades      |
+| 1.4 | Determinar objetivos de análise | Metas analíticas e critérios técnicos |
+| 1.5 | Produzir plano do projeto       | Cronograma e responsabilidades        |
 
-No contexto empresarial, a análise prescritiva é utilizada em problemas
-como otimização do mix de produtos por loja, recomendação personalizada
-em plataformas de e-commerce e definição automática de rotas logísticas
-em ambientes urbanos complexos.
 
-Esse tipo de análise exige não apenas maturidade técnica, mas também
-processos decisórios bem estruturados, integração com sistemas
-operacionais e clareza quanto aos objetivos estratégicos da organização.
+
+## Fase 2: Compreensão dos Dados (*Data Understanding*)
+
+A compreensão dos dados envolve conhecer profundamente as informações que
+serão utilizadas no projeto, independentemente de elas já existirem ou
+precisarem ser produzidas.
+
+Em muitos projetos, os dados não estão imediatamente disponíveis, sendo
+necessário coletá-los a partir de fontes externas, bases públicas,
+sistemas de terceiros ou por meio de instrumentos como surveys,
+experimentos ou registros operacionais. Nessa fase, também são avaliadas
+viabilidade, custos, limitações éticas e qualidade dos dados.
+
+As atividades incluem coleta ou produção inicial, descrição, exploração e
+verificação de qualidade, fornecendo base empírica sólida para as etapas
+seguintes.
+
+### Checklist da Fase 2
+
+| #   | Tarefa                        | Resultados esperados          |
+| --- | ----------------------------- | ----------------------------- |
+| 2.1 | Coletar ou produzir dados     | Relatório ou desenho de dados |
+| 2.2 | Descrever dados               | Relatório de descrição        |
+| 2.3 | Explorar dados                | Relatório de exploração       |
+| 2.4 | Verificar qualidade dos dados | Relatório de qualidade        |
+
+
+
+## Fase 3: Preparação dos Dados (*Data Preparation*)
+
+A preparação dos dados é frequentemente a fase mais trabalhosa do
+processo. Seu objetivo é transformar dados brutos ou heterogêneos em um
+conjunto adequado para análise e modelagem.
+
+Inclui seleção de registros e variáveis, tratamento de inconsistências,
+criação de atributos derivados, integração de múltiplas fontes e
+padronização de formatos, com documentação das decisões adotadas.
+
+### Checklist da Fase 3
+
+| #   | Tarefa           | Resultados esperados             |
+| --- | ---------------- | -------------------------------- |
+| 3.1 | Selecionar dados | Critérios de inclusão e exclusão |
+| 3.2 | Limpar dados     | Relatório de limpeza             |
+| 3.3 | Construir dados  | Atributos derivados              |
+| 3.4 | Integrar dados   | Conjuntos integrados             |
+| 3.5 | Formatar dados   | Conjunto final documentado       |
+
+
+
+## Fase 4: Modelagem (*Modeling*)
+
+Na fase de modelagem, técnicas estatísticas e de aprendagem de máquisa são 
+aplicadas aosdados preparados. São escolhidos algoritmos compatíveis com 
+os objetivos do projeto, definidos procedimentos de validação e ajustados 
+parâmetros dos modelos.
+
+Decisões tomadas nessa fase dependem fortemente das escolhas realizadas nas
+etapas anteriores e, com frequência, exigem iteração com fases anteriores.
+
+### Checklist da Fase 4
+
+| #   | Tarefa                | Resultados esperados    |
+| --- | --------------------- | ----------------------- |
+| 4.1 | Selecionar técnicas   | Técnica e pressupostos  |
+| 4.2 | Gerar design de teste | Estratégia de validação |
+| 4.3 | Construir modelo      | Modelos e parâmetros    |
+| 4.4 | Avaliar modelo        | Métricas e ajustes      |
+
+
+
+## Fase 5: Avaliação (*Evaluation*)
+
+A avaliação verifica se os resultados obtidos atendem aos objetivos de
+negócio definidos inicialmente. Não se trata apenas de desempenho técnico,
+mas de utilidade prática, viabilidade de implementação e impacto
+organizacional.
+
+Nesta etapa, decide-se se o modelo está pronto para uso, se ajustes
+adicionais são necessários ou se novas análises devem ser conduzidas.
+
+### Checklist da Fase 5
+
+| #   | Tarefa                     | Resultados esperados                |
+| --- | -------------------------- | ----------------------------------- |
+| 5.1 | Avaliar resultados         | Comparação com critérios de sucesso |
+| 5.2 | Revisar processo           | Lições aprendidas                   |
+| 5.3 | Determinar próximos passos | Decisões e ações                    |
+
+
+
+## Fase 6: Implementação (*Deployment*)
+
+A implementação transforma análises e modelos em instrumentos efetivos de
+decisão. Envolve integração com sistemas organizacionais, definição de
+métricas de monitoramento, manutenção e comunicação dos resultados aos
+gestores.
+
+Essa fase também inclui a documentação do projeto e a consolidação de
+aprendizados, contribuindo para a maturidade analítica da organização.
+
+### Checklist da Fase 6
+
+| #   | Tarefa                              | Resultados esperados        |
+| --- | ----------------------------------- | --------------------------- |
+| 6.1 | Planejar implantação                | Plano de implantação        |
+| 6.2 | Planejar monitoramento e manutenção | Plano de monitoramento      |
+| 6.3 | Produzir relatório final            | Relatório e apresentação    |
+| 6.4 | Revisar projeto                     | Documentação de experiência |
+
+
+
+## Da estrutura dos projetos aos tipos de análise orientados por dados
+
+Ao longo deste capítulo, discutimos a metodologia CRISP-DM como uma estrutura
+orientadora para projetos de Ciência de Dados, destacando a importância de
+iniciar análises a partir de objetivos de negócio claramente definidos e de
+organizar o trabalho de forma iterativa e sistemática. Vimos que projetos bem
+sucedidos dependem menos de ferramentas isoladas e mais da articulação entre
+problemas, dados, métodos e decisões.
+
+No entanto, estruturar um projeto é apenas parte do desafio. Em cada fase do
+CRISP-DM, diferentes tipos de análise podem ser empregados, cada um
+respondendo a perguntas específicas e oferecendo níveis distintos de apoio à
+tomada de decisão. Nem toda análise tem o mesmo propósito, nem exige o mesmo
+grau de sofisticação técnica.
+
+No próximo capítulo, apresentamos os principais tipos de análise de dados —
+descritiva, diagnóstica, preditiva e prescritiva — e discutimos como eles se
+relacionam com as etapas do CRISP-DM e com as necessidades práticas da
+Administração.

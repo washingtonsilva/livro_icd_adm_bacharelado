@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; Visão Geral de Ciência de Dados – Introdução à Ciência de Dados para o Bacharelado em Administração</title>
+<title>2&nbsp; Fundamentos da Ciência de Dados – Introdução à Ciência de Dados para o Bacharelado em Administração</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -50,8 +30,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./02_capitulo.html" rel="next">
-<link href="./parte1.html" rel="prev">
+<link href="./01_capitulo.html" rel="next">
+<link href="./introducao.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js" type="module"></script>
 <script src="site_libs/quarto-html/tabsets/tabsets.js" type="module"></script>
 <script src="site_libs/quarto-html/axe/axe-check.js" type="module"></script>
@@ -103,7 +83,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./parte1.html">Fundamentos da Ciência de Dados</a></li><li class="breadcrumb-item"><a href="./01_capitulo.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Visão Geral de Ciência de Dados</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./parte1.html">Fundamentos da Ciência de Dados</a></li><li class="breadcrumb-item"><a href="./parte1.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Fundamentos da Ciência de Dados</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Procurar" onclick="window.quartoOpenSearch();">
@@ -151,13 +131,13 @@ div.csl-indent {
       <ul id="quarto-sidebar-section-1" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./parte1.html" class="sidebar-item-text sidebar-link">
+  <a href="./parte1.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Fundamentos da Ciência de Dados</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./01_capitulo.html" class="sidebar-item-text sidebar-link active">
+  <a href="./01_capitulo.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Visão Geral de Ciência de Dados</span></span></a>
   </div>
 </li>
@@ -198,26 +178,15 @@ div.csl-indent {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Índice</h2>
-   
-  <ul>
-  <li><a href="#introdução-e-contextualização" id="toc-introdução-e-contextualização" class="nav-link active" data-scroll-target="#introdução-e-contextualização"><span class="header-section-number">3.1</span> Introdução e contextualização</a></li>
-  <li><a href="#a-economia-de-dados-um-breve-histórico" id="toc-a-economia-de-dados-um-breve-histórico" class="nav-link" data-scroll-target="#a-economia-de-dados-um-breve-histórico"><span class="header-section-number">3.2</span> A economia de dados: um breve histórico</a></li>
-  <li><a href="#big-data-e-a-explosão-do-volume-de-dados" id="toc-big-data-e-a-explosão-do-volume-de-dados" class="nav-link" data-scroll-target="#big-data-e-a-explosão-do-volume-de-dados"><span class="header-section-number">3.3</span> Big Data e a explosão do volume de dados</a></li>
-  <li><a href="#o-que-é-ciência-de-dados" id="toc-o-que-é-ciência-de-dados" class="nav-link" data-scroll-target="#o-que-é-ciência-de-dados"><span class="header-section-number">3.4</span> O que é Ciência de Dados?</a></li>
-  <li><a href="#metodologias-e-processos-crisp-dm" id="toc-metodologias-e-processos-crisp-dm" class="nav-link" data-scroll-target="#metodologias-e-processos-crisp-dm"><span class="header-section-number">3.5</span> Metodologias e processos: CRISP-DM</a></li>
-  <li><a href="#da-ciência-de-dados-aos-profissionais-que-a-tornam-possível" id="toc-da-ciência-de-dados-aos-profissionais-que-a-tornam-possível" class="nav-link" data-scroll-target="#da-ciência-de-dados-aos-profissionais-que-a-tornam-possível"><span class="header-section-number">3.6</span> Da Ciência de Dados aos profissionais que a tornam possível</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./parte1.html">Fundamentos da Ciência de Dados</a></li><li class="breadcrumb-item"><a href="./01_capitulo.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Visão Geral de Ciência de Dados</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./parte1.html">Fundamentos da Ciência de Dados</a></li><li class="breadcrumb-item"><a href="./parte1.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Fundamentos da Ciência de Dados</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Visão Geral de Ciência de Dados</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Fundamentos da Ciência de Dados</span></h1>
 </div>
 
 
@@ -234,137 +203,12 @@ div.csl-indent {
 </header>
 
 
-<section id="introdução-e-contextualização" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="introdução-e-contextualização"><span class="header-section-number">3.1</span> Introdução e contextualização</h2>
-<p>Nas últimas décadas, dados passaram a ocupar um papel central nas decisões econômicas, organizacionais e governamentais. Atividades cotidianas como compras online, interações em redes sociais ou o uso do GPS em smartphones geram continuamente grandes volumes de dados, que alimentam o que hoje se convencionou chamar de <em>economia de dados</em>.</p>
-<p>Esse fenômeno não surgiu de forma repentina. Ele é resultado de um processo histórico no qual a coleta, o armazenamento e a análise de dados foram progressivamente incorporados às práticas de gestão, pesquisa e tomada de decisão. Compreender essa trajetória é fundamental para entender por que a Ciência de Dados se tornou uma área central no mundo contemporâneo.</p>
-</section>
-<section id="a-economia-de-dados-um-breve-histórico" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="a-economia-de-dados-um-breve-histórico"><span class="header-section-number">3.2</span> A economia de dados: um breve histórico</h2>
-<p>As raízes da economia de dados remontam ao século XIX, quando jornais norte-americanos passaram a coletar informações sistemáticas sobre seus leitores e a realizar levantamentos para antecipar resultados eleitorais. Já nesse período inicial, dados eram utilizados como instrumento para reduzir incertezas e orientar decisões editoriais e comerciais, ainda que de forma incipiente e pouco padronizada <span class="citation" data-cites="harkness2021p01">(<a href="referencias.html#ref-harkness2021p01" role="doc-biblioref">Harkness, 2021a</a>)</span>.</p>
-<p>No início do século XX, com a consolidação do marketing como área organizacional, empresas e pesquisadores passaram a estruturar departamentos dedicados ao estudo sistemático do comportamento do consumidor. A coleta de dados deixou de ser episódica e passou a integrar processos contínuos de análise, voltados à compreensão de mercados, preferências e padrões de consumo <span class="citation" data-cites="harkness2021p01">(<a href="referencias.html#ref-harkness2021p01" role="doc-biblioref">Harkness, 2021a</a>)</span>.</p>
-<p>A partir da década de 1930, a introdução de métodos estatísticos de amostragem, notadamente os trabalhos associados a George Gallup, marcou uma mudança qualitativa importante. Previsões baseadas em dados passaram a apoiar-se em fundamentos estatísticos mais sólidos, substituindo abordagens baseadas em grandes volumes de respostas não controladas por técnicas cientificamente mais rigorosas <span class="citation" data-cites="harkness2021p02">(<a href="referencias.html#ref-harkness2021p02" role="doc-biblioref">Harkness, 2021b</a>)</span>.</p>
-<p>Entre as décadas de 1950 e 1980, empresas como a Nielsen consolidaram sistemas de observação contínua de hábitos de consumo e audiência. Esse período reforçou uma distinção central na economia de dados: observar comportamentos reais, de forma sistemática, frequentemente produz informações mais confiáveis do que simplesmente perguntar aos indivíduos sobre suas intenções ou opiniões <span class="citation" data-cites="harkness2021p02">Harkness (<a href="referencias.html#ref-harkness2021p03" role="doc-biblioref">2021c</a>)</span>.</p>
-<p>Com a digitalização da economia a partir dos anos 1990, o uso de códigos de barras, programas de fidelidade e, posteriormente, plataformas digitais e redes sociais transformou os dados em um ativo estratégico de escala global. A capacidade de coletar, armazenar e analisar grandes volumes de informações passou a redefinir modelos de negócio e estruturas competitivas em diversos setores <span class="citation" data-cites="harkness2021p03">(<a href="referencias.html#ref-harkness2021p03" role="doc-biblioref">Harkness, 2021c</a>)</span>.</p>
-<p>Mais recentemente, o avanço de modelos de inteligência artificial, como os grandes modelos de linguagem, representa o estágio mais sofisticado dessa trajetória. Esses sistemas dependem fortemente de grandes volumes de dados para seu treinamento e funcionamento, evidenciando que, na economia contemporânea, dados não são apenas um subproduto das atividades organizacionais, mas um recurso central que condiciona inovação, eficiência e poder econômico <span class="citation" data-cites="harkness2021p04">(<a href="referencias.html#ref-harkness2021p04" role="doc-biblioref">Harkness, 2021d</a>)</span>.</p>
-</section>
-<section id="big-data-e-a-explosão-do-volume-de-dados" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="big-data-e-a-explosão-do-volume-de-dados"><span class="header-section-number">3.3</span> Big Data e a explosão do volume de dados</h2>
-<div id="fig-data-deluge" class="quarto-float quarto-figure quarto-figure-center anchored" data-fig-cap="Capa da revista *The Economist* que popularizou a expressão   “The Data Deluge” (o dilúvio de dados), frequentemente citada como um   marco na discussão sobre a explosão do volume de dados e seus impactos   econômicos e gerenciais." data-fig-align="center" alt="Capa da revista The Economist com o título 'The Data Deluge'.">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-data-deluge-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/01-cap/deluge.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-fig-cap="Capa da revista *The Economist* que popularizou a expressão   “The Data Deluge” (o dilúvio de dados), frequentemente citada como um   marco na discussão sobre a explosão do volume de dados e seus impactos   econômicos e gerenciais." alt="Capa da revista The Economist com o título 'The Data Deluge'.">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-data-deluge-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;3.1: Capa da revista <span class="citation" data-cites="economist2010">The Economist (<a href="referencias.html#ref-economist2010" role="doc-biblioref">2010</a>)</span> sobre o dilúvio de dados.
-</figcaption>
-</figure>
-</div>
-<p>A matéria <em>The Data Deluge</em>, publicada pela <em>The Economist</em> <span class="citation" data-cites="economist2010">(<a href="referencias.html#ref-economist2010" role="doc-biblioref">The Economist, 2010</a>)</span>, marcou um ponto de inflexão na forma como economistas, gestores e formuladores de políticas passaram a enxergar os dados na economia contemporânea. O texto parte da constatação de que o mundo entrou em uma era caracterizada por uma produção de dados sem precedentes, impulsionada pela digitalização de processos, pela popularização da internet, pelo uso massivo de dispositivos móveis e pela automação de atividades econômicas e sociais.</p>
-<p>O artigo destaca que o crescimento do volume de dados não é apenas quantitativo, mas também qualitativo: empresas e governos passaram a registrar transações, comportamentos e interações em níveis de detalhe antes inimagináveis. Esse fenômeno transforma dados em um ativo econômico estratégico, comparável a recursos tradicionais como capital e trabalho, mas com características próprias, como alta reutilização e forte dependência de capacidades analíticas.</p>
-<p>A <em>The Economist</em> enfatiza que o verdadeiro desafio não reside na coleta dos dados, mas em sua <strong>organização, análise e interpretação</strong>. Grandes volumes de dados, por si só, não geram conhecimento nem vantagem competitiva. Somente quando combinados com métodos estatísticos, computacionais e analíticos adequados é que os dados podem apoiar decisões gerenciais mais informadas, melhorar previsões e revelar padrões econômicos relevantes.</p>
-<p>Por fim, a matéria alerta para os riscos associados à “ilusão dos dados”: quanto maior o volume de informações disponíveis, maior também a probabilidade de erros, correlações espúrias e interpretações equivocadas. Nesse contexto, competências analíticas sólidas tornam-se essenciais para administradores, economistas e profissionais das ciências sociais aplicadas, que passam a lidar com um ambiente decisório cada vez mais orientado por dados.</p>
-<p>O crescimento exponencial da produção de dados levou ao surgimento do conceito de <em>Big Data</em>, frequentemente caracterizado pelos chamados <em>cinco Vs</em>: volume, velocidade, variedade, veracidade e valor. Esses atributos ajudam a compreender não apenas a quantidade de dados gerados, mas também os desafios associados ao seu processamento e uso.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-5v-bigdata" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-5v-bigdata-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/01-cap/5vbigdata.png" class="img-fluid figure-img" style="width:70.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-5v-bigdata-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;3.2: Os cinco Vs do Big Data.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>Esse aumento no volume e na complexidade dos dados tornou insuficiente o uso exclusivo de ferramentas tradicionais, como planilhas eletrônicas, e criou a necessidade de métodos, linguagens e infraestruturas mais robustas para análise. Não por acaso, publicações de referência na área de negócios passaram a destacar dados como um dos recursos mais valiosos da economia contemporânea.</p>
-<p>Um marco simbólico importante na consolidação da chamada economia de dados foi a capa da revista <em>The Economist</em>, publicada em 2017, cujo título era <em>The World’s Most Valuable Resource</em> (“O recurso mais valioso do mundo”) e cujo subtítulo anunciava <em>Data and the new rules of competition</em> (“Dados e as novas regras da competição”). A mensagem central não era apenas a comparação entre dados e petróleo, mas a ideia de que os dados haviam se tornado o principal recurso estratégico capaz de redefinir a dinâmica competitiva entre empresas e setores <span class="citation" data-cites="economist2017">(<a href="referencias.html#ref-economist2017" role="doc-biblioref">The Economist, 2017</a>)</span>.</p>
-<p>Diferentemente de recursos tradicionais, os dados não geram valor de forma automática. Seu valor emerge da capacidade de coletá-los, organizá-los, analisá-los e, sobretudo, utilizá-los de maneira sistemática na tomada de decisão. Nesse sentido, a capa da <em>The Economist</em> aponta para uma mudança mais profunda: empresas competitivas passam a ser aquelas capazes de transformar dados em conhecimento operacional e vantagem estratégica contínua.</p>
-<p>Essa mudança implica novas regras de competição. Escala, velocidade de análise, capacidade de experimentação e aprendizado contínuo tornam-se fatores centrais. Organizações que dominam esses elementos conseguem adaptar produtos, processos e estratégias com maior rapidez, enquanto aquelas que tratam dados apenas como subprodutos operacionais tendem a perder relevância.</p>
-<p>Ao destacar os dados como o recurso mais valioso da economia contemporânea, a revista reforça a necessidade de métodos, ferramentas e competências voltadas não apenas à análise técnica, mas à integração entre dados, estratégia e decisão. É nesse contexto que a Ciência de Dados se consolida como área essencial para a Administração, indo além do uso de tecnologias específicas e passando a influenciar diretamente a forma como as organizações competem.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-worlds-most-valuable-resource" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-worlds-most-valuable-resource-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/01-cap/new_oil.jpeg" class="img-fluid figure-img" style="width:60.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-worlds-most-valuable-resource-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;3.3: Capa da revista <span class="citation" data-cites="economist2017">The Economist (<a href="referencias.html#ref-economist2017" role="doc-biblioref">2017</a>)</span> sobre o recurso mais valioso do mundo.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-</section>
-<section id="o-que-é-ciência-de-dados" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="o-que-é-ciência-de-dados"><span class="header-section-number">3.4</span> O que é Ciência de Dados?</h2>
-<p>Diante desse contexto, surge a Ciência de Dados como uma abordagem estruturada para extrair significado e valor de grandes volumes de dados. Embora o termo possa parecer intimidador, sua ideia central é relativamente simples: usar métodos analíticos e computacionais para transformar dados brutos em informações úteis para a tomada de decisão.</p>
-<p>De forma sintética, a Ciência de Dados integra conhecimentos de estatística, computação e domínio do negócio, combinando técnicas dessas áreas para lidar com problemas reais.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-venn-ds" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-venn-ds-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/01-cap/diagrama_venn_ds.png" class="img-fluid figure-img" style="width:60.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-venn-ds-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;3.4: A Ciência de Dados como interseção entre estatística, computação e conhecimento do domínio.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>Essa característica interdisciplinar explica tanto o potencial da área quanto a diversidade de formações presentes em equipes de dados.</p>
-</section>
-<section id="metodologias-e-processos-crisp-dm" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="metodologias-e-processos-crisp-dm"><span class="header-section-number">3.5</span> Metodologias e processos: CRISP-DM</h2>
-<p>A prática da Ciência de Dados costuma ser organizada por meio de metodologias de projeto. Uma das mais difundidas é o CRISP-DM (<em>Cross Industry Standard Process for Data Mining</em>), que estrutura o trabalho em etapas iterativas, desde o entendimento do problema de negócio até a implantação de soluções baseadas em dados.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-crispdm" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-crispdm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/01-cap/crispdm-trad.png" class="img-fluid figure-img" style="width:70.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-crispdm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;3.5: Etapas do processo CRISP-DM aplicadas a projetos de Ciência de Dados.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>Esse modelo destaca que projetos de dados raramente seguem um caminho linear. É comum que análises retornem a etapas anteriores à medida que novos insights surgem ou que hipóteses iniciais precisem ser revistas.</p>
-</section>
-<section id="da-ciência-de-dados-aos-profissionais-que-a-tornam-possível" class="level2" data-number="3.6">
-<h2 data-number="3.6" class="anchored" data-anchor-id="da-ciência-de-dados-aos-profissionais-que-a-tornam-possível"><span class="header-section-number">3.6</span> Da Ciência de Dados aos profissionais que a tornam possível</h2>
-<p>Ao longo deste capítulo, vimos como a chamada <em>economia de dados</em> se consolidou historicamente e por que a explosão no volume e na complexidade das informações tornou necessária uma abordagem estruturada, hoje conhecida como Ciência de Dados. Também discutimos que gerar valor a partir de dados exige mais do que tecnologia: requer métodos, organização e capacidade de transformar informação em decisão.</p>
-<p>Na prática, esse trabalho não é realizado por um único tipo de profissional. Projetos orientados por dados envolvem funções distintas, com responsabilidades e competências complementares. No próximo capítulo, apresentamos os principais papéis profissionais na área de dados — Analista de Dados, Cientista de Dados e Engenheiro de Dados — e discutimos como eles se relacionam com problemas reais de Administração e áreas afins.</p>
+<p>Esta parte do livro tem como objetivo apresentar os fundamentos conceituais, organizacionais e metodológicos da Ciência de Dados, com foco em aplicações relevantes para a Administração e áreas afins. O propósito não é aprofundar técnicas específicas, mas construir uma base sólida para a compreensão do campo e para o uso consistente de métodos orientados por dados.</p>
+<p>Ao longo dos capítulos que compõem esta parte, discutem-se as transformações históricas que levaram à consolidação da economia de dados, os principais papéis profissionais envolvidos em projetos analíticos, metodologias de organização do trabalho e os diferentes tipos de análise empregados na tomada de decisão. Esses elementos são apresentados de forma integrada, buscando reduzir a distância entre conceitos abstratos e práticas organizacionais concretas.</p>
+<p>A Parte I também introduz, de maneira gradual, princípios fundamentais de boas práticas em projetos de análise de dados, como organização de arquivos, reprodutibilidade e documentação. Esses princípios serão retomados e aprofundados ao longo do livro, acompanhando a evolução do conteúdo técnico.</p>
+<p>Ao final desta parte, o leitor deverá ser capaz de compreender o que é a Ciência de Dados, por que ela se tornou central na Administração contemporânea, como projetos de dados são estruturados e de que forma conceitos, papéis e processos se articulam em um fluxo analítico coerente. Essa visão geral servirá como base para os capítulos seguintes, nos quais ferramentas, técnicas e aplicações práticas serão exploradas com maior profundidade.</p>
 
 
-<div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
-<div id="ref-harkness2021p01" class="csl-entry" role="listitem">
-HARKNESS, T. <a href="https://doi.org/10.1111/1740-9713.01504">The history of the data economy: Part I: The birth of customer insight</a>. <strong>Significance</strong>, v. 18, n. 2, p. 12–15, a2021.
-</div>
-<div id="ref-harkness2021p02" class="csl-entry" role="listitem">
-___. <a href="https://doi.org/10.1111/1740-9713.01547">The history of the data economy: Part II: Analytics arrives</a>. <strong>Significance</strong>, v. 18, n. 4, p. 16–19, b2021.
-</div>
-<div id="ref-harkness2021p03" class="csl-entry" role="listitem">
-___. <a href="https://doi.org/10.1111/1740-9713.01567">The history of the data economy: Part III: The new kings and queens of data</a>. <strong>Significance</strong>, v. 18, n. 5, p. 16–19, c2021.
-</div>
-<div id="ref-harkness2021p04" class="csl-entry" role="listitem">
-___. <a href="https://doi.org/10.1111/1740-9713.01586">The history of the data economy: Part IV: The future</a>. <strong>Significance</strong>, v. 18, n. 6, p. 12–15, d2021.
-</div>
-<div id="ref-economist2010" class="csl-entry" role="listitem">
-THE ECONOMIST. <strong>The Data Deluge</strong>, 27 fev. 2010. Disponível em: &lt;<a href="https://www.economist.com/weeklyedition/2010-02-27">https://www.economist.com/weeklyedition/2010-02-27</a>&gt;. Acesso em: 21 jan. 2026
-</div>
-<div id="ref-economist2017" class="csl-entry" role="listitem">
-___. <strong>The World’s Most Valuable Resource</strong>, 2017. Disponível em: &lt;<a href="https://www.economist.com/weeklyedition/2017-05-06">https://www.economist.com/weeklyedition/2017-05-06</a>&gt;. Acesso em: 20 jan. 2026
-</div>
-</div>
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -769,13 +613,13 @@ ___. <strong>The World’s Most Valuable Resource</strong>, 2017. Disponível em
   </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./parte1.html" class="pagination-link" aria-label="Fundamentos da Ciência de Dados">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Fundamentos da Ciência de Dados</span></span>
+      <a href="./introducao.html" class="pagination-link" aria-label="Introdução">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introdução</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./02_capitulo.html" class="pagination-link" aria-label="Papéis profissionais na área de dados">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Papéis profissionais na área de dados</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./01_capitulo.html" class="pagination-link" aria-label="Visão Geral de Ciência de Dados">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Visão Geral de Ciência de Dados</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
