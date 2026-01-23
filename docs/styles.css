@@ -1,0 +1,87 @@
+/* =========================================================
+   Estilos globais do livro
+   Arquivo: styles.css
+   Uso: formatação visual comum a todos os capítulos HTML
+   ========================================================= */
+
+/* ---------- Texto principal ---------- */
+
+/* Justificação do corpo do texto */
+main p {
+  text-align: justify;
+  hyphens: auto;
+}
+
+/* Espaçamento confortável entre parágrafos */
+main p {
+  margin-bottom: 1rem;
+}
+
+/* Evita justificação em listas, que prejudica leitura */
+main li {
+  text-align: left;
+}
+
+/* ---------- Títulos ---------- */
+
+h1, h2, h3, h4, h5 {
+  text-align: left;
+  line-height: 1.3;
+}
+
+/* Espaçamento consistente antes de seções */
+h2 {
+  margin-top: 2.5rem;
+}
+
+h3 {
+  margin-top: 2rem;
+}
+
+/* ---------- Figuras ---------- */
+
+figure {
+  text-align: center;
+  margin: 2rem auto;
+}
+
+figcaption {
+  text-align: center;
+  font-size: 0.9em;
+  color: #555;
+}
+
+/* ---------- Callouts ---------- */
+
+.callout {
+  text-align: left;
+}
+
+/* ---------- Código ---------- */
+
+/* Código em bloco não deve ser justificado */
+pre, code {
+  text-align: left;
+  hyphens: none;
+}
+
+/* ---------- Tabelas ---------- */
+
+table {
+  margin: 1.5rem auto;
+}
+
+th, td {
+  text-align: left;
+}
+
+/* ---------- Base para futuras extensões ---------- */
+
+/*
+Aqui você pode futuramente adicionar:
+- fontes personalizadas
+- largura máxima do texto
+- cores institucionais
+- estilos para PDF (via LaTeX)
+- ajustes específicos por capítulo ou parte
+*/
