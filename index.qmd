@@ -1,57 +1,56 @@
 # Prefácio {.unnumbered}
 
-Este livro resulta da experiência acumulada nos anos de 2024 e 2025 na
-oferta da disciplina *Introdução à Ciência de Dados* para o curso noturno de
-Bacharelado em Administração do IFMG – Campus Formiga. Ele organiza e
-aprofunda os materiais utilizados em sala de aula, com o objetivo de
-oferecer aos estudantes um recurso didático progressivo, acessível e
-alinhado à realidade do ensino público brasileiro.
+Este livro resulta da minha experiência em ministrar a disciplina 
+*Introdução à Ciência de Dados*  nos anos de 2024 e 2025
+para o curso noturno de Bacharelado em Administração do IFMG – Campus Formiga. 
+A intenção é que o livro  organize e aprofunde os materiais utilizados 
+em sala de aula, com o objetivo de oferecer aos estudantes uma 
+referência aberta e, espero, com boa qualidade.
 
-O livro acompanha a estrutura da disciplina e funciona tanto como material
-de apoio às aulas quanto como um registro sistematizado dos conteúdos
-trabalhados ao longo do curso. Ao longo dos capítulos, o leitor encontrará
-referências a materiais complementares, ao site da disciplina e à recursos 
-online, que podem ser utilizadas para estudo autônomo após o
-término das aulas.
+A estrutura do livro é inspirada no programa da disciplina e deve
+funcionar tanto como material de apoio às aulas quanto como um registro 
+dos conteúdos trabalhados ao longo da disciplina. O leitor encontrará
+referências a materiais complementares e à recursos online, que podem ser 
+utilizadas para estudo autônomo.
 
 Embora pensado prioritariamente para os alunos do curso de Administração
 do IFMG – Campus Formiga, o texto foi escrito de modo a poder ser útil a
-estudantes de Administração e áreas afins em outras instituições,
-especialmente àqueles que estão iniciando o estudo de disciplinas que 
-envolvam análise de dados e estatística. Trata-se, portanto, de 
-um material aberto e em desenvolvimento constante.
+estudantes de Administração e áreas afins, especialmente àqueles que estão 
+iniciando o estudo de disciplinas que envolvam análise de dados e estatística. 
 
 O leitor a quem este livro se dirige costuma ter algum contato prévio com
 programação, geralmente por meio de disciplinas introdutórias, mas
 frequentemente apresenta dificuldades com lógica, matemática básica e
 conceitos estatísticos. Além disso, é comum a dependência quase exclusiva
 de planilhas eletrônicas, o que limita a reprodutibilidade, a transparência
-e a escalabilidade das análises. Este livro parte dessa realidade concreta e
+e a escalabilidade das análises. Este livro parte dessa realidade e
 não pressupõe fluência prévia em programação ou estatística.
 
 A proposta é deliberada: as dificuldades inerentes à Ciência de
-Dados não são evitadas, mas introduzidas de forma gradual e
+Dados não são evitadas, pelo contrário, mas introduzidas de forma gradual e
 contextualizada. Conceitos, técnicas e ferramentas são apresentados passo a
 passo, sempre que possível ancorados em exemplos ligados à área de
 Administração. O objetivo não é ensinar apenas comandos, mas contribuir
-para a formação de um modo de pensar analítico, crítico e orientado por
-dados.
+para a formação de um modo de pensar analítico e crítico, necessários 
+para a proposição de soluções basedas em dados.
 
 A linguagem de programação adotada é **R**, escolhida pelo fato de considerá-la a 
-melhor linguagem de programação especializada em análise de dados. O livro também
+melhor linguagem de programação para a análise e visualização de dados. O livro também
 introduz noções básicas de **SQL**, reconhecendo sua importância no trabalho
 com bases de dados reais. Ferramentas como **RStudio**, **Git** e
-**GitHub**, bem como o uso do **terminal**, são apresentadas como parte de um
-ambiente de trabalho coerente, voltado à organização, documentação e
+**GitHub**, bem como o uso do **terminal**, são apresentadas como parte do
+ambiente computacional utilizado, voltado à organização, documentação e
 controle de versões. O sistema **Quarto** é utilizado extensivamente, 
 reforçando a importância da reprodutibilidade, transparência e 
 importância de documentação dos procedimentos de análise.
 
-Este projeto também responde a um grave problema estrutural em minha 
-visão: a escassez de referências atualizadas em português na área de 
-Ciência de Dados e adificuldade de acesso a livros importados em 
-instituições públicas. Nessecontexto, a produção de materiais abertos 
-e adaptados ao contexto local torna-se necessária.
+Minha intenção é que este projeto, em estágio inicial de desenvolvimento, 
+forneça uma contribuiçõa, ainda que modesta, para minimizar um grave problema 
+estrutural: a escassez de referências atualizadas em português na área de Ciência 
+de Dados, a dificuldade de acesso a livros importados por instituições públicas, 
+dada a forte restrição orçamentária à que estas instituições estão submetidas há 
+muitos anos. Nesse contexto, considero que a produção de materiais abertos, de alto 
+nível e adaptados ao contexto local torna-se muito necessária.
 
 
 [**Washington Santos da Silva**](https://washingtonsilva.github.io){target="_blank"}  

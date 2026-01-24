@@ -12,6 +12,7 @@ execute:
 book:
   title: "Introdução à Ciência de Dados para Administração"
   subtitle: "Fundamentos, Técnicas e Aplicações"
+  cover-image: img/capa/capa.png
   author: "Washington Santos da Silva"
   date: 2026-01-19
   date-format: long
