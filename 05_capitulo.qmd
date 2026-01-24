@@ -17,10 +17,11 @@ mínima de projeto. A organização adequada dos arquivos facilita a
 reprodutibilidade, a colaboração e a manutenção do trabalho ao longo do
 tempo, além de tornar mais claras as etapas do processo analítico.
 
-Ao longo da disciplina, os projetos foram organizados de forma
-padronizada, separando dados brutos, dados processados e relatórios.
-Essa mesma lógica será adotada neste livro, servindo como referência para
-os exemplos e códigos apresentados nos capítulos seguintes.
+Ao longo da disciplina, os projetos são organizados de forma
+padronizada, separando dados brutos, dados limpos (ou processados), 
+scripts e relatórios quarto. Essa mesma lógica será adotada neste livro, 
+servindo como referência para os exemplos e códigos apresentados nos 
+próximos capítulos.
 
 Uma estrutura básica de projeto pode ser representada da seguinte forma:
 
@@ -31,15 +32,22 @@ seunome_icd2025/
 │   └── limpos/     # dados após limpeza e transformações
 ├── relatorios/
 │   └── 01-relatorio/
+|       └── 01_relatorio.qmd  
 |── scripts/
-|   └── 01-importacao.R
+|   ├── 01-importacao.R
+|   └── 02-preparacao.R
+|   └── 03-analise_exploratoria.R
 ├── README.md
 └── seunome_icd2025.Rproj
 ```
 
 Essa separação explícita evita que dados originais sejam sobrescritos,
 torna as etapas do processo analítico mais transparentes e facilita a
-verificação e a reprodução das análises realizadas.
+verificação e a reprodução das análises realizadas. Além disso, diversas 
+instituições e empresas com alta maturidade analítica possuem uma estrutura 
+padronizada para projetos envolvendo código e dados.
+
+::: {.callout-tip}
 
 Na prática, recomendamos **fortemente** criar inicialmente um repositório vazio no
 GitHub, cloná-lo localmente e, na pasta clonada do repositório, criar um
@@ -47,6 +55,7 @@ projeto RStudio. A partir desse projeto, os arquivos e diretórios podem
 ser organizados de forma estruturada, com controle de versão via 
 Git e GitHub.
 
+:::
 
 ::: {.callout-tip}
 
