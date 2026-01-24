@@ -34,18 +34,21 @@ Administração. O objetivo não é ensinar apenas comandos, mas contribuir
 para a formação de um modo de pensar analítico e crítico, necessários 
 para a proposição de soluções basedas em dados.
 
-A linguagem de programação adotada é **R**, escolhida pelo fato de considerá-la a 
+A linguagem de programação adotada é *R*, escolhida pelo fato de considerá-la a 
 melhor linguagem de programação para a análise e visualização de dados. O livro também
-introduz noções básicas de **SQL**, reconhecendo sua importância no trabalho
-com bases de dados reais. Ferramentas como **RStudio**, **Git** e
-**GitHub**, bem como o uso do **terminal**, são apresentadas como parte do
+introduz noções básicas de *SQL*, reconhecendo sua importância no trabalho
+com bases de dados reais. Ferramentas como *RStudio*, *Git* e
+*GitHub*, bem como o uso de um *terminal*, são apresentadas como parte do
 ambiente computacional utilizado, voltado à organização, documentação e
-controle de versões. O sistema **Quarto** é utilizado extensivamente, 
-reforçando a importância da reprodutibilidade, transparência e 
-importância de documentação dos procedimentos de análise.
+controle de versões. O sistema *Quarto* é utilizado extensivamente, 
+enfatizando a importância da **reprodutibilidade**, **transparência** e 
+a importância da **documentação** dos procedimentos de análise.
+
+-- TODO: tópicos de probabilidade, estatística (aprendizagem de máquinda?) 
+que serão abordados.
 
 Minha intenção é que este projeto, em estágio inicial de desenvolvimento, 
-forneça uma contribuiçõa, ainda que modesta, para minimizar um grave problema 
+forneça uma contribuição, ainda que modesta, para minimizar um grave problema 
 estrutural: a escassez de referências atualizadas em português na área de Ciência 
 de Dados, a dificuldade de acesso a livros importados por instituições públicas, 
 dada a forte restrição orçamentária à que estas instituições estão submetidas há 
