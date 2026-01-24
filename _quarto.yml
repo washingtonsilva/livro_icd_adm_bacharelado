@@ -10,7 +10,8 @@ execute:
   message: false
 
 book:
-  title: "Introdução à Ciência de Dados para o Bacharelado em Administração"
+  title: "Introdução à Ciência de Dados para Administração"
+  subtitle: "Fundamentos, Técnicas e Aplicações"
   author: "Washington Santos da Silva"
   date: 2026-01-19
   date-format: long
