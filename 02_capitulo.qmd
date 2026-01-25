@@ -3,7 +3,8 @@
 O crescimento da área de dados deu origem a diferentes papéis profissionais,
 que variam conforme o foco técnico, o grau de especialização e a posição no
 fluxo de produção de valor a partir dos dados. Entre os papéis mais comuns
-estão o Analista de Dados, o Cientista de Dados e o Engenheiro de Dados.
+estão o **Analista de Dados**, o **Cientista de Dados** e o 
+**Engenheiro de Dados**.
 
 Embora essas funções sejam conceitualmente distintas, na prática,
 especialmente em organizações de pequeno e médio porte, é comum que um mesmo
@@ -53,8 +54,7 @@ por meio de análises descritivas e diagnósticas.
 
 O Cientista de Dados atua de forma mais aprofundada na modelagem e na
 construção de soluções analíticas, combinando estatística, programação e
-conhecimento do problema de negócio. No nível iniciante, esse papel ainda
-envolve forte aprendizado técnico e conceitual.
+conhecimento do problema de negócio. 
 
 **Habilidades técnicas**
 
@@ -62,14 +62,14 @@ envolve forte aprendizado técnico e conceitual.
   bibliotecas especializadas (por exemplo, tidyverse, pandas,
   scikit-learn, tidymodels).
 
-- Conhecimento em SQL e em bancos de dados relacionais e não relacionais.
+- Conhecimento de SQL e bancos de dados relacionais e não relacionais.
 
 - Familiaridade com ferramentas de versionamento de código (Git) e ambientes
   de desenvolvimento.
 
 **Habilidades analíticas**
 
-- Conhecimentos em estatística aplicada e aprendizagem de máquina.
+- Conhecimento sólido de estatística aplicada e aprendizagem de máquina.
 
 - Capacidade de preparar, transformar e organizar conjuntos de dados para
   análise e modelagem.
@@ -130,17 +130,19 @@ análises descritivas, diagnósticas e preditivas.
 
 Além de competências técnicas, profissionais de dados precisam desenvolver
 habilidades interpessoais e analíticas que permitam transformar resultados
-quantitativos em decisões organizacionais concretas. Essas habilidades são
-essenciais para conectar análises de dados a problemas reais de negócio e
-para comunicar resultados de forma eficaz a diferentes públicos.
+quantitativos em decisões organizacionais concretas. 
+
+Essas habilidades são essenciais para conectar análises de dados a 
+problemas reais de negócio e para comunicar resultados de forma 
+eficaz a diferentes públicos.
 
 - **Pensamento analítico**: Abordar problemas de forma estruturada,
   formular perguntas relevantes, selecionar informações apropriadas e
   buscar soluções baseadas em evidências.
 
-- **Conhecimento do negócio**: Compreender os objetivos da organização,
-  o contexto do mercado e a forma como análises de dados se relacionam com
-  metas estratégicas e operacionais.
+- **Conhecimento do negócio**: Compreender os objetivos e estrutura da 
+  organização, o contexto do mercado e a forma como análises de dados 
+  se relacionam com metas estratégicas e operacionais.
 
 - **Comunicação oral e escrita**: Capacidade de explicar resultados
   técnicos a pessoas sem formação técnica, utilizando linguagem clara,
