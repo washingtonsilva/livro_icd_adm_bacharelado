@@ -290,33 +290,35 @@ div.csl-indent {
 <p>Antes de iniciar qualquer análise, é fundamental definir uma estrutura mínima de projeto. A organização adequada dos arquivos facilita a reprodutibilidade, a colaboração e a manutenção do trabalho ao longo do tempo, além de tornar mais claras as etapas do processo analítico.</p>
 <p>Ao longo da disciplina, os projetos são organizados de forma padronizada, separando dados brutos, dados limpos (ou processados), scripts e relatórios quarto. Essa mesma lógica será adotada neste livro, servindo como referência para os exemplos e códigos apresentados nos próximos capítulos.</p>
 <p>Uma estrutura básica de projeto pode ser representada da seguinte forma:</p>
-<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>seunome_icd2025/</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>├── dados/</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>│   ├── brutos/     # dados originais, sem modificações</span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>│   └── limpos/     # dados após limpeza e transformações</span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>├── relatorios/</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>│   └── 01-relatorio/</span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>       └── 01_relatorio.qmd  </span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>── scripts/</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>   ├── 01-importacao.R</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>   └── 02-preparacao.R</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="pp">|</span>   └── 03-analise_exploratoria.R</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>├── README.md</span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>└── seunome_icd2025.Rproj</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
-<p>Essa separação explícita evita que dados originais sejam sobrescritos, torna as etapas do processo analítico mais transparentes e facilita a verificação e a reprodução das análises realizadas. Além disso, diversas instituições e empresas com alta maturidade analítica possuem uma estrutura padronizada para projetos envolvendo código e dados.</p>
-<div class="callout callout-style-default callout-tip callout-titled">
+<div class="code-copy-outer-scaffold"><div class="sourceCode" id="cb1"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>projeto_junglivet/</span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>├── dados/                     # arquivos de dados utilizados no projeto</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a>│   ├── brutos/                # dados originais, sem modificações</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a>│   └── limpos/                # dados após limpeza e transformações</span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>├── scripts/                   # scripts R organizados por etapa da análise</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>│   ├── 01-importacao.R        # leitura e inspeção inicial dos dados</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a>│   ├── 02-preparacao.R        # limpeza, transformação e criação de variáveis</span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>│   └── 03-analise_exploratoria.R  # gráficos e estatísticas descritivas</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>├── relatorios/                # relatórios reprodutíveis do projeto</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>│   └── 01_relatorio.qmd       # relatório principal em Quarto</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>├── README.md                  # descrição do projeto e instruções gerais</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a>├── .gitignore                 # arquivos e pastas ignorados pelo Git</span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a>└── projeto_junglivet.Rproj    # arquivo do projeto RStudio</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
+<div class="callout callout-style-default callout-note callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Dica
+<span class="screen-reader-only">Nota</span>Fundamentos agora, ferramentas depois
 </div>
 </div>
 <div class="callout-body-container callout-body">
+<p>Neste momento, não é esperado que o leitor domine a linguagem R, o uso de scripts, o sistema Quarto, o ambiente RStudio ou Git e GitHub. Nesta primeira parte do livro, o objetivo é apresentar <strong>a lógica geral de um projeto de Ciência de Dados</strong>, sua organização e seu fluxo de trabalho.</p>
+<p>Essas ferramentas serão apresentadas e discutidas de forma sistemática na Parte 2. Após esse aprendizado, recomenda-se que o leitor retorne a esta seção para reinterpretar a estrutura do projeto à luz das ferramentas utilizadas para implementá-la.</p>
+</div>
+</div>
+<p>Essa separação explícita evita que dados originais sejam corrompidos, torna as etapas do processo analítico mais transparentes e facilita a verificação e a reprodução das análises realizadas. Além disso, diversas instituições e empresas com alta maturidade analítica possuem uma estrutura padronizada para projetos envolvendo código e dados.</p>
 <p>Na prática, recomendamos <strong>fortemente</strong> criar inicialmente um repositório vazio no GitHub, cloná-lo localmente e, na pasta clonada do repositório, criar um projeto RStudio. A partir desse projeto, os arquivos e diretórios podem ser organizados de forma estruturada, com controle de versão via Git e GitHub.</p>
-</div>
-</div>
 <div class="callout callout-style-default callout-tip callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -533,7 +535,7 @@ relações entre algumas variáveis e o indicador de qualidade do whisky para id
 <ul>
 <li><p>A linha horizontal dentro da caixa representa a <strong>mediana</strong> (percentil 50).</p></li>
 <li><p>Os limites inferior e superior da caixa representam o <strong>primeiro quartil</strong> (percentil 25) e o <strong>terceiro quartil</strong> (percentil 75), respectivamente.</p></li>
-<li><p>As “hastes” (whiskers) se estendem até 1,5 vezes o intervalo interquartil (IQR).</p></li>
+<li><p>As “hastes” (whiskers) se estendem até 1,5 vezes o intervalo interquartil (IQR) que é a diferença entre o terceiro e o primeiro quartil.</p></li>
 <li><p>Pontos individuais além das hastes representam <strong>outliers</strong> (valores atípicos)</p></li>
 </ul>
 <p>Essa visualização permite comparar as distribuições do indicador de qualidade entre os diferentes fornecedores de malte, oferecendo indícios iniciais sobre possíveis relações sistemáticas entre o insumo utilizado e a qualidade final do produto.</p>
@@ -573,6 +575,21 @@ Figura&nbsp;5.1: Boxplot comparativo de qualidade do whisky por fornecedor de ma
 <li>o tamanho da amostra (n) em cada grupo.</li>
 </ul>
 <p>Essa tabela ajuda a confirmar, com números, as diferenças sugeridas pelo gráfico e também permite avaliar o quanto os resultados podem ser afetados por tamanhos de amostra pequenos.</p>
+<div class="callout callout-style-default callout-note callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+<span class="screen-reader-only">Nota</span>Por que utilizamos mediana e IQR?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Na análise exploratória, optamos por resumir os dados utilizando a <strong>mediana</strong> e o <strong>intervalo interquartil (IQR)</strong>, em vez da média e do desvio-padrão. Essa escolha não é arbitrária.</p>
+<p>Distribuições assimétricas ou com valores extremos (outliers) são comuns em dados reais de processos produtivos. Nessas situações, a média pode ser fortemente influenciada por poucos valores atípicos, enquanto a mediana representa melhor o comportamento típico dos dados. De forma análoga, o IQR fornece uma medida de dispersão mais robusta, coerente com a informação visual apresentada no boxplot.</p>
+<p>Esses conceitos — assimetria, medidas de posição e medidas de dispersão — serão estudados de forma sistemática na parte do livro dedicada à análise estatística. Neste momento, o objetivo é apenas compreender como essas medidas ajudam a interpretar padrões observados nos dados.</p>
+</div>
+</div>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>dados_destilaria_limpos <span class="sc">%&gt;%</span></span>
 <span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(fornecedor_malte) <span class="sc">%&gt;%</span></span>
