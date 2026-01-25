@@ -41,7 +41,7 @@ projeto_junglivet/
 └── projeto_junglivet.Rproj    # arquivo do projeto RStudio
 ```
 
-::: {.callout-note}
+::: {.callout-note icon="false"}
 ## Fundamentos agora, ferramentas depois 
 
 Neste momento, não é esperado que o leitor domine a linguagem R, o uso de
@@ -71,6 +71,7 @@ Git e GitHub.
 
 
 ::: {.callout-tip}
+## Organização do Projeto
 
 A *organização das pastas e arquivos do projeto* não é um detalhe técnico, 
 mas parte central da reprodutibilidade e do trabalho em equipe. Um projeto 
@@ -412,7 +413,7 @@ Essa tabela ajuda a confirmar, com números, as diferenças sugeridas pelo
 gráfico e também permite avaliar o quanto os resultados podem ser afetados
 por tamanhos de amostra pequenos.
 
-::: {.callout-note}
+::: {.callout-tip}
 ## Por que utilizamos mediana e IQR?
 
 Na análise exploratória, optamos por resumir os dados utilizando a
@@ -627,12 +628,13 @@ mais sistemática.
   ajustes em etapas do processo produtivo e a definição de indicadores de
   monitoramento contínuo da qualidade.
 
-::: {.callout-note}
+::: {.callout-tip}
+## Modelagem
 
-No contexto dE CRISP-DM, modelagem **não se confunde** com aprendizagem de
-máquina. Modelar pode significar aplicar métodos estatísticos tradicionais
-para comparar grupos, explicar relações e apoiar decisões, sem a necessidade
-de construir modelos preditivos complexos.
+No contexto da Ciência de Dados e CRISP-DM, modelagem **não se confunde** 
+com aprendizagem de máquina. Modelar pode significar aplicar métodos 
+estatísticos tradicionais para comparar grupos, explicar relações e apoiar 
+decisões, sem a necessidade de construir modelos preditivos complexos.
 
 :::
 
