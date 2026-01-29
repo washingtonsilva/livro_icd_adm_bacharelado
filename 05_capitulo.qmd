@@ -114,11 +114,49 @@ negócio, antes de qualquer decisão técnica.
 Nesta fase, ainda não buscamos respostas nos dados, mas sim formular as
 perguntas corretas.
 
+### Fazer boas perguntas, alinhar expectativas e reconhecer vieses
+
+Na prática profissional, compreender o problema de negócio começa pela
+capacidade do analista de formular boas perguntas. Problemas raramente
+chegam bem definidos, e dados, por si só, não explicam o contexto em que são
+gerados. Fazer perguntas claras, relevantes e acionáveis às partes
+interessadas é o que permite entender a situação organizacional e, somente
+então, identificar o problema a ser analisado.
+
+Esse processo envolve dialogar com as partes interessadas, compreender suas
+necessidades e alinhar expectativas e objetivos antes do início da
+análise. Mesmo análises tecnicamente corretas podem falhar se não estiverem
+alinhadas ao que gestores e decisores esperam obter como resultado. Por isso,
+o sucesso de um projeto deve ser definido de forma compartilhada, ainda na
+fase de Compreensão do Negócio.
+
+Além disso, é fundamental reconhecer desde o início que os dados disponíveis
+podem refletir viéses e questões de justiça, e não apenas limitações
+técnicas. Conjuntos de dados podem estar incompletos, representar apenas
+determinados grupos ou incorporar decisões passadas que não foram neutras.
+Ignorar esses aspectos pode levar a interpretações equivocadas ou a decisões
+injustas.
+
+A partir das conversas iniciais com as partes interessadas e, em especial,
+com o diretor de operações — responsável direto pelo processo produtivo —,
+o analista de dados identificou alguns fatores recorrentes apontados como
+potencialmente relevantes para a qualidade do whisky. Entre eles destacam-se
+o **fornecedor do malte**, o **mestre responsável pela produção** e a 
+**cor do whisky**, frequentemente mencionados como elementos associados a variações
+na qualidade do produto final. Esses fatores, levantados no diálogo com o
+especialista do negócio, orientam quais variáveis devem ser observadas com
+maior atenção nas etapas seguintes da análise.
+
+Assim, a fase de Compreensão do Negócio não se limita a definir um problema,
+mas estabelece as bases conceituais, práticas e éticas que orientam todo o
+processo de análise de dados.
+
 
 ## Fase 2: Compreensão dos Dados
 
-Nesta etapa, analisamos os dados disponíveis, sua estrutura e limitações,
-antes de qualquer transformação ou modelagem.
+Nesta etapa, analisamos os dados disponíveis, sua estrutura e limitações, 
+possíveis vieses, entre outras questões, antes de qualquer transformação ou 
+análise e modelagem.
 
 
 ### Dicionário de dados
@@ -249,10 +287,26 @@ e indica automaticamente a presença de valores ausentes (NA)
 summary(dados_destilaria)
 ```
 
-A saída da função mostra que há pelo menos um valor faltante (NA).
-Com a inspeção de algumas linhas, é possível localizar rapidamente esse tipo
-de problema e decidir como tratá-lo na preparação dos dados (por exemplo,
-remover a observação ou investigar sua origem).
+```{r}
+# Verifica o número de observações por fornecedor de malte
+dados_destilaria %>%
+  count(MALTING)
+
+# Verifica o número de observações por mestre responsável
+dados_destilaria %>%
+  count(MANUFACTURER)
+```
+
+
+Além da presença de valores ausentes, a inspeção inicial dos dados permite
+avaliar aspectos relacionados à **representatividade** do conjunto disponível.
+A contagem de observações por fornecedor de malte e por mestre responsável
+mostra que alguns grupos possuem **tamanhos de amostra reduzidos** e
+**desbalanceados** em relação a outros. Esse tipo de assimetria pode introduzir
+**viés de representatividade**, afetando a justiça e a confiabilidade de
+comparações futuras. Reconhecer esse aspecto ainda na fase de Compreensão dos
+Dados é fundamental para interpretar com cautela os resultados exploratórios e
+evitar conclusões precipitadas.
 
 
 
