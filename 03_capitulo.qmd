@@ -2,36 +2,65 @@
 
 Este capítulo apresenta a metodologia CRISP-DM (*Cross-Industry Standard
 Process for Data Mining*) [@ibm_crisp_dm], amplamente utilizada para estruturar
-projetos de Ciência de Dados. O objetivo é oferecer uma visão clara e
-operacional do método, com ênfase no papel do administrador na condução,
-coordenação e alinhamento estratégico desses projetos.
+projetos de Ciência de Dados. 
+
+O objetivo é oferecer uma visão clara e operacional do método, com ênfase no
+papel do administrador na condução, coordenação e alinhamento estratégico
+desses projetos, especialmente na formulação de perguntas, definição de
+objetivos e no desenvolvimento de análises de dados em nível compatível 
+com sua formação e área de atuação, em diálogo com as partes interessadas.
+
 
 
 ## O problema do “código antes do plano”
 
 Projetos de dados frequentemente falham não por limitações técnicas, mas
-pela ausência de uma metodologia clara. É comum que equipes iniciem o
-desenvolvimento de modelos ou scripts antes mesmo de compreender o problema
-de negócio a ser resolvido.
+pela ausência de uma metodologia clara. É comum que equipes iniciem o trabalho 
+técnico (como escrever código, ajustar modelos ou gerar
+visualizações) antes mesmo de compreender o contexto 
+e identificar o problema de negócio a ser resolvido.
 
 Esse tipo de abordagem tende a gerar desalinhamento entre soluções técnicas
 e necessidades organizacionais, ciclos recorrentes de retrabalho,
 desperdício de tempo e recursos, além de dificuldades para escalar projetos
 piloto para soluções corporativas.
 
+Em muitos casos, esse problema não decorre da falta de habilidade técnica,
+mas da ausência de um processo estruturado de formulação de perguntas. Quando
+o problema de negócio não é explorado de forma iterativa junto às partes
+interessadas, o chamado “projeto de análise de dados” tende a ser frágil ou 
+mal definido, e soluções tecnicamente corretas podem ser desenvolvidas para 
+perguntas mal formuladas ouirrelevantes do ponto de vista organizacional.
+
 
 
 ## O papel do administrador em projetos de dados
 
-Nesse contexto, o administrador desempenha papel central. Cabe a ele
-assegurar que projetos de dados tenham início a partir de objetivos de
-negócio claramente definidos, com critérios mensuráveis de sucesso
-estabelecidos antes da implementação técnica.
+Em projetos de dados, o administrador não atua apenas como gestor ou
+intermediário, mas pode também desempenhar o papel de analista de dados,
+especialmente quando possui formação e competências básicas para tal. Na
+prática, ele pode atuar como **dono do problema de negócio** (quem define o que
+precisa ser resolvido e por quê), como **gestor do projeto** (quem coordena
+prazos, recursos e entregas) e como **analista de dados** em nível compatível
+com sua área de atuação. O que varia entre contextos organizacionais não é a
+possibilidade de o administrador analisar dados, mas o grau de profundidade
+técnica exigido em cada projeto.
 
-Além disso, o administrador atua como elo entre equipes técnicas e as
-partes interessadas no projeto, articulando expectativas, restrições e
-prioridades organizacionais, e garantindo que os resultados produzidos
-sejam relevantes para a tomada de decisão.
+Independentemente do papel específico assumido, ele pode contribuir 
+decisivamente ao buscar assegurar que o trabalho analítico — seja ele c
+onduzido pelo próprio administrador ou em conjunto com equipes técnicas — 
+permaneça ancorado em objetivos organizacionais claros e em problemas 
+bem definidos.
+
+Isso envolve transformar demandas genéricas em perguntas bem formuladas,
+negociar prioridades e alinhar expectativas com as partes interessadas,
+incluindo especialistas do processo, analistas e os tomadores de decisão.
+Também envolve definir critérios de sucesso que façam sentido do ponto de vista
+do negócio, estabelecer restrições e riscos relevantes (custos, prazos,
+conformidade e ética) e assegurar que os resultados sejam comunicados de modo
+acionável. Quando esse alinhamento é conduzido de forma contínua e iterativa,
+o projeto reduz retrabalho, evita soluções para o problema errado e aumenta a
+chance de impacto real positivo na tomada de decisão.
 
 
 
@@ -46,6 +75,9 @@ O CRISP-DM fornece contexto e direção para o uso dessas ferramentas,
 enfatizando que a modelagem é apenas uma das etapas de um processo mais
 amplo, orientado por objetivos organizacionais.
 
+Nesse sentido, a metodologia não apenas orienta o uso das ferramentas, mas
+também define quais perguntas devem ser feitas, quais dados são relevantes e
+como os resultados devem ser interpretados no contexto organizacional.
 
 
 ## CRISP-DM como estrutura orientadora
@@ -65,11 +97,11 @@ knitr::include_graphics("img/02-cap/crispdm.png")
 
 As fases funcionam como pontos de verificação, permitindo avaliar o
 progresso, alinhar expectativas e decidir se o projeto deve avançar, ser
-ajustado ou interrompido.
+ajustado ou interrompido. Na prática, esse processo é iterativo: novas
+perguntas podem emergir em fases posteriores, exigindo revisões nos objetivos
+de negócio ou no entendimento dos dados.
 
-
-
-## Fase 1: Compreensão do Negócio (*Business Understanding*)
+## Fase 1: Compreensão do Negócio (Business Understanding)
 
 A primeira fase do CRISP-DM tem como foco alinhar a análise de dados aos
 objetivos empresariais. Antes de qualquer coleta, modelagem ou análise, é
@@ -80,23 +112,36 @@ Nessa etapa, objetivos de negócio são definidos, a situação organizacional
 é avaliada, as partes interessadas são identificadas, metas analíticas são
 estabelecidas e um plano de projeto é elaborado de forma realista.
 
-### Checklist da Fase 1
-
-| #   | Tarefa                          | Resultados esperados                  |
-| --- | ------------------------------- | ------------------------------------- |
-| 1.1 | Determinar objetivos de negócio | Contexto e critérios de sucesso       |
-| 1.2 | Avaliar situação                | Recursos, restrições e riscos         |
-| 1.3 | Alinhar partes interessadas     | Expectativas e responsabilidades      |
-| 1.4 | Determinar objetivos de análise | Metas analíticas e critérios técnicos |
-| 1.5 | Produzir plano do projeto       | Cronograma e responsabilidades        |
+A Compreensão do Negócio é, essencialmente, um processo de formulação e
+refinamento de perguntas. Objetivos, metas analíticas e planos de projeto não
+surgem de forma imediata, mas são construídos de maneira iterativa a partir do
+diálogo com partes interessadas e especialistas no problema, que ajudam a
+delimitar o escopo, as prioridades e os critérios de sucesso da análise.
 
 
 
-## Fase 2: Compreensão dos Dados (*Data Understanding*)
+| #   | Tarefa                                      | Resultados esperados                          |
+|-----|---------------------------------------------|-----------------------------------------------|
+| 1.1 | Formular iterativamente perguntas de negócio | Perguntas claras, relevantes e acionáveis     |
+| 1.2 | Determinar objetivos de negócio             | Contexto e critérios de sucesso               |
+| 1.3 | Avaliar situação                            | Recursos, restrições e riscos                 |
+| 1.4 | Alinhar partes interessadas                 | Expectativas e objetivos alinhados            |
+| 1.5 | Determinar objetivos de análise             | Metas analíticas e critérios técnicos         |
+| 1.6 | Produzir plano do projeto                   | Cronograma e responsabilidades                |
+: Checklist da Fase 1 (Compreensão do Negócio e Formulação de Perguntas). 
+
+
+## Fase 2: Compreensão dos Dados (Data Understanding)
 
 A compreensão dos dados envolve conhecer profundamente as informações que
 serão utilizadas no projeto, independentemente de elas já existirem ou
 precisarem ser produzidas.
+
+Além de aspectos técnicos, a Compreensão dos Dados envolve avaliar potenciais
+vieses e questões de justiça associados ao conjunto disponível. Dados podem
+representar de forma desigual determinados grupos, refletir decisões passadas
+ou omitir informações relevantes, o que pode influenciar a interpretação dos
+resultados e as decisões tomadas a partir deles.
 
 Em muitos projetos, os dados não estão imediatamente disponíveis, sendo
 necessário coletá-los a partir de fontes externas, bases públicas,
@@ -108,18 +153,19 @@ As atividades incluem coleta ou produção inicial, descrição, exploração e
 verificação de qualidade, fornecendo base empírica sólida para as etapas
 seguintes.
 
-### Checklist da Fase 2
 
-| #   | Tarefa                        | Resultados esperados          |
-| --- | ----------------------------- | ----------------------------- |
-| 2.1 | Coletar ou produzir dados     | Relatório ou desenho de dados |
-| 2.2 | Descrever dados               | Relatório de descrição        |
-| 2.3 | Explorar dados                | Relatório de exploração       |
-| 2.4 | Verificar qualidade dos dados | Relatório de qualidade        |
+| #   | Tarefa                           | Resultados esperados                  |
+|-----|----------------------------------|---------------------------------------|
+| 2.1 | Coletar ou produzir dados        | Relatório ou desenho de dados         |
+| 2.2 | Descrever dados                  | Relatório de descrição                |
+| 2.3 | Explorar dados                   | Relatório de exploração               |
+| 2.4 | Verificar qualidade dos dados    | Relatório de qualidade                |
+| 2.5 | Avaliar viés e representatividade| Riscos e limitações interpretativas   |
+: Checklist da Fase 2.
 
 
 
-## Fase 3: Preparação dos Dados (*Data Preparation*)
+## Fase 3: Preparação dos Dados (Data Preparation)
 
 A preparação dos dados é frequentemente a fase mais trabalhosa do
 processo. Seu objetivo é transformar dados brutos ou heterogêneos em um
@@ -129,40 +175,40 @@ Inclui seleção de registros e variáveis, tratamento de inconsistências,
 criação de atributos derivados, integração de múltiplas fontes e
 padronização de formatos, com documentação das decisões adotadas.
 
-### Checklist da Fase 3
+
 
 | #   | Tarefa           | Resultados esperados             |
-| --- | ---------------- | -------------------------------- |
+|-----|------------------|----------------------------------|
 | 3.1 | Selecionar dados | Critérios de inclusão e exclusão |
 | 3.2 | Limpar dados     | Relatório de limpeza             |
 | 3.3 | Construir dados  | Atributos derivados              |
 | 3.4 | Integrar dados   | Conjuntos integrados             |
 | 3.5 | Formatar dados   | Conjunto final documentado       |
+: Checklist da Fase 3.
 
 
 
-## Fase 4: Modelagem (*Modeling*)
+## Fase 4: Modelagem (Modeling)
 
-Na fase de modelagem, técnicas estatísticas e de aprendagem de máquisa são 
-aplicadas aosdados preparados. São escolhidos algoritmos compatíveis com 
-os objetivos do projeto, definidos procedimentos de validação e ajustados 
+Na fase de modelagem, técnicas estatísticas e de aprendizagem de máquina são
+aplicadas aos dados preparados. São escolhidos algoritmos compatíveis com
+os objetivos do projeto, definidos procedimentos de validação e ajustados
 parâmetros dos modelos.
 
 Decisões tomadas nessa fase dependem fortemente das escolhas realizadas nas
 etapas anteriores e, com frequência, exigem iteração com fases anteriores.
 
-### Checklist da Fase 4
-
 | #   | Tarefa                | Resultados esperados    |
-| --- | --------------------- | ----------------------- |
+|-----|-----------------------|-------------------------|
 | 4.1 | Selecionar técnicas   | Técnica e pressupostos  |
 | 4.2 | Gerar design de teste | Estratégia de validação |
 | 4.3 | Construir modelo      | Modelos e parâmetros    |
 | 4.4 | Avaliar modelo        | Métricas e ajustes      |
+: Checklist da Fase 4.
 
 
 
-## Fase 5: Avaliação (*Evaluation*)
+## Fase 5: Avaliação (Evaluation)
 
 A avaliação verifica se os resultados obtidos atendem aos objetivos de
 negócio definidos inicialmente. Não se trata apenas de desempenho técnico,
@@ -172,17 +218,17 @@ organizacional.
 Nesta etapa, decide-se se o modelo está pronto para uso, se ajustes
 adicionais são necessários ou se novas análises devem ser conduzidas.
 
-### Checklist da Fase 5
+Checklist da Fase 5
 
 | #   | Tarefa                     | Resultados esperados                |
-| --- | -------------------------- | ----------------------------------- |
+|-----|----------------------------|-------------------------------------|
 | 5.1 | Avaliar resultados         | Comparação com critérios de sucesso |
 | 5.2 | Revisar processo           | Lições aprendidas                   |
 | 5.3 | Determinar próximos passos | Decisões e ações                    |
 
 
 
-## Fase 6: Implementação (*Deployment*)
+## Fase 6: Implementação (Deployment)
 
 A implementação transforma análises e modelos em instrumentos efetivos de
 decisão. Envolve integração com sistemas organizacionais, definição de
@@ -192,14 +238,13 @@ gestores.
 Essa fase também inclui a documentação do projeto e a consolidação de
 aprendizados, contribuindo para a maturidade analítica da organização.
 
-### Checklist da Fase 6
-
 | #   | Tarefa                              | Resultados esperados        |
-| --- | ----------------------------------- | --------------------------- |
+|-----|-------------------------------------|-----------------------------|
 | 6.1 | Planejar implantação                | Plano de implantação        |
 | 6.2 | Planejar monitoramento e manutenção | Plano de monitoramento      |
 | 6.3 | Produzir relatório final            | Relatório e apresentação    |
 | 6.4 | Revisar projeto                     | Documentação de experiência |
+: Checklist da Fase 6
 
 
 
