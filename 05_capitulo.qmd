@@ -8,6 +8,16 @@ não é esgotar os tópicos abordados, mas oferecer uma visão geral do processo
 de análise de dados no contexto da metodologia CRISP-DM. Este estudo de 
 caso é baseado em um exemplo fictício adaptado do livro de @jung2024modern.
 
+**Como ler este capítulo**: o objetivo aqui é oferecer uma visão geral do
+fluxo de trabalho de um projeto de Ciência de Dados, do problema de negócio
+até uma análise exploratória inicial. Você não precisa dominar a linguagem R, 
+RStudio, Quarto ou Git e GitHub neste momento.
+
+Se esta é sua primeira leitura da Parte 1, concentre-se em entender o que
+está sendo feito e por que cada decisão é tomada. Na Parte 2, as
+ferramentas serão apresentadas sistematicamente; depois disso, recomenda-se
+retornar a este capítulo e reler os trechos de código com maior segurança.
+
 
 
 ## Estrutura do projeto e organização dos arquivos
@@ -41,34 +51,11 @@ projeto_junglivet/
 └── projeto_junglivet.Rproj    # arquivo do projeto RStudio
 ```
 
-::: {.callout-note icon="false"}
-## Fundamentos agora, ferramentas depois 
-
-Neste momento, não é esperado que o leitor domine a linguagem R, o uso de
-scripts, o sistema Quarto, o ambiente RStudio ou Git e GitHub. Nesta 
-primeira parte do livro, o objetivo é apresentar 
-**a lógica geral de um projeto de Ciência de Dados**, sua organização e 
-seu fluxo de trabalho.
-
-Essas ferramentas serão apresentadas e discutidas de forma sistemática na
-Parte 2. Após esse aprendizado, recomenda-se que o leitor retorne a esta
-seção para reinterpretar a estrutura do projeto à luz das ferramentas
-utilizadas para implementá-la.
-
-:::
-
 Essa separação explícita evita que dados originais sejam corrompidos,
 torna as etapas do processo analítico mais transparentes e facilita a
 verificação e a reprodução das análises realizadas. Além disso, diversas 
 instituições e empresas com alta maturidade analítica possuem uma estrutura 
 padronizada para projetos envolvendo código e dados.
-
-Na prática, recomendamos **fortemente** criar inicialmente um repositório vazio no
-GitHub, cloná-lo localmente e, na pasta clonada do repositório, criar um
-projeto RStudio. A partir desse projeto, os arquivos e diretórios podem
-ser organizados de forma estruturada, com controle de versão via 
-Git e GitHub.
-
 
 ::: {.callout-tip}
 ## Organização do Projeto
@@ -79,6 +66,19 @@ bem estruturado permite que análises sejam compreendidas, verificadas e
 reproduzidas por outras pessoas — ou pelo próprio autor em um momento posterior.
 
 :::
+
+Na prática, recomendamos **fortemente** criar inicialmente um repositório vazio no
+GitHub, cloná-lo localmente e, na pasta clonada do repositório, criar um
+projeto RStudio. A partir desse projeto, os arquivos e diretórios podem
+ser organizados de forma estruturada, com controle de versão via 
+Git e GitHub.
+
+**Nota sobre reprodutibilidade**: ao longo deste estudo de caso, assumimos
+que o trabalho é conduzido em um projeto RStudio, com os arquivos
+organizados em pastas e com o histórico de alterações registrado por
+controle de versão (Git) e sincronizado em um repositório no GitHub.
+O relatório é produzido em Quarto, permitindo que resultados, figuras e
+tabelas sejam reproduzidos a partir do código e dos dados.
 
 
 
@@ -99,17 +99,6 @@ problema.
 Os dados fornecidos correspondem ao registro da linha de produção das
 últimas duas semanas.
 
-
-## Organização do projeto e reprodutibilidade
-
-Antes de qualquer análise, o projeto foi organizado seguindo uma estrutura
-padronizada, separando dados brutos, dados tratados e relatórios. Essa
-organização facilita a reprodutibilidade, a documentação e o trabalho
-colaborativo.
-
-A análise apresentada neste capítulo foi desenvolvida em um projeto RStudio
-versionado com Git e sincronizado com GitHub, utilizando o sistema Quarto
-para geração de relatórios reprodutíveis.
 
 
 ## Fase 1: Compreensão do Negócio
@@ -213,7 +202,7 @@ das variáveis originais.
 # a partir da raiz do projeto.
 caminho <- here::here("dados/brutos/productionlog_sample.csv")
 
-# Importa o arquivo com a funçào read_csv
+# Importa o arquivo com a função read_csv
 dados_destilaria <- readr::read_csv(caminho)
 ```
 
@@ -239,6 +228,16 @@ oferece uma visão concisa e informativa sobre:
 dplyr::glimpse(dados_destilaria)
 ```
 
+Antes de avançar para estatísticas resumidas, é útil observar algumas linhas
+do conjunto de dados. Isso ajuda a localizar problemas comuns, como valores
+ausentes, categorias inesperadas e registros inconsistentes.
+
+```{r}
+# Exibe as primeiras linhas do conjunto de dados
+dplyr::slice_head(dados_destilaria, n = 12)
+```
+
+
 Além disso, estatísticas descritivas básicas ajudam a identificar valores
 ausentes, escalas e possíveis inconsistências.
 
@@ -250,8 +249,10 @@ e indica automaticamente a presença de valores ausentes (NA)
 summary(dados_destilaria)
 ```
 
-A saída da função mostra que há pelo menos um valor faltante (`NA`) em 
-uma linha (observação) do arquivo.
+A saída da função mostra que há pelo menos um valor faltante (NA).
+Com a inspeção de algumas linhas, é possível localizar rapidamente esse tipo
+de problema e decidir como tratá-lo na preparação dos dados (por exemplo,
+remover a observação ou investigar sua origem).
 
 
 
@@ -458,7 +459,7 @@ consistência na qualidade do insumo fornecido por *Matro Ltd*.
 
 Por fim, é necessária cautela na interpretação destes resultados, pois os
 tamanhos de amostra são pequenos (n = 5 para dois fornecedores) e 
-diferentes em relaçõa ao malte próprio da destilaria. Em etapas
+diferentes em relação ao malte próprio da destilaria. Em etapas
 posteriores, métodos estatísticos formais poderão avaliar se as diferenças
 observadas persistem e se são compatíveis com variações aleatórias.
 
@@ -638,6 +639,31 @@ decisões, sem a necessidade de construir modelos preditivos complexos.
 
 :::
 
+
+::: {.callout-tip icon=“false”}
+## Checklist rápido deste estudo de caso (CRISP-DM)
+
+Ao final deste capítulo, verifique se você consegue responder “sim” às
+questões abaixo:
+
+1.	Eu consigo descrever o problema de negócio, o objetivo e o
+critério de sucesso do projeto?
+
+2.	Eu identifiquei as variáveis do arquivo e compreendi seus significados
+(dicionário de dados)?
+
+3.	Eu inspecionei a estrutura do conjunto de dados e reconheci problemas
+potenciais (por exemplo, valores ausentes e colunas irrelevantes)?
+
+4.	Eu gerei uma versão limpa e documentada do conjunto de dados?
+
+5.	Eu combinei gráficos e estatísticas descritivas para levantar
+hipóteses iniciais (por exemplo, fornecedor, mestre responsável e cor)?
+
+6.	Eu consigo explicar por que os achados aqui são exploratórios e não
+representam prova de causalidade?
+
+:::
 
 ## Resumo e Próximos Passos
 
