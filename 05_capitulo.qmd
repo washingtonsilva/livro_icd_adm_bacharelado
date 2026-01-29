@@ -637,24 +637,28 @@ posteriores do CRISP-DM.
 ### Conclusão da Análise Exploratória
 
 A análise exploratória dos dados da linha de produção da Junglivet Whisky
-Company indica que a variação observada na qualidade do produto não ocorre de
-forma puramente aleatória. Pelo contrário, os resultados sugerem associações
+Company **indica** que a variação observada na qualidade do produto não ocorre de
+forma puramente aleatória. Os resultados sugerem associações
 entre o indicador de qualidade e diferentes dimensões do processo produtivo.
 
 Em particular, a origem do malte — distinguindo insumos produzidos
 internamente daqueles adquiridos de fornecedores externos — e o indicador de
 cor do whisky emergem como variáveis potencialmente relevantes, apresentando
-padrões consistentes de associação com o desempenho em qualidade. Além disso,
-a análise por mestre responsável sugere diferenças na distribuição do
-indicador de qualidade, embora essas evidências sejam fortemente limitadas pelo
-desbalanceamento dos tamanhos de amostra entre os mestres.
+padrões consistentes de associação com o desempenho em qualidade. A análise
+por mestre responsável também sugere diferenças na distribuição do indicador
+de qualidade; no entanto, essas evidências devem ser interpretadas com cautela,
+dado o **pequeno tamanho da amostra** e o **desbalanceamento entre os grupos**,
+que podem introduzir **viés de representatividade**.
 
 É fundamental destacar que esses achados têm caráter estritamente
 exploratório. As associações observadas não constituem provas de causalidade,
 nem permitem inferências conclusivas sobre o efeito isolado de cada fator.
-Ainda assim, elas cumprem o papel central da Análise Exploratória de Dados ao
-fornecer hipóteses analíticas bem fundamentadas e ao orientar as próximas fases
-do processo CRISP-DM, nas quais métodos estatísticos mais formais poderão ser
+Além disso, a presença de dados desbalanceados e pouco representativos pode
+afetar não apenas a robustez estatística, mas também a **justiça das
+interpretações**, caso os resultados sejam extrapolados indevidamente. Ainda
+assim, a Análise Exploratória de Dados cumpre seu papel central ao fornecer
+hipóteses analíticas bem fundamentadas e ao orientar as próximas fases do
+processo CRISP-DM, nas quais métodos estatísticos mais formais poderão ser
 empregados para avaliar a robustez e a relevância prática desses padrões.
 
 
@@ -694,28 +698,38 @@ decisões, sem a necessidade de construir modelos preditivos complexos.
 :::
 
 
-::: {.callout-tip icon=“false”}
+::: {.callout-tip icon="false"}
 ## Checklist rápido deste estudo de caso (CRISP-DM)
 
 Ao final deste capítulo, verifique se você consegue responder “sim” às
 questões abaixo:
 
-1.	Eu consigo descrever o problema de negócio, o objetivo e o
-critério de sucesso do projeto?
+1. Eu consigo explicar qual é o **problema de negócio**, qual o **objetivo da
+   análise** e como o **sucesso do projeto** foi definido em conjunto com as
+   partes interessadas?
 
-2.	Eu identifiquei as variáveis do arquivo e compreendi seus significados
-(dicionário de dados)?
+2. Eu compreendo por que **fazer boas perguntas** e dialogar com especialistas
+   do negócio foi essencial para identificar os fatores inicialmente
+   considerados relevantes para a qualidade do whisky?
 
-3.	Eu inspecionei a estrutura do conjunto de dados e reconheci problemas
-potenciais (por exemplo, valores ausentes e colunas irrelevantes)?
+3. Eu consigo identificar as **variáveis disponíveis**, compreender seus
+   significados (dicionário de dados) e relacioná-las aos fatores levantados na
+   fase de Compreensão do Negócio?
 
-4.	Eu gerei uma versão limpa e documentada do conjunto de dados?
+4. Eu inspecionei a estrutura dos dados e reconheci **problemas potenciais**,
+   como valores ausentes, tamanhos de amostra reduzidos e **desbalanceamento
+   entre grupos**, que podem afetar a representatividade dos resultados?
 
-5.	Eu combinei gráficos e estatísticas descritivas para levantar
-hipóteses iniciais (por exemplo, fornecedor, mestre responsável e cor)?
+5. Eu preparei uma versão **limpa e documentada** do conjunto de dados,
+   adequada para análises exploratórias posteriores?
 
-6.	Eu consigo explicar por que os achados aqui são exploratórios e não
-representam prova de causalidade?
+6. Eu combinei **visualizações gráficas** e **estatísticas descritivas** para
+   levantar hipóteses iniciais, interpretando os resultados com cautela diante
+   do caráter exploratório da análise?
+
+7. Eu consigo explicar por que os achados apresentados **não implicam
+   causalidade** e como **viés e questões de justiça** podem influenciar a
+   interpretação dos resultados?
 
 :::
 
