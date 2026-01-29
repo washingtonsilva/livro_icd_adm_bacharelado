@@ -259,8 +259,9 @@ div.csl-indent {
   <li><a href="#relação-entre-cor-e-qualidade" id="toc-relação-entre-cor-e-qualidade" class="nav-link" data-scroll-target="#relação-entre-cor-e-qualidade"><span class="header-section-number">5.6.3</span> Relação entre cor e qualidade</a></li>
   <li><a href="#conclusão-da-análise-exploratória" id="toc-conclusão-da-análise-exploratória" class="nav-link" data-scroll-target="#conclusão-da-análise-exploratória"><span class="header-section-number">5.6.4</span> Conclusão da Análise Exploratória</a></li>
   </ul></li>
-  <li><a href="#próximas-fases" id="toc-próximas-fases" class="nav-link" data-scroll-target="#próximas-fases"><span class="header-section-number">5.7</span> Próximas Fases</a></li>
-  <li><a href="#resumo-e-próximos-passos" id="toc-resumo-e-próximos-passos" class="nav-link" data-scroll-target="#resumo-e-próximos-passos"><span class="header-section-number">5.8</span> Resumo e Próximos Passos</a></li>
+  <li><a href="#verificação-de-aprendizagem" id="toc-verificação-de-aprendizagem" class="nav-link" data-scroll-target="#verificação-de-aprendizagem"><span class="header-section-number">5.7</span> Verificação de aprendizagem</a></li>
+  <li><a href="#próximas-fases" id="toc-próximas-fases" class="nav-link" data-scroll-target="#próximas-fases"><span class="header-section-number">5.8</span> Próximas Fases</a></li>
+  <li><a href="#resumo-e-próximos-passos" id="toc-resumo-e-próximos-passos" class="nav-link" data-scroll-target="#resumo-e-próximos-passos"><span class="header-section-number">5.9</span> Resumo e Próximos Passos</a></li>
   </ul>
 </nav>
     </div>
@@ -628,8 +629,8 @@ Figura&nbsp;5.1: Boxplot comparativo de qualidade do whisky por fornecedor de ma
 </div>
 <div class="callout-body-container callout-body">
 <p>Na análise exploratória, optamos por resumir os dados utilizando a <strong>mediana</strong> e o <strong>intervalo interquartil (IQR)</strong>, em vez da média e do desvio-padrão. Essa escolha não é arbitrária.</p>
-<p>Distribuições assimétricas ou com valores extremos (outliers) são comuns em dados reais de processos produtivos. Nessas situações, a média pode ser fortemente influenciada por poucos valores atípicos, enquanto a mediana representa melhor o comportamento típico dos dados. De forma análoga, o IQR fornece uma medida de dispersão mais robusta, coerente com a informação visual apresentada no boxplot.</p>
-<p>Esses conceitos — assimetria, medidas de posição e medidas de dispersão — serão estudados de forma sistemática na parte do livro dedicada à análise estatística. Neste momento, o objetivo é apenas compreender como essas medidas ajudam a interpretar padrões observados nos dados.</p>
+<p>Distribuições assimétricas ou com valores extremos (outliers) são comuns em dados reais de processos produtivos. Nessas situações, a média pode ser fortemente influenciada por poucos valores atípicos, enquanto a mediana representa melhor o comportamento típico dos dados. De forma análoga, o IQR fornece uma medida de variabilidade mais robusta, coerente com a informação visual apresentada no boxplot.</p>
+<p>Esses conceitos — distribuição assimétrica dos dados, medidas de posição e medidas de variabilidade — serão estudados de forma sistemática na parte do livro dedicada à análise estatística. Neste momento, o objetivo é apenas compreender como essas medidas ajudam a interpretar padrões observados nos dados.</p>
 </div>
 </div>
 <div class="cell">
@@ -749,8 +750,21 @@ Figura&nbsp;5.3: Gráfico de dispersão entre qualidade e cor do whisky.
 <p>É fundamental destacar que esses achados têm caráter estritamente exploratório. As associações observadas não constituem provas de causalidade, nem permitem inferências conclusivas sobre o efeito isolado de cada fator. Além disso, a presença de dados desbalanceados e pouco representativos pode afetar não apenas a robustez estatística, mas também a <strong>justiça das interpretações</strong>, caso os resultados sejam extrapolados indevidamente. Ainda assim, a Análise Exploratória de Dados cumpre seu papel central ao fornecer hipóteses analíticas bem fundamentadas e ao orientar as próximas fases do processo CRISP-DM, nas quais métodos estatísticos mais formais poderão ser empregados para avaliar a robustez e a relevância prática desses padrões.</p>
 </section>
 </section>
-<section id="próximas-fases" class="level2" data-number="5.7">
-<h2 data-number="5.7" class="anchored" data-anchor-id="próximas-fases"><span class="header-section-number">5.7</span> Próximas Fases</h2>
+<section id="verificação-de-aprendizagem" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="verificação-de-aprendizagem"><span class="header-section-number">5.7</span> Verificação de aprendizagem</h2>
+<p>Ao final deste estudo de caso, verifique se você consegue responder “sim” às questões abaixo:</p>
+<ol type="1">
+<li><p>Eu compreendi a importância de identificar claramente o problema de negócio, o objetivo da análise e como o sucesso do projeto foi definido em conjunto com as partes interessadas?</p></li>
+<li><p>Eu compreendi por que fazer boas perguntas e dialogar com especialistas do negócio foi fundamental para identificar os fatores inicialmente considerados relevantes para a qualidade do whisky?</p></li>
+<li><p>Eu compreendi a importância de identificar as variáveis disponíveis, compreender seus significados (dicionário de dados) e relacioná-las aos fatores levantados na fase de Compreensão do Negócio?</p></li>
+<li><p>Eu compreendi a importância de reconhecer problemas potenciais nos dados, como valores ausentes, tamanhos de amostra reduzidos e desbalanceamento entre grupos, que podem afetar a representatividade dos resultados?</p></li>
+<li><p>Eu compreendi a importância de ter uma versão limpa e documentada do conjunto de dados, adequada para as análises exploratórias?</p></li>
+<li><p>Eu compreendi a importância de utilizar visualizações gráficas e estatísticas descritivas para levantar hipóteses iniciais, de interpretar os resultados com cautela diante do caráter exploratório da análise?</p></li>
+<li><p>Eu compreendi, pelo menos intuitivamente, por que os achados apresentados não implicam causalidade e como viés e questões de justiça podem influenciar a interpretação dos resultados?</p></li>
+</ol>
+</section>
+<section id="próximas-fases" class="level2" data-number="5.8">
+<h2 data-number="5.8" class="anchored" data-anchor-id="próximas-fases"><span class="header-section-number">5.8</span> Próximas Fases</h2>
 <p>A Análise Exploratória de Dados cumpriu o papel de identificar padrões, associações e possíveis fontes de variação na qualidade do whisky. A partir dessas evidências iniciais, o projeto avança para as próximas fases da metodologia CRISP-DM, nas quais essas hipóteses poderão ser avaliadas de forma mais sistemática.</p>
 <ul>
 <li><p><strong>Modelagem</strong>: nesta fase, serão aplicados métodos estatísticos apropriados para avaliar se as diferenças observadas na análise exploratória — associadas à origem do malte, ao mestre responsável e a intervalos do indicador de cor — são consistentes e não atribuíveis apenas a variações aleatórias. Exemplos de abordagens incluem testes de comparação entre grupos e modelos simples de explicação da variabilidade observada.</p></li>
@@ -770,31 +784,9 @@ Figura&nbsp;5.3: Gráfico de dispersão entre qualidade e cor do whisky.
 <p>No contexto da Ciência de Dados e CRISP-DM, modelagem <strong>não se confunde</strong> com aprendizagem de máquina. Modelar pode significar aplicar métodos estatísticos tradicionais para comparar grupos, explicar relações e apoiar decisões, sem a necessidade de construir modelos preditivos complexos.</p>
 </div>
 </div>
-<div class="callout callout-style-default callout-tip no-icon callout-titled">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon no-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Dica</span>Checklist rápido deste estudo de caso (CRISP-DM)
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>Ao final deste capítulo, verifique se você consegue responder “sim” às questões abaixo:</p>
-<ol type="1">
-<li><p>Eu consigo explicar qual é o <strong>problema de negócio</strong>, qual o <strong>objetivo da análise</strong> e como o <strong>sucesso do projeto</strong> foi definido em conjunto com as partes interessadas?</p></li>
-<li><p>Eu compreendo por que <strong>fazer boas perguntas</strong> e dialogar com especialistas do negócio foi essencial para identificar os fatores inicialmente considerados relevantes para a qualidade do whisky?</p></li>
-<li><p>Eu consigo identificar as <strong>variáveis disponíveis</strong>, compreender seus significados (dicionário de dados) e relacioná-las aos fatores levantados na fase de Compreensão do Negócio?</p></li>
-<li><p>Eu inspecionei a estrutura dos dados e reconheci <strong>problemas potenciais</strong>, como valores ausentes, tamanhos de amostra reduzidos e <strong>desbalanceamento entre grupos</strong>, que podem afetar a representatividade dos resultados?</p></li>
-<li><p>Eu preparei uma versão <strong>limpa e documentada</strong> do conjunto de dados, adequada para análises exploratórias posteriores?</p></li>
-<li><p>Eu combinei <strong>visualizações gráficas</strong> e <strong>estatísticas descritivas</strong> para levantar hipóteses iniciais, interpretando os resultados com cautela diante do caráter exploratório da análise?</p></li>
-<li><p>Eu consigo explicar por que os achados apresentados <strong>não implicam causalidade</strong> e como <strong>viés e questões de justiça</strong> podem influenciar a interpretação dos resultados?</p></li>
-</ol>
-</div>
-</div>
 </section>
-<section id="resumo-e-próximos-passos" class="level2" data-number="5.8">
-<h2 data-number="5.8" class="anchored" data-anchor-id="resumo-e-próximos-passos"><span class="header-section-number">5.8</span> Resumo e Próximos Passos</h2>
+<section id="resumo-e-próximos-passos" class="level2" data-number="5.9">
+<h2 data-number="5.9" class="anchored" data-anchor-id="resumo-e-próximos-passos"><span class="header-section-number">5.9</span> Resumo e Próximos Passos</h2>
 <p>Ao longo dos capítulos da Parte 1 do livro, vimos como conceitos, papéis, metodologias e tipos de análise se articulam em um projeto de Ciência de Dados simplificado. Essa visão geral fornece o contexto necessário para compreender não apenas <em>o que</em> deve ser feito, mas, sobretudo, <em>por que</em> determinadas decisões são tomadas ao longo do processo analítico.</p>
 <p>Na Parte 2, o foco se desloca para as ferramentas que tornam possível a execução prática desses projetos, aprofundando os princípios e as boas práticas introduzidas até aqui.</p>
 

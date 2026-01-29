@@ -479,13 +479,13 @@ Distribuições assimétricas ou com valores extremos (outliers) são comuns
 em dados reais de processos produtivos. Nessas situações, a média pode
 ser fortemente influenciada por poucos valores atípicos, enquanto a
 mediana representa melhor o comportamento típico dos dados. De forma
-análoga, o IQR fornece uma medida de dispersão mais robusta, coerente com
+análoga, o IQR fornece uma medida de variabilidade mais robusta, coerente com
 a informação visual apresentada no boxplot.
 
-Esses conceitos — assimetria, medidas de posição e medidas de dispersão —
-serão estudados de forma sistemática na parte do livro dedicada à análise
-estatística. Neste momento, o objetivo é apenas compreender como essas
-medidas ajudam a interpretar padrões observados nos dados.
+Esses conceitos — distribuição assimétrica dos dados, medidas de posição e 
+medidas de variabilidade — serão estudados de forma sistemática na parte 
+do livro dedicada à análise estatística. Neste momento, o objetivo é apenas 
+compreender como essas medidas ajudam a interpretar padrões observados nos dados.
 
 :::
 
@@ -662,6 +662,41 @@ processo CRISP-DM, nas quais métodos estatísticos mais formais poderão ser
 empregados para avaliar a robustez e a relevância prática desses padrões.
 
 
+
+## Verificação de aprendizagem 
+
+Ao final deste estudo de caso, verifique se você consegue responder “sim” às
+questões abaixo:
+
+1. Eu compreendi a importância de identificar claramente o problema de negócio, 
+   o objetivo da análise e como o sucesso do projeto foi definido em conjunto com as
+   partes interessadas?
+
+2. Eu compreendi por que fazer boas perguntas e dialogar com especialistas
+   do negócio foi fundamental para identificar os fatores inicialmente
+   considerados relevantes para a qualidade do whisky?
+
+3. Eu compreendi a importância de identificar as variáveis disponíveis, compreender seus
+   significados (dicionário de dados) e relacioná-las aos fatores levantados na
+   fase de Compreensão do Negócio?
+
+4. Eu compreendi a importância de reconhecer problemas potenciais nos dados,
+   como valores ausentes, tamanhos de amostra reduzidos e desbalanceamento
+   entre grupos, que podem afetar a representatividade dos resultados?
+
+5. Eu compreendi a importância de ter uma versão limpa e documentada do 
+   conjunto de dados, adequada para as análises exploratórias?
+
+6. Eu compreendi a importância de utilizar visualizações gráficas e estatísticas 
+   descritivas para levantar hipóteses iniciais, de interpretar os resultados com cautela diante
+   do caráter exploratório da análise?
+
+7. Eu compreendi, pelo menos intuitivamente, por que os achados apresentados 
+   não implicam causalidade e como viés e questões de justiça podem influenciar a
+   interpretação dos resultados?
+
+
+
 ## Próximas Fases
 
 A Análise Exploratória de Dados cumpriu o papel de identificar padrões,
@@ -698,40 +733,7 @@ decisões, sem a necessidade de construir modelos preditivos complexos.
 :::
 
 
-::: {.callout-tip icon="false"}
-## Checklist rápido deste estudo de caso (CRISP-DM)
 
-Ao final deste capítulo, verifique se você consegue responder “sim” às
-questões abaixo:
-
-1. Eu consigo explicar qual é o **problema de negócio**, qual o **objetivo da
-   análise** e como o **sucesso do projeto** foi definido em conjunto com as
-   partes interessadas?
-
-2. Eu compreendo por que **fazer boas perguntas** e dialogar com especialistas
-   do negócio foi essencial para identificar os fatores inicialmente
-   considerados relevantes para a qualidade do whisky?
-
-3. Eu consigo identificar as **variáveis disponíveis**, compreender seus
-   significados (dicionário de dados) e relacioná-las aos fatores levantados na
-   fase de Compreensão do Negócio?
-
-4. Eu inspecionei a estrutura dos dados e reconheci **problemas potenciais**,
-   como valores ausentes, tamanhos de amostra reduzidos e **desbalanceamento
-   entre grupos**, que podem afetar a representatividade dos resultados?
-
-5. Eu preparei uma versão **limpa e documentada** do conjunto de dados,
-   adequada para análises exploratórias posteriores?
-
-6. Eu combinei **visualizações gráficas** e **estatísticas descritivas** para
-   levantar hipóteses iniciais, interpretando os resultados com cautela diante
-   do caráter exploratório da análise?
-
-7. Eu consigo explicar por que os achados apresentados **não implicam
-   causalidade** e como **viés e questões de justiça** podem influenciar a
-   interpretação dos resultados?
-
-:::
 
 ## Resumo e Próximos Passos
 
