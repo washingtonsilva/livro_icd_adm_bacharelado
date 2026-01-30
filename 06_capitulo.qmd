@@ -1,42 +1,62 @@
-# Capítulo 5 — RStudio e fluxo de trabalho
+# Introdução ao RStudio {#sec-rstudio}
 
-Este capítulo dá o primeiro passo para um trabalho organizado e reproduzível
-com as ferramentas que utilizaremos: entender o RStudio, configurar o ambiente e 
-adotar boas práticas desde o início. 
+O objetivo deste capítulo é introduzir o Ambiente de Desenvolvimento
+Integrado RStudio, incluindo orientações sobre como instarlar, 
+criar projetos RStudio e configurar o ambiente para adotar boas 
+práticas desde o início. 
 
 
-::: {.callout-note icon="false"}
 ## Objetivos do capítulo
 
 - Reconhecer o papel do RStudio como IDE para o R.
 - Navegar pela interface e usar os painéis principais.
 - Instalar e carregar pacotes corretamente.
 - Criar projetos e organizar pastas de forma reprodutível.
-:::
 
-::: {.callout-note icon="false"}
+
 ## Pré-requisitos
 
 - Ter a linguagem R instalado no computador.
 - Acesso à internet para baixar e instalar o RStudio 
 - Acesso à internet para instalar pacotes quando necessário.
 - Noções básicas de organização de arquivos e pastas.
+
+
+
+## O que é o RStudio
+
+O RStudio é um **Ambiente de Desenvolvimento Integrado** voltado para a
+linguagem R. Em vez de abrir programas separados para escrever, executar e
+visualizar resultados, um ambiente de desenvolvimento integrado 
+reúne tudo em uma única interface.
+
+::: {.callout-note icon="false"}
+## O que é um IDE?
+
+Um Ambiente de Desenvolvimento Integrado (em inglês,*Integrated Development Environment*, IDE)  integra editor de texto, execução de código, ajuda, 
+visualização de gráficos e organização de projetos. Isso reduz erros e 
+acelera o aprendizado.
 :::
 
+Para quem está começando, a vantagem é simples: você escreve um script,
+executa no console e vê o resultado sem sair do mesmo ambiente.
 
 
 
 ## Instalação do RStudio
 
-::: {.callout-note icon="false"}
-## Instalação do RStudio no Windows
+Para instalar o RStudio em um computador com Windows, execute 
+os seguintes passos:
 
 1. Acesse [https://posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/){target="_blank"}
+
 2. Role a página; normalmente o site detecta seu sistema e disponibiliza o
    instalador logo abaixo de `2: Install RStudio`.
+
 3. Clique em `Download RStudio Desktop for Windows` se o sistema for Windows.
+
 4. Finalizado o download, clique duas vezes no arquivo e avance até concluir.
-:::
+
 
 ::: {.callout-note icon="false"}
 ## macOS/Linux
@@ -45,73 +65,50 @@ Na mesma página de download, escolha o instalador do seu sistema. O fluxo é
 análogo ao do Windows: baixar, executar e concluir a instalação.
 :::
 
-Com o RStudio instalado, vamos entender o que ele é e por que um IDE facilita
-o trabalho de quem está começando.
+Com o RStudio instalado, vamos entender o que ele é e por que este ambiente 
+de desenvolvimento integrado para a linguagem R facilita o trabalho de 
+analistas e cientistas de dados, além de ser muito amigável para 
+iniciantes.
 
-
-
-
-## O que é o RStudio
-
-O RStudio é um Ambiente de Desenvolvimento Integrado (IDE) voltado para a
-linguagem R. Em vez de abrir programas separados para escrever, executar e
-visualizar resultados, o IDE reúne tudo em uma única interface.
-
-::: {.callout-note icon="false"}
-## Conceito-chave: IDE
-
-Um IDE integra editor de texto, execução de código, ajuda, visualização de
-gráficos e organização de projetos. Isso reduz erros e acelera o aprendizado.
-:::
-
-Para quem está começando, a vantagem prática é simples: você escreve um script,
-executa no console e vê o resultado sem sair do mesmo ambiente.
 
 
 ### Por que usar o RStudio?
 
-- **Interface Amigável**: O RStudio oferece uma interface gráfica intuitiva 
+As principais vantagens do RStudio são:
+
+- **Interface amigável**: O RStudio oferece uma interface gráfica intuitiva 
 que facilita o trabalho, especialmente para iniciantes, com acesso visual 
 a scripts, console, dados e gráficos simultaneamente.
 
-- **Aumento de Produtividade**: Recursos como autocompletar código, 
+- **Aumento da produtividade**: Recursos como autocompletar código, 
 atalhos de teclado e visualização integrada de gráficos aceleram 
 significativamente o fluxo de trabalho.
 
-- **Gestão de Projetos**: O sistema de projetos do RStudio organiza seu 
+- **Gestão de projetos**: O sistema de projetos do RStudio organiza seu 
 trabalho, mantendo todos os arquivos relacionados em um único local.
 
 - **Integração com outras ferramentas**: Oferece suporte a várias 
 linguagens (R, Python, SQL), integra-se com sistemas de controle de 
 versão como Git, e facilita a publicação de conteúdo via sistema Quarto.
 
-- **Reprodutibilidade Científica**: Facilita a criação de documentos 
+- **Reprodutibilidade científica**: Facilita a criação de documentos 
 reproduzíveis que combinam código, resultados e texto narrativo, essenciais 
 para pesquisa científica e relatórios corporativos.
 
-- **Comunidade Ativa**: Desenvolvido pela Posit (anteriormente RStudio), 
+- **Comunidade ativa**: Desenvolvido pela Posit (anteriormente RStudio), 
 conta com uma grande comunidade de usuários e desenvolvedores que 
 constantemente melhoram a ferramenta.
-
 
 
 ### Erros comuns e como resolver
 
 - Confundir RStudio com a linguagem R: lembre que são ferramentas diferentes.
-- Abrir o RStudio sem ter o R instalado: instale o R antes do IDE.
+- Abrir o RStudio sem ter o R instalado: instale a linguagem R antes do RStudio.
 - Ignorar o painel de ajuda: use a guia `Help` para consultar funções.
 
 
-### Checklist do leitor
 
-- [ ] Definir o que é um IDE.
-- [ ] Explicar por que o RStudio facilita o trabalho inicial.
-- [ ] Verificar que o R está instalado no computador.
-
-
-
-
-### R (linguagem) vs RStudio (IDE)
+## R (linguagem) vs RStudio (IDE)
 
 ![](https://d33wubrfki0l68.cloudfront.net/0b4d0569b2ddf6147da90b110fbb2a17653c8b08/f06f3/images/shutterstock/r_vs_rstudio_1.png){width="100%" fig-align="center"}
 
@@ -129,20 +126,11 @@ os dois softwares instalados.
 - Achar que o RStudio "substitui" o R: ele apenas organiza o trabalho.
 - Não saber onde digitar comandos: use o painel `Console` para executar.
 
-### Checklist do leitor
-
-- [ ] Diferenciar o que é o R e o que é o RStudio.
-- [ ] Explicar por que ambos devem estar instalados.
-- [ ] Indicar onde executar comandos no RStudio.
 
 
+## Interface do RStudio
 
-
-## RStudio: Uma Visão Geral
-
-### Interface do RStudio
-
-Na primeira abertura, você verá quatro painéis. Eles funcionam em conjunto
+Ao abrir o RStudio, você verá quatro **painéis**. Eles funcionam em conjunto
 para escrever, executar, inspecionar objetos e visualizar resultados.
 
 ![](img/05-cap/rstudio-panes.jpeg){fig-align="center"}
@@ -153,8 +141,8 @@ Na figura acima, cada painel tem um papel. Vamos percorrê-los começando pelo
 
 ### Painel: **Source**
 
-- O painel `Source` permite a visualização e edição de vários arquivos 
-relacionados a diversas linguagens, tais como: `.R`, `.qmd`,
+- O painel `Source` permite a visualização e edição de 
+diversos tipos vários arquivos, tais como: `.R`, `.qmd`,
 ou arquivos de texto gerais como `.txt` ou `.md.` 
 
 - Por padrão, é o painel superior esquerdo e pode ser iniciado abrindo 
@@ -247,14 +235,6 @@ exclusão de imagens e um ícone de vassoura que limpará todos os gráficos.
 - Confundir `Files` com o sistema inteiro: ele mostra o *working directory*.
 
 
-### Checklist do leitor
-
-- [ ] Localizar `Source`, `Console`, `Environment` e `Output`.
-- [ ] Explicar o papel da guia `Files` como pasta de trabalho.
-- [ ] Abrir e alternar arquivos no `Source`.
-
-
-
 
 ## Instalando Pacotes R: 
 
@@ -299,8 +279,7 @@ install.packages(c("tidyverse", "usethis"))
 
 
 
-::: {.callout-note}
-## Atenção! Instalação e carregamento de pacotes
+## Carregamento de pacotes
 
 - Em um computador, você instala o pacote **uma única vez**.
 
@@ -319,7 +298,6 @@ library(usethis)
 .
 ```
 
-:::
 
 
 
@@ -338,12 +316,6 @@ repita a instalação.
 - Tentar usar `library()` sem instalar: rode `install.packages()` antes.
 - Esperar que a instalação funcione sem internet: verifique a conexão.
 - Instalar toda vez que abrir o RStudio: instale uma vez, carregue sempre.
-
-### Checklist do leitor
-
-- [ ] Indicar quando usar `install.packages()`.
-- [ ] Indicar quando usar `library()`.
-- [ ] Reconhecer que a instalação exige internet.
 
 
 
@@ -371,16 +343,9 @@ em diferentes projetos.
 ![](img/05-cap/rstudio_config_basica.jpeg){fig-align="center" width="90%"}
 
 
-### Checklist do leitor
-
-- [ ] Desativar a restauração automática de projetos e arquivos.
-- [ ] Configurar “Save workspace to .Rdata” como “never”.
-- [ ] Verificar o projeto ativo no RStudio.
 
 
-
-
-# Projetos RStudio e reprodutibilidade
+## Projetos RStudio
 
 Depois de conhecer a interface do RStudio, o próximo passo para trabalhar
 de forma organizada e segura é estruturar o trabalho em projetos. Projetos
@@ -420,14 +385,9 @@ Projects*.
 - Utilizar caminhos absolutos longos: prefira caminhos relativos dentro do
   projeto.
 
-### Checklist do leitor
-
-- [ ] Explicar por que projetos facilitam a reprodutibilidade.
-- [ ] Definir o que é um caminho relativo.
-- [ ] Adotar um projeto para cada análise de dados.
 
 
-## Criando projetos no RStudio
+### Criando projetos no RStudio
 
 Projetos RStudio estão sempre associados a uma pasta no sistema de
 arquivos. Há duas formas principais de criar um projeto:
@@ -478,14 +438,9 @@ pasta selecionada e ativará automaticamente o projeto.
 - Abrir o RStudio sem ativar o projeto correto: selecione o projeto no menu
   `Project`.
 
-### Checklist do leitor
-
-- [ ] Criar um projeto com nome padronizado.
-- [ ] Identificar a pasta associada ao projeto.
-- [ ] Abrir e fechar projetos pelo menu `Project`.
 
 
-## O que acontece quando um projeto é criado
+### O que acontece quando um projeto é criado
 
 Quando um novo projeto é criado ou ativado, o RStudio:
 
@@ -504,15 +459,9 @@ relatórios gerados devem estar contidos na pasta do projeto.
   adequada.
 - Ignorar o arquivo `.Rproj`: ele define qual pasta corresponde ao projeto.
 
-### Checklist do leitor
-
-- [ ] Reconhecer o arquivo `.Rproj`.
-- [ ] Explicar o papel do projeto como referência para caminhos relativos.
-- [ ] Relacionar projetos com reprodutibilidade e trabalho em equipe.
 
 
-
-## Estrutura recomendada para o projeto RStudio criado
+### Estrutura recomendada para o projeto RStudio criado
 
 Para organizar adequadamente os arquivos de projetos de análise de dados,
 recomenda-se adotar, desde o início, uma estrutura clara e consistente de
@@ -567,7 +516,9 @@ Essa organização também favorece o trabalho em equipe, pois permite que
 outras pessoas compreendam rapidamente onde encontrar dados, scripts e
 relatórios, reduzindo ambiguidades e erros operacionais.
 
-### Criando pastas pelo RStudio
+
+
+## Criando pastas pelo RStudio
 
 As pastas podem ser criadas diretamente pela interface gráfica do RStudio.
 Na guia **Files**, utilize o botão **New Folder** para criar as pastas
@@ -589,16 +540,6 @@ colaborativos ou versionados com Git.
 - Salvar relatórios fora da pasta `relatorios/`: mantenha um padrão claro.
 - Criar pastas com espaços, acentos ou caracteres especiais: prefira nomes
   simples e consistentes.
-
-### Checklist do leitor
-
-- [ ] Criar as pastas `dados/`, `relatorios/` e `scripts/`.
-- [ ] Identificar corretamente onde novos scripts e relatórios devem ser
-      salvos dentro do projeto.
-- [ ] Separar dados brutos e dados processados em subpastas distintas.
-- [ ] Explicar por que essa estrutura contribui para a reprodutibilidade e
-      o trabalho em equipe.
-
 
 
 
@@ -639,11 +580,6 @@ RStudio:
 - Não salvar o arquivo após criar: use `Ctrl+S` ou `⌘+S`.
 - Criar um `.R` quando precisava de `.qmd`: escolha o tipo correto.
 
-### Checklist do leitor
-
-- [ ] Criar um arquivo pelo menu `File`.
-- [ ] Criar um `.qmd` para relatórios.
-- [ ] Localizar arquivos na guia `Files`.
 
 
 
@@ -697,16 +633,10 @@ menu suspenso.
 - Abrir um terminal antigo: use o botão "+" para abrir um novo.
 - Esperar esse ajuste em macOS/Linux: nesses sistemas, o terminal já é padrão.
 
-### Checklist do leitor
-
-- [ ] Configurar o Git Bash no RStudio (Windows).
-- [ ] Abrir um novo terminal no painel `Terminal`.
-- [ ] Reconhecer que em macOS/Linux esse ajuste não é necessário.
 
 
 
-
-# Atalhos essenciais
+## Atalhos essenciais
 
 Atalhos economizam tempo e reduzem erros. A lista abaixo é enxuta e organizada
 por propósito. Use os que fizerem sentido agora e volte a esta seção quando
@@ -754,16 +684,11 @@ precisar ganhar velocidade.
 - Usar atalhos sem saber o foco ativo: clique primeiro no painel desejado.
 - Ignorar a lista completa: use `Alt+Shift+K`/`Option+Shift+K`.
 
-### Checklist do leitor
-
-- [ ] Alternar entre `Source` e `Console`.
-- [ ] Renderizar um documento Quarto pelo atalho.
-- [ ] Interromper uma execução travada no console.
 
 
 
 
-# Exercícios
+## Exercícios
 
 1. Explique a diferença entre **R** e **RStudio** usando a analogia
    motor/painel de controle.
@@ -850,7 +775,7 @@ automaticamente sem controle explícito do código.
 
 Caminhos relativos referenciam arquivos a partir da pasta raiz do projeto,
 em vez de utilizar um endereço fixo no computador. Isso permite que o
-mesmo projeto funcione corretamente em diferentes máquinas e sistemas
+mesmo projeto funcione corretamente em diferentes computadores e sistemas
 operacionais, facilitando o trabalho em equipe, a reprodutibilidade e o
 uso de controle de versão com Git e GitHub.
 
@@ -858,17 +783,18 @@ uso de controle de versão com Git e GitHub.
 
 
 
-7. Neste capítulo, estamos adotando a prática de organizar projetos de
-   análise de dados por meio de uma estrutura clara de diretórios.
-   Embora essas pastas possam ser criadas manualmente pelo sistema
-   operacional, utilizar recursos da própria linguagem R traz duas
-   vantagens importantes: (i) documenta explicitamente a estrutura do
-   projeto e (ii) permite que ela seja reproduzida de forma automática
-   em qualquer ambiente.
+7. Como destacamos no @sec-estudo-caso-introdutorio, é importante
+adotar a prática de organizar projetos de análise de dados por 
+meio de uma estrutura clara de diretórios. Embora essas pastas
+possam ser criadas manualmente pelo sistema operacional, utilizar 
+recursos da própria linguagem R traz duasvantagens importantes: 
+(i) documenta explicitamente a estrutura do
+projeto e (ii) permite que ela seja reproduzida de forma automática
+em qualquer ambiente.
 
-   Considerando o projeto RStudio recém-criado e ainda vazio, utilize a
-   função `dir.create()` no Console do RStudio para criar a seguinte
-   estrutura de pastas:
+Considerando o projeto RStudio recém-criado e ainda vazio, utilize a
+função `dir.create()` da linguagem R no Console do RStudio 
+para criar a seguinte estrutura de pastas:
 
    - a pasta `dados/`, contendo as subpastas `dados_brutos/` e
      `dados_limpos/`;
@@ -879,6 +805,10 @@ uso de controle de versão com Git e GitHub.
 
 ::: {.callout-tip collapse=true}
 ## Resposta
+
+Para criar a estrutura de pastas solicitada, basta 
+digitar cada um dos seguintes comandos em sequência no 
+console R do RStudio:
 
 ```{r}
 #| eval: false

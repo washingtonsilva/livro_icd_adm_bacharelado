@@ -1,4 +1,4 @@
-# Papéis profissionais na área de dados
+# Papéis profissionais na área de dados {#sec-papeis-profissionais}
 
 O crescimento da área de dados deu origem a diferentes papéis profissionais,
 que variam conforme o foco técnico, o grau de especialização e a posição no

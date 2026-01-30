@@ -1,4 +1,4 @@
-# Tipos de Análise de Dados em CRISP-DM
+# Tipos de Análise de Dados em CRISP-DM {#sec-tipos-de-analise}
 
 Ao longo do processo CRISP-DM, diferentes tipos de análise podem ser
 empregados, variando em complexidade técnica, grau de formalização e

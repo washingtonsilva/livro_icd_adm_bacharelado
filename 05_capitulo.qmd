@@ -1,22 +1,26 @@
 
-# Um Estudo de Caso Introdutório 
+# Um Estudo de Caso Introdutório {#sec-estudo-caso-intro}
 
-Este capítulo apresenta um estudo de caso introdutório com o objetivo de
-integrar, em um único exemplo, conceitos, ferramentas e práticas que serão
-aprofundados ao longo dos capítulos seguintes. A intenção, certamente, 
-não é esgotar os tópicos abordados, mas oferecer uma visão geral do processo 
-de análise de dados no contexto da metodologia CRISP-DM. Este estudo de 
-caso é baseado em um exemplo fictício adaptado do livro de @jung2024modern.
+Este capítulo apresenta um estudo de caso introdutório com o objetivo de 
+fornecer uma visão integrada de parte da metodologia CRISP-DM, 
+das ferramentas e práticas que serão aprofundados ao longo dos capítulos 
+seguintes. A intenção, certamente, não é esgotar os tópicos abordados, 
+mas oferecer uma visão geral do processo de análise de dados no contexto da 
+metodologia CRISP-DM e da linguagem R. Este estudo de 
+caso é baseado em um exemplo fictício adaptado do 
+livro de @jung2024modern.
 
-**Como ler este capítulo**: o objetivo aqui é oferecer uma visão geral do
+**Como ler este capítulo?*: o objetivo é oferecer uma visão geral do
 fluxo de trabalho de um projeto de Ciência de Dados, do problema de negócio
 até uma análise exploratória inicial. Você não precisa dominar a linguagem R, 
 RStudio, Quarto ou Git e GitHub neste momento.
 
 Se esta é sua primeira leitura da Parte 1, concentre-se em entender o que
 está sendo feito e por que cada decisão é tomada. Na Parte 2, as
-ferramentas serão apresentadas sistematicamente; depois disso, recomenda-se
-retornar a este capítulo e reler os trechos de código com maior segurança.
+ferramentas serão apresentadas sistematicamente e na Parte 3 estudaremos os 
+componentes da análise estatística efetuada. Após analisar os capítulos destas 
+partes posteriores, recomenda-se retornar a este capítulo com os 
+fundamentos adquiridos.
 
 
 
