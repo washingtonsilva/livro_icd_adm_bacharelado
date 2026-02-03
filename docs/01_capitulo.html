@@ -205,11 +205,10 @@ div.csl-indent {
    
   <ul>
   <li><a href="#introdução" id="toc-introdução" class="nav-link active" data-scroll-target="#introdução"><span class="header-section-number">1.1</span> Introdução</a></li>
-  <li><a href="#a-economia-de-dados-um-breve-histórico" id="toc-a-economia-de-dados-um-breve-histórico" class="nav-link" data-scroll-target="#a-economia-de-dados-um-breve-histórico"><span class="header-section-number">1.2</span> A Economia de Dados: Um Breve Histórico</a></li>
-  <li><a href="#big-data-e-a-explosão-do-volume-de-dados" id="toc-big-data-e-a-explosão-do-volume-de-dados" class="nav-link" data-scroll-target="#big-data-e-a-explosão-do-volume-de-dados"><span class="header-section-number">1.3</span> Big Data e a Explosão do Volume de Dados</a></li>
+  <li><a href="#big-data-e-o-dilúvio-de-dados" id="toc-big-data-e-o-dilúvio-de-dados" class="nav-link" data-scroll-target="#big-data-e-o-dilúvio-de-dados"><span class="header-section-number">1.2</span> Big Data e o Dilúvio de Dados</a></li>
+  <li><a href="#do-dilúvio-dos-dados-à-economia-de-dados-um-breve-histórico" id="toc-do-dilúvio-dos-dados-à-economia-de-dados-um-breve-histórico" class="nav-link" data-scroll-target="#do-dilúvio-dos-dados-à-economia-de-dados-um-breve-histórico"><span class="header-section-number">1.3</span> Do Dilúvio dos Dados à Economia de Dados: Um Breve Histórico</a></li>
   <li><a href="#o-que-é-ciência-de-dados" id="toc-o-que-é-ciência-de-dados" class="nav-link" data-scroll-target="#o-que-é-ciência-de-dados"><span class="header-section-number">1.4</span> O que é Ciência de Dados?</a></li>
-  <li><a href="#metodologias-e-processos-crisp-dm" id="toc-metodologias-e-processos-crisp-dm" class="nav-link" data-scroll-target="#metodologias-e-processos-crisp-dm"><span class="header-section-number">1.5</span> Metodologias e Processos: CRISP-DM</a></li>
-  <li><a href="#resumo-e-próximos-passos" id="toc-resumo-e-próximos-passos" class="nav-link" data-scroll-target="#resumo-e-próximos-passos"><span class="header-section-number">1.6</span> Resumo e Próximos Passos</a></li>
+  <li><a href="#resumo-e-próximos-passos" id="toc-resumo-e-próximos-passos" class="nav-link" data-scroll-target="#resumo-e-próximos-passos"><span class="header-section-number">1.5</span> Resumo e Próximos Passos</a></li>
   </ul>
 </nav>
     </div>
@@ -238,20 +237,11 @@ div.csl-indent {
 <section id="introdução" class="level2" data-number="1.1">
 <h2 data-number="1.1" class="anchored" data-anchor-id="introdução"><span class="header-section-number">1.1</span> Introdução</h2>
 <p>Nas últimas décadas, dados passaram a ocupar um papel central nas decisões econômicas, organizacionais e governamentais. Atividades cotidianas como compras online, interações em redes sociais ou o uso do GPS em smartphones geram continuamente grandes volumes de dados, que alimentam o que hoje se convencionou chamar de <em>economia de dados</em>.</p>
-<p>Esse fenômeno não surgiu de forma repentina. Ele é resultado de um processo histórico no qual a coleta, o armazenamento e a análise de dados foram progressivamente incorporados às práticas de gestão, pesquisa e tomada de decisão. Compreender essa trajetória é fundamental para entender por que a Ciência de Dados se tornou uma área central no mundo contemporâneo.</p>
+<p>Esse fenômeno não surgiu de forma repentina. Ele é resultado de um processo histórico no qual a coleta, o armazenamento e a análise de dados foram progressivamente incorporados às práticas de gestão, pesquisa e tomada de decisão. Compreender essa trajetória é fundamental para entender por que a Ciência de Dados se tornou uma área relevante no mundo contemporâneo.</p>
 </section>
-<section id="a-economia-de-dados-um-breve-histórico" class="level2" data-number="1.2">
-<h2 data-number="1.2" class="anchored" data-anchor-id="a-economia-de-dados-um-breve-histórico"><span class="header-section-number">1.2</span> A Economia de Dados: Um Breve Histórico</h2>
-<p>As raízes da economia de dados remontam ao século XIX, quando jornais norte-americanos passaram a coletar informações sistemáticas sobre seus leitores e a realizar levantamentos para antecipar resultados eleitorais. Já nesse período inicial, dados eram utilizados como instrumento para reduzir incertezas e orientar decisões editoriais e comerciais, ainda que de forma incipiente e pouco padronizada <span class="citation" data-cites="harkness2021p01">(<a href="referencias.html#ref-harkness2021p01" role="doc-biblioref">Harkness, 2021a</a>)</span>.</p>
-<p>No início do século XX, com a consolidação do marketing como área organizacional, empresas e pesquisadores passaram a estruturar departamentos dedicados ao estudo sistemático do comportamento do consumidor. A coleta de dados deixou de ser episódica e passou a integrar processos contínuos de análise, voltados à compreensão de mercados, preferências e padrões de consumo <span class="citation" data-cites="harkness2021p01">(<a href="referencias.html#ref-harkness2021p01" role="doc-biblioref">Harkness, 2021a</a>)</span>.</p>
-<p>A partir da década de 1930, a introdução de métodos estatísticos de amostragem, notadamente os trabalhos associados a George Gallup, marcou uma mudança qualitativa importante. Previsões baseadas em dados passaram a apoiar-se em fundamentos estatísticos mais sólidos, substituindo abordagens baseadas em grandes volumes de respostas não controladas por técnicas cientificamente mais rigorosas <span class="citation" data-cites="harkness2021p02">(<a href="referencias.html#ref-harkness2021p02" role="doc-biblioref">Harkness, 2021b</a>)</span>.</p>
-<p>Entre as décadas de 1950 e 1980, empresas como a Nielsen consolidaram sistemas de observação contínua de hábitos de consumo e audiência. Esse período reforçou uma distinção central na economia de dados: observar comportamentos reais, de forma sistemática, frequentemente produz informações mais confiáveis do que simplesmente perguntar aos indivíduos sobre suas intenções ou opiniões <span class="citation" data-cites="harkness2021p02">Harkness (<a href="referencias.html#ref-harkness2021p03" role="doc-biblioref">2021c</a>)</span>.</p>
-<p>Com a digitalização da economia a partir dos anos 1990, o uso de códigos de barras, programas de fidelidade e, posteriormente, plataformas digitais e redes sociais transformou os dados em um ativo estratégico de escala global. A capacidade de coletar, armazenar e analisar grandes volumes de informações passou a redefinir modelos de negócio e estruturas competitivas em diversos setores <span class="citation" data-cites="harkness2021p03">(<a href="referencias.html#ref-harkness2021p03" role="doc-biblioref">Harkness, 2021c</a>)</span>.</p>
-<p>Mais recentemente, o avanço de modelos de inteligência artificial, como os grandes modelos de linguagem, representa o estágio mais sofisticado dessa trajetória. Esses sistemas dependem fortemente de grandes volumes de dados para seu treinamento e funcionamento, evidenciando que, na economia contemporânea, dados não são apenas um subproduto das atividades organizacionais, mas um recurso central que condiciona inovação, eficiência e poder econômico <span class="citation" data-cites="harkness2021p04">(<a href="referencias.html#ref-harkness2021p04" role="doc-biblioref">Harkness, 2021d</a>)</span>.</p>
-</section>
-<section id="big-data-e-a-explosão-do-volume-de-dados" class="level2" data-number="1.3">
-<h2 data-number="1.3" class="anchored" data-anchor-id="big-data-e-a-explosão-do-volume-de-dados"><span class="header-section-number">1.3</span> Big Data e a Explosão do Volume de Dados</h2>
-<div id="fig-data-deluge" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Capa da revista The Economist com o título 'The Data Deluge'." data-fig-cap="Capa da revista *The Economist* que popularizou a expressão   “The Data Deluge” (o dilúvio de dados), frequentemente citada como um   marco na discussão sobre a explosão do volume de dados e seus impactos   econômicos e gerenciais." data-fig-align="center">
+<section id="big-data-e-o-dilúvio-de-dados" class="level2" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="big-data-e-o-dilúvio-de-dados"><span class="header-section-number">1.2</span> Big Data e o Dilúvio de Dados</h2>
+<div id="fig-data-deluge" class="quarto-float quarto-figure quarto-figure-center anchored" alt="Capa da revista The Economist com o título 'The Data Deluge'." data-fig-align="center" data-fig-cap="Capa da revista *The Economist* que popularizou a expressão   “The Data Deluge” (o dilúvio de dados), frequentemente citada como um   marco na discussão sobre a explosão do volume de dados e seus impactos   econômicos e gerenciais.">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-data-deluge-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="img/01-cap/deluge.jpg" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:70.0%" data-fig-cap="Capa da revista *The Economist* que popularizou a expressão   “The Data Deluge” (o dilúvio de dados), frequentemente citada como um   marco na discussão sobre a explosão do volume de dados e seus impactos   econômicos e gerenciais." alt="Capa da revista The Economist com o título 'The Data Deluge'.">
@@ -262,10 +252,9 @@ Figura&nbsp;1.1: Capa da revista <span class="citation" data-cites="economist201
 </figure>
 </div>
 <p>O relatório especial <em>The Data Deluge</em>, publicado pela <em>The Economist</em> <span class="citation" data-cites="economist2010">(<a href="referencias.html#ref-economist2010" role="doc-biblioref">The Economist, 2010</a>)</span>, marcou um ponto de inflexão na forma como economistas, gestores e formuladores de políticas passaram a enxergar os dados na economia contemporânea. O texto parte da constatação de que o mundo entrou em uma era caracterizada por uma produção de dados sem precedentes, impulsionada pela digitalização de processos, pela popularização da internet, pelo uso massivo de dispositivos móveis e pela automação de atividades econômicas e sociais.</p>
-<p>O artigo destaca que o crescimento do volume de dados não é apenas quantitativo, mas também qualitativo: empresas e governos passaram a registrar transações, comportamentos e interações em níveis de detalhe antes inimagináveis. Esse fenômeno transforma dados em um ativo econômico estratégico, comparável a recursos tradicionais como capital e trabalho, mas com características próprias, como alta reutilização e forte dependência de capacidades analíticas.</p>
-<p>A <em>The Economist</em> enfatiza que o verdadeiro desafio não reside na coleta dos dados, mas em sua <strong>organização, análise e interpretação</strong>. Grandes volumes de dados, por si só, não geram conhecimento nem vantagem competitiva. Somente quando combinados com métodos estatísticos, computacionais e analíticos adequados é que os dados podem apoiar decisões gerenciais mais informadas, melhorar previsões e revelar padrões econômicos relevantes.</p>
-<p>Por fim, a matéria alerta para os riscos associados à “ilusão dos dados”: quanto maior o volume de informações disponíveis, maior também a probabilidade de erros, correlações espúrias e interpretações equivocadas. Nesse contexto, competências analíticas sólidas tornam-se essenciais para administradores, economistas e profissionais das ciências sociais aplicadas, que passam a lidar com um ambiente decisório cada vez mais orientado por dados.</p>
-<p>Este crescimento exponencial da produção de dados levou ao surgimento do conceito de <em>Big Data</em>, frequentemente caracterizado pelos chamados <em>cinco Vs</em>: volume, velocidade, variedade, veracidade e valor. Esses atributos ajudam a compreender não apenas a quantidade de dados gerados, mas também os desafios associados ao seu processamento e uso.</p>
+<p>O crescimento observado não é apenas quantitativo, mas também qualitativo. Empresas e governos passaram a registrar transações, comportamentos e interações em níveis de detalhe antes inimagináveis. Esse fenômeno transformou os dados em um ativo econômico estratégico, com características próprias, como alta reutilização e forte dependência de capacidades analíticas.</p>
+<p>A <em>The Economist</em> enfatiza que o verdadeiro desafio não reside na coleta dos dados, mas em sua <strong>organização, análise e interpretação</strong>. Grandes volumes de dados, por si só, não geram conhecimento nem vantagem competitiva. Somente quando combinados com métodos estatísticos, computacionais e analíticos adequados é que os dados podem apoiar decisões gerenciais mais informadas, melhorar previsões e revelar padrões relevantes.</p>
+<p>Esse crescimento exponencial levou ao surgimento do conceito de <em>Big Data</em>, frequentemente caracterizado pelos chamados <em>cinco Vs</em>: volume, velocidade, variedade, veracidade e valor.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-5v-bigdata" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -280,11 +269,18 @@ Figura&nbsp;1.2: Os cinco Vs do Big Data.
 </div>
 </div>
 </div>
-<p>Esse aumento no volume e na complexidade dos dados tornou insuficiente o uso exclusivo de ferramentas tradicionais, como planilhas eletrônicas, e criou a necessidade de métodos, linguagens e infraestruturas mais robustas para análise. Não por acaso, publicações de referência na área de negócios passaram a destacar dados como um dos recursos mais valiosos da economia contemporânea.</p>
-<p>Outro marco simbólico importante na consolidação da chamada economia de dados foi a capa da revista <em>The Economist</em>, publicada em 2017, cujo título era <em>The World’s Most Valuable Resource</em> (“O recurso mais valioso do mundo”) e cujo subtítulo anunciava <em>Data and the new rules of competition</em> (“Dados e as novas regras da competição”). A mensagem central não era apenas a comparação entre dados e petróleo, mas a ideia de que os dados haviam se tornado o principal recurso estratégico capaz de redefinir a dinâmica competitiva entre empresas e setores <span class="citation" data-cites="economist2017">(<a href="referencias.html#ref-economist2017" role="doc-biblioref">The Economist, 2017</a>)</span>.</p>
-<p>Diferentemente de recursos tradicionais, os dados não geram valor de forma automática. Seu valor emerge da capacidade de coletá-los, organizá-los, analisá-los e, sobretudo, utilizá-los de maneira sistemática na tomada de decisão. Nesse sentido, a capa da <em>The Economist</em> aponta para uma mudança mais profunda: empresas competitivas passam a ser aquelas capazes de transformar dados em conhecimento operacional e vantagem estratégica contínua.</p>
-<p>Essa mudança implica novas regras de competição. Escala, velocidade de análise, capacidade de experimentação e aprendizado contínuo tornam-se fatores centrais. Organizações que dominam esses elementos conseguem adaptar produtos, processos e estratégias com maior rapidez, enquanto aquelas que tratam dados apenas como subprodutos operacionais tendem a perder relevância.</p>
-<p>Ao destacar os dados como o recurso mais valioso da economia contemporânea, a revista reforça a necessidade de métodos, ferramentas e competências voltadas não apenas à análise técnica, mas à integração entre dados, estratégia e decisão. É nesse contexto que a Ciência de Dados se consolida como área essencial para a Administração, indo além do uso de tecnologias específicas e passando a influenciar diretamente a forma como as organizações competem.</p>
+<p>O aumento do volume e da complexidade dos dados tornou insuficiente o uso exclusivo de ferramentas tradicionais, como planilhas eletrônicas, criando a necessidade de métodos, linguagens e infraestruturas mais robustas para análise.</p>
+</section>
+<section id="do-dilúvio-dos-dados-à-economia-de-dados-um-breve-histórico" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="do-dilúvio-dos-dados-à-economia-de-dados-um-breve-histórico"><span class="header-section-number">1.3</span> Do Dilúvio dos Dados à Economia de Dados: Um Breve Histórico</h2>
+<p>A intensificação da geração, do registro e do processamento de dados não produziu apenas desafios técnicos. Ela alterou profundamente a forma como dados passaram a ser apropriados economicamente, dando origem ao que se convencionou chamar de economia de dados.</p>
+<p>Nesse novo contexto, dados deixam de ser apenas subprodutos operacionais e passam a assumir o papel de insumo estratégico, capaz de influenciar modelos de negócio, estruturas de mercado e formas de competição entre organizações. A compreensão desse processo exige uma perspectiva histórica, que permita entender como práticas de coleta e análise de dados se consolidaram ao longo do tempo.</p>
+<p>As raízes da economia de dados remontam ao século XIX, quando jornais norte-americanos passaram a coletar informações sistemáticas sobre seus leitores e a realizar levantamentos para antecipar resultados eleitorais. Já nesse período inicial, dados eram utilizados como instrumento para reduzir incertezas e orientar decisões editoriais e comerciais, ainda que de forma incipiente e pouco padronizada <span class="citation" data-cites="harkness2021p01">(<a href="referencias.html#ref-harkness2021p01" role="doc-biblioref">Harkness, 2021a</a>)</span>.</p>
+<p>No início do século XX, com a consolidação do marketing como área organizacional, empresas e pesquisadores passaram a estruturar departamentos dedicados ao estudo sistemático do comportamento do consumidor. A coleta de dados deixou de ser episódica e passou a integrar processos contínuos de análise, voltados à compreensão de mercados, preferências e padrões de consumo <span class="citation" data-cites="harkness2021p01">(<a href="referencias.html#ref-harkness2021p01" role="doc-biblioref">Harkness, 2021a</a>)</span>.</p>
+<p>A partir da década de 1930, a introdução de métodos estatísticos de amostragem, notadamente os trabalhos associados a George Gallup, marcou uma mudança qualitativa importante. Previsões baseadas em dados passaram a apoiar-se em fundamentos estatísticos mais sólidos, substituindo abordagens baseadas em grandes volumes de respostas não controladas <span class="citation" data-cites="harkness2021p02">(<a href="referencias.html#ref-harkness2021p02" role="doc-biblioref">Harkness, 2021b</a>)</span>.</p>
+<p>Entre as décadas de 1950 e 1980, empresas como a Nielsen consolidaram sistemas de observação contínua de hábitos de consumo e audiência, reforçando a distinção entre observar comportamentos reais e simplesmente perguntar aos indivíduos sobre suas intenções <span class="citation" data-cites="harkness2021p02">Harkness (<a href="referencias.html#ref-harkness2021p03" role="doc-biblioref">2021c</a>)</span>.</p>
+<p>Com a digitalização da economia a partir dos anos 1990, dados passaram a ser coletados em escala global, redefinindo modelos de negócio e estruturas competitivas em diversos setores <span class="citation" data-cites="harkness2021p03">(<a href="referencias.html#ref-harkness2021p03" role="doc-biblioref">Harkness, 2021c</a>)</span>.</p>
+<p>Outro marco simbólico importante foi a capa da revista The Economist de 2017, intitulada The World’s Most Valuable Resource, que destacou dados como o principal recurso estratégico da economia contemporânea <span class="citation" data-cites="economist2017">(<a href="referencias.html#ref-economist2017" role="doc-biblioref">The Economist, 2017</a>)</span>.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-worlds-most-valuable-resource" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -299,11 +295,29 @@ Figura&nbsp;1.3: Capa da revista <span class="citation" data-cites="economist201
 </div>
 </div>
 </div>
+<p>A mensagem central não era apenas a analogia com o petróleo, mas a ideia de que dados redefinem as regras da competição. Escala, velocidade de análise, capacidade de experimentação e aprendizado contínuo tornam-se fatores estratégicos centrais.</p>
+<p>Essa dimensão gerencial ganhou destaque também na literatura voltada diretamente a administradores. Em outubro de 2012, a Harvard Business Review publicou o artigo Big Data: The Management Revolution <span class="citation" data-cites="hbr2012_bigdata">(<a href="referencias.html#ref-hbr2012_bigdata" role="doc-biblioref">Harvard Business Review, 2012</a>)</span>, de Andrew McAfee e Erik Brynjolfsson.</p>
+<div class="cell">
+<div class="cell-output-display">
+<div id="fig-hbr-bigdata" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-hbr-bigdata-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="img/01-cap/hbr.jpg" class="img-fluid figure-img" style="width:60.0%">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-hbr-bigdata-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;1.4: Capa da revista <span class="citation" data-cites="hbr2012_bigdata">Harvard Business Review (<a href="referencias.html#ref-hbr2012_bigdata" role="doc-biblioref">2012</a>)</span> sobre Big Data.
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<p>Nesse artigo, os autores argumentam que, no início da década de 2010, a principal mudança associada ao uso intensivo de dados não estava apenas na capacidade computacional, mas na possibilidade de medir e gerenciar com maior precisão aspectos centrais do desempenho organizacional. Decisões antes baseadas predominantemente em intuição passavam a ser crescentemente orientadas por evidências empíricas.</p>
+<p>Essa abordagem reforça que o valor de Big Data não é automático: ele depende do desenvolvimento de capacidades analíticas, de mudanças organizacionais e de uma cultura orientada por dados. Assim, a economia de dados assume uma dimensão explicitamente gerencial, conectando dados, estratégia e decisão.</p>
+<p>Mais recentemente, o avanço de modelos de inteligência artificial representa o estágio mais sofisticado dessa trajetória, evidenciando que dados se tornaram um recurso central que condiciona inovação, eficiência e poder econômico <span class="citation" data-cites="harkness2021p04">(<a href="referencias.html#ref-harkness2021p04" role="doc-biblioref">Harkness, 2021d</a>)</span>.</p>
 </section>
 <section id="o-que-é-ciência-de-dados" class="level2" data-number="1.4">
 <h2 data-number="1.4" class="anchored" data-anchor-id="o-que-é-ciência-de-dados"><span class="header-section-number">1.4</span> O que é Ciência de Dados?</h2>
-<p>Diante desse contexto, surge a Ciência de Dados como uma abordagem estruturada para extrair significado e valor de grandes volumes de dados. Embora o termo possa parecer intimidador, sua ideia central é relativamente simples: usar métodos analíticos e computacionais para transformar dados brutos em informações úteis para a tomada de decisão.</p>
-<p>De forma sintética, a Ciência de Dados integra conhecimentos de estatística, computação e domínio do negócio, combinando técnicas dessas áreas para lidar com problemas reais.</p>
+<p>Diante desse contexto, surge a Ciência de Dados como uma abordagem estruturada para extrair significado e valor de grandes volumes de dados. Sua ideia central é integrar métodos estatísticos, computacionais e conhecimento do negócio para transformar dados brutos em informações úteis à tomada de decisão.</p>
 <div class="cell">
 <div class="cell-output-display">
 <div id="fig-venn-ds" class="quarto-float quarto-figure quarto-figure-center anchored">
@@ -312,43 +326,20 @@ Figura&nbsp;1.3: Capa da revista <span class="citation" data-cites="economist201
 <img src="img/01-cap/diagrama_venn_ds.png" class="img-fluid figure-img" style="width:60.0%">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-venn-ds-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;1.4: A Ciência de Dados como interseção entre estatística, computação e conhecimento do domínio.
+Figura&nbsp;1.5: A Ciência de Dados como interseção entre estatística, computação e conhecimento do domínio.
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
-<p>Essa característica interdisciplinar explica tanto o potencial da área quanto a diversidade de formações presentes em equipes de dados.</p>
 </section>
-<section id="metodologias-e-processos-crisp-dm" class="level2" data-number="1.5">
-<h2 data-number="1.5" class="anchored" data-anchor-id="metodologias-e-processos-crisp-dm"><span class="header-section-number">1.5</span> Metodologias e Processos: CRISP-DM</h2>
-<p>A prática da Ciência de Dados costuma ser organizada por meio de metodologias de projeto. Uma das mais difundidas é o CRISP-DM (<em>Cross Industry Standard Process for Data Mining</em>) <span class="citation" data-cites="ibm_crisp_dm">(<a href="referencias.html#ref-ibm_crisp_dm" role="doc-biblioref">Chapman <em>et al.</em>, 2000</a>)</span>, que estrutura o trabalho em etapas iterativas, desde o entendimento do problema de negócio até a implantação de soluções baseadas em dados.</p>
-<div class="cell">
-<div class="cell-output-display">
-<div id="fig-crispdm" class="quarto-float quarto-figure quarto-figure-center anchored">
-<figure class="quarto-float quarto-float-fig figure">
-<div aria-describedby="fig-crispdm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-<img src="img/01-cap/crispdm-trad.png" class="img-fluid figure-img" style="width:70.0%">
-</div>
-<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-crispdm-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;1.5: Etapas do processo CRISP-DM aplicadas a projetos de Ciência de Dados.
-</figcaption>
-</figure>
-</div>
-</div>
-</div>
-<p>Esse modelo destaca que projetos de dados raramente seguem um caminho linear. É comum que análises retornem a etapas anteriores à medida que novos insights surgem ou que hipóteses iniciais precisem ser revistas.</p>
-</section>
-<section id="resumo-e-próximos-passos" class="level2" data-number="1.6">
-<h2 data-number="1.6" class="anchored" data-anchor-id="resumo-e-próximos-passos"><span class="header-section-number">1.6</span> Resumo e Próximos Passos</h2>
-<p>Ao longo deste capítulo, vimos como a chamada <em>economia de dados</em> se consolidou historicamente e por que a explosão no volume e na complexidade das informações tornou necessária uma abordagem estruturada, hoje conhecida como Ciência de Dados. Também discutimos que gerar valor a partir de dados exige mais do que tecnologia: requer métodos, organização e capacidade de transformar informação em decisão.</p>
-<p>Na prática, esse trabalho não é realizado por um único tipo de profissional. Projetos orientados por dados envolvem funções distintas, com responsabilidades e competências complementares. No próximo capítulo, apresentamos os principais papéis profissionais na área de dados — Analista de Dados, Cientista de Dados e Engenheiro de Dados — e discutimos como eles se relacionam com problemas reais de Administração e áreas afins.</p>
+<section id="resumo-e-próximos-passos" class="level2" data-number="1.5">
+<h2 data-number="1.5" class="anchored" data-anchor-id="resumo-e-próximos-passos"><span class="header-section-number">1.5</span> Resumo e Próximos Passos</h2>
+<p>Neste capítulo, vimos como a explosão do volume de dados deu origem a uma economia cada vez mais orientada por informação, redefinindo mercados, competição e práticas gerenciais. Nesse contexto, a Ciência de Dados emerge como uma abordagem essencial para transformar dados em decisões.</p>
+<p>No próximo capítulo, discutimos os principais papéis profissionais na área de dados.</p>
 
 
 <div id="refs" class="references csl-bib-body" data-entry-spacing="0" role="list" style="display: none">
-<div id="ref-ibm_crisp_dm" class="csl-entry" role="listitem">
-CHAPMAN, P. <em>et al.</em> <strong><a href="https://public.dhe.ibm.com/software/analytics/spss/documentation/modeler/14.2/es/CRISP-DM.pdf">CRISP-DM 1.0: Step-by-step data mining guide</a></strong>. [s.l.] CRISP-DM Consortium, 2000.
-</div>
 <div id="ref-harkness2021p01" class="csl-entry" role="listitem">
 HARKNESS, T. <a href="https://doi.org/10.1111/1740-9713.01504">The history of the data economy: Part I: The birth of customer insight</a>. <strong>Significance</strong>, v. 18, n. 2, p. 12–15, a2021.
 </div>
@@ -360,6 +351,9 @@ ___. <a href="https://doi.org/10.1111/1740-9713.01567">The history of the data e
 </div>
 <div id="ref-harkness2021p04" class="csl-entry" role="listitem">
 ___. <a href="https://doi.org/10.1111/1740-9713.01586">The history of the data economy: Part IV: The future</a>. <strong>Significance</strong>, v. 18, n. 6, p. 12–15, d2021.
+</div>
+<div id="ref-hbr2012_bigdata" class="csl-entry" role="listitem">
+HARVARD BUSINESS REVIEW. <strong>Big Data: The Management Revolution</strong>, out. 2012. Disponível em: &lt;<a href="https://hbr.org/2012/10/big-data-the-management-revolution">https://hbr.org/2012/10/big-data-the-management-revolution</a>&gt;. Acesso em: 20 jan. 2026
 </div>
 <div id="ref-economist2010" class="csl-entry" role="listitem">
 THE ECONOMIST. <strong>The Data Deluge</strong>, 27 fev. 2010. Disponível em: &lt;<a href="https://www.economist.com/weeklyedition/2010-02-27">https://www.economist.com/weeklyedition/2010-02-27</a>&gt;. Acesso em: 21 jan. 2026
