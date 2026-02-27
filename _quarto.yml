@@ -28,6 +28,10 @@ book:
         - 03_capitulo.qmd
         - 04_capitulo.qmd
         - 05_capitulo.qmd
+    - part: "Parte 2"
+      chapters:
+        - parte2.qmd
+        - 06_capitulo.qmd
 
     - referencias.qmd
 

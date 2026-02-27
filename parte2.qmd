@@ -1,0 +1,14 @@
+# Ambiente Computacional {.unnumbered}
+
+Nesta parte do livro serão fornecidas instruções para 
+instalação e configuração dos softwares que compõe 
+o ambiente computacional utilizado no livro. 
+
+Especificamente, serão instalados e apresentadas instruções 
+para uso ssobre: 
+
+- RStudio: Ambiente de Desenvolvimento Integrado 
+- Linguagem R
+- Sistema de publicação Quarto
+- Control de Versão com Git e GitHub
+- Linguagem SQL
