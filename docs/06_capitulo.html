@@ -242,7 +242,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Índice</h2>
    
   <ul>
-  <li><a href="#instalação-do-rstudio-no-windows" id="toc-instalação-do-rstudio-no-windows" class="nav-link active" data-scroll-target="#instalação-do-rstudio-no-windows"><span class="header-section-number">6.1</span> Instalação do RStudio no Windows</a></li>
+  <li><a href="#instalação-do-rstudio" id="toc-instalação-do-rstudio" class="nav-link active" data-scroll-target="#instalação-do-rstudio"><span class="header-section-number">6.1</span> Instalação do RStudio</a>
+  <ul class="collapse">
+  <li><a href="#windows" id="toc-windows" class="nav-link" data-scroll-target="#windows"><span class="header-section-number">6.1.1</span> Windows</a></li>
+  <li><a href="#linux" id="toc-linux" class="nav-link" data-scroll-target="#linux"><span class="header-section-number">6.1.2</span> Linux</a></li>
+  <li><a href="#macintosh" id="toc-macintosh" class="nav-link" data-scroll-target="#macintosh"><span class="header-section-number">6.1.3</span> Macintosh</a></li>
+  </ul></li>
   <li><a href="#o-que-é-rstudio" id="toc-o-que-é-rstudio" class="nav-link" data-scroll-target="#o-que-é-rstudio"><span class="header-section-number">6.2</span> O que é RStudio?</a></li>
   <li><a href="#o-que-é-um-ambiente-de-desenvolvimento-integrado" id="toc-o-que-é-um-ambiente-de-desenvolvimento-integrado" class="nav-link" data-scroll-target="#o-que-é-um-ambiente-de-desenvolvimento-integrado"><span class="header-section-number">6.3</span> O que é um Ambiente de Desenvolvimento Integrado?</a></li>
   <li><a href="#por-que-usar-o-rstudio" id="toc-por-que-usar-o-rstudio" class="nav-link" data-scroll-target="#por-que-usar-o-rstudio"><span class="header-section-number">6.4</span> Por que usar o RStudio?</a></li>
@@ -278,9 +283,22 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   <ul class="collapse">
   <li><a href="#menu-files" id="toc-menu-files" class="nav-link" data-scroll-target="#menu-files"><span class="header-section-number">6.11.1</span> Menu <code>Files</code></a></li>
   </ul></li>
-  <li><a href="#configurando-o-rstudio-para-usar-o-git-bash-como-terminal" id="toc-configurando-o-rstudio-para-usar-o-git-bash-como-terminal" class="nav-link" data-scroll-target="#configurando-o-rstudio-para-usar-o-git-bash-como-terminal"><span class="header-section-number">6.12</span> Configurando o RStudio para usar o Git Bash como Terminal</a></li>
-  <li><a href="#atalhos-de-teclado-essenciais-do-rstudio" id="toc-atalhos-de-teclado-essenciais-do-rstudio" class="nav-link" data-scroll-target="#atalhos-de-teclado-essenciais-do-rstudio"><span class="header-section-number">6.13</span> Atalhos de Teclado Essenciais do RStudio</a></li>
-  <li><a href="#glossário-de-termos" id="toc-glossário-de-termos" class="nav-link" data-scroll-target="#glossário-de-termos"><span class="header-section-number">6.14</span> Glossário de Termos</a>
+  <li><a href="#por-que-aprender-a-usar-um-terminal" id="toc-por-que-aprender-a-usar-um-terminal" class="nav-link" data-scroll-target="#por-que-aprender-a-usar-um-terminal"><span class="header-section-number">6.12</span> Por que aprender a usar um terminal</a>
+  <ul class="collapse">
+  <li><a href="#organizar-projetos-com-mais-agilidade" id="toc-organizar-projetos-com-mais-agilidade" class="nav-link" data-scroll-target="#organizar-projetos-com-mais-agilidade"><span class="header-section-number">6.12.1</span> Organizar projetos com mais agilidade</a></li>
+  <li><a href="#manipular-arquivos-com-rapidez-e-menos-erros" id="toc-manipular-arquivos-com-rapidez-e-menos-erros" class="nav-link" data-scroll-target="#manipular-arquivos-com-rapidez-e-menos-erros"><span class="header-section-number">6.12.2</span> Manipular arquivos com rapidez e menos erros</a></li>
+  <li><a href="#preparar-o-caminho-para-automação" id="toc-preparar-o-caminho-para-automação" class="nav-link" data-scroll-target="#preparar-o-caminho-para-automação"><span class="header-section-number">6.12.3</span> Preparar o caminho para automação</a></li>
+  </ul></li>
+  <li><a href="#configurando-o-rstudio-para-usar-o-git-bash-como-terminal" id="toc-configurando-o-rstudio-para-usar-o-git-bash-como-terminal" class="nav-link" data-scroll-target="#configurando-o-rstudio-para-usar-o-git-bash-como-terminal"><span class="header-section-number">6.13</span> Configurando o RStudio para usar o Git Bash como Terminal</a>
+  <ul class="collapse">
+  <li><a href="#configurando-o-git-bash-como-terminal-padrão" id="toc-configurando-o-git-bash-como-terminal-padrão" class="nav-link" data-scroll-target="#configurando-o-git-bash-como-terminal-padrão"><span class="header-section-number">6.13.1</span> Configurando o Git Bash como terminal padrão</a></li>
+  <li><a href="#configurando-o-git-bash-como-terminal-padrão-1" id="toc-configurando-o-git-bash-como-terminal-padrão-1" class="nav-link" data-scroll-target="#configurando-o-git-bash-como-terminal-padrão-1"><span class="header-section-number">6.13.2</span> Configurando o Git Bash como terminal padrão</a></li>
+  <li><a href="#abrindo-o-terminal-no-rstudio-e-verificando-se-é-o-git-bash" id="toc-abrindo-o-terminal-no-rstudio-e-verificando-se-é-o-git-bash" class="nav-link" data-scroll-target="#abrindo-o-terminal-no-rstudio-e-verificando-se-é-o-git-bash"><span class="header-section-number">6.13.3</span> Abrindo o terminal no RStudio e verificando se é o Git Bash</a></li>
+  <li><a href="#vantagens-de-usar-o-git-bash-dentro-do-rstudio" id="toc-vantagens-de-usar-o-git-bash-dentro-do-rstudio" class="nav-link" data-scroll-target="#vantagens-de-usar-o-git-bash-dentro-do-rstudio"><span class="header-section-number">6.13.4</span> Vantagens de usar o Git Bash dentro do RStudio</a></li>
+  <li><a href="#observação-importante" id="toc-observação-importante" class="nav-link" data-scroll-target="#observação-importante"><span class="header-section-number">6.13.5</span> Observação importante</a></li>
+  </ul></li>
+  <li><a href="#atalhos-de-teclado-essenciais-do-rstudio" id="toc-atalhos-de-teclado-essenciais-do-rstudio" class="nav-link" data-scroll-target="#atalhos-de-teclado-essenciais-do-rstudio"><span class="header-section-number">6.14</span> Atalhos de Teclado Essenciais do RStudio</a></li>
+  <li><a href="#glossário-de-termos" id="toc-glossário-de-termos" class="nav-link" data-scroll-target="#glossário-de-termos"><span class="header-section-number">6.15</span> Glossário de Termos</a>
   <ul class="collapse">
   <li><a href="#a" id="toc-a" class="nav-link" data-scroll-target="#a">A</a></li>
   <li><a href="#c" id="toc-c" class="nav-link" data-scroll-target="#c">C</a></li>
@@ -315,8 +333,24 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 
 
 <p>O objetivo deste capítulo é introduzir o Ambiente de Desenvolvimento Integrado RStudio, incluindo orientações sobre como instalar, criar projetos RStudio e configurar o ambiente para adotar boas práticas desde o início.</p>
-<section id="instalação-do-rstudio-no-windows" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="instalação-do-rstudio-no-windows"><span class="header-section-number">6.1</span> Instalação do RStudio no Windows</h2>
+<p>O capítulo também aborda a importância da estrutura de arquivos e pastas de um projeto de análise de dados e o uso do terminal integrado do RStudio para a execução de tarefas básicas no computador e para preparar o ambiente para uso do Git e GitHub que veremos nos próximos capítulos.</p>
+<section id="instalação-do-rstudio" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="instalação-do-rstudio"><span class="header-section-number">6.1</span> Instalação do RStudio</h2>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Nota
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Observação:</strong> o RStudio <strong>não substitui a linguagem R</strong>. Não importa a ordem de instalação do RStudio e da linguagem R, mas é necessário que ambos estejam instalados para que o RStudio funcione.</p>
+</div>
+</div>
+<section id="windows" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="windows"><span class="header-section-number">6.1.1</span> Windows</h3>
 <ol type="1">
 <li><p>Acesse <a href="https://posit.co/download/rstudio-desktop/" target="_blank">https://posit.co/download/rstudio-desktop/</a></p></li>
 <li><p>Role a página para baixo, em geral, o site detecta seu sistema operacional e disponibiliza o instalador adequado loga abaixo de <code>2: Install RStudio</code>.</p></li>
@@ -324,19 +358,54 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><p>Finalizado o download, basta clicar duas vezes no arquivo e, em seguida, clicar em em continuar/avançar/next até o início da instalação.</p></li>
 </ol>
 </section>
+<section id="linux" class="level3" data-number="6.1.2">
+<h3 data-number="6.1.2" class="anchored" data-anchor-id="linux"><span class="header-section-number">6.1.2</span> Linux</h3>
+<ol type="1">
+<li><p>Acesse <a href="https://posit.co/download/rstudio-desktop/" target="_blank">https://posit.co/download/rstudio-desktop/</a></p></li>
+<li><p>Role a página para baixo até a seção <code>2: Install RStudio</code>.</p></li>
+<li><p>No bloco de downloads para Linux, escolha o instalador compatível com sua distribuição:</p>
+<ul>
+<li><strong>Ubuntu/Debian</strong>: baixe o arquivo com extensão <strong><code>.deb</code></strong><br>
+</li>
+<li><strong>Fedora/RHEL/openSUSE</strong>: baixe o arquivo com extensão <strong><code>.rpm</code></strong></li>
+</ul></li>
+<li><p>Após o download, instale o pacote:</p>
+<ul>
+<li><p><strong>Se você baixou <code>.deb</code> (Ubuntu/Debian):</strong></p>
+<ol type="1">
+<li>Clique duas vezes no arquivo <code>.deb</code> para abrir a “Central de programas / Software Center”.</li>
+<li>Clique em <strong>Install/Instalar</strong> e informe sua senha, se solicitado.</li>
+</ol></li>
+<li><p><strong>Se você baixou <code>.rpm</code> (Fedora/RHEL/openSUSE):</strong></p>
+<ol type="1">
+<li>Clique duas vezes no arquivo <code>.rpm</code> para abrir o instalador de pacotes do sistema.</li>
+<li>Clique em <strong>Install/Instalar</strong> e informe sua senha, se solicitado.</li>
+</ol></li>
+</ul></li>
+<li><p>Finalizada a instalação, procure por <strong>RStudio</strong> no menu de aplicativos e abra o programa.</p></li>
+</ol>
+</section>
+<section id="macintosh" class="level3" data-number="6.1.3">
+<h3 data-number="6.1.3" class="anchored" data-anchor-id="macintosh"><span class="header-section-number">6.1.3</span> Macintosh</h3>
+<ol type="1">
+<li><p>Acesse <a href="https://posit.co/download/rstudio-desktop/" target="_blank">https://posit.co/download/rstudio-desktop/</a></p></li>
+<li><p>Role a página para baixo até a seção <code>2: Install RStudio</code>.</p></li>
+<li><p>Clique em <code>Download RStudio Desktop for macOS</code> (ou opção equivalente para <strong>Mac</strong>).</p></li>
+<li><p>Após concluir o download, abra o arquivo <strong><code>.dmg</code></strong>.</p></li>
+<li><p>Na janela que aparecer, arraste o ícone do <strong>RStudio</strong> para a pasta <strong>Applications</strong>.</p></li>
+<li><p>Abra a pasta <strong>Applications</strong> e clique no ícone do <strong>RStudio</strong> para iniciar ou utilize o Spotlight.</p></li>
+<li><p>Se o macOS exibir um aviso de segurança (“app baixado da internet”), confirme em <strong>Open/Abrir</strong>. Se necessário, vá em <strong>System Settings / Preferências do Sistema → Privacy &amp; Security / Privacidade e Segurança</strong> e permita a abertura do aplicativo.</p></li>
+</ol>
+</section>
+</section>
 <section id="o-que-é-rstudio" class="level2" data-number="6.2">
 <h2 data-number="6.2" class="anchored" data-anchor-id="o-que-é-rstudio"><span class="header-section-number">6.2</span> O que é RStudio?</h2>
-<ul>
-<li><p>RStudio é um Ambiente de Desenvolvimento Integrado (em inglês, <em>Integrated Development Environment</em>, IDE) poderoso para a linguagem R, destinado a cientistas e analistas de dados.</p></li>
-<li><p>Últil também para outras linguagens, mas principlamente para a linguagem R.</p></li>
-</ul>
+<p>RStudio é um Ambiente de Desenvolvimento Integrado (em inglês, <em>Integrated Development Environment</em>, IDE) poderoso para a linguagem R, destinado a cientistas e analistas de dados. Ele pode ser utilizado para escrever código de outras linguagens, mas ele é mais eficiente para escrever código da linguagem R.</p>
 </section>
 <section id="o-que-é-um-ambiente-de-desenvolvimento-integrado" class="level2" data-number="6.3">
 <h2 data-number="6.3" class="anchored" data-anchor-id="o-que-é-um-ambiente-de-desenvolvimento-integrado"><span class="header-section-number">6.3</span> O que é um Ambiente de Desenvolvimento Integrado?</h2>
-<ul>
-<li><p>Um Ambiente de Desenvolvimento Integrado (IDE) é um programa abrangente que facilita o desenvolvimento de software ao integrar múltiplas funcionalidades essenciais em uma única interface.</p></li>
-<li><p>Além de incluir um <strong>editor de texto</strong> avançado, ele oferece recursos de construção automática e um depurador robusto.</p></li>
-</ul>
+<p>Um Ambiente de Desenvolvimento Integrado (IDE) é um programa abrangente que facilita o desenvolvimento de software ao integrar múltiplas funcionalidades essenciais em uma única interface.</p>
+<p>Além de incluir um <strong>editor de texto</strong> avançado, ele oferece recursos de construção automática e um depurador robusto.</p>
 <p>Destacam-se também funcionalidades como:</p>
 <ul>
 <li><p><strong>destaque de sintaxe</strong>, que melhora a legibilidade do código ao colorir diferentes partes do código-fonte conforme sua função gramatical.</p></li>
@@ -362,11 +431,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p><img src="https://d33wubrfki0l68.cloudfront.net/0b4d0569b2ddf6147da90b110fbb2a17653c8b08/f06f3/images/shutterstock/r_vs_rstudio_1.png" class="img-fluid quarto-figure quarto-figure-center figure-img" style="width:100.0%"></p>
 </figure>
 </div>
-<ul>
-<li><p>R é uma <strong>linguagem de programação</strong>, enquanto o RStudio é um <strong>Ambiente de Desenvolvimento Integrado</strong> que contém recursos que facilitam o uso da linguagem R.</p></li>
-<li><p>Utilizando a analogia de um carro, R seria o motor enquanto o RStudio seria o painel de controles (<em>dashboard</em>)</p></li>
-<li><p>Portanto, é necessário ter os dois softwares instalados.</p></li>
-</ul>
+<p>R é uma <strong>linguagem de programação</strong>, enquanto o RStudio é um <strong>Ambiente de Desenvolvimento Integrado</strong> que contém recursos que facilitam o uso da linguagem R.</p>
+<p>Utilizando a analogia de um carro, R seria o motor enquanto o RStudio seria o painel de controles (<em>dashboard</em>). Portanto, é necessário ter os dois softwares instalados.</p>
 </section>
 <section id="rstudio-uma-visão-geral" class="level2" data-number="6.6">
 <h2 data-number="6.6" class="anchored" data-anchor-id="rstudio-uma-visão-geral"><span class="header-section-number">6.6</span> RStudio: Uma Visão Geral</h2>
@@ -380,18 +446,14 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="painel-source" class="level3" data-number="6.6.2">
 <h3 data-number="6.6.2" class="anchored" data-anchor-id="painel-source"><span class="header-section-number">6.6.2</span> Painel: <strong>Source</strong></h3>
-<ul>
-<li><p>O painel <code>Source</code> permite a visualização e edição de vários arquivos relacionados a diversas linguagens, tais como: <code>.R</code>, <code>.qmd</code>,<code>.py</code> ou arquivos de texto gerais como <code>.txt</code> ou <code>.md.</code></p></li>
-<li><p>Por padrão, é o painel superior esquerdo e pode ser iniciado abrindo qualquer arquivo editável no RStudio.</p></li>
-<li><p>Cada arquivo adicional que for aberto será adicionado como uma nova guia no painel.</p></li>
-</ul>
+<p>O painel <code>Source</code> permite a visualização e edição de vários arquivos relacionados a diversas linguagens, tais como: <code>.R</code>, <code>.qmd</code>,<code>.py</code> ou arquivos de texto gerais como <code>.txt</code> ou <code>.md.</code></p>
+<p>Por padrão, é o painel superior esquerdo e pode ser iniciado abrindo qualquer arquivo editável no RStudio.</p>
+<p>Cada arquivo adicional que for aberto será adicionado como uma nova guia no painel.</p>
 </section>
 <section id="painel-console" class="level3" data-number="6.6.3">
 <h3 data-number="6.6.3" class="anchored" data-anchor-id="painel-console"><span class="header-section-number">6.6.3</span> Painel: <strong>Console</strong></h3>
-<ul>
-<li><p>Esse painel fornece uma área para executar o código interativamente, isto é, você pode “conversar” diretamente com o interpretado da linguagem R.</p></li>
-<li><p>Por padrão, está vinculado a linguagem R, mas ele também pode fornecer um console Python.</p></li>
-</ul>
+<p>Esse painel fornece uma área para executar o código interativamente, isto é, você pode “conversar” diretamente com o interpretado da linguagem R.</p>
+<p>Por padrão, está vinculado a linguagem R, mas ele também pode fornecer um console Python.</p>
 </section>
 <section id="painel-environment" class="level3" data-number="6.6.4">
 <h3 data-number="6.6.4" class="anchored" data-anchor-id="painel-environment"><span class="header-section-number">6.6.4</span> Painel: <strong>Environment</strong></h3>
@@ -459,20 +521,16 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="usando-comandos" class="level3" data-number="6.7.2">
 <h3 data-number="6.7.2" class="anchored" data-anchor-id="usando-comandos"><span class="header-section-number">6.7.2</span> Usando comandos</h3>
-<ul>
-<li><p>Uma forma alternativa de instalar pacotes é usando a linha de comando.</p></li>
-<li><p>Você pode usar o seguinte comando diretamente no console, em um script, ou em um documento Quarto:</p></li>
-</ul>
+<p>Uma forma alternativa de instalar pacotes é usando a linha de comando.</p>
+<p>Você pode usar o seguinte comando diretamente no console, em um script, ou em um documento Quarto:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="fu">c</span>(<span class="st">"tidyverse"</span>, <span class="st">"usethis"</span>))</span></code></pre></div><button title="Copiar para a área de transferência" class="code-copy-button"><i class="bi"></i></button></div>
 </div>
 </section>
 <section id="atenção-instalação-e-carregamento-de-pacotes" class="level3" data-number="6.7.3">
 <h3 data-number="6.7.3" class="anchored" data-anchor-id="atenção-instalação-e-carregamento-de-pacotes"><span class="header-section-number">6.7.3</span> Atenção: Instalação e Carregamento de Pacotes</h3>
-<ul>
-<li><p>Usando um IDE como o RStudio, ou outro, em um computador, precisamos instalar pacotes apenas <strong>uma vez</strong>.</p></li>
-<li><p>Entretanto, para utilizar os pacotes já instalados, precisamos <strong>sempre carregá-los</strong> com:</p></li>
-</ul>
+<p>Usando um IDE como o RStudio, ou outro, em um computador, precisamos instalar pacotes apenas <strong>uma vez</strong>.</p>
+<p>Entretanto, para utilizar os pacotes já instalados, precisamos <strong>sempre carregá-los</strong> com:</p>
 <div class="cell">
 <div class="code-copy-outer-scaffold"><div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># carrega os pacotes utilizados</span></span>
 <span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
@@ -483,10 +541,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </section>
 <section id="conexão-com-a-internet." class="level3" data-number="6.7.4">
 <h3 data-number="6.7.4" class="anchored" data-anchor-id="conexão-com-a-internet."><span class="header-section-number">6.7.4</span> Conexão com a Internet.</h3>
-<ul>
-<li><p>Para instalar pacotes, de R ou Python, é necessária uma <strong>conexão ativa com a internet</strong>.</p></li>
-<li><p>Pode ser necessário repetir a instalação devido à falhas na conexão, que faz com que os arquivos dos pacotes não sejam baixados completamente.</p></li>
-</ul>
+<p>Para instalar pacotes, de R ou Python, é necessária uma <strong>conexão ativa com a internet</strong>.</p>
+<p>Pode ser necessário repetir a instalação devido à falhas na conexão, que faz com que os arquivos dos pacotes não sejam baixados completamente.</p>
 </section>
 </section>
 <section id="configurações-básicas-recomendadas-do-rstudio" class="level2" data-number="6.8">
@@ -510,13 +566,11 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <h2 data-number="6.9" class="anchored" data-anchor-id="projetos-rstudio"><span class="header-section-number">6.9</span> Projetos RStudio</h2>
 <section id="visão-geral" class="level3" data-number="6.9.1">
 <h3 data-number="6.9.1" class="anchored" data-anchor-id="visão-geral"><span class="header-section-number">6.9.1</span> Visão Geral</h3>
-<ul>
-<li><p>Cientistas e Analistas de dados mantêm todos os arquivos associados a um determinado projeto juntos e organizados em pastas/diretórios — dados, scripts, relatórios, etc.</p></li>
-<li><p>Esta é uma prática tão sábia e comum que o RStudio tem suporte integrado para isso por meio dos <code>Projects</code>.</p></li>
-<li><p>Os <em>RStudio Projects</em> (em português, <em>Projetos RStudio</em>) tornam simples organizar seus projetos em vários contextos, cada um com sua própria pasta e documentos diversos.</p></li>
-<li><p>Seja com R ou Python, é fundamental criar um projeto do Editor ou IDE para organizar os arquivos de cada projeto.</p></li>
-<li><p>Entre diversas outras, uma vantagem adicional importante do uso de projetos é que você se livra dos problemas com caminhos absolutos de arquivos e pastas, como veremos posteriormente.</p></li>
-</ul>
+<p>Cientistas e Analistas de dados mantêm todos os arquivos associados a um determinado projeto juntos e organizados em pastas/diretórios — dados, scripts, relatórios, etc.</p>
+<p>Esta é uma prática tão sábia e comum que o RStudio tem suporte integrado para isso por meio dos <code>Projects</code>.</p>
+<p>Os <em>RStudio Projects</em> (em português, <em>Projetos RStudio</em>) tornam simples organizar seus projetos em vários contextos, cada um com sua própria pasta e documentos diversos.</p>
+<p>Seja com R ou Python, é fundamental criar um projeto do Editor ou IDE para organizar os arquivos de cada projeto.</p>
+<p>Entre diversas outras, uma vantagem adicional importante do uso de projetos é que você se livra dos problemas com caminhos absolutos de arquivos e pastas, como veremos posteriormente.</p>
 </section>
 <section id="criando-projects-no-rstudio" class="level3" data-number="6.9.2">
 <h3 data-number="6.9.2" class="anchored" data-anchor-id="criando-projects-no-rstudio"><span class="header-section-number">6.9.2</span> Criando Projects no RStudio</h3>
@@ -629,7 +683,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <p>Embora seja possível criar a estrutura de pastas manualmente usando a guia <code>Files</code> como mostrado na seção anterior ou utilizando recursos do sistema operacional (no caso do Windows, seria possível utilizar o Windows Explorer), saber utilizar os recursos da própria linguagem R traz duas vantagens importantes:</p>
 <ul>
 <li><p>Você permanece no mesmo sistema (RStudio, no caso), o que pode aumentar sua produtividade.</p></li>
-<li><p>E no médio e longo prazos, caso aprenda mais recursos da linguagem R ou de um Terminal, você será capaz de automatizar tarefas repetivas e rotineiras, o que aumenta significativamete sua produtividade.</p></li>
+<li><p>E no médio e longo prazos, caso aprenda mais recursos da linguagem R ou de um Terminal, você será capaz de automatizar tarefas repetivas e rotineiras envolvendo a criação de pastas e arquivos, entre outas, o que aumenta significativamete sua produtividade.</p></li>
 </ul>
 <p>Considerando o projeto RStudio recém-criado e ainda vazio, utilize a função <code>dir.create()</code> da linguagem R no Console do RStudio para criar a seguinte estrutura de pastas:</p>
 <p>Para criar a estrutura de pastas podemos usar a função <code>dir.create()</code> da linguagem R. Para isso, digite os seguintes comandos no console R do RStudio, mas não é necessário digitar os comentários contidos após o símbolo <code>#</code>:</p>
@@ -660,17 +714,13 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </ul>
 <section id="menu-files" class="level3" data-number="6.11.1">
 <h3 data-number="6.11.1" class="anchored" data-anchor-id="menu-files"><span class="header-section-number">6.11.1</span> Menu <code>Files</code></h3>
-<ul>
-<li>É possível criar um novo arquivo com <code>File -&gt; New File</code>:</li>
-</ul>
+<p>É possível criar um novo arquivo com <code>File -&gt; New File</code>:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="https://docs.posit.co/ide/user/ide/guide/ui/images/system-files-menu.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
 </figure>
 </div>
-<ul>
-<li>Outra possibilidade é usar o ícone no canto superior esquerdo do RStudio:</li>
-</ul>
+<p>Outra possibilidade é usar o ícone no canto superior esquerdo do RStudio:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="img/06-cap/cria_arquivos.png" class="img-fluid quarto-figure quarto-figure-center figure-img"></p>
@@ -678,60 +728,109 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </div>
 </section>
 </section>
-<section id="configurando-o-rstudio-para-usar-o-git-bash-como-terminal" class="level2" data-number="6.12">
-<h2 data-number="6.12" class="anchored" data-anchor-id="configurando-o-rstudio-para-usar-o-git-bash-como-terminal"><span class="header-section-number">6.12</span> Configurando o RStudio para usar o Git Bash como Terminal</h2>
-<p>Como usaremos Git e GitHub, é importante configurar o terminal do RStudio para abrir com o Git Bash, permitindo executar comandos do Git sem sair do RStudio.</p>
-<ol type="1">
-<li><strong>Configurando o terminal Git Bash no RStudio</strong>:</li>
-</ol>
+<section id="por-que-aprender-a-usar-um-terminal" class="level2" data-number="6.12">
+<h2 data-number="6.12" class="anchored" data-anchor-id="por-que-aprender-a-usar-um-terminal"><span class="header-section-number">6.12</span> Por que aprender a usar um terminal</h2>
+<p>Um <strong>terminal</strong> é um programa que permite interagir com o sistema operacional de um computador digitando comandos em vez de clicar em menus. Ele permite navegar por pastas, criar e organizar arquivos e executar ferramentas usadas em projetos envolvendo código e/ou dados.</p>
+<p>Mesmo que você use o RStudio (ou outro IDE) no dia a dia, aprender o básico de um terminal pode tornar seu trabalho mais rápido e mais organizado. Isso vale no Windows(Git Bash), no Linux (Bash) e no macOS (Z shell ou Bash).</p>
+<p>A ideia é simples: o terminal ajuda a executar tarefas comuns com comandos curtos, de forma consistente e com menos cliques.</p>
+<section id="organizar-projetos-com-mais-agilidade" class="level3" data-number="6.12.1">
+<h3 data-number="6.12.1" class="anchored" data-anchor-id="organizar-projetos-com-mais-agilidade"><span class="header-section-number">6.12.1</span> Organizar projetos com mais agilidade</h3>
+<p>Em projetos com várias pastas e arquivos, o terminal ajuda a navegar e manter a estrutura organizada. Por exemplo:</p>
 <ul>
-<li><p>Abra o RStudio</p></li>
-<li><p>Clique no menu “<em>Tools</em>” &gt; “<em>Global Options</em>” &gt; “<em>Terminal</em>”.</p></li>
-<li><p>No campo “<em>New terminals open with:</em>”, selecione “<em>Git Bash</em>” no menu suspenso.</p></li>
-<li><p>Clique em “<em>Apply</em>” e depois em “<em>OK</em>”</p></li>
+<li>ver o caminho da pasta atual: <code>pwd</code></li>
+<li>listar arquivos e pastas: <code>ls</code></li>
+<li>criar uma pasta: <code>mkdir dados</code></li>
+<li>criar um arquivo vazio: <code>touch teste.qmd</code></li>
 </ul>
-<ol start="2" type="1">
-<li><strong>Acessando o terminal Git Bash no RStudio</strong>:</li>
-</ol>
+</section>
+<section id="manipular-arquivos-com-rapidez-e-menos-erros" class="level3" data-number="6.12.2">
+<h3 data-number="6.12.2" class="anchored" data-anchor-id="manipular-arquivos-com-rapidez-e-menos-erros"><span class="header-section-number">6.12.2</span> Manipular arquivos com rapidez e menos erros</h3>
+<p>No terminal, você consegue fazer operações comuns de forma direta, como:</p>
 <ul>
-<li><p>No painel inferior do RStudio, clique na aba <strong>Terminal</strong>.</p></li>
-<li><p>Se a configuração tiver sido feita corretamente (ou se o RStudio já tiver detectado o Git Bash), o terminal exibirá um prompt parecido com:</p>
-<p><code>usuario@PC MINGW64 ...</code></p>
-<p><em>(a presença de “MINGW64” é um indício forte de que você está no Git Bash).</em></p></li>
-<li><p>Para confirmar, digite o comando <code>pwd</code> e pressione <strong>Enter</strong>.</p>
-<ul>
-<li><p>O comando deve retornar um caminho, por exemplo:</p>
-<p><code>/c/Users/SeuUsuario/Documentos/ICD2026_Nome_Sobrenome</code></p></li>
-<li><p>Esse caminho deve corresponder à pasta do seu projeto (a pasta onde está o arquivo <code>.Rproj</code>) que estiver aberto no RStudio.</p></li>
-</ul></li>
+<li>mover e nenomear arquivos: <code>mv nome_antigo.csv nome_novo.csv</code></li>
+<li>copiar arquivos: <code>cp dados.csv dados_backup.csv</code></li>
+<li>criar um arquivo vazio, como um script R: <code>touch scripts/01-importacao.R</code></li>
 </ul>
-<ol start="3" type="1">
-<li><strong>Vantagens de usar o Git Bash dentro do RStudio</strong>:</li>
-</ol>
-<ul>
-<li><p>Mantém seu fluxo de trabalho dentro de um único ambiente.</p></li>
-<li><p>Facilita a navegação entre edição de arquivos e execução de comandos Git.</p></li>
-<li><p>Permite copiar e colar facilmente entre o editor e o terminal.</p></li>
-<li><p>Evita a necessidade de alternar entre aplicativos diferentes.</p></li>
-</ul>
-<div class="callout callout-style-default callout-tip callout-titled">
+<p>Essas tarefas aparecem o tempo todo em análise de dados, especialmente ao criar e organizar um projeto e na manipulação de arquivos de dados.</p>
+</section>
+<section id="preparar-o-caminho-para-automação" class="level3" data-number="6.12.3">
+<h3 data-number="6.12.3" class="anchored" data-anchor-id="preparar-o-caminho-para-automação"><span class="header-section-number">6.12.3</span> Preparar o caminho para automação</h3>
+<p>Quando você domina o básico, fica mais fácil automatizar rotinas simples, como executar sempre a mesma sequência de passos em um projeto (por exemplo, organizar arquivos, gerar relatórios e manter tudo padronizado). Isso é parte importante de um fluxo de trabalho mais profissional e reprodutível.</p>
+<div class="callout callout-style-default callout-note no-icon callout-titled">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
-<i class="callout-icon"></i>
+<i class="callout-icon no-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-<span class="screen-reader-only">Dica</span>Importante
+Nota
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>Em muitos computadores com <strong>Git for Windows</strong> instalado (o pacote que inclui o <em>Git Bash</em>), o RStudio consegue <strong>detectar automaticamente</strong> o <em>Git Bash</em> e defini-lo como o terminal padrão do RStudio, <strong>sem que você precise configurar nada</strong>.</p>
-<p>Ainda assim, é recomendável verificar esta opção em <em>Tools</em> → <em>Global Options</em> → <em>Terminal</em>, porque em alguns computadores o “terminal padrão” pode ser outro (por exemplo, <em>PowerShell</em>).</p>
-<p>Se não estiver como <em>Git Bash</em>, basta selecionar manualmente, como indicado abaixo.</p>
+<p><strong>Por enquanto, nosso objetivo é apenas o básico.</strong> Vamos usar o terminal principalmente para acompanhar o curso com mais fluidez e para dar os primeiros passos em uma habilidade muito valorizada em trabalhos com dados.</p>
 </div>
 </div>
 </section>
-<section id="atalhos-de-teclado-essenciais-do-rstudio" class="level2" data-number="6.13">
-<h2 data-number="6.13" class="anchored" data-anchor-id="atalhos-de-teclado-essenciais-do-rstudio"><span class="header-section-number">6.13</span> Atalhos de Teclado Essenciais do RStudio</h2>
+</section>
+<section id="configurando-o-rstudio-para-usar-o-git-bash-como-terminal" class="level2" data-number="6.13">
+<h2 data-number="6.13" class="anchored" data-anchor-id="configurando-o-rstudio-para-usar-o-git-bash-como-terminal"><span class="header-section-number">6.13</span> Configurando o RStudio para usar o Git Bash como Terminal</h2>
+<p>Como usaremos <strong>Git</strong> e <strong>GitHub</strong> ao longo da disciplina, é conveniente que o terminal do RStudio abra em um ambiente do tipo Unix (Linux/macOS). No Windows, a forma mais simples de obter essa experiência é usar o <strong>Git Bash</strong> (instalado junto com o <strong>Git for Windows</strong>).</p>
+<blockquote class="blockquote">
+<p><strong>Ponto importante:</strong> o Git Bash não é o único terminal possível no Windows. Mesmo que o RStudio abra com outro terminal (por exemplo, <em>PowerShell</em>), isso não impede que você use o RStudio normalmente.</p>
+<p>Nesta etapa, o objetivo é apenas <strong>padronizar o ambiente do terminal</strong> para que ele se comporte de forma semelhante ao que veremos em sistemas Unix (Linux/macOS). Isso facilita acompanhar os exemplos quando usarmos comandos simples de terminal, como <code>pwd</code> e <code>ls</code>, para localizar pastas e arquivos do projeto e outros mais avançados.</p>
+</blockquote>
+<p>Considerando que você utiliza um computador com Windows que já instalou o <strong>Git for Windows</strong>, siga as etapas a seguir.</p>
+<section id="configurando-o-git-bash-como-terminal-padrão" class="level3" data-number="6.13.1">
+<h3 data-number="6.13.1" class="anchored" data-anchor-id="configurando-o-git-bash-como-terminal-padrão"><span class="header-section-number">6.13.1</span> Configurando o Git Bash como terminal padrão</h3>
+</section>
+<section id="configurando-o-git-bash-como-terminal-padrão-1" class="level3" data-number="6.13.2">
+<h3 data-number="6.13.2" class="anchored" data-anchor-id="configurando-o-git-bash-como-terminal-padrão-1"><span class="header-section-number">6.13.2</span> Configurando o Git Bash como terminal padrão</h3>
+<ol type="1">
+<li><p>Abra o RStudio.</p></li>
+<li><p>Clique no menu <strong>Tools</strong> → <strong>Global Options</strong> → <strong>Terminal</strong>.</p></li>
+<li><p>No campo <strong>New terminals open with:</strong>, selecione <strong>Git Bash</strong> (ou apenas <strong>Bash</strong>, dependendo da versão do RStudio).</p></li>
+<li><p>Clique em <strong>Apply</strong> e depois em <strong>OK</strong>.</p></li>
+<li><p>Se a opção <strong>Git Bash</strong> (ou <strong>Bash</strong>) não aparecer no menu suspenso:</p>
+<ul>
+<li><p>Feche e abra o RStudio novamente e volte a esta tela de configuração.</p></li>
+<li><p>Se ainda assim a opção não aparecer, verifique se o <strong>Git for Windows</strong> está instalado corretamente no computador. Em alguns casos, pode ser necessário reinstalar o Git for Windows, garantindo que ele fique disponível no sistema (por exemplo, com o Git acessível no terminal).</p></li>
+</ul></li>
+</ol>
+</section>
+<section id="abrindo-o-terminal-no-rstudio-e-verificando-se-é-o-git-bash" class="level3" data-number="6.13.3">
+<h3 data-number="6.13.3" class="anchored" data-anchor-id="abrindo-o-terminal-no-rstudio-e-verificando-se-é-o-git-bash"><span class="header-section-number">6.13.3</span> Abrindo o terminal no RStudio e verificando se é o Git Bash</h3>
+<ol type="1">
+<li><p>No painel inferior do RStudio, clique na aba <strong>Terminal</strong>.</p></li>
+<li><p>Se a configuração tiver sido feita corretamente (ou se o RStudio já tiver detectado automaticamente), o terminal pode exibir um prompt semelhante a:</p>
+<p><code>usuario@PC MINGW64 ...</code></p>
+<p>A presença de “MINGW64” é um indício forte de que você está no Git Bash.</p></li>
+<li><p>Para confirmar, digite o comando <code>pwd</code> e pressione <strong>Enter</strong>.</p>
+<p>O comando deve retornar um caminho, por exemplo:</p>
+<p><code>/c/Users/SeuUsuario/Documentos/ICD2026_Nome_Sobrenome</code></p>
+<p>Esse caminho deve corresponder à pasta do seu projeto (a pasta onde está o arquivo <code>.Rproj</code>, caso você já tenha criado um projeto no RStudio) ou à pasta onde você está trabalhando no momento.</p></li>
+<li><p>Se ao digitar <code>pwd</code> aparecer uma mensagem de erro (ou se nada semelhante ao exemplo acima for exibido), é provável que o Terminal <strong>não</strong> esteja abrindo no Git Bash.</p>
+<p>Nesse caso, volte em <strong>Tools</strong> → <strong>Global Options</strong> → <strong>Terminal</strong> e selecione <strong>Git Bash</strong> (ou <strong>Bash</strong>) em <strong>New terminals open with:</strong>. Em seguida, clique em <strong>Apply</strong> e <strong>OK</strong> e abra o Terminal novamente.</p></li>
+</ol>
+</section>
+<section id="vantagens-de-usar-o-git-bash-dentro-do-rstudio" class="level3" data-number="6.13.4">
+<h3 data-number="6.13.4" class="anchored" data-anchor-id="vantagens-de-usar-o-git-bash-dentro-do-rstudio"><span class="header-section-number">6.13.4</span> Vantagens de usar o Git Bash dentro do RStudio</h3>
+<ul>
+<li><p>Evita a necessidade de alternar entre aplicativos diferentes.</p></li>
+<li><p>Mantém seu fluxo de trabalho dentro de um único ambiente.</p></li>
+<li><p>Aproxima a experiência do Windows do que é comum em Linux/macOS.</p></li>
+<li><p>Facilita acompanhar exemplos e tutoriais que usam comandos do tipo Unix, como <code>pwd</code> e <code>ls</code>.</p></li>
+<li><p>Reduz a necessidade de “traduzir” comandos quando o professor demonstrar procedimentos no macOS.</p></li>
+</ul>
+</section>
+<section id="observação-importante" class="level3" data-number="6.13.5">
+<h3 data-number="6.13.5" class="anchored" data-anchor-id="observação-importante"><span class="header-section-number">6.13.5</span> Observação importante</h3>
+<p>Em muitos computadores com <strong>Git for Windows</strong> instalado, o RStudio consegue detectar automaticamente o Git Bash e defini-lo como terminal padrão.</p>
+<p>Ainda assim, é recomendável verificar essa opção em <strong>Tools</strong> → <strong>Global Options</strong> → <strong>Terminal</strong>, porque em alguns computadores o terminal padrão pode ser outro (por exemplo, <em>PowerShell</em>).</p>
+<p>Se não estiver como Git Bash (ou Bash), basta selecionar manualmente, como indicado acima.</p>
+<p>Se a opção <strong>Git Bash</strong> (ou <strong>Bash</strong>) não aparecer nas configurações do Terminal, feche e abra o RStudio novamente. Se ainda assim não aparecer, verifique se o <strong>Git for Windows</strong> está instalado corretamente no computador.</p>
+</section>
+</section>
+<section id="atalhos-de-teclado-essenciais-do-rstudio" class="level2" data-number="6.14">
+<h2 data-number="6.14" class="anchored" data-anchor-id="atalhos-de-teclado-essenciais-do-rstudio"><span class="header-section-number">6.14</span> Atalhos de Teclado Essenciais do RStudio</h2>
 <p>Dominar alguns atalhos de teclado básicos aumentará significativamente sua produtividade no RStudio, especialmente ao trabalhar com documentos Quarto:</p>
 <p><strong>Windows/Linux | macOS | Função</strong></p>
 <p><strong>Navegação entre painéis:</strong></p>
@@ -770,8 +869,8 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <li><code>Setas ↑/↓</code>: Navega pelo histórico de comandos no Console</li>
 </ul>
 </section>
-<section id="glossário-de-termos" class="level2" data-number="6.14">
-<h2 data-number="6.14" class="anchored" data-anchor-id="glossário-de-termos"><span class="header-section-number">6.14</span> Glossário de Termos</h2>
+<section id="glossário-de-termos" class="level2" data-number="6.15">
+<h2 data-number="6.15" class="anchored" data-anchor-id="glossário-de-termos"><span class="header-section-number">6.15</span> Glossário de Termos</h2>
 <section id="a" class="level3 unnumbered">
 <h3 class="unnumbered anchored" data-anchor-id="a">A</h3>
 <p><strong>Ambiente de Desenvolvimento Integrado (IDE)</strong>: Software que combina editor de código ou texto, console, gerenciamento de arquivos e outras ferramentas para facilitar o desenvolvimento de softwares.</p>

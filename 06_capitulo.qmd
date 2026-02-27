@@ -5,9 +5,25 @@ Integrado RStudio, incluindo orientações sobre como instalar,
 criar projetos RStudio e configurar o ambiente para adotar boas 
 práticas desde o início. 
 
+O capítulo também aborda a importância da estrutura de arquivos e 
+pastas de um projeto de análise de dados e o uso do terminal 
+integrado do RStudio para a execução de tarefas básicas no 
+computador e para preparar o ambiente para uso do Git e 
+GitHub que veremos nos próximos capítulos.  
 
 
-## Instalação do RStudio no Windows
+
+
+## Instalação do RStudio
+
+::: {.callout-note icon=false}
+**Observação:** o RStudio **não substitui a linguagem R**. Não importa a 
+ordem de instalação do RStudio e da linguagem R, mas é necessário que 
+ambos estejam instalados para que o RStudio funcione.
+:::
+
+
+### Windows
 
 1.  Acesse [https://posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/){target="_blank"}
 
@@ -23,24 +39,74 @@ clicar em em continuar/avançar/next até o início da instalação.
 
 
 
+### Linux
+
+1.  Acesse [https://posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/){target="_blank"}
+
+2.  Role a página para baixo até a seção `2: Install RStudio`.
+
+3.  No bloco de downloads para Linux, escolha o instalador compatível com sua distribuição:
+
+    - **Ubuntu/Debian**: baixe o arquivo com extensão **`.deb`**  
+    - **Fedora/RHEL/openSUSE**: baixe o arquivo com extensão **`.rpm`**
+
+4.  Após o download, instale o pacote:
+
+    - **Se você baixou `.deb` (Ubuntu/Debian):**
+      
+      1. Clique duas vezes no arquivo `.deb` para abrir a “Central de programas / Software Center”.
+      2. Clique em **Install/Instalar** e informe sua senha, se solicitado.
+
+    - **Se você baixou `.rpm` (Fedora/RHEL/openSUSE):**
+      
+      1. Clique duas vezes no arquivo `.rpm` para abrir o instalador de pacotes do sistema.
+      2. Clique em **Install/Instalar** e informe sua senha, se solicitado.
+
+5.  Finalizada a instalação, procure por **RStudio** no menu de aplicativos e abra o programa.
+
+
+
+### Macintosh
+
+
+1.  Acesse [https://posit.co/download/rstudio-desktop/](https://posit.co/download/rstudio-desktop/){target="_blank"}
+
+2.  Role a página para baixo até a seção `2: Install RStudio`.
+
+3.  Clique em `Download RStudio Desktop for macOS` (ou opção equivalente para **Mac**).
+
+4.  Após concluir o download, abra o arquivo **`.dmg`**.
+
+5.  Na janela que aparecer, arraste o ícone do **RStudio** para a pasta **Applications**.
+
+6.  Abra a pasta **Applications** e clique no ícone do **RStudio** para iniciar ou utilize o 
+Spotlight.
+
+7.  Se o macOS exibir um aviso de segurança (“app baixado da internet”), confirme em 
+**Open/Abrir**. Se necessário, vá em 
+**System Settings / Preferências do Sistema → Privacy & Security / Privacidade e Segurança** e permita a 
+abertura do aplicativo.
+
+
+
+
 ## O que é RStudio?
 
-- RStudio é um Ambiente de Desenvolvimento Integrado (em inglês, 
+RStudio é um Ambiente de Desenvolvimento Integrado (em inglês, 
 *Integrated Development Environment*, IDE) poderoso para a linguagem R, 
-destinado a cientistas e analistas de dados.
-
-- Últil também para outras linguagens, mas principlamente para a 
-linguagem R.
+destinado a cientistas e analistas de dados. Ele pode ser utilizado para 
+escrever código de outras linguagens, mas ele é mais eficiente para 
+escrever código da linguagem R.
 
 
 
 ## O que é um Ambiente de Desenvolvimento Integrado?
 
-- Um Ambiente de Desenvolvimento Integrado (IDE) é um programa 
+Um Ambiente de Desenvolvimento Integrado (IDE) é um programa 
 abrangente que facilita o desenvolvimento de software ao integrar 
 múltiplas funcionalidades essenciais em uma única interface. 
 
-- Além de incluir um **editor de texto** avançado, ele oferece 
+Além de incluir um **editor de texto** avançado, ele oferece 
 recursos de construção automática e um depurador robusto. 
 
 Destacam-se também funcionalidades como: 
@@ -88,14 +154,13 @@ constantemente melhoram a ferramenta.
 
 ![](https://d33wubrfki0l68.cloudfront.net/0b4d0569b2ddf6147da90b110fbb2a17653c8b08/f06f3/images/shutterstock/r_vs_rstudio_1.png){width="100%" fig-align="center"}
 
-- R é uma **linguagem de programação**, enquanto o RStudio é um 
+R é uma **linguagem de programação**, enquanto o RStudio é um 
 **Ambiente de Desenvolvimento Integrado** que contém recursos que 
 facilitam o uso da linguagem R.
 
-- Utilizando a analogia de um carro, R seria o motor enquanto o RStudio 
-seria o painel de controles (*dashboard*)
-
-- Portanto, é necessário ter os dois softwares instalados.
+Utilizando a analogia de um carro, R seria o motor enquanto o RStudio 
+seria o painel de controles (*dashboard*). Portanto, é necessário ter 
+os dois softwares instalados.
 
 
 
@@ -112,24 +177,24 @@ seria o painel de controles (*dashboard*)
 
 ### Painel: **Source**
 
-- O painel `Source` permite a visualização e edição de vários arquivos 
+O painel `Source` permite a visualização e edição de vários arquivos 
 relacionados a diversas linguagens, tais como: `.R`, `.qmd`,`.py`
 ou arquivos de texto gerais como `.txt` ou `.md.` 
 
-- Por padrão, é o painel superior esquerdo e pode ser iniciado abrindo 
+Por padrão, é o painel superior esquerdo e pode ser iniciado abrindo 
 qualquer arquivo editável no RStudio. 
 
-- Cada arquivo adicional que for aberto será adicionado como uma nova guia 
+Cada arquivo adicional que for aberto será adicionado como uma nova guia 
 no painel.
 
 
 
 ### Painel: **Console**
 
-- Esse painel fornece uma área para executar o código interativamente, isto 
+Esse painel fornece uma área para executar o código interativamente, isto 
 é, você pode "conversar" diretamente com o interpretado da linguagem R.
 
-- Por padrão, está vinculado a linguagem R, mas ele também pode fornecer um 
+Por padrão, está vinculado a linguagem R, mas ele também pode fornecer um 
 console Python.
 
 
@@ -234,9 +299,9 @@ tidyverse usethis
 
 ### Usando comandos
 
-- Uma forma alternativa de instalar pacotes é usando a linha de comando. 
+Uma forma alternativa de instalar pacotes é usando a linha de comando. 
 
-- Você pode usar o seguinte comando diretamente no console, em um script, 
+Você pode usar o seguinte comando diretamente no console, em um script, 
 ou em um documento Quarto:
 
 ```{r}
@@ -249,10 +314,10 @@ install.packages(c("tidyverse", "usethis"))
 
 ### Atenção: Instalação e Carregamento de Pacotes
 
-- Usando um IDE como o RStudio, ou outro, em um computador, 
+Usando um IDE como o RStudio, ou outro, em um computador, 
 precisamos instalar pacotes apenas **uma vez**.
 
-- Entretanto, para utilizar os pacotes já instalados, precisamos 
+Entretanto, para utilizar os pacotes já instalados, precisamos 
 **sempre carregá-los** com:
 
 ```{r}
@@ -269,10 +334,10 @@ library(usethis)
 
 ### Conexão com a Internet.
 
-- Para instalar pacotes, de R ou Python, é necessária uma 
+Para instalar pacotes, de R ou Python, é necessária uma 
 **conexão ativa com a internet**.
 
-- Pode ser necessário repetir a instalação devido à falhas 
+Pode ser necessário repetir a instalação devido à falhas 
 na conexão, que faz com que os arquivos dos pacotes não 
 sejam baixados completamente.
 
@@ -306,21 +371,21 @@ sejam baixados completamente.
 
 ### Visão Geral
 
-- Cientistas e Analistas de dados mantêm todos os arquivos associados 
+Cientistas e Analistas de dados mantêm todos os arquivos associados 
 a um determinado projeto juntos e organizados em pastas/diretórios — 
 dados, scripts, relatórios, etc. 
 
-- Esta é uma prática tão sábia e comum que o RStudio tem suporte integrado 
+Esta é uma prática tão sábia e comum que o RStudio tem suporte integrado 
 para isso por meio dos `Projects`. 
 
-- Os *RStudio Projects* (em português, *Projetos RStudio*) tornam simples 
+Os *RStudio Projects* (em português, *Projetos RStudio*) tornam simples 
 organizar seus projetos em vários contextos, cada um com sua própria 
 pasta e documentos diversos.
 
-- Seja com R ou Python, é fundamental criar um projeto do 
+Seja com R ou Python, é fundamental criar um projeto do 
 Editor ou IDE para organizar os arquivos de cada projeto.
 
-- Entre diversas outras, uma vantagem adicional importante do uso de 
+Entre diversas outras, uma vantagem adicional importante do uso de 
 projetos é que você se livra dos problemas com caminhos absolutos 
 de arquivos e pastas, como veremos posteriormente.
 
@@ -369,12 +434,11 @@ acentos, espaços e caracteres especiais para nomear pastas, projetos
 e arquivos. 
 :::
 
+
 4. Digite o nome do projeto (por exemplo, `icd2026_joao_silva`) no campo 
 de texto abaixo de **Directory Name** e clique na caixa **Create a git repository**:
 
 ![](img/06-cap/new_project04.png){fig-align="center" width="80%"}
-
-
 
 5. Clique em **Create Project** para criar o projeto. Em seguida, 
 você verá algo similar a seguinte imagem no RStudio:
@@ -458,7 +522,8 @@ sua produtividade.
 
 - E no médio e longo prazos, caso aprenda mais recursos da linguagem R 
 ou de um Terminal, você será capaz de automatizar tarefas repetivas e 
-rotineiras, o que aumenta significativamete sua produtividade.
+rotineiras envolvendo a criação de pastas e arquivos, entre outas, 
+o que aumenta significativamete sua produtividade.
 
 Considerando o projeto RStudio recém-criado e ainda vazio, utilize a
 função `dir.create()` da linguagem R no Console do RStudio 
@@ -507,12 +572,12 @@ de edição de código para tipos de arquivos específicos:
 
 ### Menu `Files`
 
-- É possível criar um novo arquivo com `File -> New File`:
+É possível criar um novo arquivo com `File -> New File`:
 
 ![](https://docs.posit.co/ide/user/ide/guide/ui/images/system-files-menu.png){fig-align="center"}
 
 
-- Outra possibilidade é usar o ícone no canto superior esquerdo do 
+Outra possibilidade é usar o ícone no canto superior esquerdo do 
 RStudio:
 
 ![](img/06-cap/cria_arquivos.png){fig-align="center"}
@@ -520,71 +585,168 @@ RStudio:
 
 
 
+## Por que aprender a usar um terminal
+
+Um **terminal** é um programa que permite interagir com o 
+sistema operacional de um computador digitando comandos
+em vez de clicar em menus. Ele permite navegar por pastas, criar e organizar
+arquivos e executar ferramentas usadas em projetos envolvendo código e/ou 
+dados.
+
+Mesmo que você use o RStudio (ou outro IDE) no dia a dia, aprender o 
+básico de um terminal pode tornar seu trabalho mais rápido e mais organizado. 
+Isso vale no Windows(Git Bash), no Linux (Bash) e no macOS (Z shell ou Bash).
+
+A ideia é simples: o terminal ajuda a executar tarefas comuns com comandos
+curtos, de forma consistente e com menos cliques.
+
+
+### Organizar projetos com mais agilidade
+
+Em projetos com várias pastas e arquivos, o terminal ajuda a navegar e manter
+a estrutura organizada. Por exemplo:
+
+- ver o caminho da pasta atual: `pwd`
+- listar arquivos e pastas: `ls`
+- criar uma pasta: `mkdir dados`
+- criar um arquivo vazio: `touch teste.qmd`
+
+
+
+### Manipular arquivos com rapidez e menos erros
+
+No terminal, você consegue fazer operações comuns de forma direta, como:
+
+- mover e nenomear arquivos: `mv nome_antigo.csv nome_novo.csv`
+- copiar arquivos: `cp dados.csv dados_backup.csv`
+- criar um arquivo vazio, como um script R: `touch scripts/01-importacao.R`
+
+Essas tarefas aparecem o tempo todo em análise de dados, especialmente ao
+criar e organizar um projeto e na manipulação de arquivos de dados.
+
+### Preparar o caminho para automação
+
+Quando você domina o básico, fica mais fácil automatizar rotinas simples,
+como executar sempre a mesma sequência de passos em um projeto (por exemplo,
+organizar arquivos, gerar relatórios e manter tudo padronizado). Isso é parte
+importante de um fluxo de trabalho mais profissional e reprodutível.
+
+
+::: {.callout-note icon=false}
+**Por enquanto, nosso objetivo é apenas o básico.** Vamos usar o terminal
+principalmente para acompanhar o curso com mais fluidez e para dar os primeiros
+passos em uma habilidade muito valorizada em trabalhos com dados.
+:::
+
+
+
 
 ## Configurando o RStudio para usar o Git Bash como Terminal
 
-Como usaremos Git e GitHub, é importante configurar o terminal do RStudio 
-para abrir com o Git Bash, permitindo executar comandos do Git sem sair do RStudio.
+Como usaremos **Git** e **GitHub** ao longo da disciplina, é conveniente que o
+terminal do RStudio abra em um ambiente do tipo Unix (Linux/macOS). No Windows,
+a forma mais simples de obter essa experiência é usar o **Git Bash** (instalado
+junto com o **Git for Windows**).
+
+> **Ponto importante:** o Git Bash não é o único terminal possível no Windows.
+> Mesmo que o RStudio abra com outro terminal (por exemplo, *PowerShell*), isso
+> não impede que você use o RStudio normalmente.
+>
+> Nesta etapa, o objetivo é apenas **padronizar o ambiente do terminal** para
+> que ele se comporte de forma semelhante ao que veremos em sistemas Unix
+> (Linux/macOS). Isso facilita acompanhar os exemplos quando usarmos
+> comandos simples de terminal, como `pwd` e `ls`, para localizar pastas e
+> arquivos do projeto e outros mais avançados.
+
+Considerando que você utiliza um computador com Windows que já instalou o 
+**Git for Windows**, siga as etapas a seguir.
 
 
-1. **Configurando o terminal Git Bash no RStudio**:
+### Configurando o Git Bash como terminal padrão
 
-- Abra o RStudio
+### Configurando o Git Bash como terminal padrão
 
-- Clique no menu "*Tools*" > "*Global Options*" > "*Terminal*".
+1. Abra o RStudio.
 
-- No campo "*New terminals open with:*", selecione "*Git Bash*" no 
-menu suspenso.
+2. Clique no menu **Tools** → **Global Options** → **Terminal**.
 
-- Clique em "*Apply*" e depois em "*OK*"
+3. No campo **New terminals open with:**, selecione **Git Bash** (ou apenas
+   **Bash**, dependendo da versão do RStudio).
 
+4. Clique em **Apply** e depois em **OK**.
 
-2. **Acessando o terminal Git Bash no RStudio**:
+5. Se a opção **Git Bash** (ou **Bash**) não aparecer no menu suspenso:
 
-- No painel inferior do RStudio, clique na aba **Terminal**.
+   - Feche e abra o RStudio novamente e volte a esta tela de configuração.
 
-- Se a configuração tiver sido feita corretamente (ou se o RStudio já tiver
-  detectado o Git Bash), o terminal exibirá um prompt parecido com:
-
-  `usuario@PC MINGW64 ...`
-
-  *(a presença de “MINGW64” é um indício forte de que você está no Git Bash).*
-
-- Para confirmar, digite o comando `pwd` e pressione **Enter**.
-
-  - O comando deve retornar um caminho, por exemplo:
-
-    `/c/Users/SeuUsuario/Documentos/ICD2026_Nome_Sobrenome`
-
-  - Esse caminho deve corresponder à pasta do seu projeto (a pasta onde está o
-    arquivo `.Rproj`) que estiver aberto no RStudio.
+   - Se ainda assim a opção não aparecer, verifique se o **Git for Windows**
+     está instalado corretamente no computador. Em alguns casos, pode ser
+     necessário reinstalar o Git for Windows, garantindo que ele fique
+     disponível no sistema (por exemplo, com o Git acessível no terminal).
 
 
+### Abrindo o terminal no RStudio e verificando se é o Git Bash
 
-3. **Vantagens de usar o Git Bash dentro do RStudio**:
+1. No painel inferior do RStudio, clique na aba **Terminal**.
 
-- Mantém seu fluxo de trabalho dentro de um único ambiente.
+2. Se a configuração tiver sido feita corretamente (ou se o RStudio já tiver
+   detectado automaticamente), o terminal pode exibir um prompt semelhante a:
 
-- Facilita a navegação entre edição de arquivos e execução de comandos Git.
+   `usuario@PC MINGW64 ...`
 
-- Permite copiar e colar facilmente entre o editor e o terminal.
+   A presença de “MINGW64” é um indício forte de que você está no Git Bash.
+
+3. Para confirmar, digite o comando `pwd` e pressione **Enter**.
+
+   O comando deve retornar um caminho, por exemplo:
+
+   `/c/Users/SeuUsuario/Documentos/ICD2026_Nome_Sobrenome`
+
+   Esse caminho deve corresponder à pasta do seu projeto (a pasta onde está o
+   arquivo `.Rproj`, caso você já tenha criado um projeto no RStudio) ou à pasta
+   onde você está trabalhando no momento.
+
+4. Se ao digitar `pwd` aparecer uma mensagem de erro (ou se nada semelhante ao
+   exemplo acima for exibido), é provável que o Terminal **não** esteja abrindo
+   no Git Bash.
+
+   Nesse caso, volte em **Tools** → **Global Options** → **Terminal** e selecione
+   **Git Bash** (ou **Bash**) em **New terminals open with:**. Em seguida, clique
+   em **Apply** e **OK** e abra o Terminal novamente.
+
+
+
+### Vantagens de usar o Git Bash dentro do RStudio
 
 - Evita a necessidade de alternar entre aplicativos diferentes.
 
+- Mantém seu fluxo de trabalho dentro de um único ambiente.
 
-::: {.callout-tip}
-## Importante  
+- Aproxima a experiência do Windows do que é comum em Linux/macOS.
 
-Em muitos computadores com **Git for Windows** instalado (o pacote que inclui o *Git Bash*),
-o RStudio consegue **detectar automaticamente** o *Git Bash* e defini-lo como o terminal 
-padrão do RStudio, **sem que você precise configurar nada**.  
+- Facilita acompanhar exemplos e tutoriais que usam comandos do tipo Unix,
+  como `pwd` e `ls`.
 
-Ainda assim, é recomendável verificar esta opção em *Tools* → *Global Options* → *Terminal*,
-porque em alguns computadores o “terminal padrão” pode ser outro (por exemplo, *PowerShell*).
+- Reduz a necessidade de “traduzir” comandos quando o professor demonstrar
+  procedimentos no macOS.
 
-Se não estiver como *Git Bash*, basta selecionar manualmente, como indicado abaixo.
-:::
 
+
+### Observação importante
+
+Em muitos computadores com **Git for Windows** instalado, o RStudio consegue
+detectar automaticamente o Git Bash e defini-lo como terminal padrão.
+
+Ainda assim, é recomendável verificar essa opção em **Tools** → **Global Options**
+→ **Terminal**, porque em alguns computadores o terminal padrão pode ser outro
+(por exemplo, *PowerShell*).
+
+Se não estiver como Git Bash (ou Bash), basta selecionar manualmente, como
+indicado acima.
+
+Se a opção **Git Bash** (ou **Bash**) não aparecer nas configurações do Terminal,
+feche e abra o RStudio novamente. Se ainda assim não aparecer, verifique se o
+**Git for Windows** está instalado corretamente no computador.
 
 
 
