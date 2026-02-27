@@ -1,4 +1,4 @@
-# Introdução ao RStudio 
+# Introdução ao RStudio {#sec-rstudio}
 
 O objetivo deste capítulo é introduzir o Ambiente de Desenvolvimento
 Integrado RStudio, incluindo orientações sobre como instalar, 
