@@ -32,6 +32,8 @@ book:
       chapters:
         - parte2.qmd
         - 06_capitulo.qmd
+        - 07_capitulo.qmd
+        - 08_capitulo.qmd
 
     - referencias.qmd
 

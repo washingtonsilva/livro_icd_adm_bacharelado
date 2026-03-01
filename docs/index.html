@@ -189,6 +189,18 @@ ul.task-list li input[type="checkbox"] {
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Introdução ao RStudio</span></span></a>
   </div>
 </li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./07_capitulo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Introdução à Linguagem R</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./08_capitulo.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">Introdução ao Sistema Quarto</span></span></a>
+  </div>
+</li>
       </ul>
   </li>
         <li class="sidebar-item">
@@ -249,14 +261,13 @@ ul.task-list li input[type="checkbox"] {
 
 <section id="prefácio" class="level1 unnumbered">
 <h1 class="unnumbered">Prefácio</h1><p><img src="img/capa/capa.png" title="Introdução à Ciência de Dados para Administração" class="quarto-cover-image nolightbox img-fluid"></p>
-<p>Este livro resulta da minha experiência em ministrar a disciplina <em>Introdução à Ciência de Dados</em> nos anos de 2024 e 2025 para o curso noturno de Bacharelado em Administração do IFMG – Campus Formiga. A intenção é que o livro organize e aprofunde os materiais utilizados em sala de aula, com o objetivo de oferecer aos estudantes uma referência aberta e, espero, com boa qualidade.</p>
-<p>A estrutura do livro é inspirada no programa da disciplina e deve funcionar tanto como material de apoio às aulas quanto como um registro dos conteúdos trabalhados ao longo da disciplina. O leitor encontrará referências a materiais complementares e à recursos online, que podem ser utilizadas para estudo autônomo.</p>
-<p>Embora pensado prioritariamente para os alunos do curso de Administração do IFMG – Campus Formiga, o texto foi escrito de modo a poder ser útil a estudantes de Administração e áreas afins, especialmente àqueles que estão iniciando o estudo de disciplinas que envolvam análise de dados e estatística.</p>
-<p>O leitor a quem este livro se dirige costuma ter algum contato prévio com programação, geralmente por meio de disciplinas introdutórias, mas frequentemente apresenta dificuldades com lógica, matemática básica e conceitos estatísticos. Além disso, é comum a dependência quase exclusiva de planilhas eletrônicas, o que limita a reprodutibilidade, a transparência e a escalabilidade das análises. Este livro parte dessa realidade e não pressupõe fluência prévia em programação ou estatística.</p>
-<p>A proposta é deliberada: as dificuldades inerentes à Ciência de Dados não são evitadas, pelo contrário, mas introduzidas de forma gradual e contextualizada. Conceitos, técnicas e ferramentas são apresentados passo a passo, sempre que possível ancorados em exemplos ligados à área de Administração. O objetivo não é ensinar apenas comandos, mas contribuir para a formação de um modo de pensar analítico e crítico, necessários para a proposição de soluções basedas em dados.</p>
-<p>A linguagem de programação adotada é <em>R</em>, escolhida pelo fato de considerá-la a melhor linguagem de programação para a análise e visualização de dados. O livro também introduz noções básicas de <em>SQL</em>, reconhecendo sua importância no trabalho com bases de dados reais. Ferramentas como <em>RStudio</em>, <em>Git</em> e <em>GitHub</em>, bem como o uso de um <em>terminal</em>, são apresentadas como parte do ambiente computacional utilizado, voltado à organização, documentação e controle de versões. O sistema <em>Quarto</em> é utilizado extensivamente, enfatizando a importância da <strong>reprodutibilidade</strong>, <strong>transparência</strong> e a importância da <strong>documentação</strong> dos procedimentos de análise.</p>
-<p>– TODO: tópicos de probabilidade, estatística (aprendizagem de máquinda?) que serão abordados.</p>
-<p>Minha intenção é que este projeto, em estágio inicial de desenvolvimento, forneça uma contribuição, ainda que modesta, para minimizar um grave problema estrutural: a escassez de referências atualizadas em português na área de Ciência de Dados, a dificuldade de acesso a livros importados por instituições públicas, dada a forte restrição orçamentária à que estas instituições estão submetidas há muitos anos. Nesse contexto, considero que a produção de materiais abertos, de alto nível e adaptados ao contexto local torna-se muito necessária.</p>
+<p>O projeto deste livro digital, em estágio inicial de desenvolvimento, resulta da minha experiência em ministrar a disciplina <em>Introdução à Ciência de Dados</em> nos anos de 2024 e 2025 para o curso noturno de Bacharelado em Administração do IFMG – Campus Formiga. A intenção é que o livro organize e aprofunde os materiais utilizados em sala de aula, com o objetivo de oferecer aos estudantes, e demais interessados, uma referência aberta e, espero, com boa qualidade.</p>
+<p>Minha intenção é que este projeto forneça uma contribuição, ainda que modesta, para minimizar um grave problema estrutural: a escassez de referências atualizadas em português na área de Ciência de Dados, a dificuldade de acesso a livros importados por instituições públicas, dada a forte restrição orçamentária à que estas instituições estão submetidas há muitos anos. Nesse contexto, considero que a produção de materiais abertos, de alto nível e adaptados ao contexto local torna-se muito necessária.</p>
+<p>A estrutura do livro é inspirada no programa da disciplina e deve funcionar como material de apoio às aulas. O leitor encontrará referências a materiais complementares e à recursos online, que podem ser utilizadas para estudo autônomo. Embora pensado prioritariamente para os alunos do curso de Administração do IFMG – Campus Formiga, o texto está sendo escrito de modo a poder ser útil a estudantes de Administração e áreas afins.</p>
+<p>O leitor a quem este livro se dirige costuma ter uma dependência quase exclusiva de planilhas eletrônicas, que limitam fortemente a reprodutibilidade, a transparência e a escalabilidade das análises. Além disso, é usual que o leitor típico tenha tido algum contato prévio com programação, geralmente por meio de disciplinas introdutórias, mas frequentemente apresenta dificuldades com lógica, matemática básica e conceitos estatísticos. Este livro parte dessa realidade e não pressupõe fluência prévia em programação, probabilidade ou estatística.</p>
+<p>A proposta é intencional: as dificuldades inerentes à Ciência de Dados não são evitadas, pelo contrário, mas introduzidas de forma gradual e contextualizada. Conceitos, técnicas e ferramentas são apresentados passo a passo. O objetivo não é ensinar apenas comandos, mas contribuir para a formação de um modo de pensar analítico e crítico, necessários para a proposição de soluções basedas em dados.</p>
+<p>A linguagem de programação adotada é <em>R</em>, escolhida pelo fato de considerá-la a melhor linguagem para a análise e visualização de dados. O livro também introduz noções básicas de <em>SQL</em>, reconhecendo sua importância no trabalho com bases de dados reais. Ferramentas como <em>RStudio</em>, <em>Git</em> e <em>GitHub</em>, bem como o uso de um <em>terminal</em>, são apresentadas como parte do ambiente computacional utilizado, voltado à organização, documentação e controle de versões. O sistema <em>Quarto</em> é utilizado extensivamente, enfatizando a importância da <strong>reprodutibilidade</strong>, <strong>transparência</strong> e a importância da <strong>documentação</strong> dos procedimentos de análise.</p>
+<p>– TODO: escrever sobre os fundamentos de probabilidade, estatística e ciência de Dados que serão abordados. Agradecimentos.</p>
 <p><a href="https://washingtonsilva.github.io" target="_blank"><strong>Washington Santos da Silva</strong></a><br>
 Professor do IFMG – Campus Formiga</p>
 
