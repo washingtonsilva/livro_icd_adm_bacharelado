@@ -1,1 +1,2271 @@
 ## Introdução ao Controle de Versão com Git e Github {#sec-git}
+
+
+Este capítulo aborda o controle de versão de documentos 
+computacionais usando o sistema Git e a plataforma GitHub.
+
+
+
+## O que é Git?
+
+- Imagine o Git como um "sistema de salvamento inteligente" que registra 
+  cada versão dos seus documentos e projetos.
+
+- Ao contrário do método tradicional de salvar vários arquivos 
+  como "**Relatório_v1.docx**", "**Relatório_v2.docx**", o Git guarda apenas 
+  as mudanças, economizando espaço.
+
+- É como uma "máquina do tempo" para seu trabalho: você pode visualizar ou 
+  restaurar qualquer versão anterior quando precisar, sem perder as versões 
+  mais recentes.
+
+- Facilita o trabalho em equipe, permitindo que várias pessoas alterem 
+  os mesmos arquivos sem conflitos graves.
+
+
+
+## Por que usar Git?
+
+- **Evita a confusão de múltiplas versões**: Adeus a arquivos como   
+  "**Relatorio_Final_v2_Revisado_Corrigido.docx**".
+
+- **Recuperação de trabalho**: Se algo der errado, você pode voltar 
+   facilmente a uma versão anterior que funcionava.
+
+- **Experimente sem medo**: Tente novas abordagens sabendo que pode 
+  reverter se não gostar do resultado.
+
+- **Trabalho colaborativo organizado**: Múltiplas pessoas podem trabalhar 
+  no mesmo projeto sem sobrescrever o trabalho umas das outras.
+
+- **Documentação automática**: O histórico de alterações serve como 
+   documentação da evolução do seu trabalho.
+
+
+
+
+## O que é GitHub?
+
+- Um serviço online que funciona como uma "nuvem para projetos Git".
+
+- Pense no GitHub como um Google Drive ou Dropbox especializado para 
+  projetos que usam Git.
+
+- Além de armazenar seus arquivos, oferece ferramentas para colaboração, 
+  revisão e discussão do trabalho.
+
+- É amplamente usado tanto por desenvolvedores quanto por pesquisadores, 
+  analistas e educadores para compartilhar trabalhos.
+
+
+
+
+## Por que usar GitHub?
+
+- **Backup seguro**: Seus projetos ficam armazenados na nuvem, 
+  protegidos contra perda de dados se seu computador falhar ou 
+  for perdido.
+
+- **Portfólio profissional**: Muitos profissionais usam o GitHub como 
+  vitrine de seus trabalhos e habilidades.
+
+- **Colaboração simplificada**: Facilita o trabalho em equipe mesmo com 
+  pessoas em locais diferentes.
+
+- **Compartilhamento eficiente**: Compartilhe seu trabalho com colegas 
+  de curso, de trabalho ou com o mundo.
+
+- **Aprendizado constante**: Acesse e estude projetos semelhantes ao seu 
+  para aprender novas técnicas e abordagens.
+
+
+
+
+
+## Instalação e Configurações Básicas
+
+
+### Instando Git no Windows
+
+1. **Baixe o instalador**:
+
+- Acesse o site oficial: 
+[https://git-scm.com/download/win](https://git-scm.com/download/win){target="_blank"}
+
+- O site deve te indicar automaticamente qual a versão adequada para 
+  seu sistema operacional.
+
+2. **Execute o instalador**:
+
+- Clique duplo no arquivo baixado (algo como "Git-2.xx.x-64-bit.exe`").
+- Aceite as permissões de administrador se solicitado.
+
+3. **Configure o instalador**:
+
+- Mantenha as opções padrão na maioria das telas;
+
+- Na tela "*Adjusting your PATH environment*", escolha a opção 
+ recomendada: "*Git from the command line and also from 3rd-party software*"
+ 
+- Para as demais opções, as configurações padrão funcionam bem para 
+iniciantes
+
+4. **Conclua a instalação**:
+
+- Clique em "*Install*" e aguarde a conclusão
+
+- Ao finalizar, marque a opção "*Launch Git Bash*" e clique em "*Finish*" 
+ para abrir o Git Bash imediatamente
+
+5. **Verifique a instalação**:
+
+- No Git Bash que abriu, digite: `git --version`
+
+- Se aparecer algo como `git version 2.xx.x`, a instalação foi bem-sucedida!
+
+
+
+
+::: {.callout-note icon="false"}
+## O que é o Git Bash?
+
+- O Git Bash é um terminal especial (uma janela de linha de comando) 
+  instalado junto com o Git no Windows.
+
+- Pense nele como uma "janela de comando" onde você digita instruções 
+  para o Git.
+
+- **Por que usar o Git Bash em vez do Prompt de Comando do Windows?**
+
+    - Oferece comandos adicionais úteis que não existem no prompt padrão 
+     do Windows.
+     
+    - Funciona de forma mais semelhante ao Git em outros sistemas 
+     (Mac, Linux).
+     
+    - Possui recursos de autocompletar e visualização colorida que 
+      facilitam o us.o
+
+- **Como abrir o Git Bash**:
+
+    - Método 1: Pesquise "Git Bash" no menu Iniciar.
+    - Método 2: Clique com o botão direito em qualquer pasta e selecione 
+     "Git Bash Here" para abrir o terminal já naquela pasta.
+
+- **Não se assuste com a interface de texto!** 
+
+    - Apesar de parecer complicado no início, você precisará aprender 
+      apenas alguns comandos básicos para começar.
+:::
+
+
+
+
+### Configurando o Git no seu computador
+
+Antes de começar a usar o Git, é necessário fazer uma configuração 
+inicial básica. Essa configuração identifica quem está fazendo as 
+alterações e só precisa ser feita uma vez em cada computador.
+
+1. **Configure seu nome de usuário**:
+
+- Abra o Git Bash
+
+- Digite o comando:
+
+```bash
+git config --global user.name "nome_sobrenome"
+```
+- Exemplo: 
+
+```bash
+git config --global user.name "maria_silva"
+```
+
+
+2. **Configure seu email**:
+
+- Use o mesmo email que você usará (ou já usa) para sua conta no GitHub:
+
+```bash
+git config --global user.email "seu.email@exemplo.com"
+```
+
+- Exemplo: 
+
+```bash
+git config --global user.email "maria.silva@gmail.com
+```
+
+3. **Verifique suas configurações**:
+
+- Para conferir se tudo está correto:
+
+```bash
+git config --global --list
+```
+
+- Isso mostrará todas as suas configurações globais
+
+Estas informações serão usadas para identificar suas contribuições em 
+projetos, então use dados reais, especialmente se for trabalhar em 
+projetos compartilhados.
+
+
+
+### Criando Conta no GitHub
+
+O GitHub é onde você vai armazenar seus projetos Git na nuvem. 
+Criar uma conta é gratuito e simples:
+
+1. **Acesse o site do GitHub**:
+
+- Acesse [https://github.com](https://github.com){target="_blank"}
+
+- Clique no botão "Sign up" (Cadastrar-se)
+
+2. **Preencha o formulário de cadastro**:
+
+- Digite seu email (use o mesmo que configurou no Git local).
+
+- Crie uma senha segura.
+
+- Escolha um nome de usuário único:
+  
+     - Este será parte do endereço dos seus projetos (github.com/seu-usuario).
+     - Recomendação: use algo profissional que você não se importaria de 
+       mostrar no currículo.
+
+3. **Verifique seu email**:
+
+- O GitHub enviará um código de verificação para seu email.
+
+- Insira este código para confirmar sua conta.
+
+4. **Personalize sua experiência** (opcional):
+
+- O GitHub perguntará sobre seu nível de experiência e interesses.
+
+- Você pode preencher ou pular esta etapa.
+
+5. **Configure a autenticação em dois fatores** (recomendado):
+
+- Para maior segurança, ative a autenticação em dois fatores nas configurações.
+
+- Isso protege sua conta mesmo se alguém descobrir sua senha.
+
+6. **Crie seu primeiro repositório**:
+
+- Após entrar, clique no botão "+" no canto superior direito.
+
+- Selecione "*New repository*" (Novo repositório).
+
+- Dê um nome ao repositório (por exemplo, "meu-primeiro-projeto").
+
+- Clique em "*Create repository*" (Criar repositório).
+
+Pronto! Sua conta está criada e você já tem seu primeiro repositório 
+no GitHub.
+
+
+
+
+## Configurando o RStudio para usar o Git Bash como Terminal
+
+
+Como trabalharemos com o sistema Quarto e RStudio, é importante 
+saber como acessar e usar o terminal Git Bash diretamente dentro 
+do RStudio:
+
+1. **Configurando o terminal Git Bash no RStudio**:
+
+- Abra o RStudio
+
+- Vá para "*Tools*" > "*Global Options*" > "*Terminal*".
+
+- No campo "*New terminals open with:*", selecione "*Git Bash*" no 
+menu suspenso.
+
+- Clique em "*Apply*" e depois em "*OK*"
+
+2. **Acessando o terminal Git Bash no RStudio**:
+
+- No painel inferior do RStudio, clique na aba "*Terminal*".
+
+- Um novo terminal Git Bash será aberto.
+
+- Se um terminal já estiver aberto, mas não for o Git Bash, clique 
+  no ícone "+" no canto superior direito do painel de terminal e 
+  selecione "*New Terminal*" para abrir um novo terminal Git Bash
+
+3. **Vantagens de usar o Git Bash dentro do RStudio**:
+
+- Mantém seu fluxo de trabalho dentro de um único ambiente.
+
+- Facilita a navegação entre edição de arquivos e execução de comandos Git.
+
+- Permite copiar e colar facilmente entre o editor e o terminal.
+
+- Evita a necessidade de alternar entre aplicativos diferentes.
+
+4. **Verificando se está usando Git Bash**:
+
+- O prompt do Git Bash normalmente mostra o caminho atual e termina com "$".
+
+- As cores do texto no terminal são diferentes do terminal padrão do Windows.
+
+- Você pode digitar `echo $SHELL` e pressionar Enter - se mostrar algo 
+  contendo "bash", você está no Git Bash.
+
+
+
+
+## Comandos Essenciais para Começar {#sec-essenciais}
+
+
+Os quatro comandos básicos que você usará com mais frequência 
+(seu fluxo de trabalho padrão) são:
+
+- `git status`: consulta o estado atual dos seus arquivos
+- `git add`: prepara as mudanças para serem salvas
+- `git commit`: salva as mudanças no repositório local
+- `git push origin main`: envia as mudanças para o GitHub
+
+Pense nestes comandos como um processo de 4 passos:
+
+1. Verificar o que mudou (`status`).
+2. Adicionar/Selecionar o que você quer salvar (`add`).
+3. Salvar as mudanças localmente com uma descrição (`commit`).
+4. Enviar para a nuvem/GitHub (`push`).
+
+
+
+### git status
+
+- O comando `git status` é como tirar uma "foto" do estado atual 
+do seu projeto.
+
+- **O que ele mostra?**: 
+
+    - Quais arquivos você modificou desde o último salvamento.
+    - Quais arquivos são novos e ainda não estão sendo rastreados.
+    - Quais mudanças já estão prontas para serem salvas (commit).
+
+- **Quando usar?**:
+
+    - Sempre que quiser verificar o que mudou no seu projeto.
+    - Antes de fazer um commit para confirmar que está incluindo as 
+      mudanças certas.
+    - Quando não se lembrar se salvou suas últimas alterações.
+
+- **Exemplo prático**: Imagine que você está trabalhando em uma análise de 
+  dados e:
+
+    - Modificou seu script principal (`analise.R`).
+    - Adicionou um novo arquivo de dados (`dados_2024.csv`).
+    - Modificou seu relatório (`relatorio.qmd`).
+    
+- Ao digitar `git status`, você verá todos esses arquivos listados indicando 
+quais estão prontos para commit (<span style="color: green;">em verde</span>) e 
+quais ainda precisam ser adicionados (<span style="color: red;">em vermelho</span>).
+
+- **É como fazer a pergunta**: "O que mudou no meu projeto e o que preciso 
+ salvar?"
+
+
+
+
+### git add
+
+- O comando `git add` é como adicionar ou selecionar quais mudanças você 
+quer incluir na próxima "foto" (commit) do seu projeto.
+
+- Pense nele como a etapa de "seleção" antes de salvar suas mudanças 
+definitivamente.
+
+- **Como funciona na prática?**
+
+- Imagine que você está organizando fotos para um álbum:
+  
+    - Você tira várias fotos (faz várias mudanças nos arquivos)
+    - Antes de imprimir o álbum, seleciona quais fotos quer incluir (`git add`)
+    - Só depois de selecionar, você finaliza uma página do álbum (`git commit`)
+
+- **Quando usar?** Use `git add` quando:
+
+    - Terminar de fazer uma alteração que faz sentido ser salva
+    - Quiser incluir um novo arquivo ao projeto
+    - Antes de fazer um commit
+
+**Exemplos de Uso:**
+
+1. Para adicionar **apenas um arquivo** específico:
+
+```bash
+git add scripts/analise.R
+```
+Esse comando adiciona apenas o arquivo `analise.R` que está na pasta "scripts".
+   
+Se você estiver trabalhando com análises estatísticas ou financeiras, 
+poderia ser:
+
+```bash
+git add analise_rentabilidade.R
+```
+
+2. Para selecionar **todos os arquivos de uma pasta**:
+
+```bash
+git add scripts/
+```
+
+Esse comando adiciona todos os arquivos modificados dentro da pasta "scripts"
+
+3. Para selecionar **todos os arquivos modificados** do projeto:
+
+```bash
+git add .
+```
+
+O ponto "." significa "todos os arquivos" - **use com cuidado!**
+
+
+**Dica para iniciantes:** 
+
+- Comece usando o comando completo para cada arquivo até se familiarizar 
+  com o processo. 
+  
+- Depois, quando estiver mais confiante, você pode usar o `git add .` para 
+  adicionar vários arquivos de uma vez.
+
+
+
+### git commit
+
+- O `git commit` é o momento de "salvar oficialmente" as mudanças que você 
+  selecionou com o `git add`.
+
+- É como tirar uma foto do estado atual do seu projeto e adicionar uma 
+  legenda descrevendo o que mudou.
+
+- Cada commit cria um ponto na linha do tempo do seu projeto ao qual 
+  você pode voltar se precisar.
+
+**Como usar:**
+
+```bash
+git commit -m "mensagem descrevendo o que você fez"
+```
+
+A parte `-m "mensagem"` é onde você explica brevemente o que mudou.
+
+**Exemplos de boas mensagens de commit:**
+
+```bash
+git commit -m "adiciona análise inicial dos dados de vendas"
+```
+
+```bash
+git commit -m "corrige fórmulas na seção de métodos"
+```
+
+```bash
+git commit -m "finaliza capítulo 3 da dissertação"
+```
+
+**Quando fazer um commit?**
+
+Pense em cada commit como um "marco" no seu trabalho:
+
+- **Após completar uma tarefa específica**: 
+  "Terminei de analisar os dados de janeiro" → commit
+  
+- **Após resolver um problema**:
+  "Corrigi o erro nas referências" → commit
+  
+- **Antes de fazer uma mudança grande ou arriscada**:
+  "Vou reorganizar toda a estrutura do documento" → commit primeiro!
+
+**Analogia:** Se seu trabalho fosse uma viagem, cada commit seria como 
+fincar uma bandeira no caminho dizendo "cheguei até aqui com segurança". 
+Se você se perder depois, pode sempre voltar a este ponto.
+
+**Recomendação para iniciantes:** Faça commits frequentes! É melhor 
+ter muitos pequenos commits do que poucos commits gigantes.
+
+
+
+### git push
+
+- O comando `git push` envia as mudanças que você salvou localmente 
+  (com `commit`) para o GitHub.
+
+- É como sincronizar seu trabalho local com a "nuvem", tornando-o disponível 
+  para outras pessoas ou em outros computadores.
+
+**Como funciona na prática:**
+
+Imagine que você:
+
+1. Fez várias alterações no seu computador
+2. Adicionou essas alterações (`git add`)
+3. Salvou-as localmente (`git commit`)
+
+Neste ponto, as mudanças estão apenas no seu computador! Para enviar ao GitHub:
+
+```bash
+git push origin main
+```
+
+**O que significa "origin main"?**
+
+- `origin` é o nome padrão que o Git dá ao seu repositório remoto 
+  no GitHub (como um "apelido" para o endereço completo)
+
+- `main` é o nome do ramo principal do seu projeto (anteriormente chamado 
+   de "master" em projetos mais antigos)
+
+**Quando fazer um push?**
+
+- Ao terminar uma sessão de trabalho
+- Quando quiser compartilhar seu progresso com colegas
+- Como backup de segurança do seu trabalho
+- Antes de mudar para outro computador
+
+**Analogia:** Se os commits são como salvar seu jogo em um cartão de memória, 
+o push é como fazer um backup desse cartão na nuvem. Se seu computador 
+quebrar, você não perde o progresso.
+
+**Dica:** Para ver se seu push funcionou, acesse seu repositório no 
+GitHub pelo navegador - você deverá ver todas as mudanças que acabou 
+de enviar.
+
+
+
+## Uso do Git via Terminal no RStudio
+
+::: {.callout-note icon="false"}
+## Usando Git via Terminal no RStudio
+
+Todos os comandos Git que aprendemos serão executados através do 
+terminal Git Bash **dentro** do RStudio:
+
+1. **Abra o terminal no RStudio**:
+
+- Clique na aba "*Terminal*" no painel inferior do RStudio.
+
+- Certifique-se de que está usando o Git Bash (o prompt deve 
+  terminar com "$").
+
+2. **Navegue até a pasta do projeto**:
+
+- Se você estiver trabalhando em um Projeto RStudio, o terminal já estará 
+  aberto na pasta correta.
+  
+- Caso contrário, use o comando `cd` para navegar até a pasta do seu projeto.
+
+3. **Execute os comandos Git normalmente**:
+
+```bash
+# Verificar o estado atual
+git status
+
+# Adicionar arquivos para o próximo commit
+git add nome-do-arquivo.qmd
+
+# Fazer um commit com mensagem
+git commit -m "Adiciona análise descritiva"
+
+# Enviar para o GitHub
+git push origin main
+```
+
+**Por que usar o terminal em vez da interface Git do RStudio?**
+
+- Mais rápido e responsivo.
+
+- Menos sobrecarga visual, ajudando a focar no que realmente importa.
+
+- As mesmas habilidades são transferíveis para qualquer ambiente, não 
+  apenas RStudio.
+  
+- Mensagens de erro e avisos são exibidos com mais clareza.
+
+- Fornece mais controle sobre o processo Git.
+
+**Dica para iniciantes**:
+
+Mantenha uma "cola" dos comandos Git mais comuns por perto até se 
+familiarizar com eles. Com o tempo, você os memorizará naturalmente 
+através do uso frequente.
+
+
+
+## Comandos Úteis para o Dia a Dia (Opcional)
+
+Após se sentir familiarizado e confortável com os 4 comandos 
+essenciais explicandos na @sec-essenciais, vale a pena conhecer e 
+testar outros comandos úteis para o dia a dia, como os 
+comandos `git fetch`, `git diff` e `git restore`.
+
+
+
+### git fetch
+
+- O comando `git fetch` baixa as mudanças do repositório remoto (GitHub) 
+  para seu computador, mas **não** aplica essas mudanças automaticamente 
+  aos seus arquivos.
+
+- É diferente do `git pull`, que baixa E aplica as mudanças imediatamente.
+
+- **Quando usar?**:
+
+    - Quando quiser verificar se há mudanças no GitHub antes de aplicá-las
+    - Para colaboração segura: ver o que seu orientador mudou antes de mesclar
+    - Quando quiser evitar conflitos inesperados
+
+- **Como funciona na prática:**
+
+1. **Verificar se há mudanças no GitHub**:
+
+```bash
+git fetch origin main
+```
+
+2. **Ver se existem mudanças para baixar**:
+
+```bash
+git status
+```
+
+Se houver mudanças, você verá algo como:
+```
+Your branch is behind 'origin/main' by 2 commits
+```
+
+3. **Ver quais mudanças foram feitas (opcional)**:
+
+```bash
+git log HEAD..origin/main --oneline
+```
+
+Isso mostra os commits que estão no GitHub mas ainda não no seu computador.
+
+4. **Aplicar as mudanças quando estiver pronto**:
+
+```bash
+git merge origin/main
+```
+
+Ou simplesmente:
+
+```bash
+git pull origin main
+```
+
+**Analogia**: Se `git pull` é como pedir uma pizza e já começar a comer, 
+`git fetch` é como pedir a pizza, ela chegar, mas você primeiro olhar 
+o que veio antes de decidir se quer comer.
+
+**Vantagem para colaboração**: Com `git fetch`, você pode ver exatamente 
+o que seu orientador mudou antes de aplicar as alterações, evitando 
+surpresas e conflitos inesperados.
+
+**Exemplo prático**:
+
+```bash
+# Verificar se orientador fez mudanças
+git fetch origin main
+
+# Ver o que mudou
+git log HEAD..origin/main --oneline
+
+# Se estiver tudo ok, aplicar as mudanças
+git merge origin/main
+
+# Ou fazer tudo de uma vez com pull
+git pull origin main
+```
+
+
+
+### git diff
+
+- O comando `git diff` mostra as alterações específicas que foram 
+  feitas nos arquivos, mas que ainda não foram preparadas para commit 
+  (não passaram pelo `git add`).
+
+- É como um "modo de revisão" que destaca exatamente o que foi adicionado 
+  (<span style="color: green;">em verde</span>) e o que foi removido 
+  (<span style="color: red;">em vermelho</span>).
+
+- **Quando usar?**:
+
+    - Antes de adicionar arquivos com `git add`, para revisar exatamente 
+      o que foi  alterado.
+    - Para verificar detalhes das modificações que o `git status` apenas lista.
+    - Quando você não se lembra exatamente o que mudou em um arquivo específico.
+
+- **Exemplos de Uso:**
+
+1. Para ver todas as mudanças não preparadas:
+
+```bash
+git diff
+```
+
+2. Para ver as mudanças em um arquivo específico:
+
+```bash
+git diff relatorio.qmd
+```
+
+3. Para ver as mudanças que já foram preparadas com `git add` (e 
+irão para o próximo commit):
+
+```bash
+git diff --staged
+```
+
+- **Analogia:** Se o `git status` é como uma lista de compras que 
+mostra quais itens você precisa, o `git diff` é como abrir cada item para 
+inspecionar seu conteúdo antes de colocá-lo no carrinho.
+
+- **Como interpretar o resultado:**
+  
+  - Linhas que começam com `+` mostram conteúdo adicionado
+  - Linhas que começam com `-` mostram conteúdo removido
+  - O contexto (linhas não alteradas) aparece sem símbolos especiais
+
+- **Dica para iniciantes:** 
+
+Use o `git diff` antes de cada `git add` para ter certeza de que 
+está adicionando apenas as alterações desejadas, especialmente quando 
+trabalha com documentos importantes como relatórios financeiros, análises 
+de dados ou capítulos de dissertação.
+
+
+
+### git restore
+
+::: {.callout-note icon="false"}
+## O que é `git restore`?
+
+- O comando `git restore` é usado para desfazer mudanças em arquivos, 
+  funcionando como um "ctrl+z" mais poderoso e específico.
+
+- É um comando moderno (introduzido no Git 2.23) que substitui alguns 
+  usos do antigo `git checkout`, sendo mais claro e intuitivo.
+
+- **Quando usar?**:
+
+    - Quando você fez alterações em um arquivo mas quer descartar essas mudanças.
+    - Para remover arquivos da área de preparação (staging area) sem perder as alterações.
+    - Quando quer voltar um arquivo ao estado do último commit.
+
+- **Principais casos de uso:**
+
+**1. Descartar mudanças não salvas em um arquivo:**
+
+```bash
+git restore relatorio.qmd
+```
+
+Este comando descarta todas as alterações feitas no arquivo `relatorio.qmd` 
+desde o último commit, voltando-o ao estado anterior.
+
+**2. Remover arquivo da área de preparação (unstage):**
+
+```bash
+git restore --staged relatorio.qmd
+```
+
+Se você usou `git add relatorio.qmd` mas mudou de ideia e não quer mais 
+incluir esse arquivo no próximo commit, este comando remove o arquivo 
+da staging area, mas mantém suas alterações no arquivo.
+
+**3. Descartar mudanças em todos os arquivos:**
+
+```bash
+git restore .
+```
+
+**⚠️ CUIDADO:** Este comando descarta TODAS as alterações não commitadas 
+em todos os arquivos do projeto!
+
+- **Analogia:** Pense no `git restore` como um "desfazer" específico:
+
+  - É como ter um botão "desfazer" que funciona por arquivo individual
+  - Diferente do Ctrl+Z do editor, que desfaz uma alteração por vez, 
+    o `git restore` pode voltar o arquivo inteiro ao estado anterior
+  - Você pode escolher desfazer apenas a "preparação para salvamento" 
+    (unstage) sem perder o trabalho
+
+- **Fluxo de trabalho típico:**
+
+1. Você modifica um arquivo (`relatorio.qmd`)
+2. Visualiza as mudanças: `git diff relatorio.qmd`
+3. Decide que não gosta das alterações
+4. Descarta as mudanças: `git restore relatorio.qmd`
+
+**Ou:**
+
+1. Você adiciona um arquivo: `git add relatorio.qmd`
+2. Muda de ideia sobre incluí-lo no commit
+3. Remove da staging area: `git restore --staged relatorio.qmd`
+4. O arquivo continua modificado, mas não será incluído no próximo commit
+
+- **Dica importante:** Sempre use `git status` antes de usar `git restore` 
+  para entender exatamente quais arquivos serão afetados.
+
+- **Diferença entre `git restore` e `git checkout`:**
+
+  - `git restore` é mais específico: serve apenas para restaurar arquivos
+  - `git checkout` tem múltiplas funções (mudar branches, restaurar arquivos, etc.)
+  - Para iniciantes, `git restore` é mais claro e menos confuso
+
+**Exemplo prático para o contexto acadêmico:**
+
+Imagine que você está escrevendo sua dissertação e fez várias alterações 
+em um capítulo, mas percebeu que a versão anterior estava melhor:
+
+```bash
+# Veja o que mudou
+git diff capitulo2.qmd
+
+# Se não gostar das mudanças, descarte-as
+git restore capitulo2.qmd
+
+# O arquivo volta ao estado do último commit
+```
+
+
+
+## Introdução a *Branches* (Ramificações)
+
+- **Branch** (ou ramificação) é como criar uma "linha paralela" de desenvolvimento do seu projeto.
+
+- Imagine seu projeto como o tronco de uma árvore, e os branches como galhos que se separam do tronco principal.
+
+- Cada branch é uma versão independente do seu projeto onde você pode fazer experimentos, correções ou desenvolver novas funcionalidades sem afetar o trabalho principal.
+
+- **Analogia**: Se o seu projeto fosse um livro, o branch principal (`main`) seria a versão oficial. Um branch seria como fazer uma fotocópia do livro para testar uma nova estrutura de capítulos - você pode experimentar sem estragar o original.
+
+**Quando usar branches?**
+
+- **Experimentação**: Testar uma nova abordagem de análise sem comprometer o trabalho atual
+- **Colaboração avançada**: Cada pessoa trabalha em seu próprio branch
+- **Correções urgentes**: Fazer uma correção rápida enquanto desenvolve outras partes
+- **Versões diferentes**: Manter uma versão para apresentação e outra para desenvolvimento
+
+
+
+### Comandos Básicos de Branches
+
+**1. Ver quais branches existem:**
+
+```bash
+git branch
+```
+
+Isso mostra todos os branches locais. O branch atual aparece marcado com um asterisco (*).
+
+**2. Criar um novo branch:**
+
+```bash
+git branch nome-do-branch
+```
+
+**Exemplo:**
+```bash
+git branch experimento-analise
+```
+
+Este comando cria um novo branch chamado "experimento-analise" baseado no estado atual do seu projeto.
+
+**3. Mudar para um branch diferente:**
+
+```bash
+git checkout nome-do-branch
+```
+
+**Exemplo:**
+```bash
+git checkout experimento-analise
+```
+
+**4. Criar e mudar para um novo branch (atalho):**
+
+```bash
+git checkout -b nome-do-branch
+```
+
+**Exemplo:**
+```bash
+git checkout -b revisao-metodologia
+```
+
+Isso é equivalente a fazer `git branch revisao-metodologia` seguido de `git checkout revisao-metodologia`.
+
+**5. Voltar para o branch principal:**
+
+```bash
+git checkout main
+```
+
+**6. Ver o histórico visual dos branches:**
+
+```bash
+git log --oneline --graph --all
+```
+
+Isso mostra uma representação visual de como os branches se relacionam.
+
+
+
+### Workflow Básico com Branches
+
+Exemplo Prático: Experimentando uma Nova Análise
+
+Imagine que você quer testar uma abordagem diferente de análise 
+de dados, mas não quer perder seu trabalho atual:
+
+**Passo 1: Criar um branch para o experimento**
+
+```bash
+# Verificar em qual branch você está
+git status
+
+# Criar e mudar para o branch de experimento
+git checkout -b teste-nova-analise
+```
+
+**Passo 2: Trabalhar no branch experimental**
+
+```bash
+# Fazer suas modificações experimentais nos arquivos
+# Depois, salvar as mudanças normalmente:
+
+git add .
+git commit -m "Adiciona análise experimental com método X"
+```
+
+**Passo 3: Comparar com o trabalho original**
+
+```bash
+# Voltar para o branch principal para comparar
+git checkout main
+
+# Seus arquivos agora mostram a versão original
+# Voltar para o experimento
+git checkout teste-nova-analise
+
+# Seus arquivos mostram a versão experimental
+```
+
+**Passo 4: Decidir o que fazer**
+
+Se gostou do experimento:
+```bash
+# Voltar para main
+git checkout main
+
+# Incorporar as mudanças do experimento
+git merge teste-nova-analise
+
+# Deletar o branch experimental (opcional)
+git branch -d teste-nova-analise
+```
+
+Se não gostou do experimento:
+```bash
+# Voltar para main
+git checkout main
+
+# Deletar o branch experimental
+git branch -D teste-nova-analise
+```
+
+**Dica**: Use `-d` para deletar um branch que já foi mergeado, e `-D` para forçar a deleção de um branch não mergeado.
+
+
+
+### Branches em Colaboração
+
+::: {.callout-note icon="false"}
+## Usando Branches para Colaboração Avançada
+
+**Cenário**: Orientador e orientando trabalhando simultaneamente em diferentes partes:
+
+**1. Orientando criando branch para nova seção:**
+
+```bash
+# Criar branch para trabalhar no capítulo 4
+git checkout -b capitulo4-resultados
+
+# Trabalhar normalmente
+git add .
+git commit -m "Adiciona análise dos resultados - primeira versão"
+
+# Enviar o branch para o GitHub
+git push origin capitulo4-resultados
+```
+
+**2. Orientador trabalhando em revisões em branch separado:**
+
+```bash
+# Baixar o branch do orientando
+git fetch origin
+git checkout capitulo4-resultados
+
+# Revisar e fazer sugestões
+git add .
+git commit -m "Revisão: sugestões para melhoria dos gráficos"
+git push origin capitulo4-resultados
+```
+
+**3. Incorporar o trabalho ao projeto principal:**
+
+Quando ambos estiverem satisfeitos:
+
+```bash
+# Voltar para o branch principal
+git checkout main
+
+# Incorporar as mudanças
+git merge capitulo4-resultados
+
+# Enviar para o GitHub
+git push origin main
+
+# Limpar o branch temporário (opcional)
+git branch -d capitulo4-resultados
+git push origin --delete capitulo4-resultados
+```
+
+**Vantagens desta abordagem:**
+
+- **Isolamento**: Trabalho experimental não afeta a versão principal
+- **Colaboração segura**: Cada pessoa pode trabalhar sem interferir no outro
+- **Histórico claro**: Fácil de ver quais mudanças vieram de qual branch
+- **Backup automático**: Cada branch pode ser enviado para o GitHub separadamente
+:::
+
+
+
+### Resolvendo Conflitos entre Branches
+
+::: {.callout-note icon="false"}
+## Quando Branches Conflitam
+
+Às vezes, ao fazer `git merge`, podem ocorrer conflitos se o mesmo arquivo foi modificado em ambos os branches:
+
+**1. Tentativa de merge com conflito:**
+
+```bash
+git checkout main
+git merge novo-capitulo
+```
+
+Se houver conflito, você verá:
+```
+CONFLICT (content): Merge conflict in capitulo2.qmd
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+**2. Resolver o conflito:**
+
+- Abra o arquivo com conflito no RStudio
+- Você verá as marcações de conflito:
+
+```
+<<<<<<< HEAD
+Texto da versão main
+=======
+Texto da versão do branch
+>>>>>>> novo-capitulo
+```
+
+- Edite o arquivo para manter o texto desejado
+- Remova as marcações `<<<<<<<`, `=======`, e `>>>>>>>`
+- Salve o arquivo
+
+**3. Finalizar o merge:**
+
+```bash
+git add capitulo2.qmd
+git commit -m "Resolve conflito entre main e novo-capitulo"
+```
+
+**Dica**: Para evitar conflitos, comunique-se sobre quais arquivos cada pessoa está modificando.
+
+
+
+### Boas Práticas com Branches
+
+A seguir, são elencadas recomendações para o uso 
+de Branches:
+
+**1. Nomenclatura clara:**
+
+```bash
+# Bons nomes de branches:
+git checkout -b correcao-referencias
+git checkout -b analise-capitulo3
+git checkout -b revisao-orientador-2024-08
+
+# Evite nomes confusos:
+git checkout -b branch1
+git checkout -b teste
+git checkout -b temporario
+```
+
+**2. Branches de vida curta:**
+
+- Use branches para tarefas específicas e temporárias
+- Faça merge e delete quando a tarefa estiver completa
+- Evite branches que ficam abertos por semanas
+
+**3. Sempre commitar antes de mudar de branch:**
+
+```bash
+# Antes de mudar de branch, salve seu trabalho
+git add .
+git commit -m "Trabalho em progresso no capítulo 2"
+git checkout outro-branch
+```
+
+**4. Manter branches atualizados:**
+
+```bash
+# Periodicamente, atualize seu branch com as mudanças do main
+git checkout main
+git pull origin main
+git checkout seu-branch
+git merge main
+```
+
+**5. Para iniciantes:**
+
+- Comece usando apenas o branch `main` até se sentir confortável
+- Experimente branches para tarefas pequenas e bem definidas
+- Pratique criar, mudar e deletar branches em um projeto de teste
+
+**Quando NÃO usar branches (para iniciantes):**
+
+- Se você está apenas começando com Git
+- Para projetos pequenos com uma pessoa
+- Quando a comunicação com colaboradores já funciona bem sem branches
+
+
+
+## Workflow para Trabalhar Colaborativamente
+
+::: {.callout-note icon="false"}
+## Objetivo desta seção
+
+- Apresentar um passo a passo prático para orientandos de mestrado 
+  colaborarem com seus orientadores usando Git e GitHub.
+
+- Estabelecer um fluxo de trabalho claro que minimize conflitos e 
+  maximize a produtividade.
+
+- Servir como guia inicial que pode ser adaptado para outros tipos de 
+  colaboração acadêmica.
+:::
+
+
+
+
+::: {.callout-note icon="false"}
+## Visão Geral do Workflow Colaborativo
+
+O fluxo de trabalho a seguir foi desenhado especificamente para a dinâmica 
+entre orientando e orientador, onde ambos contribuem para documentos como 
+dissertações, artigos e análises de dados.
+
+1. **Configuração inicial** (feita apenas uma vez).
+
+2. **Ciclo de desenvolvimento** (repetido diariamente/semanalmente).
+
+3. **Incorporação de feedback** (quando o orientador fizer sugestões).
+
+**Fluxo básico:**
+
+1. Orientando baixa/puxa mudanças do repositório no GitHub (pull)
+2. Orientando trabalha nos arquivos
+3. Orientando envia mudanças (commit + push)
+4. Orientador baixa/puxa mudanças (pull)
+5. Orientador revisa e faz sugestões
+6. Orientador envia feedback (commit + push)
+7. Orientando baixa/puxa o feedback (voltando ao passo 1)
+:::
+
+
+
+##  Configuração Inicial para o Exame de Qualificacão do Mestrado
+
+::: {.callout-note icon="false"}
+## Configuração Inicial - Orientando
+
+Esta etapa será realizada apenas uma vez, no início do trabalho com 
+seu orientador:
+
+1. **Utilizando o Templote Quarto para o Exame de Qualificação**:
+
+- Acesse o repositório do template: [Template para o Exame de Qualificaçao do Mestrado](https://github.com/washingtonsilva/quarto_exame_qualificacao.git){target="_blank"}
+
+- Clique no botão "*Use this template*" no topo da página
+
+- Clique em "*Create a new repository*"
+
+- Na próxima página, escreva um nome para o seu repositório, por exemplo,  
+`repositorio_exame_qualificacao`, no campo abaiso de "*Repository name*". 
+
+- Revise e estando tudo ok, clique no botão verde "*Create repository*".
+
+- Pronto! você acabou de criar um repositório disponível na sua 
+conta do GitHub contendo o template Quarto para o exame de 
+qualificação do mestrado.
+
+2. **Adicione seu orientador como colaborador**:
+
+- Dentro do seu repositório do template, clique na aba "*Settings*" 
+ (localizada na parte superior da página).
+ 
+- No menu lateral esquerdo, clique em "*Collaborators*" 
+(pode estar dentro da seção "Access").
+
+- Clique no botão "*Add people*".
+
+- Digite o email cadastrado ou nome de usuário do seu orientador no GitHub.
+
+- Selecione o perfil do seu orientador e escolha o nível de 
+ permissão (recomendado: "Write" ou "Maintain").
+ 
+- Clique em "*Add [nome do colaborador]*".
+
+- O GitHub enviará um convite por email ao seu orientador; e
+le precisará aceitar o convite para ter acesso.
+
+3. **Clone o repositório para seu computador usando o RStudio**:
+
+- Abra o RStudio
+
+- Clique em *Project* -> *New Project* -> *Version Control* -> *Git* (clone 
+a project from a github repository).
+
+- Usando seu navegoar, dentro do seu repositório no GitHub, clique no 
+  botão verde "*Code*".
+
+- Verifique se a opção "*HTTPS*" está selecionada (em vez de SSH ou 
+ GitHub CLI).
+ 
+- Copie a URL mostrada (que terá o formato https://github.com/seu-usuario/nome-repositorio.git)
+
+- No RStudio, cole a URL do repositório no campo abaixo de 
+"*Repository URL*"
+
+- Defina um nome para o repositório local, pode ser o mesmo nome 
+do repositório no GitHub: `repositorio_exame_qualificacao`
+
+- Antes de cliar no botão "*Create*" verifique se o endereço exibido abaixo 
+de "*Create projet as subdirectory of:*" está apontando para a pasta 
+do seu computador na qual deseja salvar o repositório localmente. 
+
+- Caso necessário, clique em "*browse*" e selecione a pasta onde 
+deseja salvar o repositório no seu computador.
+
+- Clique em "*Create*"
+
+
+4. **Verificação final**:
+
+- Confirme que o repositório foi clonado corretamente observando 
+se a pasta no seu computador contém os arquivos do 
+repositório do template quarto
+
+- Digite `git status` para verificar o estado atual do seu repositório local
+:::
+
+
+
+
+## Configuração Inicial - Orientador
+
+::: {.callout-note icon="false"}
+## Configuração do Ambiente do Orientador
+
+Após receber o convite de colaboração do orientando, o orientador deve 
+configurar seu ambiente para trabalhar no projeto:
+
+1. **Aceitar o convite de colaboração**:
+
+- Verifique seu email para o convite do GitHub enviado pelo orientando
+- Clique no link do convite para aceitar a colaboração
+- Isso dará acesso ao repositório do orientando
+
+2. **Verificar/configurar credenciais Git locais**:
+
+- Abra o Git Bash (Windows) ou Terminal (Mac/Linux)
+- Verifique se suas credenciais estão configuradas:
+
+```bash
+git config --global user.name
+git config --global user.email
+```
+
+- Se não estiverem configuradas ou precisarem ser atualizadas:
+
+```bash
+git config --global user.name "Nome do Orientador"
+git config --global user.email "orientador@email.com"
+```
+
+**Importante**: Use o mesmo email cadastrado no GitHub.
+
+3. **Clonar o repositório do orientando**:
+
+- No repositório do GitHub, clique no botão verde "*Code*"
+- Copie a URL HTTPS mostrada
+- No RStudio, clique em *Project* -> *New Project* -> *Version Control* -> *Git*
+- Cole a URL do repositório
+- Escolha uma pasta para salvar o projeto localmente
+- Clique em "*Create*"
+
+4. **Verificar configuração do terminal RStudio** (se aplicável):
+
+- Siga os mesmos passos de configuração do Git Bash no RStudio 
+  explicados anteriormente na seção de configuração
+
+5. **Teste inicial**:
+
+- Abra o terminal no RStudio
+- Execute `git status` para confirmar que está no repositório correto
+- Execute `git pull origin main` para garantir que tem a versão mais recente
+
+**Dica para orientadores**: Mantenha uma rotina de sempre executar 
+`git pull origin main` antes de começar a revisar o trabalho, para ter 
+certeza de que está vendo a versão mais atualizada.
+:::
+
+
+
+
+## Ciclo de Desenvolvimento
+
+::: {.callout-note icon="false"}
+## Ciclo Diário/Semanal de Trabalho - Orientando 
+(usando Terminal no RStudio)
+
+Este é o ciclo que você repetirá regularmente enquanto trabalha em seu projeto:
+
+1. **Comece o dia de trabalho atualizando seu repositório local**:
+
+- Abra seu projeto no RStudio
+
+- Clique na aba "Terminal" no painel inferior
+
+- Execute o comando:
+
+```bash
+git pull origin main
+```
+
+Este comando baixa qualquer mudança que seu orientador possa ter feito.
+
+2. **Trabalhe em seus arquivos normalmente no RStudio**:
+
+- Edite seus arquivos .qmd
+- Execute análises no R
+- Gere tabelas e visualizações
+- Renderize documentos Quarto
+
+Trabalhe como você normalmente faria no RStudio.
+
+3. **Salve seu progresso usando o terminal Git Bash no RStudio**:
+ 
+A cada conquista significativa ou no final do dia, 
+**sem sair do RStudio**, use o terminal para:
+
+```bash
+# Verifique o que mudou
+git status
+
+# Veja as alterações específicas (opcional)
+git diff arquivo-modificado.qmd
+
+# Adicione os arquivos modificados (você pode especificar arquivos individuais)
+git add .
+
+# Salve as mudanças localmente com uma mensagem descritiva
+git commit -m "Adiciona análise descritiva no capítulo 3"
+
+# Envie para o GitHub
+git push origin main
+```
+
+**Benefícios deste fluxo de trabalho**:
+
+- Mantém tudo em um único ambiente (RStudio)
+- Usa comandos Git de forma direta e transparente
+- Evita problemas de desempenho da interface gráfica
+- Facilita a compreensão do que está realmente acontecendo
+
+**Lembre-se**: Fazer commits pequenos e frequentes com mensagens 
+descritivas claras ajuda tanto você quanto seu orientador a 
+acompanhar o progresso do trabalho.
+:::
+
+
+
+
+## Incorporação de Feedback
+
+::: {.callout-note icon="false"}
+## Quando seu Orientador Fornecer Feedback - Orientando
+
+Este processo ocorre depois que seu orientador revisar seu trabalho 
+e fizer alterações:
+
+1. **Obtenha as mudanças feitas pelo orientador**:
+
+Em um terminal Git Bash dentro do RStudio execute:
+
+```bash
+git pull origin main
+```
+
+Isso baixa as alterações, comentários ou correções feitas pelo orientador.
+
+2. **Revise as mudanças**:
+
+Novamente, Em um terminal Git Bash dentro do RStudio execute:
+
+```bash
+# Para ver quais arquivos foram modificados pelo orientador
+git log
+
+# Para ver as mudanças específicas em um arquivo
+git diff HEAD~1 HEAD -- caminho/do/arquivo
+```
+
+Este comando mostra o que mudou entre a versão atual e a anterior.
+
+3. **Trabalhe com as sugestões**:
+
+- Implemente as correções sugeridas.
+
+- Responda a questionamentos (pode ser no próprio documento ou em um 
+  comentário no GitHub).
+  
+- Complemente seções conforme solicitado.
+
+4. **Continue o ciclo normal**:
+
+Volte ao passo 2 (Ciclo de Desenvolvimento) e continue seu trabalho.
+:::
+
+
+
+
+## Boas Práticas de Comunicação e Convenções
+
+::: {.callout-note icon="false"}
+## Estabelecendo Convenções de Trabalho
+
+Para minimizar conflitos e maximizar a eficiência na colaboração, é importante 
+estabelecer algumas convenções e práticas de comunicação:
+
+**1. Convenções para mensagens de commit:**
+
+Estabeleça um padrão claro para as mensagens. Sugestões:
+
+```bash
+# Para o orientando:
+git commit -m "Adiciona: análise descritiva do capítulo 2"
+git commit -m "Corrige: formatação das tabelas na seção 3.1"
+git commit -m "Finaliza: primeira versão da metodologia"
+
+# Para o orientador:
+git commit -m "Revisão: sugestões para o capítulo 2"
+git commit -m "Correção: ajustes na análise estatística"
+git commit -m "Comentário: questões sobre a metodologia"
+```
+
+**2. Comunicação sobre trabalho em andamento:**
+
+- **Antes de trabalhar em uma seção**: Comunique via email ou issue 
+  do GitHub qual seção você planeja trabalhar
+- **Frequência de commits**: Orientando deve fazer push pelo menos diariamente; 
+  orientador deve revisar semanalmente ou conforme acordado
+- **Mudanças significativas**: Sempre avise antes de fazer alterações estruturais grandes
+
+**3. Uso de Issues para organização:**
+
+Crie issues no GitHub para:
+
+- Tarefas específicas: "Adicionar análise de regressão"
+- Dúvidas: "Questão sobre interpretação dos resultados"
+- Revisões: "Revisar capítulo 3 - metodologia"
+
+**4. Estratégia para evitar conflitos:**
+
+- **Regra dos horários**: Orientando trabalha durante o dia, orientador revisa à noite/fim de semana
+- **Seções específicas**: Evite que ambos trabalhem na mesma seção simultaneamente
+- **Comunicação rápida**: Use mensagens instantâneas para coordenar trabalho urgente
+
+**5. Backup e segurança:**
+
+- **Sempre faça commit antes de grandes mudanças**: Use `git commit -m "backup antes de reestruturação"`
+- **Pull antes de push**: Sempre execute `git pull origin main` antes de `git push origin main`
+- **Verifique mudanças**: Use `git status` e `git diff` antes de cada commit
+:::
+
+
+
+
+## Lidando com Conflitos
+
+::: {.callout-note icon="false"}
+## Resolvendo Conflitos via Terminal no RStudio
+
+Quando ocorrem conflitos durante um pull, você pode resolvê-los 
+diretamente no RStudio:
+
+1. **Identificando conflitos**:
+
+Ao executar `git pull` no terminal, você verá uma mensagem como:
+
+```
+CONFLICT (content): Merge conflict in nome-do-arquivo.qmd
+Automatic merge failed; fix conflicts and then commit the result.
+```
+
+2. **Abrindo e editando o arquivo com conflito**:
+
+- No RStudio, abra o arquivo com conflito no editor
+- RStudio mostrará as marcações de conflito com formatação visual:
+
+```
+<<<<<<< HEAD
+Seu texto (versão local)
+=======
+Texto do orientador (versão do GitHub)
+>>>>>>> abcd1234
+```
+
+3. **Resolvendo o conflito**:
+
+- Edite manualmente o arquivo, removendo as marcações de conflito
+- Mantenha o texto que faz mais sentido (seu texto, o texto do orientador, ou uma combinação de ambos)
+- Remova completamente as linhas com `<<<<<<< HEAD`, `=======` e `>>>>>>> abcd1234`
+- Salve o arquivo
+
+4. **Concluindo a resolução via terminal**:
+
+Após resolver todos os conflitos no editor, volte ao terminal no RStudio:
+
+```bash
+# Verifique se todos os conflitos foram resolvidos
+git status
+
+# Adicione o arquivo resolvido
+git add nome-do-arquivo.qmd
+
+# Faça um commit da resolução
+git commit -m "Resolve conflito no arquivo nome-do-arquivo.qmd"
+
+# Envie para o GitHub
+git push origin main
+```
+
+**Dica**: Comunique-se com seu orientador quando encontrar conflitos. 
+Às vezes, uma conversa rápida pode esclarecer qual versão deve ser mantida.
+
+**Estratégias para Prevenir Conflitos:**
+
+1. **Use `git fetch` antes de começar a trabalhar**:
+
+```bash
+# Verificar se há mudanças antes de começar
+git fetch origin main
+git status
+
+# Se houver mudanças, aplicá-las primeiro
+git pull origin main
+```
+
+2. **Faça backup antes de operações arriscadas**:
+
+```bash
+# Fazer commit do trabalho atual antes de pull
+git add .
+git commit -m "Backup antes de aplicar mudanças do orientador"
+git pull origin main
+```
+
+3. **Para conflitos complexos, considere usar uma ferramenta visual**:
+
+O RStudio possui um merge tool integrado que pode ser acessado através 
+da interface Git do RStudio quando há conflitos.
+
+4. **Em caso de emergência (quando há muitos conflitos)**:
+
+```bash
+# Voltar ao estado anterior (use com cuidado!)
+git merge --abort
+
+# Isso cancela o merge e volta ao estado antes do pull
+# Depois você pode tentar novamente ou pedir ajuda
+```
+:::
+
+
+
+## Trabalhando com Issues do GitHub
+
+::: {.callout-note icon="false"}
+## Usando Issues para Organizar Tarefas
+
+O GitHub possui uma ferramenta chamada "Issues" que é excelente para:
+
+- Listar tarefas pendentes
+- Registrar problemas a serem resolvidos
+- Documentar discussões entre orientando e orientador
+
+**Como usar**:
+
+1. **Crie uma issue**:
+
+- No GitHub, acesse a aba "Issues" do repositório.
+- Clique em "New issue".
+- Dê um título descritivo e explique a tarefa/problema.
+- Use marcadores como listas, negrito e itálico para organizar.
+- Adicione etiquetas (labels) como "revisão", "urgent", "discussão".
+
+2. **Acompanhe o progresso**:
+
+- Comente nas issues para atualizar o progresso.
+- Referencie commits relacionados usando "#" (exemplo: "Resolve #4").
+- Feche a issue quando a tarefa estiver concluída.
+
+3. **Referencie issues nos commits**:
+
+```bash
+git commit -m "Adiciona análise de correlação solicitada na issue #5"
+```
+
+Isso cria uma referência cruzada que facilita acompanhar o histórico 
+de mudanças e discussões.
+
+**Exemplos práticos de Issues para mestrado:**
+
+1. **Issue de tarefa (orientando cria)**:
+   - Título: "Adicionar análise de regressão logística"
+   - Descrição: "Incluir análise de regressão logística conforme discutido na reunião de 15/08. Variáveis: idade, renda, escolaridade."
+
+2. **Issue de dúvida (orientando cria)**:
+   - Título: "Dúvida sobre interpretação dos coeficientes"
+   - Descrição: "Como interpretar o coeficiente negativo da variável 'idade' no modelo? Verificar se faz sentido teórico."
+
+3. **Issue de revisão (orientador cria)**:
+   - Título: "Revisar fundamentação teórica - Capítulo 2"
+   - Descrição: "Ampliar discussão sobre teoria X. Adicionar autores Y e Z. Prioridade: alta."
+
+4. **Labels úteis**:
+   - `urgente`: para tarefas com prazo apertado
+   - `revisão`: para correções do orientador
+   - `dúvida`: para questões técnicas
+   - `dados`: para questões relacionadas aos dados
+   - `metodologia`: para questões metodológicas
+:::
+
+
+
+
+## Workflow para Diferentes Tipos de Revisão
+
+::: {.callout-note icon="false"}
+## Adaptando o Workflow para Diferentes Situações
+
+**1. Revisão rápida (correções pontuais)**:
+
+Orientador:
+```bash
+git pull origin main
+# Fazer pequenas correções diretamente
+git add .
+git commit -m "Correções pontuais: ortografia e formatação"
+git push origin main
+```
+
+**2. Revisão substancial (quando há muitas mudanças)**:
+
+Para evitar conflitos em revisões grandes, considere usar um workflow alternativo:
+
+Orientador:
+```bash
+git pull origin main
+git checkout -b revisao-capitulo2  # Criar branch temporário
+# Fazer todas as mudanças
+git add .
+git commit -m "Revisão completa do capítulo 2"
+git push origin revisao-capitulo2
+```
+
+Depois, o orientando pode:
+```bash
+git fetch origin
+git checkout revisao-capitulo2
+# Revisar as mudanças
+git checkout main
+git merge revisao-capitulo2
+git push origin main
+```
+
+**3. Trabalho simultâneo em seções diferentes**:
+
+- Orientando trabalha nos capítulos 3-4
+- Orientador revisa capítulos 1-2
+- Comunicação clara sobre quem está trabalhando onde
+
+**Quando usar branches**:
+- Revisões muito grandes
+- Trabalho simultâneo intenso
+- Experimentação com estruturas diferentes
+- Preparação para defesa (versão estável vs versão de trabalho)
+:::
+
+
+
+
+## Aplicando este Workflow a Outros Cenários
+
+::: {.callout-note icon="false"}
+## Adaptando para Outras Colaborações
+
+Este mesmo fluxo de trabalho pode ser facilmente adaptado para 
+colaborar com:
+
+- Colegas de classe em projetos em grupo.
+- Outros pesquisadores em artigos científicos.
+- Equipes de trabalho em relatórios ou análises.
+- Projetos de extensão ou iniciação científica.
+
+A mesma lógica se aplica:
+
+1. Configuração inicial (uma vez).
+2. Ciclo frequente de atualizações.
+3. Incorporação de feedback dos colaboradores.
+
+A diferença principal em outros cenários pode ser a necessidade 
+de usar "branches" (ramificações) para trabalhos mais complexos com 
+múltiplos colaboradores, um tópico que pode ser explorado quando você 
+já estiver confortável com este fluxo básico.
+:::
+
+
+
+
+## Resumo do Workflow
+
+::: {.callout-note icon="false"}
+## Resumindo
+
+O ciclo de trabalho com seu orientador segue este padrão:
+
+1. **Comece o dia puxando alterações**: `git pull origin main`
+
+2. **Trabalhe nos arquivos** normalmente
+
+3. **Verifique mudanças**: `git status` e `git diff`
+
+4. **Salve seu progresso**:
+
+   ```bash
+   git add .
+   git commit -m "Mensagem descritiva"
+   git push origin main
+   ```
+   
+5. **Repita** diariamente ou quando concluir uma parte significativa
+
+## Resumo do Workflow
+
+::: {.callout-note icon="false"}
+## Resumindo: Checklist Diário
+
+### **Para o Orientando:** {.unnumbered}
+
+**Início do dia:**
+
+1. **Verificar atualizações**: `git fetch origin main` seguido de `git status`
+
+2. **Aplicar mudanças**: `git pull origin main` (se houver atualizações)
+
+3. **Verificar estado**: `git status` (deve estar "clean")
+
+**Durante o trabalho:**
+
+4. **Trabalhar normalmente** nos arquivos
+
+5. **Verificar mudanças periodicamente**: `git status` e `git diff`
+
+**Fim do dia ou após completar uma tarefa:**
+
+6. **Revisar mudanças**: `git diff` para conferir o que mudou
+
+7. **Adicionar arquivos**: `git add .` (ou especificar arquivos individuais)
+
+8. **Fazer commit**: `git commit -m "Mensagem descritiva e clara"`
+
+9. **Enviar para GitHub**: `git push origin main`
+
+### **Para o Orientador:** {.unnumbered}
+
+**Antes de revisar:**
+
+1. **Baixar atualizações**: `git pull origin main`
+
+2. **Verificar o que mudou**: `git log --oneline -5` (últimos 5 commits)
+
+**Após revisar:**
+
+3. **Fazer mudanças** necessárias
+
+4. **Commit das revisões**: `git commit -m "Revisão: [descrição das mudanças]"`
+
+5. **Enviar feedback**: `git push origin main`
+
+**Verificações de Segurança:**
+
+- **Sempre fazer backup**: `git status` deve estar limpo antes de pull
+
+- **Verificar conflitos**: Se aparecer mensagem de conflito, resolver antes de continuar
+
+- **Comunicar mudanças grandes**: Avisar o colaborador antes de reestruturações
+
+- **Usar Issues**: Para mudanças complexas ou discussões importantes
+
+**Lembre-se**: a comunicação clara e frequente é mais importante que o 
+conhecimento técnico avançado. Em caso de dúvida, sempre pergunte!
+:::
+
+
+
+
+## Solução de Problemas Comuns
+
+::: {.callout-note icon="false"}
+## Problemas Frequentes e Soluções
+
+**1. "Esqueci de fazer pull antes de começar a trabalhar"**
+
+Solução:
+```bash
+# Fazer backup do trabalho atual
+git add .
+git commit -m "Backup antes de sincronizar"
+
+# Buscar mudanças do GitHub
+git pull origin main
+
+# Se houver conflitos, resolvê-los como explicado anteriormente
+```
+
+**2. "Fiz push mas o orientador não vê minhas mudanças"**
+
+Verificações:
+- Confirme que o push foi bem-sucedido (não houve mensagens de erro)
+- Peça ao orientador para fazer `git pull origin main`
+- Verifique se ambos estão no mesmo branch (main)
+
+**3. "Perdi trabalho após fazer pull"**
+
+Recuperação:
+```bash
+# Ver histórico recente
+git log --oneline -10
+
+# Encontrar o commit antes do problema
+git show hash-do-commit
+
+# Se necessário, recuperar versão anterior
+git checkout hash-do-commit -- arquivo.qmd
+```
+
+**4. "Muitos conflitos, não sei como resolver"**
+
+Estratégia:
+1. Conversar com o orientador sobre qual versão manter
+2. Se for muito complexo: `git merge --abort`
+3. Trabalhar em horários diferentes até resolver o conflito
+4. Considerar usar branches para trabalho simultâneo
+
+**5. "RStudio não reconhece que estou em um repositório Git"**
+
+Soluções:
+- Verificar se está abrindo o projeto correto (.Rproj)
+- Verificar se a pasta contém a pasta `.git`
+- Reiniciar o RStudio
+- No terminal: `git status` deve funcionar
+:::
+
+
+
+
+## Dicas para usar o Terminal Git Bash no RStudio
+
+::: {.callout-note icon="false"}
+## Dicas para usar o Terminal Git Bash no RStudio
+
+Para tornar seu trabalho com Git mais eficiente usando o terminal no RStudio:
+
+1. **Atalhos úteis no terminal Git Bash**:
+
+- Pressione a tecla "seta para cima" para acessar comandos anteriores
+- Use Tab para autocompletar nomes de arquivos e comandos
+- Ctrl+C cancela um comando em execução
+- Ctrl+L limpa a tela do terminal (ou digite `clear`)
+
+2. **Verificando rapidamente as mudanças**:
+
+```bash
+# Ver mudanças em um arquivo específico
+git diff caminho/para/arquivo.qmd
+
+# Ver apenas os nomes dos arquivos modificados
+git status -s
+```
+
+3. **Adicionando arquivos seletivamente**:
+
+```bash
+# Adicionar arquivos interativamente (pergunta arquivo por arquivo)
+git add -i
+
+# Adicionar apenas partes específicas de um arquivo
+git add -p
+```
+
+4. **Revertendo mudanças quando necessário**:
+
+```bash
+# Usar git restore (comando moderno) em vez de checkout
+git restore nome-do-arquivo.qmd
+
+# Remover arquivo da staging area
+git restore --staged nome-do-arquivo.qmd
+
+# Desfazer o último commit (mantendo as mudanças)
+git reset --soft HEAD~1
+```
+
+5. **Visualizando o histórico e colaboração**:
+
+```bash
+# Ver histórico resumido com autor
+git log --oneline --graph --decorate
+
+# Ver apenas os commits do orientador
+git log --author="nome_do_orientador"
+
+# Ver mudanças entre commits
+git diff HEAD~1 HEAD
+
+# Ver quem modificou cada linha de um arquivo
+git blame arquivo.qmd
+
+# Ver histórico de um arquivo específico
+git log -p nome-do-arquivo.qmd
+```
+
+6. **Comandos úteis para colaboração**:
+
+```bash
+# Verificar diferenças com o repositório remoto
+git fetch origin main
+git diff HEAD origin/main
+
+# Ver arquivos modificados nos últimos commits
+git diff --name-only HEAD~3
+
+# Criar um backup rápido
+git tag backup-$(date +%Y%m%d)
+
+# Ver status de forma compacta
+git status -s
+```
+
+6. **Mantendo o terminal aberto**:
+
+- Você pode manter o terminal Git Bash aberto o tempo todo enquanto trabalha.
+
+- Para abrir um novo terminal sem fechar o atual, clique no ícone "+" no 
+painel do terminal.
+
+- Use diferentes terminais para diferentes tarefas (um para Git, 
+outro para R, etc.).
+
+7. **Salvando comandos frequentes em um arquivo de texto**:
+
+- Crie um arquivo de texto no seu projeto chamado "git-comandos.txt".
+
+- Guarde ali os comandos que você usa com frequência para copiar e colar.
+
+- Adicione comentários úteis ao lado de cada comando.
+:::
+
+
+
+
+# Recuperando Versões Anteriores de Arquivos
+
+::: {.callout-note icon="false"}
+## Recuperando Versões Anteriores
+
+Uma das principais vantagens do Git é a possibilidade de voltar no tempo e 
+recuperar versões anteriores dos seus arquivos. Esta funcionalidade é 
+especialmente útil quando:
+
+- Você fez alterações que não funcionaram como esperado.
+- Precisa consultar como o texto estava redigido anteriormente.
+- Deseja recuperar conteúdo que foi removido acidentalmente.
+
+Vamos ver como fazer isso através do terminal Git Bash no RStudio:
+:::
+
+::: {.callout-note icon="false"}
+## Visualizando o Histórico de um Arquivo
+
+Antes de recuperar uma versão anterior, você precisa identificar quando 
+(em qual commit) o arquivo estava no estado que você deseja recuperar:
+
+1. **Veja o histórico de commits do arquivo**:
+
+```bash
+git log --follow arquivo.qmd
+```
+
+O parâmetro `--follow` é útil para ver o histórico mesmo se o arquivo 
+foi renomeado.
+
+2. **Visualização mais compacta**:
+
+```bash
+git log --follow --oneline arquivo.qmd
+```
+
+Isso mostrará cada commit em uma única linha, com seu ID (hash) e mensagem.
+
+Exemplo de resultado:
+
+```
+a7f3de6 Atualiza análise estatística da seção 3
+b9e8d12 Corrige tabelas e adiciona conclusões
+f7d2e09 Primeira versão do capítulo metodologia
+```
+
+3. **Anote o ID (hash) do commit** que contém a versão que você deseja 
+recuperar. No exemplo acima, poderia ser `f7d2e09` se você quisesse 
+voltar à primeira versão.
+:::
+
+::: {.callout-note icon="false"}
+## Visualizando o Conteúdo de uma Versão Antiga
+
+Para verificar o conteúdo antes de recuperá-lo:
+
+```bash
+git show hash:arquivo.qmd
+```
+
+Substitua `hash` pelo ID do commit e `arquivo.qmd` pelo nome do seu arquivo.
+
+**Exemplo:**
+
+```bash
+git show f7d2e09:metodologia.qmd
+```
+
+Isso mostrará o conteúdo do arquivo `metodologia.qmd` como estava no 
+commit `f7d2e09`, sem alterar seu arquivo atual.
+:::
+
+::: {.callout-note icon="false"}
+## Recuperando uma Versão Antiga
+
+Há duas maneiras principais de recuperar uma versão antiga de um arquivo:
+
+ 
+**Método 1:** Sobrescrever o arquivo atual
+
+Este método substitui completamente seu arquivo atual pela versão antiga:
+
+```bash
+git checkout hash -- arquivo.qmd
+```
+
+**Exemplo:**
+
+```bash
+git checkout f7d2e09 -- metodologia.qmd
+```
+
+**O que acontece?**
+
+- Seu arquivo atual é substituído pela versão antiga
+- A mudança aparece como uma modificação não commitada
+- Você ainda precisa adicionar e commitar esta mudança
+
+Depois de executar o comando acima, você precisará:
+
+```bash
+git add metodologia.qmd
+git commit -m "Restaura versão anterior da metodologia"
+```
+
+**Método 2:** Criar uma cópia da versão antiga
+
+Se você quiser manter seu arquivo atual e apenas examinar a versão antiga:
+
+```bash
+git show hash:arquivo.qmd > arquivo_antigo.qmd
+```
+
+**Exemplo:**
+
+```bash
+git show f7d2e09:metodologia.qmd > metodologia_antiga.qmd
+```
+
+Isso criará um novo arquivo chamado `metodologia_antiga.qmd` com o 
+conteúdo da versão antiga, sem afetar seu arquivo atual.
+:::
+
+
+::: {.callout-tip}
+## Dicas e Observações
+
+- **Identifique o commit correto**: Use `git log` com cuidado para 
+  encontrar exatamente a versão que deseja.
+  
+- **Salve seu trabalho atual**: Faça commit de suas mudanças atuais antes 
+  de recuperar versões antigas.
+  
+- **Lembre-se do formato do comando**: O formato `git checkout hash -- arquivo` 
+  é importante; não esqueça os dois traços antes do nome do arquivo.
+  
+- **Recuperação parcial**: Se quiser recuperar apenas partes específicas de
+uma versão antiga, use a segunda abordagem e depois copie manualmente as 
+partes relevantes.
+
+Esta funcionalidade de "máquina do tempo" é uma das maiores vantagens do 
+Git em comparação com o método tradicional de salvar múltiplas cópias de 
+arquivos com nomes diferentes.
+:::
+
+
+
+
+
+## Glossário de Termos
+
+### B {.unnumbered}
+
+**Branch**: Ramificação independente do código que permite trabalhar 
+em funcionalidades ou correções sem afetar a linha principal de 
+desenvolvimento.
+
+### C {.unnumbered}
+
+**Clone**: Cópia completa de um repositório, incluindo todos os arquivos, 
+histórico e branches, para o computador local.
+
+**Commit**: "Fotografia" do estado do projeto em um determinado momento, 
+com uma mensagem descritiva das alterações realizadas.
+
+**Conflito**: Situação onde o Git não consegue mesclar automaticamente 
+alterações de diferentes fontes porque ambas modificaram a mesma parte 
+de um arquivo.
+
+### F {.unnumbered}
+
+**Fork**: Cópia pessoal de um repositório de outra pessoa no GitHub, 
+permitindo experimentar mudanças sem afetar o projeto original.
+
+### G {.unnumbered}
+
+**Git**: Sistema de controle de versão distribuído que registra alterações 
+em arquivos ao longo do tempo.
+
+**Git Bash**: Terminal especial instalado com o Git no Windows que permite 
+executar comandos Git e outros comandos Unix.
+
+**GitHub**: Plataforma online que hospeda repositórios Git e oferece 
+ferramentas adicionais para colaboração e desenvolvimento de projetos.
+
+### H {.unnumbered}
+
+**Hash**: Identificador único (como `f7d2e09`) gerado para cada commit, 
+permitindo referenciar versões específicas dos arquivos.
+
+### I {.unnumbered}
+
+**Issue**: Funcionalidade do GitHub para rastrear tarefas, melhorias, bugs 
+e outras questões relacionadas a um projeto.
+
+### M {.unnumbered}
+
+**Main**: Branch principal de um repositório Git (anteriormente chamado 
+de "master").
+
+**Merge**: Processo de unir alterações de diferentes branches ou commits.
+
+### O {.unnumbered}
+
+**Origin**: Nome padrão dado ao repositório remoto (normalmente no GitHub) 
+a partir do qual um repositório local foi clonado.
+
+### P {.unnumbered}
+
+**Pull**: Ação de baixar as alterações do repositório remoto para o 
+repositório local, atualizando-o.
+
+**Push**: Ação de enviar commits do repositório local para o repositório 
+remoto (GitHub).
+
+### R {.unnumbered}
+
+**Repositório**: Coleção de arquivos e pastas de um projeto, junto com o 
+histórico completo de alterações.
+
+**Repositório Local**: Versão do repositório armazenada no seu computador.
+
+**Repositório Remoto**: Versão do repositório armazenada em um servidor 
+(como o GitHub).
+
+### S {.unnumbered}
+
+**Stage/Staging Area**: Área intermediária onde as alterações são 
+adicionadas (via `git add`) antes de serem definitivamente salvas 
+em um commit.
+
+### T {.unnumbered}
+
+**Terminal**: Interface de linha de comando onde os comandos Git são 
+executados.
+
+### W {.unnumbered}
+
+**Working Directory**: Diretório local onde os arquivos do projeto estão 
+sendo editados ativamente.
+
+
+
+
+## Referências
+
+::: {#refs}
+:::
